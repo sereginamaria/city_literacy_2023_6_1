@@ -1,24 +1,18 @@
 <template>
-  <div class="background-body">
-    Привет
-  </div>
+  <ModularTask1/>
 </template>
 
 <script>
     import {mapGetters} from "vuex";
+    import ModularTask1 from "@/components/Task1/ModularTask1";
     export default {
         name: "Task1Model",
-        computed: {
+      components: {ModularTask1},
+      computed: {
             ...mapGetters(['mainJSON']),
         },
     }
 </script>
 
 <style scoped>
-  .background-body {
-    height: 100vh;
-    backdrop-filter: blur(5px);/*
-    background: rgba(255, 255, 255, 0.01); url("../assets/Task1Background.png") no-repeat center center fixed;*/
-    background-size: cover;
-  }
 </style>

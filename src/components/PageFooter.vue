@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid d-flex justify-content-between align-items-center footer">
+    <div class="container-fluid d-flex justify-content-end align-items-center footer">
         <MyButton style="background: #F3AE4E; border-color: #F3AE4E; width: 200px" @click="showModal">Завершить</MyButton>
     </div>
 
@@ -95,7 +95,7 @@
 
 <style scoped>
     .footer {
-        height: 72px;
+        height: 70px;
         background: #344A5F;
         backdrop-filter: blur(8.15485px);
         position: fixed;

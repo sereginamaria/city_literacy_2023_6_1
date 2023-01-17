@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid d-flex justify-content-between nav-bar">
+    <div class="container-fluid d-flex justify-content-end nav-bar">
         <!--<div>
             <MyButton data-bs-toggle="collapse" data-bs-target="#collapse-instruction" aria-expanded="false"
                       aria-controls="collapse-instruction" style="background: transparent; border-color: white">
@@ -97,10 +97,7 @@
 <style scoped>
     .nav-bar {
         height: 70px;
-        background: transparent;
-        position: fixed;
-        top: 0;
-        padding-top: 16px;
+        background: #344A5F;
         z-index: 99;
     }
 </style>

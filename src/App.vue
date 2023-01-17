@@ -3,6 +3,7 @@
   <InstructionPage v-if="mainJSON.instructionShow"/>
 
   <div v-if="mainJSON.mainPageShow">
+    <PageNavBar/>
     <PageBody/>
     <PageFooter/>
   </div>
@@ -18,10 +19,12 @@
   import AuthForm from "@/components/AuthForm";
   import InstructionPage from "@/components/InstructionPage";
   import PausePage from "@/components/PausePage";
+  import PageNavBar from "@/components/PageNavBar";
 
   export default {
     name: 'App',
     components: {
+      PageNavBar,
       PausePage,
       InstructionPage,
       AuthForm,
@@ -240,6 +243,15 @@
     background: transparent;
     border-color: transparent;
     box-shadow: none;
+  }
+  .blue-buttons {
+    background: #2a94d6;
+    border-color: #2a94d6;;
+  }
+  .white-buttons {
+    background: #FCFCFC;
+    border: 1px solid #54BEDF;
+    color: #333333;
   }
 
   .dialog {
