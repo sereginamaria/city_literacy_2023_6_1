@@ -253,6 +253,28 @@
     border: 1px solid #54BEDF;
     color: #333333;
   }
+  .white-buttons:hover {
+    background: #FCFCFC;
+    border: 1px solid #54BEDF;
+    color: #333333;
+  }
+  .white-buttons:active {
+    background: #FCFCFC !important;
+    border: 1px solid #54BEDF !important;
+    color: #333333 !important;
+  }
+  .white-buttons:focus-visible {
+    background: #FCFCFC;
+    border: 1px solid #54BEDF;
+    color: #333333;
+    box-shadow: none;
+  }
+  .white-buttons:disabled {
+    background: #FCFCFC;
+    border: 1px solid #54BEDF;
+    color: #333333;
+    box-shadow: none;
+  }
 
   .dialog {
     top: 0;
