@@ -1,11 +1,11 @@
 <template>
-    <div>
+    <span>
         <select v-model="selectedOptions">
             <option v-for="item in list" :key="item.id">
                 {{item.value}}
             </option>
         </select>
-    </div>
+    </span>
 </template>
 
 <script>

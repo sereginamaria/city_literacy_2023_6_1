@@ -2,6 +2,7 @@
   <ModularTask1 style="position: relative"/>
   <ModularTask2/>
   <ModularTask3/>
+  <ModularTask4/>
 </template>
 
 <script>
@@ -9,9 +10,10 @@
     import ModularTask1 from "@/components/Task1/ModularTask1";
     import ModularTask2 from "@/components/Task1/ModularTask2";
     import ModularTask3 from "@/components/Task1/ModularTask3";
+    import ModularTask4 from "@/components/Task1/ModularTask4";
     export default {
         name: "Task1Model",
-      components: {ModularTask3, ModularTask2, ModularTask1},
+      components: {ModularTask4, ModularTask3, ModularTask2, ModularTask1},
       computed: {
             ...mapGetters(['mainJSON']),
         },
