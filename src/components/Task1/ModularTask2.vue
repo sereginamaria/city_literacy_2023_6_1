@@ -49,7 +49,7 @@
             <p>
                 Инструкция: Выбери ту полку, на которой находится подходящая обувь для тебя и для Аси. Помни, что обувь должна подходить для музея, где будет много людей.
             </p>
-            <MyButton class="white-buttons" @click="showModal" v-if="mainJSON.task1.results.ULSCLL1_Log_SCK1_1 !== 'NA'">Готово</MyButton>
+            <MyButton class="white-buttons" @click="showModal" v-if="mainJSON.task1.results.ULSCLL1_Log_SCK1_3 !== 'NA'">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>

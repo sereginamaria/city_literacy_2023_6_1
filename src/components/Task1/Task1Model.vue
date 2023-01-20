@@ -3,6 +3,8 @@
   <ModularTask2/>
   <ModularTask3/>
   <ModularTask4/>
+  <ModularTask5/>
+  <ModularTask6/>
 </template>
 
 <script>
@@ -11,9 +13,11 @@
     import ModularTask2 from "@/components/Task1/ModularTask2";
     import ModularTask3 from "@/components/Task1/ModularTask3";
     import ModularTask4 from "@/components/Task1/ModularTask4";
+    import ModularTask5 from "@/components/Task1/ModularTask5";
+    import ModularTask6 from "@/components/Task1/ModularTask6";
     export default {
         name: "Task1Model",
-      components: {ModularTask4, ModularTask3, ModularTask2, ModularTask1},
+      components: {ModularTask6, ModularTask5, ModularTask4, ModularTask3, ModularTask2, ModularTask1},
       computed: {
             ...mapGetters(['mainJSON']),
         },
@@ -32,5 +36,16 @@
   }
   .background-text p{
     color: white;
+  }
+  .choosenAnswer {
+    background: rgba(84, 190, 223, 0.15);
+  }
+  .background-answers {
+    background: #FFFFFF;
+    border: 1px solid #54BEDF;
+    left: calc(100%/1.8);
+    width: calc(100%/3);
+    position: absolute;
+    bottom: calc(100%/2.5);
   }
 </style>

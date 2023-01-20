@@ -139,15 +139,4 @@
     .background3 {
         background: url("../../assets/BackgroundModule10.png") rgba(255, 255, 255, 0.01) no-repeat center center fixed;
     }
-    .choosenAnswer {
-        background: rgba(84, 190, 223, 0.15);
-    }
-    .background-answers {
-        background: #FFFFFF;
-        border: 1px solid #54BEDF;
-        left: calc(100%/1.8);
-        width: calc(100%/3);
-        position: absolute;
-        bottom: calc(100%/2.5);
-    }
 </style>

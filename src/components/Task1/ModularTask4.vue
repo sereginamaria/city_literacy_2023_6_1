@@ -29,15 +29,15 @@
     <!--Задание рабочая тетрадь-->
     <div class="background3" v-if="mainJSON.task1.modularTask1_14Show">
         <div class="background-task">
-            <div style="line-height: 3;">
+            <div style="line-height: 3;" id="collapseModularTask4">
                 Москва была основана в
                 <MySelect :list="this.mainJSON.task1.listWorkBook1" :listID="1" @answer="addAnswer"
                           :selected="this.mainJSON.task1.results.ULSCLL1_Log_LLK1_1"></MySelect>
                 году
-                <span type="button" data-bs-toggle="collapse" data-bs-target="#collapseWorkBookQ2" aria-expanded="false" aria-controls="collapseWorkBookQ2"
-                      @click="openWorkBookQ(15)"
-                >_______</span>.
-                <div class="collapse" id="collapseWorkBookQ2" style="position: absolute">
+                <span data-bs-toggle="collapse" data-bs-target="#collapseWorkBookQ2" aria-expanded="false" aria-controls="collapseWorkBookQ2"
+                      @click="openWorkBookQ(15)" style="text-decoration: underline"
+                >{{this.mainJSON.task1.results.ULSCLL1_Log_LLK1_2 !== "NA" ? mainJSON.task1.results.ULSCLL1_Log_LLK1_2 : "_______"}}</span>.
+                <div class="collapse" id="collapseWorkBookQ2" style="position: absolute" data-bs-parent="#collapseModularTask4">
                     <div class="card card-body">
                         <p>
                             Кто из них основал Москву?
@@ -48,10 +48,10 @@
                     </div>
                 </div>
                 По его указу на берегу Москвы-реки была возведена деревянная крепость. Сейчас на этом месте мы видим
-                <span type="button" data-bs-toggle="collapse" data-bs-target="#collapseWorkBookQ3" aria-expanded="false" aria-controls="collapseWorkBookQ3"
-                      @click="openWorkBookQ(16)"
-                >_______</span>.
-                <div class="collapse" id="collapseWorkBookQ3" style="position: absolute">
+                <span data-bs-toggle="collapse" data-bs-target="#collapseWorkBookQ3" aria-expanded="false" aria-controls="collapseWorkBookQ3"
+                      @click="openWorkBookQ(16)" style="text-decoration: underline"
+                >{{this.mainJSON.task1.results.ULSCLL1_Log_LLK1_3 !== "NA" ? mainJSON.task1.results.ULSCLL1_Log_LLK1_3 : "_______"}}</span>.
+                <div class="collapse" id="collapseWorkBookQ3" style="position: absolute" data-bs-parent="#collapseModularTask4">
                     <div class="card card-body">
                         <p>
                             Что сейчас находится на месте деревянной крепости?
@@ -62,10 +62,10 @@
                     </div>
                 </div>
                 В наше время рядом с этим местом находится памятник
-                <span type="button" data-bs-toggle="collapse" data-bs-target="#collapseWorkBookQ4" aria-expanded="false" aria-controls="collapseWorkBookQ4"
-                      @click="openWorkBookQ(17)"
-                >_______</span>.
-                <div class="collapse" id="collapseWorkBookQ4" style="position: absolute">
+                <span data-bs-toggle="collapse" data-bs-target="#collapseWorkBookQ4" aria-expanded="false" aria-controls="collapseWorkBookQ4"
+                      @click="openWorkBookQ(17)" style="text-decoration: underline"
+                >{{this.mainJSON.task1.results.ULSCLL1_Log_LLK1_4 !== "NA" ? mainJSON.task1.results.ULSCLL1_Log_LLK1_4 : "_______"}}</span>.
+                <div class="collapse" id="collapseWorkBookQ4" style="position: absolute" data-bs-parent="#collapseModularTask4">
                     <div class="card card-body">
                         <p>
                             Кому поставлен этот памятник?
@@ -81,7 +81,9 @@
         <!--Второй вопрос-->
         <div class="background-task2" v-if="mainJSON.task1.modularTask1_15Show">
             <div v-for="el in mainJSON.task1.listWorkBook2" :key="el.id">
-                <div class="d-flex mt-2">
+                <div class="d-flex mt-2" @click="chooseWorkBookEl(2, 15, el)"
+                     data-bs-toggle="collapse" data-bs-target="#collapseWorkBookQ2" aria-expanded="false" aria-controls="collapseWorkBookQ2"
+                >
                     <img :src="'img/'+el.src" alt="" style="width: calc(100%/2.5);">
                     <div>
                         <p>
@@ -96,46 +98,49 @@
         </div>
 
         <!--Третий вопрос-->
-        <div class="background-task" v-if="mainJSON.task1.modularTask1_16Show">
-            <p style="line-height: 3;">
-                Москва была основана в
-                <MySelect :list="this.mainJSON.task1.listWorkBook1" :listID="1" @answer="addAnswer"
-                          :selected="this.mainJSON.task1.results.ULSCLL1_Log_LLK1_1"></MySelect>
-                году
-                <MySelect :list="this.mainJSON.task1.listWorkBook1" :listID="2" @answer="addAnswer"
-                          :selected="this.mainJSON.task1.results.ULSCLL1_Log_LLK1_1"></MySelect>.
-                По его указу на берегу Москвы-реки была возведена деревянная крепость. Сейчас на этом месте мы видим
-                <MySelect :list="this.mainJSON.task1.listWorkBook1" :listID="3" @answer="addAnswer"
-                          :selected="this.mainJSON.task1.results.ULSCLL1_Log_LLK1_1"></MySelect>.
-                В наше время рядом с этим местом находится памятник
-                <MySelect :list="this.mainJSON.task1.listWorkBook1" :listID="4" @answer="addAnswer"
-                          :selected="this.mainJSON.task1.results.ULSCLL1_Log_LLK1_1"></MySelect>.
-            </p>
+        <div class="background-task2" v-if="mainJSON.task1.modularTask1_16Show">
+            <div v-for="el in mainJSON.task1.listWorkBook3" :key="el.id">
+                <div class="d-flex mt-2" @click="chooseWorkBookEl(3, 16, el)"
+                     data-bs-toggle="collapse" data-bs-target="#collapseWorkBookQ3" aria-expanded="false" aria-controls="collapseWorkBookQ3"
+                >
+                    <img :src="'img/'+el.src" alt="" style="width: calc(100%/2.5);">
+                    <div>
+                        <p>
+                            Рисунок №{{el.id}}
+                        </p>
+                        <p>
+                            {{el.value}}
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!--Четвертый вопрос-->
-        <div class="background-task" v-if="mainJSON.task1.modularTask1_17Show">
-            <p style="line-height: 3;">
-                Москва была основана в
-                <MySelect :list="this.mainJSON.task1.listWorkBook1" :listID="1" @answer="addAnswer"
-                          :selected="this.mainJSON.task1.results.ULSCLL1_Log_LLK1_1"></MySelect>
-                году
-                <MySelect :list="this.mainJSON.task1.listWorkBook1" :listID="2" @answer="addAnswer"
-                          :selected="this.mainJSON.task1.results.ULSCLL1_Log_LLK1_1"></MySelect>.
-                По его указу на берегу Москвы-реки была возведена деревянная крепость. Сейчас на этом месте мы видим
-                <MySelect :list="this.mainJSON.task1.listWorkBook1" :listID="3" @answer="addAnswer"
-                          :selected="this.mainJSON.task1.results.ULSCLL1_Log_LLK1_1"></MySelect>.
-                В наше время рядом с этим местом находится памятник
-                <MySelect :list="this.mainJSON.task1.listWorkBook1" :listID="4" @answer="addAnswer"
-                          :selected="this.mainJSON.task1.results.ULSCLL1_Log_LLK1_1"></MySelect>.
-            </p>
+        <div class="background-task2" v-if="mainJSON.task1.modularTask1_17Show">
+            <img src="../../assets/Workbook8.png" alt="" style="width: 90%">
+            <div style="background: #fff; border: 1px solid #54bedf;" class="mt-2">
+                <div v-for="el in mainJSON.task1.listWorkBook4" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_LLK1_4}"
+                     style="padding: 10px 20px"
+                >
+                    <div @click="chooseAnswer(el)"
+                         data-bs-toggle="collapse" data-bs-target="#collapseWorkBookQ4" aria-expanded="false" aria-controls="collapseWorkBookQ4"
+                    >
+                        {{el.value}}
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="background-text">
             <p>
                 Инструкция: Заполни пропуски в тексте.
             </p>
-            <MyButton class="white-buttons" @click="showModal" v-if="mainJSON.task1.results.ULSCLL1_Log_SCK2_1 !== 'NA'">Готово</MyButton>
+            <MyButton class="white-buttons" @click="showModal"
+                      v-if="mainJSON.task1.results.ULSCLL1_Log_LLK1_1 !== 'NA' || mainJSON.task1.results.ULSCLL1_Log_LLK1_2 !== 'NA'
+                      || mainJSON.task1.results.ULSCLL1_Log_LLK1_3 !== 'NA' || mainJSON.task1.results.ULSCLL1_Log_LLK1_4 !== 'NA'"
+            >
+                Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
@@ -184,6 +189,14 @@
                 this.mainJSON.task1.modularTask1_13Show = false
                 this.mainJSON.task1.modularTask1_14Show = true
             },
+            chooseAnswer(el){
+                this.mainJSON.task1.results.ULSCLL1_Log_LLK1_4 = el.value
+                this.mainJSON.task1.modularTask1_17Show = false
+            },
+            chooseWorkBookEl(workBookID, id, el){
+              this.mainJSON.task1.results["ULSCLL1_Log_LLK1_" + workBookID] = el.value
+                this.mainJSON.task1["modularTask1_" + id + "Show"] = false
+            },
             addAnswer(el, listID){
                 if(listID === 1){
                     this.mainJSON.task1.results.ULSCLL1_Log_LLK1_1 = el
@@ -223,14 +236,22 @@
                 }
             },
             openWorkBookQ(id){
+                let k = 15
+                while (k !== 18){
+                    if(k !== id){
+                        this.mainJSON.task1["modularTask1_" + k + "Show"] = false
+                    }
+                    k++
+                }
                 this.mainJSON.task1["modularTask1_" + id + "Show"] = !this.mainJSON.task1["modularTask1_" + id + "Show"]
+                console.log(this.mainJSON.task1)
             },
             checkAnswer(status){
                 this.modalVisible = false
 
                 if(status) {
-                    this.mainJSON.task1.modularTask1_10Show = false
-                    this.mainJSON.task1.modularTask1_11Show = true
+                    this.mainJSON.task1.modularTask1_14Show = false
+                    this.mainJSON.task1.modularTask1_18Show = true
                 }
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
@@ -273,18 +294,17 @@
     .background-task {
             width: calc(100%/3.5);
             position: absolute;
-            top: calc(100%/4);
+            top: calc(100%/6);
             left: calc(100%/5);
     }
     .background-task2 {
         width: calc(100%/3.5);
         position: absolute;
-        top: calc(100%/7);
+        top: calc(100%/8);
         left: calc(100%/1.8);
     }
     .card {
         background: #FFFFFF;
         border: 1px solid #54BEDF;
     }
-
 </style>
