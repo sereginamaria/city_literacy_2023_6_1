@@ -68,7 +68,7 @@
           }
           if (newValue < 3600 && newValue > 3300) {
             let time = newValue - 3300
-            let hours_all = Math.floor(time / 3600)
+            let hours_all = Math.floor(time / 3600)  // TODO разобраться с DateTime
             let minutes_all = Math.floor((time - (hours_all*3600))/60)
             let seconds_all = time - (hours_all * 3600) - (minutes_all * 60)
 
@@ -80,17 +80,20 @@
             }
             this.mainJSON['retPause'] = minutes_all + ":" + seconds_all
           }
+
           if (newValue === 3300) {
             this.mainJSON["pauseShow"] = false
             this.mainJSON["mainPageShow"] = true
             this.startPushTimer()
           }
+
           if (newValue === 1500) {
             this.mainJSON["pauseShow"] = true
             this.mainJSON["mainPageShow"] = false
             this.pushMainJSON()
             this.stopPushTimer()
           }
+
           if(newValue < 1500 && newValue > 1200){
             let time = newValue - 1200
             let hours_all = Math.floor(time / 3600)
@@ -105,8 +108,9 @@
             }
             this.mainJSON['retPause'] = minutes_all + ":" + seconds_all
           }
+
           if (newValue === 1200) {
-            this.mainJSON["pauseShow"] = false
+            this.mainJSON["pauseShow"] = false  // TODO codestyle
             this.mainJSON["mainPageShow"] = true
             this.startPushTimer()
           }
@@ -115,7 +119,7 @@
       }
     },
     methods: {
-      ...mapMutations(["push_mainJSON"]),
+      ...mapMutations(["push_mainJSON"]),  // todo eslint
       ...mapActions(['get_mainJSON']),
       startTimer() {
         this.timer = setInterval(() => {
@@ -195,7 +199,7 @@
     font-family: 'SF UI Text';
     src: url('./fonts/sf_ui_text_regular.eot');
     src: url('./fonts/sf_ui_text_regular.eot?iefix') format('eot'),
-    url('./fonts/sf_ui_text_regular.woff') format('woff'),
+    url('./fonts/sf_ui_text_regular.woff') format('woff'),  /* todo разобраться с путями для стилей и шрифтов */
     url('./fonts/sf_ui_text_regular.ttf') format('truetype'),
     url('./fonts/sf_ui_text_regular.svg#webfont') format('svg');
     font-weight: normal;

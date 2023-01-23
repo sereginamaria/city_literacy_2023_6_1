@@ -38,7 +38,7 @@ export default new Vuex.Store({
             state.mainJSON = el
         },
         push_login: (state, auth) => {
-            axios.post("/city_literacy/server_request/auth_city.php", {
+            axios.post("/city_literacy/server_request/auth_city.php", {  // todo разница между авторизацией и аутентификацией
                 loginJSON: {
                     login: auth.login,
                     password: auth.password
@@ -60,7 +60,7 @@ export default new Vuex.Store({
                         localStorage.hash = response.data.hash
                         localStorage.login = response.data.login
                     }
-                    if (response.data.status === "error") {
+                    if (response.data.status === "error") {  // todo constants to enums
                         state.loginResponse = response.data
                     }
                 })
@@ -73,17 +73,18 @@ export default new Vuex.Store({
                     mainJSON: push.push
                 })
                     .then(function () {
-
+                     // todo ?????????????????????????????
                      /*   Vue.set(state, "responsePushJSON", response.data)*/
 
                     })
                     .catch(function () {
      /*                   Vue.set(state, "responsePushJSON", "noInternet")*/
+                        // todo ?????????????????????????????
                     })
             }
             else {
 
-                window.location.reload();
+                window.location.reload();   // todo проверить случайбесконечных перезагрузок
             }
         },
     },

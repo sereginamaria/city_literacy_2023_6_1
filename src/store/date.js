@@ -10,7 +10,7 @@ const date = {
     "ret": '',
     "retPush": '',
     "retPause": '',
-    "task1Show": true,
+    "task1Show": true,  // todo хранить свойства внутри объекта
     "task2Show": false,
     "task3Show": false,
     "results": {
@@ -23,7 +23,7 @@ const date = {
     },
     "task1": {
         "results": {
-            "ULSCLL1_Log_SCK1_1": "NA",
+            "ULSCLL1_Log_SCK1_1": "NA",  // todo поразмислыть в контексте state machine
             "ULSCLL1_Log_SCK1_3": "NA",
             "ULSCLL1_Log_SCK2_1": "NA",
 
@@ -37,18 +37,19 @@ const date = {
             "ULSCLL1_Log_SCK2_4": "NA",
 
         },
+        // todo codestyle / вынести константы
         "instruction": "Этой весной в Москве проходит акция “Ночь музеев”, когда музеи города открыты для посетителей намного дольше, чем обычно. Ты со своей старшей сестрой Асей отправляешься в Новую Третьяковку на Крымском Валу и тебе предстоит выполнить различные задания. Обрати внимание: при выполнении каждого задания после нажатия кнопки «Готово» ты уже не сможешь изменить ответ.",
         //Первый экран с инструкцией
         "modularTask1_0Show": true,
         //Выбор рюкзака
-        "modularTask1_1Show": false,
+        "modularTask1_1Show": false,  // todo к разговору про state machine
         //Экран в случае выбора первого
         "modularTask1_2Show": false,
         //Экран в случае выбора второго
         "modularTask1_3Show": false,
         //Перетаскивание вещей в рюкзаке
         "modularTask1_4Show": false,
-        "listOfElementsStart": [
+        "listOfElementsStart": [  // todo контекстуальные стили? подумать про state machine
             {
                 "src": "Element1.png",
                 "src_dop": "Element1_dop.png",
@@ -117,7 +118,7 @@ const date = {
             {
                 "name": "В) Будем стоять и держаться за поручень до объявления дежурного.",
                 "id": 3,
-            },   {
+            }, {
                 "name": "Г) Поднимемся самостоятельно наверх, чтобы спросить дежурного, что случилось.",
                 "id": 4,
             },
@@ -141,19 +142,23 @@ const date = {
         //Картинки ко второму вопросу
         "modularTask1_15Show": false,
         "listWorkBook2": [
-            {   "src": "Workbook1.png",
+            {
+                "src": "Workbook1.png",
                 "value": "Князь Юрий Долгорукий",
                 "id": 1,
             },
-            {   "src": "Workbook2.png",
+            {
+                "src": "Workbook2.png",
                 "value": "Князь Иван Калита",
                 "id": 2,
             },
-            {   "src": "Workbook3.png",
+            {
+                "src": "Workbook3.png",
                 "value": "Князь Даниил Московский",
                 "id": 3,
             },
-            {   "src": "Workbook4.png",
+            {
+                "src": "Workbook4.png",
                 "value": "Боярин Степан Кучка",
                 "id": 4,
             },
@@ -161,15 +166,18 @@ const date = {
         //Картинки к третьему вопросу
         "modularTask1_16Show": false,
         "listWorkBook3": [
-            {   "src": "Workbook5.png",
+            {
+                "src": "Workbook5.png",
                 "value": "Кремль",
                 "id": 1,
             },
-            {   "src": "Workbook6.png",
+            {
+                "src": "Workbook6.png",
                 "value": "Воскресенские ворота",
                 "id": 2,
             },
-            {   "src": "Workbook7.png",
+            {
+                "src": "Workbook7.png",
                 "value": "Птичья башня",
                 "id": 3,
             }
@@ -215,7 +223,7 @@ const date = {
             {
                 "name": "В) Нельзя переходить дорогу в обуви на каблуке.",
                 "id": 3,
-            },   {
+            }, {
                 "name": "Г) Нельзя переходить дорогу без светоотражающих элементов одежды.",
                 "id": 4,
             },
@@ -234,7 +242,7 @@ const date = {
             {
                 "name": "В) В трамвае нужно снимать головной убор.",
                 "id": 3,
-            },   {
+            }, {
                 "name": "Г) Из трамвая нужно выходить через переднюю дверь.",
                 "id": 4,
             },
@@ -253,7 +261,7 @@ const date = {
             {
                 "name": "В) Велосипедистам нельзя ездить по дороге без специального багажника.",
                 "id": 3,
-            },   {
+            }, {
                 "name": "Г) Велосипедистам нельзя ездить по дороге в два ряда.",
                 "id": 4,
             },
@@ -267,7 +275,7 @@ const date = {
         "modularTask1_28Show": false,
 
     },
-   }
+}
 
 export default {
     date

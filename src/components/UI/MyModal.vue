@@ -2,7 +2,7 @@
     <div v-if="show" class="dialog">
         <div class="dialog-content">
             <div class="mb-3">
-                <slot></slot>
+                <slot></slot>  <!-- todo именовать слоты -->
             </div>
             <MyButton v-for="button in buttons" :key="button.value"  @click="$emit('update', button.status)"
                       class="me-3 blue-buttons"
