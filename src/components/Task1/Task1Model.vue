@@ -5,6 +5,13 @@
   <ModularTask4/>
   <ModularTask5/>
   <ModularTask6/>
+  <ModularTask7/>
+  <ModularTask8/>
+  <ModularTask9/>
+  <ModularTask10/>
+  <ModularTask11/>
+  <ModularTask12/>
+  <ModularTask13/>
 </template>
 
 <script>
@@ -15,9 +22,23 @@
     import ModularTask4 from "@/components/Task1/ModularTask4";
     import ModularTask5 from "@/components/Task1/ModularTask5";
     import ModularTask6 from "@/components/Task1/ModularTask6";
+    import ModularTask7 from "@/components/Task1/ModularTask7";
+    import ModularTask8 from "@/components/Task1/ModularTask8";
+    import ModularTask9 from "@/components/Task1/ModularTask9";
+    import ModularTask10 from "@/components/Task1/ModularTask10";
+    import ModularTask11 from "@/components/Task1/ModularTask11";
+    import ModularTask12 from "@/components/Task1/ModularTask12";
+    import ModularTask13 from "@/components/Task1/ModularTask13";
     export default {
         name: "Task1Model",
-      components: {ModularTask6, ModularTask5, ModularTask4, ModularTask3, ModularTask2, ModularTask1},
+      components: {
+        ModularTask13,
+        ModularTask12,
+        ModularTask11,
+        ModularTask10,
+        ModularTask9,
+        ModularTask8,
+        ModularTask7, ModularTask6, ModularTask5, ModularTask4, ModularTask3, ModularTask2, ModularTask1},
       computed: {
             ...mapGetters(['mainJSON']),
         },

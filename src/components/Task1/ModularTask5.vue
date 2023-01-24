@@ -48,7 +48,7 @@
     <!--Задание 5 пункт 1-->
     <div class="background5" v-if="mainJSON.task1.modularTask1_23Show">
         <div class="background-answers">
-            <div v-for="el in mainJSON.task1.listOfAnswersMetro" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCK2_2}"
+            <div v-for="el in mainJSON.task1.listOfAnswersTask5Point1" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCK2_2}"
                  style="padding: 10px 20px"
             >
                 <div @click="chooseAnswer(1, el)">
@@ -67,7 +67,7 @@
     <!--Задание 5 пункт 2-->
     <div class="background6" v-if="mainJSON.task1.modularTask1_24Show">
         <div class="background-answers">
-            <div v-for="el in mainJSON.task1.listOfAnswersMetro" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCK2_3}"
+            <div v-for="el in mainJSON.task1.listOfAnswersTask5Point2" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCK2_3}"
                  style="padding: 10px 20px"
             >
                 <div @click="chooseAnswer(2, el)">
@@ -86,7 +86,7 @@
     <!--Задание 5 пункт 3-->
     <div class="background7" v-if="mainJSON.task1.modularTask1_25Show">
         <div class="background-answers">
-            <div v-for="el in mainJSON.task1.listOfAnswersMetro" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCK2_4}"
+            <div v-for="el in mainJSON.task1.listOfAnswersTask5Point3" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCK2_4}"
                  style="padding: 10px 20px"
             >
                 <div @click="chooseAnswer(3, el)">
