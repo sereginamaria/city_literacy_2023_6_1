@@ -11,7 +11,7 @@
     <!--Задание 12 задание-->
     <div class="background1" v-if="mainJSON.task1.modularTask1_55Show">
         <div class="background-answers">
-            <div v-for="el in mainJSON.task1.listOfAnswersTask7" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_LLK5_1}"
+            <div v-for="el in mainJSON.task1.listOfAnswersTask12" :key="el.id" :class="{choosenAnswer: el.choose}"
                  style="padding: 10px 20px"
             >
                 <div @click="chooseAnswer(el)">
@@ -23,7 +23,7 @@
             <p>
                 Инструкция: Выбери ВСЕ подходящие сайты, которыми можно воспользоваться, чтобы посмотреть достопримечательности Москвы онлайн.
             </p>
-            <MyButton class="white-buttons" @click="showModal" v-if="mainJSON.task1.results.ULSCLL1_Log_LLK5_1 !== 'NA'">Готово</MyButton>
+            <MyButton class="white-buttons" @click="showModal" v-if="mainJSON.task1.results.ULSCLL1_Log_LLK5_1 !== 'NA' && mainJSON.task1.results.ULSCLL1_Log_LLK5_1 !== ''">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
@@ -60,10 +60,20 @@
                 ]
                 this.modalMessage = 'Ты действительно хочешь закончить выполнение этого задания? После этого уже нельзя будет изменить ответы.'
             },
-            chooseAnswer(qID, el) {
-                if (qID === 1) {
-                    this.mainJSON.task1.results.ULSCLL1_Log_LLK5_1 = el.id
+            chooseAnswer(el) {
+                let k = 0
+                this.mainJSON.task1.listOfChoosenAnswersTask12.forEach(elMass => {
+                    if(elMass === el.id){
+                        this.mainJSON.task1.listOfChoosenAnswersTask12.splice(this.mainJSON.task1.listOfChoosenAnswersTask12.indexOf(elMass), 1)
+                        el.choose = false
+                        k++
+                    }
+                })
+                if(k === 0){
+                    this.mainJSON.task1.listOfChoosenAnswersTask12.push(el.id)
+                    el.choose = true
                 }
+                this.mainJSON.task1.results.ULSCLL1_Log_LLK5_1 = this.mainJSON.task1.listOfChoosenAnswersTask12.join()
             },
             show1_55() {
                 this.mainJSON.task1.modularTask1_54Show = false

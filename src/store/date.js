@@ -43,22 +43,25 @@ const date = {
             "ULSCLL1_Log_SCS4_2": "NA",
             "ULSCLL1_Log_SCS4_3": "NA",
 
-            "ULSCLL1_Log_LLK3_1": "N",
+            "ULSCLL1_Log_LLK3_1": "NA",
 
             //10
-            "ULSCLL1_Log_LLK2_1": "N",
+            "ULSCLL1_Log_LLK2_1": "NA",
 
             //11
-            "ULSCLL1_Log_LLK4_1": "N",
+            "ULSCLL1_Log_LLK4_1": "NA",
 
             //12
-            "ULSCLL1_Log_LLK5_1": "N",
+            "ULSCLL1_Log_LLK5_1": "NA",
+
+            //13
+            "ULSCLL1_Log_SCK3_1": "NA",
 
         },
         // todo codestyle / вынести константы
         "instruction": "Этой весной в Москве проходит акция “Ночь музеев”, когда музеи города открыты для посетителей намного дольше, чем обычно. Ты со своей старшей сестрой Асей отправляешься в Новую Третьяковку на Крымском Валу и тебе предстоит выполнить различные задания. Обрати внимание: при выполнении каждого задания после нажатия кнопки «Готово» ты уже не сможешь изменить ответ.",
         //Первый экран с инструкцией
-        "modularTask1_0Show": true,
+        "modularTask1_0Show": false,
         //Выбор рюкзака
         "modularTask1_1Show": false,  // todo к разговору про state machine
         //Экран в случае выбора первого
@@ -391,11 +394,105 @@ const date = {
         ],
 
         //Задание 9 реплика 1
-        "modularTask1_45Show": false,
+        "modularTask1_45Show": true,
         //Задание 9 реплика 2
         "modularTask1_46Show": false,
         //Задание 9 задание
         "modularTask1_47Show": false,
+        "listOfElementsTask9": [  // todo контекстуальные стили? подумать про state machine
+            {
+                "src": "Stiker1.png",
+                "name": "Парк Таганский",
+                "id": 1,
+                "choose": false,
+                "style": "width: calc(100%/13); position: absolute; bottom: calc(100%/6.8); left: calc(100%/4)"
+            },
+            {
+                "src": "Stiker2.png",
+                "name": "Пруд Королевский",
+                "id": 2,
+                "choose": false,
+                "style": "width: calc(100%/13); position: absolute; bottom: calc(100%/1.6); left: calc(100%/3.8)"
+            },
+            {
+                "src": "Stiker3.png",
+                "name": "Красная Площадь",
+                "id": 3,
+                "choose": false,
+                "style": "width: calc(100%/13); position: absolute; bottom: calc(100%/1.95); left: calc(100%/2.1)"
+            },
+            {
+                "src": "Stiker4.png",
+                "name": "Кремль",
+                "id": 4,
+                "choose": false,
+                "style": "width: calc(100%/13); position: absolute; bottom: calc(100%/2.4); left: calc(100%/2.25)"
+            },
+            {
+                "src": "Stiker5.png",
+                "name": "Патриаршие пруды",
+                "id": 5,
+                "choose": false,
+                "style": "width: calc(100%/13); position: absolute; bottom: calc(100%/1.65); left: calc(100%/3)"
+            },
+            {
+                "src": "Stiker6.png",
+                "name": "Тверская улица",
+                "id": 6,
+                "choose": false,
+                "style": "width: calc(100%/13); position: absolute; bottom: calc(100%/1.65); left: calc(100%/2.4)"
+            },
+            {
+                "src": "Stiker7.png",
+                "name": "Садовое кольцо",
+                "id": 7,
+                "choose": false,
+                "style": "width: calc(100%/13); position: absolute; bottom: calc(100%/1.3); left: calc(100%/2.4)"
+            },
+            {
+                "src": "Stiker8.png",
+                "name": "Бульварное кольцо",
+                "id": 8,
+                "choose": false,
+                "style": "width: calc(100%/13); position: absolute; bottom: calc(100%/1.5); left: calc(100%/2)"
+            },
+            {
+                "src": "Stiker9.png",
+                "name": "Река Ока",
+                "id": 9,
+                "choose": false,
+                "style": "width: calc(100%/13); position: absolute; bottom: calc(100%/7); left: calc(100%/1.32)"
+            },
+            {
+                "src": "Stiker10.png",
+                "name": "Река Яуза",
+                "id": 10,
+                "choose": false,
+                "style": "width: calc(100%/13); position: absolute; bottom: calc(100%/1.8); left: calc(100%/1.4)"
+            },
+            {
+                "src": "Stiker11.png",
+                "name": "Чистые пруды",
+                "id": 11,
+                "choose": false,
+                "style": "width: calc(100%/13); position: absolute; bottom: calc(100%/1.8); left: calc(100%/1.7)"
+            },
+            {
+                "src": "Stiker12.png",
+                "name": "Парк Зарядье",
+                "id": 12,
+                "choose": false,
+                "style": "width: calc(100%/13); position: absolute; bottom: calc(100%/2.4); left: calc(100%/2)"
+            },
+            {
+                "src": "Stiker13.png",
+                "name": "Музеон",
+                "id": 13,
+                "choose": false,
+                "style": "width: calc(100%/13); position: absolute; bottom: calc(100%/4.7); left: calc(100%/2.4)"
+            },
+        ],
+        "listOfAnswersTask9": [],
 
         //Задание 10 реплика 1
         "modularTask1_48Show": false,
@@ -403,6 +500,44 @@ const date = {
         "modularTask1_49Show": false,
         //Задание 10 задание
         "modularTask1_50Show": false,
+        "listOfElementsTask10": [
+            {
+                "id": 1,
+                "value": "Московский Кремль"
+            },
+            {
+                "id": 2,
+                "value": "ВДНХ"
+            },
+            {
+                "id": 3,
+                "value": "Пушкинский музей"
+            },
+            {
+                "id": 4,
+                "value": "Большой театр"
+            },
+            {
+                "id": 5,
+                "value": "Московский зоопарк"
+            },
+            {
+                "id": 6,
+                "value": "Государственный исторический музей"
+            },
+            {
+                "id": 7,
+                "value": "Государственная Третьяковская галерея"
+            },
+            {
+                "id": 8,
+                "value": "Парк Горького"
+            },
+        ],
+        "listOfAnswersTask10_1": [],
+        "listOfAnswersTask10_2": [],
+        "listOfAnswersTask10_3": [],
+        "listOfAnswersTask10": [],
 
         //Задание 11 реплика 1
         "modularTask1_51Show": false,
@@ -410,15 +545,59 @@ const date = {
         "modularTask1_52Show": false,
         //Задание 11 задание
         "modularTask1_53Show": false,
+        "listOfAnswersTask11": [
+            {
+                "name": "А) Фестиваль “Путешествие в рождество”",
+                "id": 1,
+                "choose": false,
+            },
+            {
+                "name": "Б) Фестиваль “Времена и эпохи”",
+                "id": 2,
+                "choose": false,
+            },
+            {
+                "name": "В) Фестиваль “Ежевичное варенье”",
+                "id": 3,
+                "choose": false,
+            }, {
+                "name": "Г) Фестиваль Воздушных шаров",
+                "id": 4,
+                "choose": false,
+            },
+        ],
+        "listOfChoosenAnswersTask11": [],
 
         //Задание 12 реплика 1
         "modularTask1_54Show": false,
         //Задание 12 задание
         "modularTask1_55Show": false,
+        "listOfAnswersTask12": [
+            {
+                "name": "А) Культура Москвы Онлайн https://www.mos.ru/city/projects/kulturaonline",
+                "id": 1,
+                "choose": false,
+            },
+            {
+                "name": "Б) Мероприятия и события в Москве https://mos-holidays.ru/news/",
+                "id": 2,
+                "choose": false,
+            },
+            {
+                "name": "В) Узнай Москву https://um.mos.ru",
+                "id": 3,
+                "choose": false,
+            }, {
+                "name": "Г) Яндекс.Афиша: Куда сходить в Москве https://afisha.yandex.ru/moscow",
+                "id": 4,
+                "choose": false,
+            },
+        ],
+        "listOfChoosenAnswersTask12": [],
 
         //Задание 13 реплика 1
         "modularTask1_56Show": false,
-        //Задание 12=3 реплика 2
+        //Задание 13 реплика 2
         "modularTask1_57Show": false,
         //Задание 13 реплика 3
         "modularTask1_58Show": false,

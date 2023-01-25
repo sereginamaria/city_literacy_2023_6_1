@@ -20,7 +20,7 @@
     <!--Задание 11 задание-->
     <div class="background2" v-if="mainJSON.task1.modularTask1_53Show">
         <div class="background-answers">
-            <div v-for="el in mainJSON.task1.listOfAnswersTask7" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_LLK4_1}"
+            <div v-for="el in mainJSON.task1.listOfAnswersTask11" :key="el.id" :class="{choosenAnswer: el.choose}"
                  style="padding: 10px 20px"
             >
                 <div @click="chooseAnswer(el)">
@@ -32,7 +32,7 @@
             <p>
                 Инструкция: Выбери из списка все фестивали, которые проходят в Москве.
             </p>
-            <MyButton class="white-buttons" @click="showModal" v-if="mainJSON.task1.results.ULSCLL1_Log_LLK4_1 !== 'NA'">Готово</MyButton>
+            <MyButton class="white-buttons" @click="showModal" v-if="mainJSON.task1.results.ULSCLL1_Log_LLK4_1 !== 'NA' && mainJSON.task1.results.ULSCLL1_Log_LLK4_1 !== ''">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
@@ -69,10 +69,20 @@
                 ]
                 this.modalMessage = 'Ты действительно хочешь закончить выполнение этого задания? После этого уже нельзя будет изменить ответы.'
             },
-            chooseAnswer(qID, el) {
-                if (qID === 1) {
-                    this.mainJSON.task1.results.ULSCLL1_Log_LLK5_1 = el.id
+            chooseAnswer(el) {
+                let k = 0
+                this.mainJSON.task1.listOfChoosenAnswersTask11.forEach(elMass => {
+                    if(elMass === el.id){
+                        this.mainJSON.task1.listOfChoosenAnswersTask11.splice(this.mainJSON.task1.listOfChoosenAnswersTask11.indexOf(elMass), 1)
+                        el.choose = false
+                        k++
+                    }
+                })
+                if(k === 0){
+                    this.mainJSON.task1.listOfChoosenAnswersTask11.push(el.id)
+                    el.choose = true
                 }
+                this.mainJSON.task1.results.ULSCLL1_Log_LLK4_1 = this.mainJSON.task1.listOfChoosenAnswersTask11.join()
             },
             show1_52() {
                 this.mainJSON.task1.modularTask1_51Show = false

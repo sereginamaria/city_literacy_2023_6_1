@@ -19,8 +19,11 @@
     </div>
     <!--Задание 9 задание-->
     <div class="background2" v-if="mainJSON.task1.modularTask1_47Show">
-        <div class="background-task">
-
+        <div>
+            <div v-for="el in mainJSON.task1.listOfElementsTask9" :key="el.id">
+                <img :src="'img/'+el.src" :class="{choose: el.choose}" @click="addAnswer(el)"
+                     alt="Avatar" :style="el.style"/>
+            </div>
         </div>
 
         <div class="background-text">
@@ -72,6 +75,11 @@
                 this.mainJSON.task1.modularTask1_46Show = false
                 this.mainJSON.task1.modularTask1_47Show = true
             },
+            addAnswer(el){
+                el.choose = !el.choose
+                this.mainJSON.task1.listOfAnswersTask9.push(el.name)
+                this.mainJSON.task1.results.ULSCLL1_Log_LLK3_1 = this.mainJSON.task1.listOfAnswersTask9.join()
+            },
             checkAnswer(status) {
                 this.modalVisible = false
 
@@ -113,5 +121,8 @@
     }
     .background2 {
         background: url("../../assets/BackgroundModule43.png") rgba(255, 255, 255, 0.01) no-repeat center center fixed;
+    }
+    .choose {
+        opacity: 0.5;
     }
 </style>

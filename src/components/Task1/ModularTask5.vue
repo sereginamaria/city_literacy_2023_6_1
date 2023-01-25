@@ -61,7 +61,7 @@
                 Вопрос: Какое современное правило дорожного движения нарушается на картине? Выбери один ответ.
             </p>
             <MyButton class="white-buttons" @click="show1_24" v-if="mainJSON.task1.results.ULSCLL1_Log_SCK2_2 !== 'NA'">Далее</MyButton>
-            <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
+            <MyButton class="white-buttons" disabled v-else>Далее</MyButton>
         </div>
     </div>
     <!--Задание 5 пункт 2-->
@@ -80,7 +80,7 @@
                 Вопрос: Какое современное правило дорожного движения нарушается на картине? Выбери один ответ.
             </p>
             <MyButton class="white-buttons" @click="show1_25" v-if="mainJSON.task1.results.ULSCLL1_Log_SCK2_3 !== 'NA'">Далее</MyButton>
-            <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
+            <MyButton class="white-buttons" disabled v-else>Далее</MyButton>
         </div>
     </div>
     <!--Задание 5 пункт 3-->

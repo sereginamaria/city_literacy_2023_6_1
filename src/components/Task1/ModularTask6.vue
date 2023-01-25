@@ -32,7 +32,8 @@
             <p>
                 Инструкция: Что ответишь Коле? Выбери один вариант ответа.
             </p>
-            <MyButton class="white-buttons" @click="show1_29">Далее</MyButton>
+            <MyButton class="white-buttons" @click="show1_29" v-if="mainJSON.task1.results.ULSCLL1_Log_SCS4_1 !== 'NA'">Далее</MyButton>
+            <MyButton class="white-buttons"  disabled v-else>Далее</MyButton>
         </div>
     </div>
 
