@@ -217,6 +217,10 @@
     /*   height: 175px;*/
   }
 
+  :not(:root):fullscreen::backdrop {
+    background: white;
+  }
+
   * {
     font-family: SF UI Text;
     font-style: normal;

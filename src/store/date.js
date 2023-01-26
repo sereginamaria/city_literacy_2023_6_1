@@ -57,11 +57,22 @@ const date = {
             //13
             "ULSCLL1_Log_SCK3_1": "NA",
 
+            //14
+            "ULSCLL1_Log_SCK3_2": "NA",
+            "ULSCLL1_Log_SCK3_3": "NA",
+            "ULSCLL1_Log_SCK3_4": "NA",
+            "ULSCLL1_Log_SCK3_5": "NA",
+
+            //15
+            "ULSCLL1_Log_LLK6_1": "NA",
+            "ULSCLL1_Log_LLK6_2": "NA",
+            "ULSCLL1_Log_LLK6_3": "NA",
+            "ULSCLL1_Log_LLK6_4": "NA",
         },
         // todo codestyle / вынести константы
         "instruction": "Этой весной в Москве проходит акция “Ночь музеев”, когда музеи города открыты для посетителей намного дольше, чем обычно. Ты со своей старшей сестрой Асей отправляешься в Новую Третьяковку на Крымском Валу и тебе предстоит выполнить различные задания. Обрати внимание: при выполнении каждого задания после нажатия кнопки «Готово» ты уже не сможешь изменить ответ.",
         //Первый экран с инструкцией
-        "modularTask1_0Show": false,
+        "modularTask1_0Show": true,
         //Выбор рюкзака
         "modularTask1_1Show": false,  // todo к разговору про state machine
         //Экран в случае выбора первого
@@ -394,7 +405,7 @@ const date = {
         ],
 
         //Задание 9 реплика 1
-        "modularTask1_45Show": true,
+        "modularTask1_45Show": false,
         //Задание 9 реплика 2
         "modularTask1_46Show": false,
         //Задание 9 задание
@@ -605,8 +616,117 @@ const date = {
         "modularTask1_59Show": false,
         //Задание 13 задание
         "modularTask1_60Show": false,
+        "listOfAnswersTask13": [
+            {
+                "name": "А) Переждать ураган под деревом.",
+                "id": 1,
+                "choose": false,
+            },
+            {
+                "name": "Б) Спрятаться у торговой палатки.",
+                "id": 2,
+                "choose": false,
+            },
+            {
+                "name": "В) Зайти в ближайший магазин.",
+                "id": 3,
+                "choose": false,
+            }, {
+                "name": "Г) Найти укрытие на детской площадке.",
+                "id": 4,
+                "choose": false,
+            },
+        ],
+        "listOfChoosenAnswersTask13": [],
 
+        //Задание 14 реплика 1
+        "modularTask1_61Show": false,
+        //Задание 14 реплика 2
+        "modularTask1_62Show": false,
+        //Задание 14 задание
+        "modularTask1_63Show": false,
+        "listOfAnswersTask14": [
+            {
+                "src": "task14EL1.png",
+                "src_dop": "Element1_dop.png",
+                "id": 1,
+            },
+            {
+                "src": "task14EL2.png",
+                "src_dop": "Element2_dop.png",
+                "id": 2,
+            },
+            {
+                "src": "task14EL3.png",
+                "src_dop": "Element3.png",
+                "id": 3,
+            },
+            {
+                "src": "task14EL4.png",
+                "src_dop": "Element4_dop.png",
+                "id": 4,
+            },
+            {
+                "src": "task14EL5.png",
+                "src_dop": "Element5.png",
+                "id": 5,
+            },
+            {
+                "src": "task14EL6.png",
+                "src_dop": "Element6_dop.png",
+                "id": 6,
+            },
+            {
+                "src": "task14EL7.png",
+                "src_dop": "Element7_dop.png",
+                "id": 7,
+            },
+            {
+                "src": "task14EL8.png",
+                "src_dop": "Element7_dop.png",
+                "id": 8,
+            },
+        ],
+        "listOfAnswersTask14_1": [],
+        "listOfAnswersTask14_2": [],
+        "listOfAnswersTask14_3": [],
+        "listOfAnswersTask14_4": [],
+
+        //Задание 15 реплика 1
+        "modularTask1_64Show": false,
+        //Задание 15 задание
+        "modularTask1_65Show": false,
+        "listOfAnswersTask15": [
+            {
+                "id": 1,
+                "value": "Попасть на экскурсию в Музей космонавтики"
+            },
+            {
+                "id": 2,
+                "value": "Погулять на улице в Парке Сокольники"
+            },
+            {
+                "id": 3,
+                "value": "Посетить Планетарий Москвы"
+            },
+            {
+                "id": 4,
+                "value": "Покормить птиц в Московском зоопарке"
+            },
+        ],
+        "listOfAnswersTask15_1": [],
+        "listOfAnswersTask15_2": [],
+        "listOfAnswersTask15_3": [],
+        "listOfAnswersTask15_4": [],
+
+        //Задание 16 реплика 1
+        "modularTask1_66Show": false,
     },
+    "task2": {
+        "instruction": "Этой весной в Москве проходит акция “Ночь музеев”, когда музеи города открыты для посетителей намного дольше, чем обычно. Ты со своей старшей сестрой Асей отправляешься в Новую Третьяковку на Крымском Валу и тебе предстоит выполнить различные задания. Обрати внимание: при выполнении каждого задания после нажатия кнопки «Готово» ты уже не сможешь изменить ответ.",
+        //Первый экран с инструкцией
+        "modularTask2_0Show": false,
+    }
 }
 
 export default {

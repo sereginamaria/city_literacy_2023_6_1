@@ -12,6 +12,9 @@
   <ModularTask11/>
   <ModularTask12/>
   <ModularTask13/>
+  <ModularTask14/>
+  <ModularTask15/>
+  <ModularTask16/>
 </template>
 
 <script>
@@ -29,9 +32,15 @@
     import ModularTask11 from "@/components/Task1/ModularTask11";
     import ModularTask12 from "@/components/Task1/ModularTask12";
     import ModularTask13 from "@/components/Task1/ModularTask13";
+    import ModularTask14 from "@/components/Task1/ModularTask14";
+    import ModularTask15 from "@/components/Task1/ModularTask15";
+    import ModularTask16 from "@/components/Task1/ModularTask16";
     export default {
         name: "Task1Model",
       components: {
+        ModularTask16,
+        ModularTask15,
+        ModularTask14,
         ModularTask13,
         ModularTask12,
         ModularTask11,
