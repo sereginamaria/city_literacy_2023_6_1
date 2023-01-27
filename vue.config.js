@@ -6,8 +6,8 @@ module.exports = defineConfig({
 const path = require("path");
 
 module.exports = {
-  publicPath: '/city_literacy/v0',  // TODO
+  publicPath: '/city_literacy/2023_6_1',  // TODO
 
-  outputDir: path.resolve(__dirname, "../v1_1/"),
-  assetsDir: "../v1_1/"
+  outputDir: path.resolve(__dirname, "../2023_6_1/"),
+  assetsDir: "../2023_6_1/"
 }
