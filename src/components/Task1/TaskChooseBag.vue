@@ -9,7 +9,7 @@
         </div>
         <div class="background-text">
             <p>
-                {{constTextTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
+                {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
             </p>
             <MyButton class="white-buttons" @click="showModal" v-if="mainJSON.task1.results.ULSCLL1_Log_SCK1_1 !== 'NA'">Выбрать</MyButton>
             <MyButton class="white-buttons" disabled v-else>Выбрать</MyButton>
@@ -30,7 +30,7 @@
         name: "taskChooseBag",
         props: {
             screen: {},
-            constTextTaskNightInTheMuseum: {}
+            constTaskNightInTheMuseum: {}
         },
         data() {
             return {

@@ -34,7 +34,7 @@
         name: "TaskBadWeather",
         props: {
             screen: {},
-            constTextTaskNightInTheMuseum: {}
+            constTaskNightInTheMuseum: {}
         },
         computed: {
             ...mapGetters(['mainJSON']),

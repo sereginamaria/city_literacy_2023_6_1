@@ -88,7 +88,7 @@
         name: "TaskAttractions",
         props: {
             screen: {},
-            constTextTaskNightInTheMuseum: {}
+            constTaskNightInTheMuseum: {}
         },
         computed: {
             ...mapGetters(['mainJSON']),

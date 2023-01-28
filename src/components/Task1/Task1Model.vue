@@ -1,39 +1,39 @@
 <template>
-  <TextScreen v-if="screen.isShow && !screen.haveTask" :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+  <TextScreen v-if="screen.isShow && !screen.haveTask" :screen="screen" :constTaskNightInTheMuseum="constTaskNightInTheMuseum"/>
   <TaskChooseBag v-if="screen.isShow && screen.haveTask && screen.taskName === 'ChooseBag'"
-                  :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+                  :screen="screen" :constTaskNightInTheMuseum="constTaskNightInTheMuseum"/>
   <TaskMovingThingsFromBag v-if="screen.isShow && screen.haveTask && screen.taskName === 'MovingThingsFromBag'"
-                           :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+                           :screen="screen" :constTaskNightInTheMuseum="constTaskNightInTheMuseum"/>
   <TaskChooseShoes v-if="screen.isShow && screen.haveTask && screen.taskName === 'ChooseShoes'"
-                 :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+                 :screen="screen" :constTaskNightInTheMuseum="constTaskNightInTheMuseum"/>
   <TaskMetro v-if="screen.isShow && screen.haveTask && screen.taskName === 'Metro'"
-             :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+             :screen="screen" :constTaskNightInTheMuseum="constTaskNightInTheMuseum"/>
   <TaskWorkBook v-if="screen.isShow && screen.haveTask && screen.taskName === 'WorkBook'"
-                :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+                :screen="screen" :constTaskNightInTheMuseum="constTaskNightInTheMuseum"/>
   <TaskMuseumPaintings v-if="(screen.taskName === 'MuseumPaintings1' || screen.taskName === 'MuseumPaintings2' ||screen.taskName === 'MuseumPaintings3') &&
                         screen.isShow && screen.haveTask"
-                       :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+                       :screen="screen" :constTaskNightInTheMuseum="constTaskNightInTheMuseum"/>
   <TaskEscape v-if="screen.isShow && screen.haveTask && screen.taskName === 'Escape'"
-              :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+              :screen="screen" :constTaskNightInTheMuseum="constTaskNightInTheMuseum"/>
   <TaskFire v-if="screen.isShow && screen.haveTask && screen.taskName === 'Fire'"
-            :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+            :screen="screen" :constTaskNightInTheMuseum="constTaskNightInTheMuseum"/>
   <TaskStatue  v-if="(screen.taskName === 'Statue1' || screen.taskName === 'Statue2') &&
                 screen.isShow && screen.haveTask"
-               :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+               :screen="screen" :constTaskNightInTheMuseum="constTaskNightInTheMuseum"/>
   <TaskMap v-if="screen.isShow && screen.haveTask && screen.taskName === 'Map'"
-           :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+           :screen="screen" :constTaskNightInTheMuseum="constTaskNightInTheMuseum"/>
   <TaskAttractions v-if="screen.isShow && screen.haveTask && screen.taskName === 'Attractions'"
-                   :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+                   :screen="screen" :constTaskNightInTheMuseum="constTaskNightInTheMuseum"/>
   <TaskFestival v-if="screen.isShow && screen.haveTask && screen.taskName === 'Festival'"
-                :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+                :screen="screen" :constTaskNightInTheMuseum="constTaskNightInTheMuseum"/>
   <TaskSites v-if="screen.isShow && screen.haveTask && screen.taskName === 'Sites'"
-             :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+             :screen="screen" :constTaskNightInTheMuseum="constTaskNightInTheMuseum"/>
   <TaskBadWeather v-if="screen.isShow && screen.haveTask && screen.taskName === 'BadWeather'"
-                  :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+                  :screen="screen" :constTaskNightInTheMuseum="constTaskNightInTheMuseum"/>
   <TaskWarningSigns v-if="screen.isShow && screen.haveTask && screen.taskName === 'WarningSigns'"
-                    :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+                    :screen="screen" :constTaskNightInTheMuseum="constTaskNightInTheMuseum"/>
   <TaskWeatherForecast v-if="screen.isShow && screen.haveTask && screen.taskName === 'WeatherForecast'"
-                       :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+                       :screen="screen" :constTaskNightInTheMuseum="constTaskNightInTheMuseum"/>
 </template>
 
 <script>
@@ -77,7 +77,7 @@
           TextScreen,
         },
         computed: {
-            ...mapGetters(['mainJSON', 'constTextTaskNightInTheMuseum']),
+            ...mapGetters(['mainJSON', 'constTaskNightInTheMuseum']),
           screenID(){
             return this.mainJSON.task1.shownScreenID
           },

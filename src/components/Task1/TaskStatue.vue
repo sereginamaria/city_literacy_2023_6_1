@@ -54,7 +54,7 @@
         name: "TaskStatue",
         props: {
             screen: {},
-            constTextTaskNightInTheMuseum: {}
+            constTaskNightInTheMuseum: {}
         },
         computed: {
             ...mapGetters(['mainJSON']),

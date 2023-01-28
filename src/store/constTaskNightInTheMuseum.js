@@ -1,4 +1,4 @@
-const constTextTaskNightInTheMuseum = {
+const constTaskNightInTheMuseum = {
     "instruction": "Этой весной в Москве проходит акция “Ночь музеев”, когда музеи города открыты для посетителей намного дольше, чем обычно. " +
         "Ты со своей старшей сестрой Асей отправляешься в Новую Третьяковку на Крымском Валу и тебе предстоит выполнить различные задания. " +
         "Обрати внимание: при выполнении каждого задания после нажатия кнопки «Готово» ты уже не сможешь изменить ответ.",
@@ -75,5 +75,5 @@ const constTextTaskNightInTheMuseum = {
 }
 
 export default {
-    constTextTaskNightInTheMuseum
+    constTaskNightInTheMuseum
 }

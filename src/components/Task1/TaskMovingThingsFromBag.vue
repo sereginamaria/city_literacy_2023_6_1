@@ -26,7 +26,7 @@
         </div>
         <div class="background-text">
             <p>
-                {{constTextTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
+                {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
             </p>
             <MyButton class="white-buttons" @click="showModal" v-if="mainJSON.task1.listOfElementsEnd.length !== 0">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
@@ -48,7 +48,7 @@
         name: "TaskMovingThingsFromBag",
         props: {
             screen: {},
-            constTextTaskNightInTheMuseum: {}
+            constTaskNightInTheMuseum: {}
         },
         data() {
             return {
@@ -61,7 +61,7 @@
             draggable
         },
         computed: {
-            ...mapGetters(['mainJSON', 'constTextTaskNightInTheMuseum']),
+            ...mapGetters(['mainJSON', 'constTaskNightInTheMuseum']),
             screenID(){
                 return this.mainJSON.task1.shownScreenID
             }

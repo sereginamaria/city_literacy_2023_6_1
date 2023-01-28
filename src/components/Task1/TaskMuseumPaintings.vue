@@ -74,7 +74,7 @@
         name: "TaskMuseumPaintings",
         props: {
             screen: {},
-            constTextTaskNightInTheMuseum: {}
+            constTaskNightInTheMuseum: {}
         },
         data() {
             return {

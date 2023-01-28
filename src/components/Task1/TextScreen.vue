@@ -4,7 +4,7 @@
     >
         <div class="background-text">
             <p>
-                {{constTextTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
+                {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
             </p>
             <MyButton class="white-buttons" @click="nextTask(screen)">Далее</MyButton>
         </div>
@@ -23,7 +23,7 @@
         name: "TextScreen",
         props: {
             screen: {},
-            constTextTaskNightInTheMuseum: {}
+            constTaskNightInTheMuseum: {}
         },
         data() {
             return {

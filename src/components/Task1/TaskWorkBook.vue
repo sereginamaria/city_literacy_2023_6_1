@@ -132,7 +132,7 @@
         name: "TaskWorkBook",
         props: {
             screen: {},
-            constTextTaskNightInTheMuseum: {}
+            constTaskNightInTheMuseum: {}
         },
         data() {
             return {

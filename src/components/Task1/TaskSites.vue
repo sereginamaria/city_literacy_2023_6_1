@@ -33,7 +33,7 @@
         name: "TaskSites",
         props: {
             screen: {},
-            constTextTaskNightInTheMuseum: {}
+            constTaskNightInTheMuseum: {}
         },
         computed: {
             ...mapGetters(['mainJSON']),

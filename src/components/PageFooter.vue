@@ -1,5 +1,13 @@
 <template>
     <div class="container-fluid d-flex justify-content-end align-items-center footer">
+        <div v-if="this.mainJSON.task2.isShow">
+            <MyButton class="ml-3 transparent-buttons"
+                      data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Чат"
+                      @click="openChat"
+            >
+                <img src="../assets/tak2-chat-icon.svg">
+            </MyButton>
+        </div>
         <MyButton style="background: #F3AE4E; border-color: #F3AE4E; width: 200px" @click="showModal">Завершить</MyButton>
     </div>
 
@@ -27,35 +35,10 @@
             }
         },
         methods: {
-            openBrowser(){
-                if(this.mainJSON.task1.isShow){
-                    this.mainJSON.task1.browserShow = !this.mainJSON.task1.browserShow
-                }
-                if(this.mainJSON.task3Show){
-                    this.mainJSON.task3.browserShow = !this.mainJSON.task3.browserShow
-                }
-            },
-            openTaskManager(){
-                if(this.mainJSON.task1.isShow){
-                    this.mainJSON.task1.taskManagerShow = !this.mainJSON.task1.taskManagerShow
-                }
-                if(this.mainJSON.task3Show){
-                    this.mainJSON.task3.taskManagerShow = !this.mainJSON.task3.taskManagerShow
-                }
-            },
             openChat(){
-                if(this.mainJSON.task2Show){
+                if(this.mainJSON.task2.isShow){
                     this.mainJSON.task2.chatShow = !this.mainJSON.task2.chatShow
                 }
-                if(this.mainJSON.task3Show){
-                    this.mainJSON.task3.chatShow = !this.mainJSON.task3.chatShow
-                }
-            },
-            openBooklet(){
-                this.mainJSON.task3.bookletShow = !this.mainJSON.task3.bookletShow
-            },
-            openMap(){
-                this.mainJSON.task3.mapObjectsShow = !this.mainJSON.task3.mapObjectsShow
             },
             showModal(){
                 this.modalVisible = true
@@ -102,5 +85,4 @@
         bottom: 0;
         z-index: 99;
     }
-
 </style>

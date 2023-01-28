@@ -2,7 +2,7 @@
     <div>
        <!-- <PageNavBar/>-->
         <Task1Model v-if="this.mainJSON.task1.isShow"/>
-        <Task2Model v-if="this.mainJSON.task2Show"/>
+        <Task2Model v-if="this.mainJSON.task2.isShow"/>
     </div>
 </template>
 

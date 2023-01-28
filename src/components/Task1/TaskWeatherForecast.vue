@@ -119,7 +119,7 @@
         },
         props: {
             screen: {},
-            constTextTaskNightInTheMuseum: {}
+            constTaskNightInTheMuseum: {}
         },
         components: {
             draggable
