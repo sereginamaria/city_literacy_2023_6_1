@@ -28,7 +28,7 @@
         },
         methods: {
             openBrowser(){
-                if(this.mainJSON.task1Show){
+                if(this.mainJSON.task1.isShow){
                     this.mainJSON.task1.browserShow = !this.mainJSON.task1.browserShow
                 }
                 if(this.mainJSON.task3Show){
@@ -36,7 +36,7 @@
                 }
             },
             openTaskManager(){
-                if(this.mainJSON.task1Show){
+                if(this.mainJSON.task1.isShow){
                     this.mainJSON.task1.taskManagerShow = !this.mainJSON.task1.taskManagerShow
                 }
                 if(this.mainJSON.task3Show){
@@ -68,9 +68,9 @@
             checkAnswer(){
                 this.modalVisible = false
                 let change = 0
-                if(this.mainJSON.task1Show && change === 0){
-                    this.mainJSON["task1Show"] = false
-                    this.mainJSON["task2Show"] = true
+                if(this.mainJSON.task1.isShow && change === 0){
+                    this.mainJSON.task1["isShow"] = false
+                    this.mainJSON.task2["isShow"] = true
                     this.mainJSON["instructionShow"] = true
                     this.mainJSON["mainPageShow"] = false
                     change++

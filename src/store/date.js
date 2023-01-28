@@ -10,9 +10,6 @@ const date = {
     "ret": '',
     "retPush": '',
     "retPause": '',
-    "task1Show": true,  // todo хранить свойства внутри объекта
-    "task2Show": false,
-    "task3Show": false,
     "results": {
         "dataTimeStart": null,
         "dataTimeEndTask1": null,
@@ -69,18 +66,140 @@ const date = {
             "ULSCLL1_Log_LLK6_3": "NA",
             "ULSCLL1_Log_LLK6_4": "NA",
         },
-        // todo codestyle / вынести константы
-        "instruction": "Этой весной в Москве проходит акция “Ночь музеев”, когда музеи города открыты для посетителей намного дольше, чем обычно. Ты со своей старшей сестрой Асей отправляешься в Новую Третьяковку на Крымском Валу и тебе предстоит выполнить различные задания. Обрати внимание: при выполнении каждого задания после нажатия кнопки «Готово» ты уже не сможешь изменить ответ.",
-        //Первый экран с инструкцией
-        "modularTask1_0Show": true,
-        //Выбор рюкзака
-        "modularTask1_1Show": false,  // todo к разговору про state machine
-        //Экран в случае выбора первого
-        "modularTask1_2Show": false,
-        //Экран в случае выбора второго
-        "modularTask1_3Show": false,
+        "isShow": true,
+        "shownScreenID": 0,
+        "screens": [
+            {"id": 0, "isShow": true, "imgURL": "BackgroundModule0", "haveTask": false,
+                "description": ''},
+            {"id": 1, "isShow": false, "imgURL": "BackgroundModule1", "haveTask": true, "taskName": "ChooseBag",
+                "description": ''},
+            {"id": 2, "isShow": false, "imgURL": "BackgroundModule2", "haveTask": false,
+                "description": ''},
+            {"id": 3, "isShow": false, "imgURL": "BackgroundModule3", "haveTask": false,
+                "description": ''},
+            {"id": 4, "isShow": false, "imgURL": "BackgroundModule1", "haveTask": true, "taskName": "MovingThingsFromBag",
+                "description": 'Перетаскивание вещей'},
+            {"id": 5, "isShow": false, "imgURL": "BackgroundModule5", "haveTask": false,
+                "description": ''},
+            {"id": 6, "isShow": false, "imgURL": "BackgroundModule6", "haveTask": true, "taskName": "ChooseShoes",
+                "description": 'Выбор обуви'},
+            {"id": 7, "isShow": false, "imgURL": "BackgroundModule7", "haveTask": false,
+                "description": ''},
+            {"id": 8, "isShow": false, "imgURL": "BackgroundModule8", "haveTask": false,
+                "description": ''},
+            {"id": 9, "isShow": false, "imgURL": "BackgroundModule9", "haveTask": false,
+                "description": ''},
+            {"id": 10, "isShow": false, "imgURL": "BackgroundModule10", "haveTask": true, "taskName": "Metro",
+                "description": 'Метро'},
+            {"id": 11, "isShow": false, "imgURL": "BackgroundModule11", "haveTask": false,
+                "description": ''},
+            {"id": 12, "isShow": false, "imgURL": "BackgroundModule12", "haveTask": false,
+                "description": ''},
+            {"id": 13, "isShow": false, "imgURL": "BackgroundModule13", "haveTask": false,
+                "description": ''},
+            {"id": 14, "isShow": false, "imgURL": "BackgroundModule14", "haveTask": true, "taskName": "WorkBook",
+                "description": 'Раюочая тетрадь'},
+            {"id": 15, "isShow": false, "imgURL": "BackgroundModule15", "haveTask": false,
+                "description": ''},
+            {"id": 16, "isShow": false, "imgURL": "BackgroundModule16", "haveTask": false,
+                "description": ''},
+            {"id": 17, "isShow": false, "imgURL": "BackgroundModule17", "haveTask": false,
+                "description": ''},
+            {"id": 18, "isShow": false, "imgURL": "BackgroundModule18", "haveTask": false,
+                "description": ''},
+            {"id": 19, "isShow": false, "imgURL": "BackgroundModule19", "haveTask": false,
+                "description": ''},
+            {"id": 20, "isShow": false, "imgURL": "BackgroundModule20", "haveTask": true, "taskName": "MuseumPaintings1",
+                "description": 'Картины'},
+            {"id": 21, "isShow": false, "imgURL": "BackgroundModule21", "haveTask": true, "taskName": "MuseumPaintings2",
+                "description": 'Картины'},
+            {"id": 22, "isShow": false, "imgURL": "BackgroundModule22", "haveTask": true, "taskName": "MuseumPaintings3",
+                "description": 'Картины'},
+            {"id": 23, "isShow": false, "imgURL": "BackgroundModule23", "haveTask": false,
+                "description": ''},
+            {"id": 24, "isShow": false, "imgURL": "BackgroundModule24", "haveTask": false,
+                "description": ''},
+            {"id": 25, "isShow": false, "imgURL": "BackgroundModule25", "haveTask": true, "taskName": "Escape",
+                "description": 'Побег'},
+            {"id": 26, "isShow": false, "imgURL": "BackgroundModule26", "haveTask": false,
+                "description": '2 или 4 ответ'},
+            {"id": 27, "isShow": false, "imgURL": "BackgroundModule27", "haveTask": false,
+                "description": '2 или 4 ответ'},
+            {"id": 28, "isShow": false, "imgURL": "BackgroundModule28", "haveTask": false,
+                "description": '2 или 4 ответ'},
+            {"id": 29, "isShow": false, "imgURL": "BackgroundModule29", "haveTask": false,
+                "description": '1 ответ'},
+            {"id": 30, "isShow": false, "imgURL": "BackgroundModule28", "haveTask": false,
+                "description": '1 ответ'},
+            {"id": 31, "isShow": false, "imgURL": "BackgroundModule31", "haveTask": false,
+                "description": '3 ответ'},
+            {"id": 32, "isShow": false, "imgURL": "BackgroundModule32", "haveTask": false,
+                "description": ''},
+            {"id": 33, "isShow": false, "imgURL": "BackgroundModule33", "haveTask": false,
+                "description": ''},
+            {"id": 34, "isShow": false, "imgURL": "BackgroundModule34", "haveTask": true, "taskName": "Fire",
+                "description": 'Пожар'},
+            {"id": 35, "isShow": false, "imgURL": "BackgroundModule35", "haveTask": false,
+                "description": ''},
+            {"id": 36, "isShow": false, "imgURL": "BackgroundModule36", "haveTask": false,
+                "description": ''},
+            {"id": 37, "isShow": false, "imgURL": "BackgroundModule37", "haveTask": true, "taskName": "Statue1",
+                "description": 'Статуя'},
+            {"id": 38, "isShow": false, "imgURL": "BackgroundModule38", "haveTask": false,
+                "description": 'Ответ да'},
+            {"id": 39, "isShow": false, "imgURL": "BackgroundModule39", "haveTask": false,
+                "description": 'Ответ нет'},
+            {"id": 40, "isShow": false, "imgURL": "BackgroundModule40", "haveTask": false,
+                "description": ''},
+            {"id": 41, "isShow": false, "imgURL": "BackgroundModule41", "haveTask": true, "taskName": "Statue2",
+                "description": 'Вторая статуя'},
+            {"id": 42, "isShow": false, "imgURL": "BackgroundModule42", "haveTask": false,
+                "description": ''},
+            {"id": 43, "isShow": false, "imgURL": "BackgroundModule43", "haveTask": false,
+                "description": ''},
+            {"id": 44, "isShow": false, "imgURL": "BackgroundModule44", "haveTask": true, "taskName": "Map",
+                "description": 'Карта'},
+            {"id": 45, "isShow": false, "imgURL": "BackgroundModule45", "haveTask": false,
+                "description": ''},
+            {"id": 46, "isShow": false, "imgURL": "BackgroundModule46", "haveTask": false,
+                "description": ''},
+            {"id": 47, "isShow": false, "imgURL": "BackgroundModule46", "haveTask": true, "taskName": "Attractions",
+                "description": 'Достопримечательности'},
+            {"id": 48, "isShow": false, "imgURL": "BackgroundModule48", "haveTask": false,
+                "description": ''},
+            {"id": 49, "isShow": false, "imgURL": "BackgroundModule49", "haveTask": false,
+                "description": ''},
+            {"id": 50, "isShow": false, "imgURL": "BackgroundModule50", "haveTask": true, "taskName": "Festival",
+                "description": 'Фестиваль'},
+            {"id": 51, "isShow": false, "imgURL": "BackgroundModule48", "haveTask": false,
+                "description": ''},
+            {"id": 52, "isShow": false, "imgURL": "BackgroundModule52", "haveTask": true, "taskName": "Sites",
+                "description": 'Сайты'},
+            {"id": 53, "isShow": false, "imgURL": "BackgroundModule53", "haveTask": false,
+                "description": ''},
+            {"id": 54, "isShow": false, "imgURL": "BackgroundModule54", "haveTask": false,
+                "description": ''},
+            {"id": 55, "isShow": false, "imgURL": "BackgroundModule55", "haveTask": false,
+                "description": ''},
+            {"id": 56, "isShow": false, "imgURL": "BackgroundModule56", "haveTask": false,
+                "description": ''},
+            {"id": 57, "isShow": false, "imgURL": "BackgroundModule54", "haveTask": true, "taskName": "BadWeather",
+                "description": 'Плохая погода (и 4 раза фон меняется)'},
+            {"id": 58, "isShow": false, "imgURL": "BackgroundModule62", "haveTask": false,
+                "description": 'Предупреждающие знаки коля'},
+            {"id": 59, "isShow": false, "imgURL": "BackgroundModule63", "haveTask": false,
+                "description": ''},
+            {"id": 60, "isShow": false, "imgURL": "BackgroundModule63", "haveTask": true, "taskName": "WarningSigns",
+                "description": 'Предупреждающие знаки'},
+            {"id": 61, "isShow": false, "imgURL": "BackgroundModule64", "haveTask": false,
+                "description": ''},
+            {"id": 62, "isShow": false, "imgURL": "BackgroundModule64", "haveTask": true, "taskName": "WeatherForecast",
+                "description": 'Прогноз погоды'},
+            {"id": 63, "isShow": false, "imgURL": "BackgroundModule65", "haveTask": false,
+                "description": ''},
+        ],
+
         //Перетаскивание вещей в рюкзаке
-        "modularTask1_4Show": false,
         "listOfElementsStart": [  // todo контекстуальные стили? подумать про state machine
             {
                 "src": "Element1.png",
@@ -126,18 +245,8 @@ const date = {
             },
         ],
         "listOfElementsEnd": [],
-        //Инструкция перд выбором обуви
-        "modularTask1_5Show": false,
-        //Выбор обуви
-        "modularTask1_6Show": false,
-        //Инструкция перед заданием с метро
-        "modularTask1_7Show": false,
-        //Слова автора в метро
-        "modularTask1_8Show": false,
-        //Инструкция в метро
-        "modularTask1_9Show": false,
+
         //Задание в метро
-        "modularTask1_10Show": false,
         "listOfAnswersMetro": [
             {
                 "name": "А) Спустимся самостоятельно вниз и узнаем, что случилось, у дежурного.",
@@ -156,14 +265,8 @@ const date = {
             },
 
         ],
-        //Инструкция задание рабочая тетрадь
-        "modularTask1_11Show": false,
-        //Слова автора задание рабочая тетрадь
-        "modularTask1_12Show": false,
-        //Слова Коли рабочая тетрадь
-        "modularTask1_13Show": false,
+
         //Задание рабочая тетрадь
-        "modularTask1_14Show": false,
         "listWorkBook1": [
             {"id": 0, "value": "Выбери ответ:"},
             {"id": 1, "value": "1123"},
@@ -231,18 +334,7 @@ const date = {
             }
         ],
 
-        //Задание 5 инструкция 1
-        "modularTask1_18Show": false,
-        //Задание 5 инструкция 2
-        "modularTask1_19Show": false,
-        //Задание 5 инструкция 3
-        "modularTask1_20Show": false,
-        //Задание 5 инструкция 4
-        "modularTask1_21Show": false,
-        //Задание 5 инструкция 5
-        "modularTask1_22Show": false,
         //Задание 5 пункт 1
-        "modularTask1_23Show": false,
         "listOfAnswersTask5Point1": [
             {
                 "name": "А) Нельзя переходить дорогу в неположенном месте.",
@@ -261,7 +353,6 @@ const date = {
             },
         ],
         //Задание 5 пункт 2
-        "modularTask1_24Show": false,
         "listOfAnswersTask5Point2": [
             {
                 "name": "А) При выходе из трамвая его нужно обходить спереди.",
@@ -280,7 +371,6 @@ const date = {
             },
         ],
         //Задание 5 пункт 3
-        "modularTask1_25Show": false,
         "listOfAnswersTask5Point3": [
             {
                 "name": "А) Велосипедистам нельзя ездить по дороге в платье.",
@@ -299,12 +389,7 @@ const date = {
             },
         ],
 
-        //Задание 6 реплика 1
-        "modularTask1_26Show": false,
-        //Задание 6 реплика 2
-        "modularTask1_27Show": false,
         //Задание 6 задание
-        "modularTask1_28Show": false,
         "listOfAnswersTask6": [
             {
                 "name": "А) Нет, ночью в городе опасно гулять без взрослых.",
@@ -323,27 +408,7 @@ const date = {
             },
         ],
 
-        //Задание 6 выбраны отвветы 2 или 4 реплика 1
-        "modularTask1_29Show": false,
-        //Задание 6 выбраны отвветы 2 или 4 реплика 2
-        "modularTask1_30Show": false,
-        //Задание 6 выбраны отвветы 2 или 4 реплика 3
-        "modularTask1_31Show": false,
-
-        //Задание 6 выбран отввет 1 реплика 1
-        "modularTask1_32Show": false,
-        //Задание 6 выбран отввет 1 реплика 2
-        "modularTask1_33Show": false,
-
-        //Задание 6 выбран отввет 3 реплика 1
-        "modularTask1_34Show": false,
-
-        //Задание 7 реплика 1
-        "modularTask1_35Show": false,
-        //Задание 7 реплика 2
-        "modularTask1_36Show": false,
         //Задание 7 задание
-        "modularTask1_37Show": false,
         "listOfAnswersTask7": [
             {
                 "name": "А) Взять сестру за руку и следовать за ней к выходу.",
@@ -362,12 +427,7 @@ const date = {
             },
         ],
 
-        //Задание 8 реплика 1
-        "modularTask1_38Show": false,
-        //Задание 8 реплика 2
-        "modularTask1_39Show": false,
         //Задание 8 задание 1
-        "modularTask1_40Show": false,
         "listOfAnswersTask8_1": [
             {
                 "name": "А) Да, давай!",
@@ -378,14 +438,8 @@ const date = {
                 "id": 2,
             }
         ],
-        //Задание 8 выбран ответ да реплика 1
-        "modularTask1_41Show": false,
-        //Задание 8 выбран ответ нет реплика 1
-        "modularTask1_42Show": false,
-        //Задание 8 реплика 3
-        "modularTask1_43Show": false,
+
         //Задание 8 задание 2
-        "modularTask1_44Show": false,
         "listOfAnswersTask8_2": [
             {
                 "name": "А) Нам стоит сообщить охране музея.",
@@ -404,12 +458,7 @@ const date = {
             },
         ],
 
-        //Задание 9 реплика 1
-        "modularTask1_45Show": false,
-        //Задание 9 реплика 2
-        "modularTask1_46Show": false,
         //Задание 9 задание
-        "modularTask1_47Show": false,
         "listOfElementsTask9": [  // todo контекстуальные стили? подумать про state machine
             {
                 "src": "Stiker1.png",
@@ -505,12 +554,7 @@ const date = {
         ],
         "listOfAnswersTask9": [],
 
-        //Задание 10 реплика 1
-        "modularTask1_48Show": false,
-        //Задание 10 реплика 2
-        "modularTask1_49Show": false,
         //Задание 10 задание
-        "modularTask1_50Show": false,
         "listOfElementsTask10": [
             {
                 "id": 1,
@@ -550,12 +594,7 @@ const date = {
         "listOfAnswersTask10_3": [],
         "listOfAnswersTask10": [],
 
-        //Задание 11 реплика 1
-        "modularTask1_51Show": false,
-        //Задание 11 реплика 2
-        "modularTask1_52Show": false,
         //Задание 11 задание
-        "modularTask1_53Show": false,
         "listOfAnswersTask11": [
             {
                 "name": "А) Фестиваль “Путешествие в рождество”",
@@ -579,10 +618,7 @@ const date = {
         ],
         "listOfChoosenAnswersTask11": [],
 
-        //Задание 12 реплика 1
-        "modularTask1_54Show": false,
         //Задание 12 задание
-        "modularTask1_55Show": false,
         "listOfAnswersTask12": [
             {
                 "name": "А) Культура Москвы Онлайн https://www.mos.ru/city/projects/kulturaonline",
@@ -606,16 +642,7 @@ const date = {
         ],
         "listOfChoosenAnswersTask12": [],
 
-        //Задание 13 реплика 1
-        "modularTask1_56Show": false,
-        //Задание 13 реплика 2
-        "modularTask1_57Show": false,
-        //Задание 13 реплика 3
-        "modularTask1_58Show": false,
-        //Задание 13 реплика 4
-        "modularTask1_59Show": false,
         //Задание 13 задание
-        "modularTask1_60Show": false,
         "listOfAnswersTask13": [
             {
                 "name": "А) Переждать ураган под деревом.",
@@ -639,12 +666,7 @@ const date = {
         ],
         "listOfChoosenAnswersTask13": [],
 
-        //Задание 14 реплика 1
-        "modularTask1_61Show": false,
-        //Задание 14 реплика 2
-        "modularTask1_62Show": false,
         //Задание 14 задание
-        "modularTask1_63Show": false,
         "listOfAnswersTask14": [
             {
                 "src": "task14EL1.png",
@@ -692,10 +714,7 @@ const date = {
         "listOfAnswersTask14_3": [],
         "listOfAnswersTask14_4": [],
 
-        //Задание 15 реплика 1
-        "modularTask1_64Show": false,
         //Задание 15 задание
-        "modularTask1_65Show": false,
         "listOfAnswersTask15": [
             {
                 "id": 1,
@@ -719,12 +738,11 @@ const date = {
         "listOfAnswersTask15_3": [],
         "listOfAnswersTask15_4": [],
 
-        //Задание 16 реплика 1
-        "modularTask1_66Show": false,
     },
     "task2": {
-        "instruction": "Этой весной в Москве проходит акция “Ночь музеев”, когда музеи города открыты для посетителей намного дольше, чем обычно. Ты со своей старшей сестрой Асей отправляешься в Новую Третьяковку на Крымском Валу и тебе предстоит выполнить различные задания. Обрати внимание: при выполнении каждого задания после нажатия кнопки «Готово» ты уже не сможешь изменить ответ.",
+        "instruction": "Инструкция",
         //Первый экран с инструкцией
+        "isShow": false,
         "modularTask2_0Show": false,
     }
 }

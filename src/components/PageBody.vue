@@ -1,7 +1,7 @@
 <template>
     <div>
        <!-- <PageNavBar/>-->
-        <Task1Model v-if="this.mainJSON.task1Show"/>
+        <Task1Model v-if="this.mainJSON.task1.isShow"/>
         <Task2Model v-if="this.mainJSON.task2Show"/>
     </div>
 </template>

@@ -1,60 +1,101 @@
 <template>
-  <ModularTask1 style="position: relative"/>
-  <ModularTask2/>
-  <ModularTask3/>
-  <ModularTask4/>
-  <ModularTask5/>
-  <ModularTask6/>
-  <ModularTask7/>
-  <ModularTask8/>
-  <ModularTask9/>
-  <ModularTask10/>
-  <ModularTask11/>
-  <ModularTask12/>
-  <ModularTask13/>
-  <ModularTask14/>
-  <ModularTask15/>
-  <ModularTask16/>
+  <TextScreen v-if="screen.isShow && !screen.haveTask" :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+  <TaskChooseBag v-if="screen.isShow && screen.haveTask && screen.taskName === 'ChooseBag'"
+                  :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+  <TaskMovingThingsFromBag v-if="screen.isShow && screen.haveTask && screen.taskName === 'MovingThingsFromBag'"
+                           :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+  <TaskChooseShoes v-if="screen.isShow && screen.haveTask && screen.taskName === 'ChooseShoes'"
+                 :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+  <TaskMetro v-if="screen.isShow && screen.haveTask && screen.taskName === 'Metro'"
+             :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+  <TaskWorkBook v-if="screen.isShow && screen.haveTask && screen.taskName === 'WorkBook'"
+                :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+  <TaskMuseumPaintings v-if="(screen.taskName === 'MuseumPaintings1' || screen.taskName === 'MuseumPaintings2' ||screen.taskName === 'MuseumPaintings3') &&
+                        screen.isShow && screen.haveTask"
+                       :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+  <TaskEscape v-if="screen.isShow && screen.haveTask && screen.taskName === 'Escape'"
+              :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+  <TaskFire v-if="screen.isShow && screen.haveTask && screen.taskName === 'Fire'"
+            :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+  <TaskStatue  v-if="(screen.taskName === 'Statue1' || screen.taskName === 'Statue2') &&
+                screen.isShow && screen.haveTask"
+               :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+  <TaskMap v-if="screen.isShow && screen.haveTask && screen.taskName === 'Map'"
+           :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+  <TaskAttractions v-if="screen.isShow && screen.haveTask && screen.taskName === 'Attractions'"
+                   :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+  <TaskFestival v-if="screen.isShow && screen.haveTask && screen.taskName === 'Festival'"
+                :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+  <TaskSites v-if="screen.isShow && screen.haveTask && screen.taskName === 'Sites'"
+             :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+  <TaskBadWeather v-if="screen.isShow && screen.haveTask && screen.taskName === 'BadWeather'"
+                  :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+  <TaskWarningSigns v-if="screen.isShow && screen.haveTask && screen.taskName === 'WarningSigns'"
+                    :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
+  <TaskWeatherForecast v-if="screen.isShow && screen.haveTask && screen.taskName === 'WeatherForecast'"
+                       :screen="screen" :constTextTaskNightInTheMuseum="constTextTaskNightInTheMuseum"/>
 </template>
 
 <script>
     import {mapGetters} from "vuex";
-    import ModularTask1 from "@/components/Task1/ModularTask1";
-    import ModularTask2 from "@/components/Task1/ModularTask2";
-    import ModularTask3 from "@/components/Task1/ModularTask3";
-    import ModularTask4 from "@/components/Task1/ModularTask4";
-    import ModularTask5 from "@/components/Task1/ModularTask5";
-    import ModularTask6 from "@/components/Task1/ModularTask6";
-    import ModularTask7 from "@/components/Task1/ModularTask7";
-    import ModularTask8 from "@/components/Task1/ModularTask8";
-    import ModularTask9 from "@/components/Task1/ModularTask9";
-    import ModularTask10 from "@/components/Task1/ModularTask10";
-    import ModularTask11 from "@/components/Task1/ModularTask11";
-    import ModularTask12 from "@/components/Task1/ModularTask12";
-    import ModularTask13 from "@/components/Task1/ModularTask13";
-    import ModularTask14 from "@/components/Task1/ModularTask14";
-    import ModularTask15 from "@/components/Task1/ModularTask15";
-    import ModularTask16 from "@/components/Task1/ModularTask16";
+    import TextScreen from "@/components/Task1/TextScreen";
+    import TaskChooseBag from "@/components/Task1/TaskChooseBag";
+    import TaskMovingThingsFromBag from "@/components/Task1/TaskMovingThingsFromBag";
+    import TaskChooseShoes from "@/components/Task1/TaskChooseShoes";
+    import TaskMetro from "@/components/Task1/TaskMetro";
+    import TaskWorkBook from "@/components/Task1/TaskWorkBook";
+    import TaskMuseumPaintings from "@/components/Task1/TaskMuseumPaintings";
+    import TaskEscape from "@/components/Task1/TaskEscape";
+    import TaskFire from "@/components/Task1/TaskFire";
+    import TaskStatue from "@/components/Task1/TaskStatue";
+    import TaskMap from "@/components/Task1/TaskMap";
+    import TaskAttractions from "@/components/Task1/TaskAttractions";
+    import TaskFestival from "@/components/Task1/TaskFestival";
+    import TaskSites from "@/components/Task1/TaskSites";
+    import TaskBadWeather from "@/components/Task1/TaskBadWeather";
+    import TaskWarningSigns from "@/components/Task1/TaskWarningSigns";
+    import TaskWeatherForecast from "@/components/Task1/TaskWeatherForecast";
     export default {
         name: "Task1Model",
-      components: {
-        ModularTask16,
-        ModularTask15,
-        ModularTask14,
-        ModularTask13,
-        ModularTask12,
-        ModularTask11,
-        ModularTask10,
-        ModularTask9,
-        ModularTask8,
-        ModularTask7, ModularTask6, ModularTask5, ModularTask4, ModularTask3, ModularTask2, ModularTask1},
-      computed: {
-            ...mapGetters(['mainJSON']),
+        components: {
+          TaskWeatherForecast,
+          TaskWarningSigns,
+          TaskBadWeather,
+          TaskSites,
+          TaskFestival,
+          TaskAttractions,
+          TaskMap,
+          TaskStatue,
+          TaskFire,
+          TaskEscape,
+          TaskMuseumPaintings,
+          TaskWorkBook,
+          TaskMetro,
+          TaskChooseShoes,
+          TaskMovingThingsFromBag,
+          TaskChooseBag,
+          TextScreen,
+        },
+        computed: {
+            ...mapGetters(['mainJSON', 'constTextTaskNightInTheMuseum']),
+          screenID(){
+            return this.mainJSON.task1.shownScreenID
+          },
+          screen(){
+            return this.mainJSON.task1.screens[this.screenID]
+          }
         },
     }
 </script>
 
 <style>
+  .background {
+    height: calc(100vh - 140px);
+    backdrop-filter: blur(5px);
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
   .background-text {
     display: flex;
     justify-content: space-between;
@@ -64,12 +105,15 @@
     position: fixed;
     bottom: 0;
   }
+
   .background-text p{
     color: white;
   }
+
   .choosenAnswer {
     background: rgba(84, 190, 223, 0.15);
   }
+
   .background-answers {
     background: #FFFFFF;
     border: 1px solid #54BEDF;

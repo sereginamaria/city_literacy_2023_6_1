@@ -2,16 +2,19 @@ import Vuex from 'vuex'
 import axios from "axios";
 
 import date from "./date"
+import constTextTaskNightInTheMuseum from "./constTextTaskNightInTheMuseum"
 
 export default new Vuex.Store({
     state: {
         mainJSON: {},
+        constTextTaskNightInTheMuseum: {},
         loginResponse: {}
     },
     actions: {
         get_mainJSON({commit}){
             if (!localStorage.login && !localStorage.hash) {
                 commit('set_mainJSON', date.date)
+                commit('set_constTextTaskNightInTheMuseum', constTextTaskNightInTheMuseum.constTextTaskNightInTheMuseum)
             }
             else {
                 axios.post( "/city_literacy/server_request/auth_city.php", {
@@ -21,11 +24,13 @@ export default new Vuex.Store({
                     .then(function (response) {
                         if (response.data.status === "ok") {
                             commit('set_mainJSON', JSON.parse(response.data.json))
+                            commit('set_constTextTaskNightInTheMuseum', constTextTaskNightInTheMuseum.constTextTaskNightInTheMuseum)
                         }
                         if (response.data.status === "error") {
                             localStorage.clear()
                             window.location.reload();
                             commit('set_mainJSON', date.date)
+                            commit('set_constTextTaskNightInTheMuseum', constTextTaskNightInTheMuseum.constTextTaskNightInTheMuseum)
                         }
                     })
                     .catch(function () {
@@ -36,6 +41,9 @@ export default new Vuex.Store({
     mutations: {
         set_mainJSON: (state, el) => {
             state.mainJSON = el
+        },
+        set_constTextTaskNightInTheMuseum: (state, el) => {
+            state.constTextTaskNightInTheMuseum = el
         },
         push_login: (state, auth) => {
             axios.post("/city_literacy/server_request/auth_city.php", {  // todo разница между авторизацией и аутентификацией
@@ -91,6 +99,9 @@ export default new Vuex.Store({
     getters: {
         mainJSON(state){
             return state.mainJSON;
+        },
+        constTextTaskNightInTheMuseum(state){
+            return state.constTextTaskNightInTheMuseum;
         },
         loginResponse(state){
             return state.loginResponse;
