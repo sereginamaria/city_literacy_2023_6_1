@@ -4,7 +4,7 @@
             <div class="instruction-card">
                 <div>
                     <p v-if="mainJSON.task1.isShow">{{constTaskNightInTheMuseum.instruction}}</p>
-                    <p v-if="mainJSON.task2.isShow">{{mainJSON.task2.instruction}}</p>
+                    <p v-if="mainJSON.task2.isShow">{{constTaskChatWalk.instruction}}</p>
                 </div>
                 <div class="d-flex justify-content-end">
                     <p style="font-style: italic; width: 700px; text-align: right;">
@@ -25,7 +25,7 @@
     export default {
         name: "InstructionPage",
         computed: {
-            ...mapGetters(['mainJSON', 'constTaskNightInTheMuseum']),
+            ...mapGetters(['mainJSON', 'constTaskNightInTheMuseum', 'constTaskChatWalk']),
         },
         methods: {
             instruction() {

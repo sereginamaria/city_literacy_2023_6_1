@@ -3,11 +3,13 @@ import axios from "axios";
 
 import date from "./date"
 import constTaskNightInTheMuseum from "./constTaskNightInTheMuseum"
+import constTaskChatWalk from "@/store/constTaskChatWalk";
 
 export default new Vuex.Store({
     state: {
         mainJSON: {},
         constTaskNightInTheMuseum: {},
+        constTaskChatWalk: {},
         loginResponse: {}
     },
     actions: {
@@ -15,6 +17,7 @@ export default new Vuex.Store({
             if (!localStorage.login && !localStorage.hash) {
                 commit('set_mainJSON', date.date)
                 commit('set_constTaskNightInTheMuseum', constTaskNightInTheMuseum.constTaskNightInTheMuseum)
+                commit('set_constTaskChatWalk', constTaskChatWalk.constTaskChatWalk)
             }
             else {
                 axios.post( "/city_literacy/server_request/auth_city.php", {
@@ -25,12 +28,14 @@ export default new Vuex.Store({
                         if (response.data.status === "ok") {
                             commit('set_mainJSON', JSON.parse(response.data.json))
                             commit('set_constTaskNightInTheMuseum', constTaskNightInTheMuseum.constTaskNightInTheMuseum)
+                            commit('set_constTaskChatWalk', constTaskChatWalk.constTaskChatWalk)
                         }
                         if (response.data.status === "error") {
                             localStorage.clear()
                             window.location.reload();
                             commit('set_mainJSON', date.date)
                             commit('set_constTaskNightInTheMuseum', constTaskNightInTheMuseum.constTaskNightInTheMuseum)
+                            commit('set_constTaskChatWalk', constTaskChatWalk.constTaskChatWalk)
                         }
                     })
                     .catch(function () {
@@ -44,6 +49,9 @@ export default new Vuex.Store({
         },
         set_constTaskNightInTheMuseum: (state, el) => {
             state.constTaskNightInTheMuseum = el
+        },
+        set_constTaskChatWalk: (state, el) => {
+            state.constTaskChatWalk = el
         },
         push_login: (state, auth) => {
             axios.post("/city_literacy/server_request/auth_city.php", {  // todo разница между авторизацией и аутентификацией
@@ -102,6 +110,9 @@ export default new Vuex.Store({
         },
         constTaskNightInTheMuseum(state){
             return state.constTaskNightInTheMuseum;
+        },
+        constTaskChatWalk(state){
+            return state.constTaskChatWalk;
         },
         loginResponse(state){
             return state.loginResponse;

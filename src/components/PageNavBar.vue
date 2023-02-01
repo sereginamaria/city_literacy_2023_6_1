@@ -1,6 +1,6 @@
 <template>
     <div class="container-fluid d-flex justify-content-end nav-bar">
-        <!--<div>
+        <div v-if="this.mainJSON.task2.isShow">
             <MyButton data-bs-toggle="collapse" data-bs-target="#collapse-instruction" aria-expanded="false"
                       aria-controls="collapse-instruction" style="background: transparent; border-color: white">
                 Показать инструкцию <span><img src="../assets/fill.svg" style="margin: auto 0 auto 5px"></span>
@@ -8,9 +8,7 @@
             <div id="collapse-instruction" class="collapse">
                 <div class="card card-body">
                     <div>
-                        <p v-if="mainJSON.task1Show">{{mainJSON.task1.instruction}}</p>
-                        <p v-if="mainJSON.task2Show">{{mainJSON.task2.instruction}}</p>
-                        <p v-if="mainJSON.task3Show">{{mainJSON.task3.instruction}}</p>
+                        <p>{{constTaskChatWalk.instruction}}</p>
                     </div>
                     <div class="d-flex justify-content-end">
                         <p style="font-style: italic; width: 700px; text-align: right;">
@@ -19,7 +17,7 @@
                     </div>
                 </div>
             </div>
-        </div>-->
+        </div>
 
         <div class="d-flex align-items-center text-center">
             <div class="d-flex flex-column" style="width: 200px">
@@ -52,7 +50,7 @@
             }
         },
         computed: {
-            ...mapGetters(['mainJSON']),
+            ...mapGetters(['mainJSON', 'constTaskChatWalk']),
         },
         methods: {
             ...mapMutations(["push_mainJSON"]),

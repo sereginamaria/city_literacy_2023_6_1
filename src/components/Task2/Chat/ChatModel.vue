@@ -13,7 +13,7 @@
             :left="left"
             :top="top"
     >
-        <div class="d-flex justify-content-between handle">
+        <div class="d-flex justify-content-between align-items-center handle" style="padding: 0 10px">
             <div class="d-flex align-items-center">
                 <p style="color: #FFFFFF;">Чат</p>
             </div>
@@ -67,4 +67,10 @@
 </script>
 
 <style scoped>
+    .handle{
+        height: 36px;
+        background: #45607B;
+        box-shadow: 0px 0px 5px rgba(201, 201, 201, 0.5);
+        border-radius: 10px 10px 0px 0px;
+    }
 </style>

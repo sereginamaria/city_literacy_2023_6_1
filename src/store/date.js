@@ -66,7 +66,7 @@ const date = {
             "ULSCLL1_Log_LLK6_3": "NA",
             "ULSCLL1_Log_LLK6_4": "NA",
         },
-        "isShow": true,
+        "isShow": false,
         "shownScreenID": 0,
         "screens": [
             {"id": 0, "isShow": true, "imgURL": "BackgroundModule0", "haveTask": false,
@@ -740,54 +740,112 @@ const date = {
 
     },
     "task2": {
-        "instruction": "Инструкция",
-        //Первый экран с инструкцией
-        "isShow": false,
+        "isShow": true,
         "results": {
-            //Checkbox1
-            "ULHLDT3_HLK1": "NA",
-            "ULHLDT3_Log_HLK1": "NA",
-
-            //Checkbox2
-            "ULHLDT3_HLK2": "NA",
-            "ULHLDT3_Log_HLK2": "NA",
-
-            //Radio1
-            "ULHLDT3_HLK3_1": "NA",
-            "ULHLDT3_Log_HLK3_1": "NA",
-
-            //Radio2
-            "ULHLDT3_HLK3_2": "NA",
-            "ULHLDT3_Log_HLK3_2": "NA",
-
-            //Radio3
-            "ULHLDT3_DTK1": "NA",
-            "ULHLDT3_Log_DTK1": "NA",
-
-            //Radio4
-            "ULHLDT3_DTS3": "NA",
-            "ULHLDT3_Log_DTS3": "NA",
-
-            //Radio5
-            "ULHLDT3_HLS2": "NA",
-            "ULHLDT3_Log_HLS2": "NA",
-
-            //Radio6
-            "ULHLDT3_DTK2": "NA",
-            "ULHLDT3_Log_DTK2": "NA",
-
-            //Radio7
-            "ULHLDT3_DTS5": "NA",
-            "ULHLDT3_Log_DTS5": "NA",
-
-            //Route
-            "ULHLDT3_Log1_DTS2": "NA",
-            "ULHLDT3_Log2_DTS2": "NA",
-            "ULHLDT3_Log3_DTS1": "NA",
-            "ULHLDT3_DTS2": "NA",
-            "ULHLDT3_DTS1": "NA"
-
+            //0
+            "ULHLDT1_Log_HLS1_1": "NA",
+            //1
+            "ULHLDT1_Log_HLS4_1": "NA",
+            //2
+            "ULHLDT1_Log_DTS2_1": "NA",
+            //3
+            "ULHLDT1_Log_HLS5_1": "NA",
+            //4
+            "ULHLDT1_Log_HLK1_1": "NA",
+            //5
+            "ULHLDT1_Log_HLK2_1": "NA",
+            //6
+            "ULHLDT1_Log_DTS1_1": "NA",
+            //7
+            "ULHLDT1_Log_HLK4_1": "NA",
+            //8
+            "ULHLDT1_Log_DTK1_1": "NA",
+            //9
+            "ULHLDT1_Log_HLK3_1": "NA",
+            //10
+            "ULHLDT1_Log_HLS3_1": "NA",
+            //11
+            "ULHLDT1_Log_HLS1_2": "NA",
+            //12
+            "ULHLDT1_Log_HLK2_2": "NA",
+            //13
+            "ULHLDT1_Log_DTS1_2": "NA",
+            //14
+            "ULHLDT1_Log_DTS3_1": "NA",
+            //15
+            "ULHLDT1_Log_HLS2_1": "NA"
         },
+        "shownScreenID": 0,
+        "screens": [
+            {
+                "id": 0, "type": "radio", "isShow": true, "haveImg": false,
+                "description": ""
+            },
+            {
+                "id": 1, "type": "radio", "isShow": false, "haveImg": true,
+                "description": ""
+            },
+            {
+                "id": 2, "type": "radio", "isShow": false, "haveImg": false,
+                "description": ""
+            },
+            {
+                "id": 3, "type": "radio", "isShow": false, "haveImg": false,
+                "description": ""
+            },
+            {
+                "id": 4, "type": "checkBox", "isShow": false, "haveImg": false,
+                "description": ""
+            },
+            {
+                "id": 5, "type": "checkBox", "isShow": false, "haveImg": false,
+                "description": ""
+            },
+            {
+                "id": 6, "type": "radio", "isShow": false, "haveImg": false,
+                "description": ""
+            },
+            {
+                "id": 7, "type": "checkBox", "isShow": false, "haveImg": false,
+                "description": ""
+            },
+            {
+                "id": 8, "type": "radio", "isShow": false, "haveImg": false,
+                "description": ""
+            },
+            {
+                "id": 9, "type": "radio", "isShow": false, "haveImg": false,
+                "description": ""
+            },
+            {
+                "id": 10, "type": "radio", "isShow": false, "haveImg": false,
+                "description": ""
+            },
+            {
+                "id": 11, "type": "radio", "isShow": false, "haveImg": false,
+                "description": ""
+            },
+            {
+                "id": 12, "type": "radio", "isShow": false, "haveImg": false,
+                "description": ""
+            },
+            {
+                "id": 13, "type": "radio", "isShow": false, "haveImg": false,
+                "description": ""
+            },
+            {
+                "id": 14, "type": "radio", "isShow": false, "haveImg": false,
+                "description": ""
+            },
+            {
+                "id": 15, "type": "radio", "isShow": false, "haveImg": false,
+                "description": ""
+            },
+            {
+                "id": 16, "type": "radio", "isShow": false, "haveImg": false,
+                "description": ""
+            },
+        ],
         "ULHLDT3_Log_HLK1": [],
         "ULHLDT3_Log_HLK2": [],
         "checkBox1Selected": [],
@@ -817,348 +875,6 @@ const date = {
         "block11AnswerShow": false,
         "block12MessageShow": false,
         "block12AnswerShow": false,
-        "checkBox1Options": [
-            {"text": "Сбалансированное питание", "value": "Сбалансированное питание", "id": 1},
-            {"text": "Употребление очень большого количества воды", "value": "Употребление очень большого количества воды", "id": 2},
-            {"text": "Физическая активность по возможностям организма", "value": "Физическая активность по возможностям организма", "id": 3},
-            {"text": "Ежедневные тяжелые двухчасовые тренировки", "value": "Ежедневные тяжелые двухчасовые тренировки", "id": 4},
-            {"text": "Влажная уборка в квартире", "value": "Влажная уборка в квартире", "id": 5},
-            {"text": "Ежедневный длительный сон до полудня", "value": "Ежедневный длительный сон до полудня", "id": 6},
-            {"text": "Эмоциональная разгрузка", "value": "Эмоциональная разгрузка", "id": 7},
-            {"text": "Соблюдение правильного режима дня", "value": "Соблюдение правильного режима дня", "id": 8},
-            {"text": "Отсутствие вредных привычек", "value": "Отсутствие вредных привычек", "id": 9},
-            {"text": "Длительное общение с друзьями в соцсетях", "value": "Длительное общение с друзьями в соцсетях", "id": 10},
-            {"text": "Проветривание комнаты", "value": "Проветривание комнаты", "id": 11}
-        ],
-        "checkBox2Options": [
-            {"text": "Отсутствие специальных знаков для езды на самокате", "value": "Отсутствие специальных знаков для езды на самокате", "id": 1},
-            {"text": "Отсутствие единой системы дорожек для езды на самокате", "value": "Отсутствие единой системы дорожек для езды на самокате", "id": 2},
-            {"text": "Вредные выбросы в атмосферу", "value": "Вредные выбросы в атмосферу", "id": 3},
-            {"text": "Разговор по мобильному телефону", "value": "Разговор по мобильному телефону", "id": 4},
-            {"text": "Обилие тротуаров, из-за которых надо часто тормозить", "value": "Обилие тротуаров, из-за которых надо часто тормозить", "id": 5},
-            {"text": "Внезапное открытие двери припаркованной машины", "value": "Внезапное открытие двери припаркованной машины", "id": 6},
-            {"text": "Много пыли в воздухе", "value": "Много пыли в воздухе", "id": 7},
-            {"text": "Не везде можно проехать на самокате", "value": "Не везде можно проехать на самокате", "id": 8},
-            {"text": "Трамвайные рельсы", "value": "Трамвайные рельсы", "id": 9},
-            {"text": "Световое загрязнение", "value": "Световое загрязнение", "id": 10},
-        ],
-        "radio1Options": [
-            {
-                "id": 1,
-                "name": "Я считаю, от завтрака можно отказаться. А вот от полноценного сна не менее 7 часов - нет. От недостатка сна очень скоро наступит постоянная усталость и мозг будет работать гораздо хуже."
-            },
-            {
-                "id": 2,
-                "name": "Думаю, вполне можно спать поменьше, останется больше времени на важные дела. А вот завтрак - это очень важный прием пищи. Без нормального завтрака появятся проблемы с пищеварением и даже обменом веществ."
-            },
-            {
-                "id": 3,
-                "name": "Думаю, автор видео предлагает отличные идеи. Поменьше есть - похудеешь. Поменьше спать - будешь больше успевать."
-            },
-            {
-                "id": 4,
-                "name": "Это опасные советы, и следовать им нельзя. От недосыпа будешь все время усталым и раздражительным. А ходить до обеда голодным очень вредно для желудка."
-            }
-        ],
-        "radio2Options": [
-            {
-                "id": 1,
-                "name": "Да ну ты что! В фастфуде полно быстрых углеводов и трансжиров, и даже немного фастфуда может привести к нарушениям пищеварения и обмена веществ."
-            },
-            {
-                "id": 2,
-                "name": "Мне кажется, нормальная идея. Главное - действительно есть понемногу, и какая разница, что это фастфуд, молодому здоровому организму это не вредно. А если пить много воды, вообще все будет отлично."
-            },
-            {
-                "id": 3,
-                "name": "Для меня идея выглядит убедительно. Растущему организму необходимо получать около 3000 калорий в день. В фастфуде много калорий, значит, он поможет соблюдать эту норму. "
-            },
-            {
-                "id": 4,
-                "name": "Фастфуд такой вкусный из-за усилителей вкуса, а еще он содержит трансжиры. Это очень вредные для пищеварения вещества, а тут предлагается есть только его. К тому же, есть всего на 500 калорий в день в принципе не полезно. "
-            }
-        ],
-        "radio3Options": [
-            {
-                "id": 1,
-                "name": "В этом поможет специальное приложение или сайт, где люди ищут компаньона для занятий спортом"
-            },
-            {
-                "id": 2,
-                "name": "Нужно открыть карту города, там обычно отмечены специализированные площадки для каждого вида спорта"
-            },
-            {
-                "id": 3,
-                "name": "Достаточно просто пройтись по району и спросить ребят на спортивных площадках "
-            },
-            {
-                "id": 4,
-                "name": "У себя в соцсети написать, что хотите сегодня поиграть и ищете партнера "
-            }
-        ],
-        "radio4Options": [
-            {
-                "id": 1,
-                "name": "«Люблю совушек»"
-            },
-            {
-                "id": 3,
-                "name": "«МаринКА»"
-            },
-            {
-                "id": 4,
-                "name": "«Савченко К.Н.»"
-            },
-            {
-                "id": 5,
-                "name": "«Женя З.»"
-            },
-            {
-                "id": 6,
-                "name": "Думаю, без разницы, выбирай любого"
-            }
-        ],
-        "radio5Options": [
-            {
-                "id": 1,
-                "name": "Позвонить по номеру 112"
-            },
-            {
-                "id": 2,
-                "name": "Позвонить близким"
-            },
-            {
-                "id": 3,
-                "name": "Попросить прохожих вызвать скорую помощь"
-            },
-            {
-                "id": 4,
-                "name": "Искать ближайший травмпункт"
-            },
-            {
-                "id": 5,
-                "name": "Позвонить в поликлинику"
-            },
-            {
-                "id": 6,
-                "name": "Доехать до дома"
-            }
-        ],
-        "radio6Options": [
-            {
-                "id": 1,
-                "name": "Официальный сайт Департамента транспорта нашего города"
-            },
-            {
-                "id": 2,
-                "name": "Интерактивная карта метро"
-            },
-            {
-                "id": 3,
-                "name": "Популярные интерактивные карты нашего города"
-            },
-            {
-                "id": 4,
-                "name": "Карта пунктов проката самокатов"
-            }
-        ],
-        "radio7Options": [
-            {
-                "id": 1,
-                "name": "Первый сайт "
-            },
-            {
-                "id": 2,
-                "name": "Второй сайт "
-            },
-            {
-                "id": 3,
-                "name": "Третий сайт "
-            },
-            {
-                "id": 4,
-                "name": "Четвертый сайт"
-            }
-        ],
-        "chatMapOptions": [
-            //Красная зона
-            {
-                "id": 1, "value": "Парк «Золотой»", "top": "200px", "left": "140px",
-                "choose": false,
-                "bicycle": true
-            },
-            {
-                "id": 2, "value": "Парк «Средиземье»", "top": "350px", "left": "360px",
-                "choose": false,
-                "bicycle": false
-            },
-            {
-                "id": 3, "value": "Дендропарк уникальных деревьев", "top": "230px", "left": "420px",
-                "choose": false,
-                "bicycle": false
-            },
-            {
-                "id": 4, "value": "Парк песчаных скульптур»", "top": "230px", "left": "220px",
-                "choose": false,
-                "bicycle": false
-            },
-            {
-                "id": 5, "value": "Парк 100-летия города", "top": "370px", "left": "200px",
-                "choose": false,
-                "bicycle": false
-            },
-            //Розовая зона
-            {
-                "id": 6, "value": "Парк редких растений", "top": "260px", "left": "190px",
-                "choose": false,
-                "bicycle": false
-            },
-            {
-                "id": 7, "value": "Дворцовый парк Усачева", "top": "320px", "left": "240px",
-                "choose": false,
-                "bicycle": false
-            },
-            {
-                "id": 8, "value": "Парк семейного отдыха 'Спорт для всех'", "top": "380px", "left": "460px",
-                "choose": false,
-                "bicycle": false
-            },
-            {
-                "id": 9, "value": "Парк - зона отдыха 'Цветущие луга'", "top": "160px", "left": "140px",
-                "choose": false,
-                "bicycle": false
-            },
-            {
-                "id": 10, "value": "Парк «Хвойный»", "top": "410px", "left": "350px",
-                "choose": false,
-                "bicycle": true
-            },
-            {
-                "id": 11, "value": "Парк «Птичий край»", "top": "270px", "left": "370px",
-                "choose": false,
-                "bicycle": false
-            },
-            //Желтая зона
-            {
-                "id": 12, "value": "Парк «Есенинские холмы»", "top": "130px", "left": "180px",
-                "choose": false,
-                "bicycle": false
-            },
-            {
-                "id": 13, "value": "Елизаветенский парк", "top": "290px", "left": "160px",
-                "choose": false,
-                "bicycle": false
-            },
-            {
-                "id": 14, "value": "Парк им.50-летия Победы", "top": "150px", "left": "370px",
-                "choose": false,
-                "bicycle": false
-            },
-            {
-                "id": 15, "value": "Парк «Волшебные горы»", "top": "300px", "left": "400px",
-                "choose": false,
-                "bicycle": false
-            },
-            {
-                "id": 16, "value": "Парк при Институте ботаники", "top": "410px", "left": "480px",
-                "choose": false,
-                "bicycle": false
-            },
-            //Зеленая зона
-            {
-                "id": 17, "value": "Парк «Времена года»", "top": "320px", "left": "80px",
-                "choose": false,
-                "bicycle": false
-            },
-            {
-                "id": 18, "value": "Парк «Водопады»", "top": "440px", "left": "530px",
-                "choose": false,
-                "bicycle": true
-            },
-            {
-                "id": 19, "value": "Парк «Еловая аллея»", "top": "80px", "left": "150px",
-                "choose": false,
-                "bicycle": false
-            },
-            {
-                "id": 20, "value": "Парк «Зеленый сад»", "top": "200px", "left": "310px",
-                "choose": false,
-                "bicycle": true
-            },
-            {
-                "id": 21, "value": "Парк у прудов «Цапля»", "top": "100px", "left": "330px",
-                "choose": false,
-                "bicycle": false
-            }
-        ],
-        "chatMapAnswers": [],
-        "busShow": false,
-        "carShow": false,
-        "bikeShow": false,
-        "manShow": false,
-        "busChoose": false,
-        "carChoose": false,
-        "bikeChoose": false,
-        "manChoose": false,
-        "chatRouteFrom": [
-            {"id": 0, "value": "Выбери ответ:"},
-            {"id": 1, "value": 'ул. Буковая, 26'},
-            {"id": 2, "value": 'ул. Боковая, 26'},
-            {"id": 3, "value": 'ул. Борковая, 26'},
-            {"id": 4, "value": 'Буковая аллея, 26'},
-            {"id": 5, "value": 'ул. Букова, 26'}
-        ],
-        "chatRouteTo": [
-            {"value": "Выбери ответ:", "id": 0},
-            {"value": 'Парк «Зелёный сад»', "id": 1},
-            {"value": 'Парк «Золотой»', "id": 2},
-            {"value": 'Парк «Средиземье»', "id": 3},
-            {"value": 'Дендропарк уникальных деревьев', "id": 4},
-            {"value": 'Парк песчаных скульптур', "id": 5}
-        ],
-        "chatRouteShare": false,
-        "chatRouteScrin": false,
-        "highlight1": false,
-        "highlight2": false,
-        "highlight3": false,
-        "highlight4": false,
-        "highlight5": false,
-        "highlight6": false,
-        "highlight7": false,
-        "highlight8": false,
-        "highlight9": false,
-        "highlight10": false,
-        "highlight11": false,
-        "highlight12": false,
-        "highlight13": false,
-        "highlight14": false,
-        "highlight15": false,
-        "highlight16": false,
-        "highlight17": false,
-        "highlight18": false,
-        "highlight19": false,
-        "highlight20": false,
-        "highlight21": false,
-        "highlight22": false,
-        "highlight23": false,
-        "highlight24": false,
-        "highlight25": false,
-        "highlight26": false,
-        "highlight27": false,
-        "highlight28": false,
-        "highlight29": false,
-        "highlight30": false,
-        "highlight31": false,
-        "highlight32": false,
-        "highlight33": false,
-        "highlight34": false,
-        "highlight35": false,
-        "highlight36": false,
-        "highlight37": false,
-        "highlight38": false,
-        "highlight39": false,
-        "highlight40": false,
-        "highlight41": false,
     }
 }
 

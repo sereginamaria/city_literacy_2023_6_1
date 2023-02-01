@@ -303,4 +303,8 @@
     max-width: 600px;
     padding: 20px;
   }
+
+  .text-bold {
+    font-weight: bold
+  }
 </style>

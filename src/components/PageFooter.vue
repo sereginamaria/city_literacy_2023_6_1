@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid d-flex justify-content-end align-items-center footer">
+    <div class="container-fluid d-flex justify-content-end align-items-center footer" :class="{'justify-content-between': this.mainJSON.task2.isShow}">
         <div v-if="this.mainJSON.task2.isShow">
             <MyButton class="ml-3 transparent-buttons"
                       data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Чат"

@@ -1,5 +1,7 @@
 <template>
-    <ChatModel v-if="this.mainJSON.task2.chatShow"/>
+    <div class="background" :style="{ background: 'url(' + require('../../assets/TaskChatBackground.png') + ')'}">
+        <ChatModel v-if="this.mainJSON.task2.chatShow"/>
+    </div>
 </template>
 
 <script>
@@ -16,5 +18,4 @@
 </script>
 
 <style scoped>
-
 </style>
