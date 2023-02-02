@@ -34,10 +34,6 @@
                         el.isShow = true
                     }
                 })
-
-                var block = document.getElementById("main");
-                console.log(block)
-                block.scrollIntoView({behavior: 'smooth'});
             }
         }
     }

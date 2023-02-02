@@ -1,12 +1,14 @@
 <template>
-    <div class="container-fluid d-flex justify-content-end nav-bar">
+    <div class="container-fluid d-flex justify-content-end nav-bar" :class="{'justify-content-between': this.mainJSON.task2.isShow}">
         <div v-if="this.mainJSON.task2.isShow">
-            <MyButton data-bs-toggle="collapse" data-bs-target="#collapse-instruction" aria-expanded="false"
-                      aria-controls="collapse-instruction" style="background: transparent; border-color: white">
-                Показать инструкцию <span><img src="../assets/fill.svg" style="margin: auto 0 auto 5px"></span>
-            </MyButton>
+            <div class="d-flex align-items-center h-100">
+                <MyButton data-bs-toggle="collapse" data-bs-target="#collapse-instruction" aria-expanded="false"
+                          aria-controls="collapse-instruction" style="background: transparent; border-color: white">
+                    Показать инструкцию <span><img src="../assets/fill.svg" style="margin: auto 0 auto 5px"></span>
+                </MyButton>
+            </div>
             <div id="collapse-instruction" class="collapse">
-                <div class="card card-body">
+                <div class="card card-body" style="z-index: 9">
                     <div>
                         <p>{{constTaskChatWalk.instruction}}</p>
                     </div>

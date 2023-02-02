@@ -1,10 +1,11 @@
 <template>
-    <div class="instruction-body">
+    <div class="instruction-body" :class="{backgroundTaskNightInTheMuseum: mainJSON.task1.isShow, backgroundTaskChatWalk: mainJSON.task2.isShow}">
         <div class="w-100 h-100 d-flex flex-column justify-content-center align-items-center">
             <div class="instruction-card">
                 <div>
                     <p v-if="mainJSON.task1.isShow">{{constTaskNightInTheMuseum.instruction}}</p>
                     <p v-if="mainJSON.task2.isShow">{{constTaskChatWalk.instruction}}</p>
+                    <p v-if="mainJSON.task3.isShow">{{mainJSON.task3.instruction}}</p>
                 </div>
                 <div class="d-flex justify-content-end">
                     <p style="font-style: italic; width: 700px; text-align: right;">
@@ -39,9 +40,14 @@
 <style scoped>
     .instruction-body {
         backdrop-filter: blur(5px);
-        background: url("../assets/Background.png") rgba(255, 255, 255, 0.01) no-repeat center center fixed;
         height: 100vh;
-        background-size: cover;
+        background-size: cover !important;
+    }
+    .backgroundTaskNightInTheMuseum {
+        background: url("../assets/Background.png") rgba(255, 255, 255, 0.01) no-repeat center center fixed;
+    }
+    .backgroundTaskChatWalk {
+        background: url("../assets/TaskChatBackground.png") rgba(255, 255, 255, 0.01) no-repeat center center fixed;
     }
     .instruction-card {
         display: flex;

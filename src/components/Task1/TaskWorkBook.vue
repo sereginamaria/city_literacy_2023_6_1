@@ -57,7 +57,7 @@
                 <div class="d-flex mt-2" @click="chooseWorkBookEl(2, 15, el)"
                      data-bs-toggle="collapse" data-bs-target="#collapseWorkBookQ2" aria-expanded="false" aria-controls="collapseWorkBookQ2"
                 >
-                    <img :src="'img/'+el.src" alt="" style="width: calc(100%/2.5);">
+                    <img :src=" require('../../assets/' + el.src) " alt="" style="width: calc(100%/2.5);">
                     <div>
                         <p>
                             Рисунок №{{el.id}}
@@ -76,7 +76,7 @@
                 <div class="d-flex mt-2" @click="chooseWorkBookEl(3, 16, el)"
                      data-bs-toggle="collapse" data-bs-target="#collapseWorkBookQ3" aria-expanded="false" aria-controls="collapseWorkBookQ3"
                 >
-                    <img :src="'img/'+el.src" alt="" style="width: calc(100%/2.5);">
+                    <img :src=" require('../../assets/' + el.src) " alt="" style="width: calc(100%/2.5);">
                     <div>
                         <p>
                             Рисунок №{{el.id}}

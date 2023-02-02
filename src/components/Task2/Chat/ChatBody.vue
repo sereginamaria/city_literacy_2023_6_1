@@ -23,20 +23,18 @@
             </div>
 
             <!-- Варианты ответов -->
-            <div id="main3" class="body-answers" style="padding: 10px; height: 40%" >
+            <div id="main3" class="body-answers" style="padding: 10px; height: max-content; max-height: 40%" >
                 <div style="height: 100%; overflow-y: scroll; padding-right: 10px;">
                     <ChatRadioAnswer v-if="currentScreen.isShow && currentScreen.type === 'radio'" :screenConst="screenConst"/>
-                    <ChatCheckBoxAnswer v-if="currentScreen.isShow && currentScreen.type === 'checkBox'" :screenConst="screenConst"/>
+                    <ChatCheckBoxAnswer v-if="currentScreen.isShow && currentScreen.type === 'checkBox'" :screenConst="screenConst" />
+
+                    <div class="message-answer" v-if="currentScreen.isShow && currentScreen.type === 'end'">
+                        <MyButton @click="endTask">Завершить</MyButton>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <MyModal v-model:show="modalVisible" v-model:buttons="modalButtons"
-             @update="checkAnswer"
-    >
-        {{this.modalMessage}}
-    </MyModal>
 </template>
 
 <script>
@@ -61,41 +59,16 @@
             },
             screenConst(){
                 return this.constTaskChatWalk.screens[this.screenID]
-            }
-        },
-        data() {
-            return {
-                modalVisible: false,
-                modalButtons: [],
-                modalMessage: ''
-            }
+            },
         },
         methods: {
-            showNextBlock(blockID){
-                if(blockID !== 12){
-                    let nextBlockID = blockID + 1
-
-                    this.mainJSON.task2["block" + nextBlockID + "MessageShow"] = true
-                    this.mainJSON.task2["block" + nextBlockID + "AnswerShow"] = true
-                    this.mainJSON.task2["block" + blockID + "AnswerShow"] = false
-                }
-                else {
-                    this.modalVisible = true
-                    this.modalButtons = [
-                        {value: "Завершить", status: "nextTask"},
-                    ]
-                    this.modalMessage = 'Ты выполнил все задачи, переходи к следующему заданию.'
-                }
-            },
-            checkAnswer(status){
-                if(status === "nextTask"){
-                    this.mainJSON["task2Show"] = false
-                    this.mainJSON["task3Show"] = true
-                    this.mainJSON["instructionShow"] = true
-                    this.mainJSON["mainPageShow"] = false
-                }
+            endTask(){
+                this.mainJSON.task2["isShow"] = false
+                this.mainJSON.task3["isShow"] = true
+                this.mainJSON["instructionShow"] = true
+                this.mainJSON["mainPageShow"] = false
             }
-        }
+        },
     }
 </script>
 

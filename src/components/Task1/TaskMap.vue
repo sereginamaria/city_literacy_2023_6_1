@@ -3,7 +3,7 @@
     <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
         <div>
             <div v-for="el in mainJSON.task1.listOfElementsTask9" :key="el.id">
-                <img :src="'img/'+el.src" :class="{choose: el.choose}" @click="addAnswer(el)"
+                <img :src=" require('../../assets/' + el.src) " :class="{choose: el.choose}" @click="addAnswer(el)"
                      alt="Avatar" :style="el.style"/>
             </div>
         </div>

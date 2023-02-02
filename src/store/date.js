@@ -66,7 +66,7 @@ const date = {
             "ULSCLL1_Log_LLK6_3": "NA",
             "ULSCLL1_Log_LLK6_4": "NA",
         },
-        "isShow": false,
+        "isShow": true,
         "shownScreenID": 0,
         "screens": [
             {"id": 0, "isShow": true, "imgURL": "BackgroundModule0", "haveTask": false,
@@ -740,7 +740,7 @@ const date = {
 
     },
     "task2": {
-        "isShow": true,
+        "isShow": false,
         "results": {
             //0
             "ULHLDT1_Log_HLS1_1": "NA",
@@ -842,39 +842,50 @@ const date = {
                 "description": ""
             },
             {
-                "id": 16, "type": "radio", "isShow": false, "haveImg": false,
+                "id": 16, "type": "end", "isShow": false, "haveImg": false,
                 "description": ""
             },
         ],
-        "ULHLDT3_Log_HLK1": [],
-        "ULHLDT3_Log_HLK2": [],
-        "checkBox1Selected": [],
-        "checkBox2Selected": [],
         "chatShow": true,
-        "block1MessageShow": true,
-        "block1AnswerShow": true,
-        "block2MessageShow": false,
-        "block2AnswerShow": false,
-        "block3MessageShow": false,
-        "block3AnswerShow": false,
-        "block4MessageShow": false,
-        "block4AnswerShow": false,
-        "block5MessageShow": false,
-        "block5AnswerShow": false,
-        "block6MessageShow": false,
-        "block6AnswerShow": false,
-        "block7MessageShow": false,
-        "block7AnswerShow": false,
-        "block8MessageShow": false,
-        "block8AnswerShow": false,
-        "block9MessageShow": false,
-        "block9AnswerShow": false,
-        "block10MessageShow": false,
-        "block10AnswerShow": false,
-        "block11MessageShow": false,
-        "block11AnswerShow": false,
-        "block12MessageShow": false,
-        "block12AnswerShow": false,
+        "checkBox1Selected": [],
+    },
+    "task3": {
+        "instruction": "Иструкция задание 3",
+        "isShow": false,
+        "results": {
+            //0
+            "ULHLDT1_Log_HLS1_1": "NA",
+            //1
+            "ULHLDT1_Log_HLS4_1": "NA",
+            //2
+            "ULHLDT1_Log_DTS2_1": "NA",
+            //3
+            "ULHLDT1_Log_HLS5_1": "NA",
+            //4
+            "ULHLDT1_Log_HLK1_1": "NA",
+            //5
+            "ULHLDT1_Log_HLK2_1": "NA",
+            //6
+            "ULHLDT1_Log_DTS1_1": "NA",
+            //7
+            "ULHLDT1_Log_HLK4_1": "NA",
+            //8
+            "ULHLDT1_Log_DTK1_1": "NA",
+            //9
+            "ULHLDT1_Log_HLK3_1": "NA",
+            //10
+            "ULHLDT1_Log_HLS3_1": "NA",
+            //11
+            "ULHLDT1_Log_HLS1_2": "NA",
+            //12
+            "ULHLDT1_Log_HLK2_2": "NA",
+            //13
+            "ULHLDT1_Log_DTS1_2": "NA",
+            //14
+            "ULHLDT1_Log_DTS3_1": "NA",
+            //15
+            "ULHLDT1_Log_HLS2_1": "NA"
+        },
     }
 }
 

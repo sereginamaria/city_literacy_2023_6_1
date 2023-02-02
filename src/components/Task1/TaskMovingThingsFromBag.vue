@@ -7,7 +7,7 @@
                 group="draggingThings"
         >
             <template #item="{ element }">
-                <img :src="'img/'+element.src_dop"
+                <img :src=" require('../../assets/' + element.src_dop) "
                      alt="Avatar"  :style="element.style"/>
             </template>
         </draggable>
@@ -19,7 +19,7 @@
                     group="draggingThings"
             >
                 <template #item="{ element }">
-                    <img :src="'img/'+element.src"
+                    <img :src=" require('../../assets/' + element.src) "
                          alt="Avatar" :style="element.style"/>
                 </template>
             </draggable>

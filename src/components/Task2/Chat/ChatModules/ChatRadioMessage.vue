@@ -23,13 +23,11 @@
         <div v-if="typeof this.mainJSON.task2.results[currentScreenConst.resultIndicator] === 'string'">
             <p class="chat-message-answer chat-message">
                 {{this.mainJSON.task2.results[currentScreenConst.resultIndicator]}}
-                123456
             </p>
         </div>
         <div v-else>
             <p class="chat-message-answer chat-message" v-for="el in this.mainJSON.task2.results[currentScreenConst.resultIndicator]" :key="el">
                 {{el.value}}
-                hsdkcwe
             </p>
         </div>
     </div>
