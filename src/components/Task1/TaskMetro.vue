@@ -1,6 +1,10 @@
 <template>
     <!--Задание в метро-->
     <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
+        <div class="instruction-block">
+            <p>Инструкция: Что ответить Асе? Выбери один вариант ответа
+            </p>
+        </div>
         <div class="background-answers">
             <div v-for="el in mainJSON.task1.listOfAnswersMetro" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCK2_1}"
                  style="padding: 10px 20px"
@@ -15,16 +19,10 @@
             <p>
                 {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
             </p>
-            <MyButton class="white-buttons" @click="showModal" v-if="mainJSON.task1.results.ULSCLL1_Log_SCK2_1 !== 'NA'">Готово</MyButton>
+            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.task1.results.ULSCLL1_Log_SCK2_1 !== 'NA'">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
-
-    <MyModal v-model:show="modalVisible" v-model:buttons="modalButtons"
-             @update="checkAnswer"
-    >
-        {{this.modalMessage}}
-    </MyModal>
 </template>
 
 <script>
@@ -36,41 +34,22 @@
             screen: {},
             constTaskNightInTheMuseum: {}
         },
-        data() {
-            return {
-                modalVisible: false,
-                modalButtons: [],
-                modalMessage: ''
-            }
-        },
         computed: {
             ...mapGetters(['mainJSON']),
         },
         methods: {
             ...mapMutations(["push_mainJSON"]),
-            showModal(){
-                this.modalVisible = true
-                this.modalButtons = [
-                    {value: "Да", status: true},
-                    {value: "Нет", status: false}
-                ]
-                this.modalMessage = 'Ты действительно хочешь закончить выполнение этого задания? После этого уже нельзя будет изменить ответы.'
-            },
             chooseAnswer(el){
                 this.mainJSON.task1.results.ULSCLL1_Log_SCK2_1 = el.id
             },
-            checkAnswer(status){
-                this.modalVisible = false
-
-                if(status) {
-                    screen.isShow = false
-                    this.mainJSON.task1.shownScreenID++
-                    this.mainJSON.task1.screens.forEach(el => {
-                        if (el.id === this.mainJSON.task1.shownScreenID) {
-                            el.isShow = true
-                        }
-                    })
-                }
+            checkAnswer(){
+                screen.isShow = false
+                this.mainJSON.task1.shownScreenID++
+                this.mainJSON.task1.screens.forEach(el => {
+                    if (el.id === this.mainJSON.task1.shownScreenID) {
+                        el.isShow = true
+                    }
+                })
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
                     [

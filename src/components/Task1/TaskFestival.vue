@@ -1,6 +1,10 @@
 <template>
     <!--Задание 11 задание-->
     <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
+        <div class="instruction-block">
+            <p> Инструкция: Выбери из списка все фестивали, которые проходят в Москве.
+            </p>
+        </div>
         <div class="background-answers">
             <div v-for="el in mainJSON.task1.listOfAnswersTask11" :key="el.id" :class="{choosenAnswer: el.choose}"
                  style="padding: 10px 20px"
@@ -12,18 +16,12 @@
         </div>
         <div class="background-text">
             <p>
-                Инструкция: Выбери из списка все фестивали, которые проходят в Москве.
+                {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
             </p>
-            <MyButton class="white-buttons" @click="showModal" v-if="mainJSON.task1.results.ULSCLL1_Log_LLK4_1 !== 'NA' && mainJSON.task1.results.ULSCLL1_Log_LLK4_1 !== ''">Готово</MyButton>
+            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.task1.results.ULSCLL1_Log_LLK4_1 !== 'NA' && mainJSON.task1.results.ULSCLL1_Log_LLK4_1 !== ''">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
-
-    <MyModal v-model:show="modalVisible" v-model:buttons="modalButtons"
-             @update="checkAnswer"
-    >
-        {{this.modalMessage}}
-    </MyModal>
 </template>
 
 <script>
@@ -38,23 +36,8 @@
             screen: {},
             constTaskNightInTheMuseum: {}
         },
-        data() {
-            return {
-                modalVisible: false,
-                modalButtons: [],
-                modalMessage: ''
-            }
-        },
         methods: {
             ...mapMutations(["push_mainJSON"]),
-            showModal() {
-                this.modalVisible = true
-                this.modalButtons = [
-                    {value: "Да", status: true},
-                    {value: "Нет", status: false}
-                ]
-                this.modalMessage = 'Ты действительно хочешь закончить выполнение этого задания? После этого уже нельзя будет изменить ответы.'
-            },
             chooseAnswer(el) {
                 let k = 0
                 this.mainJSON.task1.listOfChoosenAnswersTask11.forEach(elMass => {
@@ -70,18 +53,14 @@
                 }
                 this.mainJSON.task1.results.ULSCLL1_Log_LLK4_1 = this.mainJSON.task1.listOfChoosenAnswersTask11.join()
             },
-            checkAnswer(status) {
-                this.modalVisible = false
-
-                if (status) {
-                    screen.isShow = false
-                    this.mainJSON.task1.shownScreenID++
-                    this.mainJSON.task1.screens.forEach(el => {
-                        if (el.id === this.mainJSON.task1.shownScreenID) {
-                            el.isShow = true
-                        }
-                    })
-                }
+            checkAnswer() {
+                screen.isShow = false
+                this.mainJSON.task1.shownScreenID++
+                this.mainJSON.task1.screens.forEach(el => {
+                    if (el.id === this.mainJSON.task1.shownScreenID) {
+                        el.isShow = true
+                    }
+                })
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
                     [

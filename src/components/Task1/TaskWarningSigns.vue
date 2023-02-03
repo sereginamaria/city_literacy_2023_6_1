@@ -14,7 +14,7 @@
                     >
                         <template #item="{ element }">
                             <div class="d-flex justify-content-center align-items-center h-100">
-                                <img :src="'img/'+element.src"
+                                <img :src=" require('../../assets/' + element.src) "
                                      alt="Avatar"  style="height: inherit"/>
                             </div>
                         </template>
@@ -30,7 +30,7 @@
                     >
                         <template #item="{ element }">
                             <div class="d-flex justify-content-center align-items-center h-100">
-                                <img :src="'img/'+element.src"
+                                <img :src=" require('../../assets/' + element.src) "
                                      alt="Avatar"  style="height: 95%"/>
                             </div>
                         </template>
@@ -46,7 +46,7 @@
                     >
                         <template #item="{ element }">
                             <div class="d-flex justify-content-center align-items-center h-100">
-                                <img :src="'img/'+element.src"
+                                <img :src=" require('../../assets/' + element.src) "
                                      alt="Avatar"  style="height: 95%"/>
                             </div>
                         </template>
@@ -62,7 +62,7 @@
                     >
                         <template #item="{ element }">
                             <div class="d-flex justify-content-center align-items-center h-100">
-                                <img :src="'img/'+element.src"
+                                <img :src=" require('../../assets/' + element.src) "
                                      alt="Avatar"  style="height: 95%"/>
                             </div>
                         </template>
@@ -76,7 +76,7 @@
             >
                 <template #item="{ element }">
                     <div>
-                        <img :src="'img/'+element.src"
+                        <img :src=" require('../../assets/' + element.src) "
                              alt="Avatar" />
                     </div>
                 </template>
@@ -85,20 +85,14 @@
 
         <div class="background-text">
             <p>
-                Инструкция: Перемести предупреждающие знаки под соответствующие подписи.
+                {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
             </p>
-            <MyButton class="white-buttons" @click="showModal" v-if="mainJSON.task1.results.ULSCLL1_Log_SCK3_2 !== 'NA' || mainJSON.task1.results.ULSCLL1_Log_SCK3_3 !== 'NA'
+            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.task1.results.ULSCLL1_Log_SCK3_2 !== 'NA' || mainJSON.task1.results.ULSCLL1_Log_SCK3_3 !== 'NA'
             || mainJSON.task1.results.ULSCLL1_Log_SCK3_4 !== 'NA' || mainJSON.task1.results.ULSCLL1_Log_SCK3_5 !== 'NA'"
             >Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
-
-    <MyModal v-model:show="modalVisible" v-model:buttons="modalButtons"
-             @update="checkAnswer"
-    >
-        {{this.modalMessage}}
-    </MyModal>
 </template>
 
 <script>
@@ -117,13 +111,6 @@
         components: {
             draggable
         },
-        data() {
-            return {
-                modalVisible: false,
-                modalButtons: [],
-                modalMessage: ''
-            }
-        },
         methods: {
             ...mapMutations(["push_mainJSON"]),
             error(id) {
@@ -134,25 +121,14 @@
                 let idNew = id + 1
                 this.mainJSON.task1.results['ULSCLL1_Log_SCK3_' + idNew] = this.mainJSON.task1["listOfAnswersTask14_" + id][0].id
             },
-            showModal() {
-                this.modalVisible = true
-                this.modalButtons = [
-                    {value: "Да", status: true},
-                    {value: "Нет", status: false}
-                ]
-                this.modalMessage = 'Ты действительно хочешь закончить выполнение этого задания? После этого уже нельзя будет изменить ответы.'
-            },
-            checkAnswer(status) {
-                this.modalVisible = false
-                if (status) {
-                    screen.isShow = false
-                    this.mainJSON.task1.shownScreenID++
-                    this.mainJSON.task1.screens.forEach(el => {
-                        if (el.id === this.mainJSON.task1.shownScreenID) {
-                            el.isShow = true
-                        }
-                    })
-                }
+            checkAnswer() {
+                screen.isShow = false
+                this.mainJSON.task1.shownScreenID++
+                this.mainJSON.task1.screens.forEach(el => {
+                    if (el.id === this.mainJSON.task1.shownScreenID) {
+                        el.isShow = true
+                    }
+                })
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
                     [

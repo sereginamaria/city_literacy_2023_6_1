@@ -4,8 +4,16 @@
         <div class="background-task">
             <div style="line-height: 3;" id="collapseModularTask4">
                 Москва была основана в
-                <MySelect :list="this.mainJSON.task1.listWorkBook1" :listID="1" @answer="addAnswer"
-                          :selected="this.mainJSON.task1.results.ULSCLL1_Log_LLK1_1"></MySelect>
+                <span data-bs-toggle="collapse" data-bs-target="#collapseWorkBookQ1" aria-expanded="false" aria-controls="collapseWorkBookQ1"
+                      @click="openWorkBookQ(14)" style="text-decoration: underline"
+                >{{this.mainJSON.task1.results.ULSCLL1_Log_LLK1_1 !== "NA" ? mainJSON.task1.results.ULSCLL1_Log_LLK1_1 : "_______"}}</span>
+                <div class="collapse" id="collapseWorkBookQ1" style="position: absolute" data-bs-parent="#collapseModularTask4">
+                    <div class="card card-body">
+                        <p>
+                            В каком году была основана Москва?
+                        </p>
+                    </div>
+                </div>
                 году
                 <span data-bs-toggle="collapse" data-bs-target="#collapseWorkBookQ2" aria-expanded="false" aria-controls="collapseWorkBookQ2"
                       @click="openWorkBookQ(15)" style="text-decoration: underline"
@@ -51,17 +59,29 @@
             </div>
         </div>
 
+        <!--Первый вопрос-->
+        <div class="background-task2" v-if="mainJSON.task1.modularTask1_14Show">
+            <div v-for="el in mainJSON.task1.listWorkBook1" :key="el.id">
+                <div class="d-flex mt-2" @click="chooseWorkBookEl(1, 14, el)"
+                     data-bs-toggle="collapse" data-bs-target="#collapseWorkBookQ1" aria-expanded="false" aria-controls="collapseWorkBookQ1"
+                >
+                    <div>
+                        <p style="background: #FFFFFF; border: 1px solid #54BEDF; border-radius: 0px; padding: 10px 20px;">
+                            {{el.value}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!--Второй вопрос-->
         <div class="background-task2" v-if="mainJSON.task1.modularTask1_15Show">
             <div v-for="el in mainJSON.task1.listWorkBook2" :key="el.id">
                 <div class="d-flex mt-2" @click="chooseWorkBookEl(2, 15, el)"
                      data-bs-toggle="collapse" data-bs-target="#collapseWorkBookQ2" aria-expanded="false" aria-controls="collapseWorkBookQ2"
                 >
-                    <img :src=" require('../../assets/' + el.src) " alt="" style="width: calc(100%/2.5);">
+                    <img :src=" require('../../assets/' + el.src) " alt="" style="width: 30%">
                     <div>
-                        <p>
-                            Рисунок №{{el.id}}
-                        </p>
                         <p>
                             {{el.value}}
                         </p>
@@ -78,9 +98,6 @@
                 >
                     <img :src=" require('../../assets/' + el.src) " alt="" style="width: calc(100%/2.5);">
                     <div>
-                        <p>
-                            Рисунок №{{el.id}}
-                        </p>
                         <p>
                             {{el.value}}
                         </p>
@@ -107,9 +124,9 @@
 
         <div class="background-text">
             <p>
-                Инструкция: Заполни пропуски в тексте.
+                {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
             </p>
-            <MyButton class="white-buttons" @click="showModal"
+            <MyButton class="white-buttons" @click="checkAnswer"
                       v-if="mainJSON.task1.results.ULSCLL1_Log_LLK1_1 !== 'NA' || mainJSON.task1.results.ULSCLL1_Log_LLK1_2 !== 'NA'
                       || mainJSON.task1.results.ULSCLL1_Log_LLK1_3 !== 'NA' || mainJSON.task1.results.ULSCLL1_Log_LLK1_4 !== 'NA'"
             >
@@ -118,11 +135,6 @@
         </div>
     </div>
 
-    <MyModal v-model:show="modalVisible" v-model:buttons="modalButtons"
-             @update="checkAnswer"
-    >
-        {{this.modalMessage}}
-    </MyModal>
 </template>
 
 <script>
@@ -134,71 +146,42 @@
             screen: {},
             constTaskNightInTheMuseum: {}
         },
-        data() {
-            return {
-                modalVisible: false,
-                modalButtons: [],
-                modalMessage: ''
-            }
-        },
         computed: {
             ...mapGetters(['mainJSON']),
         },
         methods: {
             ...mapMutations(["push_mainJSON"]),
-            showModal(){
-                this.modalVisible = true
-                this.modalButtons = [
-                    {value: "Да", status: true},
-                    {value: "Нет", status: false}
-                ]
-                this.modalMessage = 'Ты действительно хочешь закончить выполнение этого задания? После этого уже нельзя будет изменить ответы.'
-            },
             chooseAnswer(el){
                 this.mainJSON.task1.results.ULSCLL1_Log_LLK1_4 = el.value
                 this.mainJSON.task1.modularTask1_17Show = false
             },
             chooseWorkBookEl(workBookID, id, el){
-                this.mainJSON.task1.results["ULSCLL1_Log_LLK1_" + workBookID] = el.value
+                if(workBookID === 2){
+                    if(el.value === 'Князь Юрий Долгорукий'){
+                        this.mainJSON.task1.results["ULSCLL1_Log_LLK1_" + workBookID] = 'Князем Юрием Долгоруким'
+                    }
+                    if(el.value === 'Князь Иван Калита'){
+                        this.mainJSON.task1.results["ULSCLL1_Log_LLK1_" + workBookID] = 'Князем Иваном Калитой'
+                    }
+                    if(el.value === 'Князь Даниил Московский'){
+                        this.mainJSON.task1.results["ULSCLL1_Log_LLK1_" + workBookID] = 'Князем Даниилом Московским'
+                    }
+                    if(el.value === 'Князь Степан Кучка'){
+                        this.mainJSON.task1.results["ULSCLL1_Log_LLK1_" + workBookID] = 'Князем Степаном Кучкой'
+                    }
+                }
+                if(workBookID === 3){
+                    if(el.value === 'Птичья башня'){
+                        this.mainJSON.task1.results["ULSCLL1_Log_LLK1_" + workBookID] = 'Птичью башню'
+                    }
+                    else {
+                        this.mainJSON.task1.results["ULSCLL1_Log_LLK1_" + workBookID] = el.value
+                    }
+                }
+                if(workBookID === 1 || workBookID === 4){
+                    this.mainJSON.task1.results["ULSCLL1_Log_LLK1_" + workBookID] = el.value
+                }
                 this.mainJSON.task1["modularTask1_" + id + "Show"] = false
-            },
-            addAnswer(el, listID){
-                if(listID === 1){
-                    this.mainJSON.task1.results.ULSCLL1_Log_LLK1_1 = el
-                    if(el === 'этнографический парк' || el === 'центр искусств одаренных детей Севера'){
-                        this.mainJSON.task1.results.UL3SEIIDT_InvitationsJarv_IIS5_1 = 1
-                    }
-                    else {
-                        this.mainJSON.task1.results.UL3SEIIDT_InvitationsJarv_IIS5_1 = 0
-                    }
-                }
-                if(listID === 2){
-                    this.mainJSON.task1.results.UL3SEIIDT_InvitationsParf_Log_IIS5_2 = el
-                    if(el === 'ярмарка современных народных промыслов малых народов России'){
-                        this.mainJSON.task1.results.UL3SEIIDT_InvitationsJarv_IIS5_2 = 1
-                    }
-                    else {
-                        this.mainJSON.task1.results.UL3SEIIDT_InvitationsJarv_IIS5_2 = 0
-                    }
-                }
-                if(listID === 3){
-                    this.mainJSON.task1.results.UL3SEIIDT_InvitationsParf_Log_IIS5_3 = el
-                    if(el === 'фестиваль народной музыки северных народов России'){
-                        this.mainJSON.task1.results.UL3SEIIDT_InvitationsJarv_IIS5_3 = 1
-                    }
-                    else {
-                        this.mainJSON.task1.results.UL3SEIIDT_InvitationsJarv_IIS5_3 = 0
-                    }
-                }
-                if(listID === 4){
-                    this.mainJSON.task1.results.UL3SEIIDT_InvitationsParf_Log_IIS5_4 = el
-                    if(el === 'калитки'){
-                        this.mainJSON.task1.results.UL3SEIIDT_InvitationsJarv_IIS5_4 = 1
-                    }
-                    else {
-                        this.mainJSON.task1.results.UL3SEIIDT_InvitationsJarv_IIS5_4 = 0
-                    }
-                }
             },
             openWorkBookQ(id){
                 let k = 15
@@ -211,18 +194,14 @@
                 this.mainJSON.task1["modularTask1_" + id + "Show"] = !this.mainJSON.task1["modularTask1_" + id + "Show"]
                 console.log(this.mainJSON.task1)
             },
-            checkAnswer(status){
-                this.modalVisible = false
-
-                if(status) {
-                    screen.isShow = false
-                    this.mainJSON.task1.shownScreenID++
-                    this.mainJSON.task1.screens.forEach(el => {
-                        if (el.id === this.mainJSON.task1.shownScreenID) {
-                            el.isShow = true
-                        }
-                    })
-                }
+            checkAnswer(){
+                screen.isShow = false
+                this.mainJSON.task1.shownScreenID++
+                this.mainJSON.task1.screens.forEach(el => {
+                    if (el.id === this.mainJSON.task1.shownScreenID) {
+                        el.isShow = true
+                    }
+                })
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
                     [

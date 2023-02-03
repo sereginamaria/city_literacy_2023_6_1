@@ -65,7 +65,7 @@
                 })
             },
             nextTask(screen){
-                if(screen.id === 63){
+                if(screen.id === 53){
                     this.modalVisible = true
                     this.modalButtons = [
                         {value: "Хорошо", status: true}
@@ -74,13 +74,13 @@
                 }
                 else {
                     screen.isShow = false
-                    if(screen.id === 28 || screen.id === 30){
-                        this.mainJSON.task1.shownScreenID = 32
+                    if(screen.id === 24 || screen.id === 26){
+                        this.mainJSON.task1.shownScreenID = 28
                     }
-                    if(screen.id === 38){
-                        this.mainJSON.task1.shownScreenID = 40
+                    if(screen.id === 32){
+                        this.mainJSON.task1.shownScreenID = 34
                     }
-                    else {
+                    if(screen.id !== 24 && screen.id !== 26 && screen.id !== 32) {
                         this.mainJSON.task1.shownScreenID++
                     }
 

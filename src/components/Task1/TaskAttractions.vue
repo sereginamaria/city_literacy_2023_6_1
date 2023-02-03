@@ -68,16 +68,10 @@
             <p>
                 Добавь подписи к объектам на картинках, перенеси название выбранного объекта в нужное поле.
             </p>
-            <MyButton class="white-buttons" @click="showModal" v-if="mainJSON.task1.results.ULSCLL1_Log_LLK2_1 !== 'NA'">Готово</MyButton>
+            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.task1.results.ULSCLL1_Log_LLK2_1 !== 'NA'">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
-
-    <MyModal v-model:show="modalVisible" v-model:buttons="modalButtons"
-             @update="checkAnswer"
-    >
-        {{this.modalMessage}}
-    </MyModal>
 </template>
 
 <script>
@@ -96,13 +90,6 @@
         components: {
             draggable
         },
-        data() {
-            return {
-                modalVisible: false,
-                modalButtons: [],
-                modalMessage: ''
-            }
-        },
         methods: {
             ...mapMutations(["push_mainJSON"]),
             error(id) {
@@ -117,26 +104,15 @@
                     console.log(this.mainJSON.task1.results.ULSCLL1_Log_LLK2_1)
                 }
             },
-            showModal() {
-                this.modalVisible = true
-                this.modalButtons = [
-                    {value: "Да", status: true},
-                    {value: "Нет", status: false}
-                ]
-                this.modalMessage = 'Ты действительно хочешь закончить выполнение этого задания? После этого уже нельзя будет изменить ответы.'
-            },
-            checkAnswer(status) {
-                this.modalVisible = false
+            checkAnswer() {
                 this.mainJSON.task1.results.ULSCLL1_Log_LLK2_1 = ""
-                if (status) {
-                    screen.isShow = false
-                    this.mainJSON.task1.shownScreenID++
-                    this.mainJSON.task1.screens.forEach(el => {
-                        if (el.id === this.mainJSON.task1.shownScreenID) {
-                            el.isShow = true
-                        }
-                    })
-                }
+                screen.isShow = false
+                this.mainJSON.task1.shownScreenID++
+                this.mainJSON.task1.screens.forEach(el => {
+                    if (el.id === this.mainJSON.task1.shownScreenID) {
+                        el.isShow = true
+                    }
+                })
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
                     [

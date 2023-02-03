@@ -92,20 +92,14 @@
 
         <div class="background-text">
             <p>
-                Инструкция: Построй план прогулки по времени. Выбери, когда лучше посетить то или иное место. Перетащи подходящую активность в нужный временной промежуток.
+                {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
             </p>
-            <MyButton class="white-buttons" @click="showModal" v-if="mainJSON.task1.results.ULSCLL1_Log_LLK6_1 !== 'NA' || mainJSON.task1.results.ULSCLL1_Log_LLK6_2 !== 'NA'
+            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.task1.results.ULSCLL1_Log_LLK6_1 !== 'NA' || mainJSON.task1.results.ULSCLL1_Log_LLK6_2 !== 'NA'
             || mainJSON.task1.results.ULSCLL1_Log_LLK6_3 !== 'NA' || mainJSON.task1.results.ULSCLL1_Log_LLK6_4 !== 'NA'"
             >Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
-
-    <MyModal v-model:show="modalVisible" v-model:buttons="modalButtons"
-             @update="checkAnswer"
-    >
-        {{this.modalMessage}}
-    </MyModal>
 </template>
 
 <script>
@@ -124,13 +118,6 @@
         components: {
             draggable
         },
-        data() {
-            return {
-                modalVisible: false,
-                modalButtons: [],
-                modalMessage: ''
-            }
-        },
         methods: {
             ...mapMutations(["push_mainJSON"]),
             error(id) {
@@ -140,29 +127,14 @@
                 }
                 this.mainJSON.task1.results['ULSCLL1_Log_LLK6_' + id] = this.mainJSON.task1["listOfAnswersTask15_" + id][0].id
             },
-            showModal() {
-                this.modalVisible = true
-                this.modalButtons = [
-                    {value: "Да", status: true},
-                    {value: "Нет", status: false}
-                ]
-                this.modalMessage = 'Ты действительно хочешь закончить выполнение этого задания? После этого уже нельзя будет изменить ответы.'
-            },
-            show1_65() {
-                this.mainJSON.task1.modularTask1_64Show = false
-                this.mainJSON.task1.modularTask1_65Show = true
-            },
-            checkAnswer(status) {
-                this.modalVisible = false
-                if (status) {
-                    screen.isShow = false
-                    this.mainJSON.task1.shownScreenID++
-                    this.mainJSON.task1.screens.forEach(el => {
-                        if (el.id === this.mainJSON.task1.shownScreenID) {
-                            el.isShow = true
-                        }
-                    })
-                }
+            checkAnswer() {
+                screen.isShow = false
+                this.mainJSON.task1.shownScreenID++
+                this.mainJSON.task1.screens.forEach(el => {
+                    if (el.id === this.mainJSON.task1.shownScreenID) {
+                        el.isShow = true
+                    }
+                })
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
                     [

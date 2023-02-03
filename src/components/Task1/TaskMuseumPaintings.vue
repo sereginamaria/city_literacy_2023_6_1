@@ -1,7 +1,7 @@
 <template>
     <!--Задание 5 пункт 1-->
     <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}"
-         v-if="mainJSON.task1.screens[this.mainJSON.task1.shownScreenID].id === 20">
+         v-if="mainJSON.task1.screens[this.mainJSON.task1.shownScreenID].id === 17">
         <div class="background-answers">
             <div v-for="el in mainJSON.task1.listOfAnswersTask5Point1" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCK2_2}"
                  style="padding: 10px 20px"
@@ -13,7 +13,7 @@
         </div>
         <div class="background-text">
             <p>
-                Вопрос: Какое современное правило дорожного движения нарушается на картине? Выбери один ответ.
+                {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
             </p>
             <MyButton class="white-buttons" @click="nextTask(screen)" v-if="mainJSON.task1.results.ULSCLL1_Log_SCK2_2 !== 'NA'">Далее</MyButton>
             <MyButton class="white-buttons" disabled v-else>Далее</MyButton>
@@ -21,7 +21,7 @@
     </div>
     <!--Задание 5 пункт 2-->
     <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}"
-         v-if="mainJSON.task1.screens[this.mainJSON.task1.shownScreenID].id === 21">
+         v-if="mainJSON.task1.screens[this.mainJSON.task1.shownScreenID].id === 18">
         <div class="background-answers">
             <div v-for="el in mainJSON.task1.listOfAnswersTask5Point2" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCK2_3}"
                  style="padding: 10px 20px"
@@ -33,7 +33,7 @@
         </div>
         <div class="background-text">
             <p>
-                Вопрос: Какое современное правило дорожного движения нарушается на картине? Выбери один ответ.
+                {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
             </p>
             <MyButton class="white-buttons" @click="nextTask(screen)" v-if="mainJSON.task1.results.ULSCLL1_Log_SCK2_3 !== 'NA'">Далее</MyButton>
             <MyButton class="white-buttons" disabled v-else>Далее</MyButton>
@@ -41,7 +41,7 @@
     </div>
     <!--Задание 5 пункт 3-->
     <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}"
-         v-if="mainJSON.task1.screens[this.mainJSON.task1.shownScreenID].id === 22">
+         v-if="mainJSON.task1.screens[this.mainJSON.task1.shownScreenID].id === 19">
         <div class="background-answers">
             <div v-for="el in mainJSON.task1.listOfAnswersTask5Point3" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCK2_4}"
                  style="padding: 10px 20px"
@@ -53,18 +53,12 @@
         </div>
         <div class="background-text">
             <p>
-                Вопрос: Какое современное правило дорожного движения нарушается на картине? Выбери один ответ.
+                {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
             </p>
-            <MyButton class="white-buttons" @click="showModal" v-if="mainJSON.task1.results.ULSCLL1_Log_SCK2_4 !== 'NA'">Готово</MyButton>
+            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.task1.results.ULSCLL1_Log_SCK2_4 !== 'NA'">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
-
-    <MyModal v-model:show="modalVisible" v-model:buttons="modalButtons"
-             @update="checkAnswer"
-    >
-        {{this.modalMessage}}
-    </MyModal>
 </template>
 
 <script>
@@ -75,13 +69,6 @@
         props: {
             screen: {},
             constTaskNightInTheMuseum: {}
-        },
-        data() {
-            return {
-                modalVisible: false,
-                modalButtons: [],
-                modalMessage: ''
-            }
         },
         computed: {
             ...mapGetters(['mainJSON']),
@@ -97,30 +84,18 @@
                     }
                 })
             },
-            showModal(){
-                this.modalVisible = true
-                this.modalButtons = [
-                    {value: "Да", status: true},
-                    {value: "Нет", status: false}
-                ]
-                this.modalMessage = 'Ты действительно хочешь закончить выполнение этого задания? После этого уже нельзя будет изменить ответы.'
-            },
             chooseAnswer(id, el){
                 id++
                 this.mainJSON.task1.results["ULSCLL1_Log_SCK2_" + id] = el.id
             },
-            checkAnswer(status){
-                this.modalVisible = false
-
-                if(status) {
-                    screen.isShow = false
-                    this.mainJSON.task1.shownScreenID++
-                    this.mainJSON.task1.screens.forEach(el => {
-                        if (el.id === this.mainJSON.task1.shownScreenID) {
-                            el.isShow = true
-                        }
-                    })
-                }
+            checkAnswer(){
+                screen.isShow = false
+                this.mainJSON.task1.shownScreenID++
+                this.mainJSON.task1.screens.forEach(el => {
+                    if (el.id === this.mainJSON.task1.shownScreenID) {
+                        el.isShow = true
+                    }
+                })
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
                     [

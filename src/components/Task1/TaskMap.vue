@@ -1,6 +1,10 @@
 <template>
     <!--Задание 9 задание-->
     <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
+        <div class="instruction-block">
+            <p>Инструкция: Проверь эту карту. Кликни на те объекты, которых на самом деле НЕТ в Москве. Ты можешь вернуть объект на карту, кликнув на него еще раз.
+            </p>
+        </div>
         <div>
             <div v-for="el in mainJSON.task1.listOfElementsTask9" :key="el.id">
                 <img :src=" require('../../assets/' + el.src) " :class="{choose: el.choose}" @click="addAnswer(el)"
@@ -10,7 +14,7 @@
 
         <div class="background-text">
             <p>
-                Инструкция: Проверь эту карту. Кликни на те объекты, которых на самом деле НЕТ в Москве. Ты можешь вернуть объект на карту, кликнув на него еще раз.
+                {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
             </p>
             <MyButton class="white-buttons" @click="showModal" v-if="mainJSON.task1.results.ULSCLL1_Log_LLK3_1 !== 'NA'">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>

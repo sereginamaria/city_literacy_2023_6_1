@@ -108,6 +108,7 @@
 
   .background-text p{
     color: white;
+    font-size: 18px;
   }
 
   .choosenAnswer {
@@ -121,5 +122,17 @@
     width: calc(100%/3);
     position: absolute;
     bottom: calc(100%/2.5);
+  }
+
+  .instruction-block {
+    margin: auto;
+    background: #FFFFFF;
+    border: 5px solid #54BEDF;
+    width: 70%;
+    padding: 20px;
+  }
+
+  .instruction-block p {
+    font-size: 18px;
   }
 </style>

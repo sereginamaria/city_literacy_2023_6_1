@@ -1,6 +1,9 @@
 <template>
     <!--Перетаскивание вещей из сумки-->
     <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
+        <div class="instruction-block">
+            <p>Инструкция: Какие вещи в сумке небезопасно проносить в музей? Выложи их, перетащив из сумки на стол. Чтобы вернуть вещь в сумку, снова перетащи ее.</p>
+        </div>
         <draggable
                 class="list-group draggable-backpack-end"
                 :list="this.mainJSON.task1.listOfElementsEnd"
@@ -8,7 +11,7 @@
         >
             <template #item="{ element }">
                 <img :src=" require('../../assets/' + element.src_dop) "
-                     alt="Avatar"  :style="element.style"/>
+                     alt="Avatar"  :style="element.style_dop"  @mouseover="onHover($event, element.toolTip)" @mouseout="this.toolTipVisible = false"/>
             </template>
         </draggable>
         <div>
@@ -20,7 +23,7 @@
             >
                 <template #item="{ element }">
                     <img :src=" require('../../assets/' + element.src) "
-                         alt="Avatar" :style="element.style"/>
+                         alt="Avatar" :style="element.style"  @mouseover="onHover($event, element.toolTip)" @mouseout="this.toolTipVisible = false"/>
                 </template>
             </draggable>
         </div>
@@ -32,6 +35,8 @@
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
+
+    <MyTooltip :toolTipVisible="toolTipVisible" :toolTipMessage="toolTipMessage" :clientX="clientX" :clientY="clientY"/>
 
     <MyModal v-model:show="modalVisible" v-model:buttons="modalButtons"
              @update="checkAnswer"
@@ -54,7 +59,11 @@
             return {
                 modalVisible: false,
                 modalButtons: [],
-                modalMessage: ''
+                modalMessage: '',
+                toolTipVisible: false,
+                toolTipMessage: '',
+                clientX: 0,
+                clientY: 0,
             }
         },
         components: {
@@ -68,6 +77,13 @@
         },
         methods: {
             ...mapMutations(["push_mainJSON"]),
+            onHover(event, message) {
+                const { clientX, clientY } = event;
+                this.toolTipVisible = true;
+                this.clientX = clientX - clientX/15;
+                this.clientY = clientY  - clientY/15;
+                this.toolTipMessage = message
+            },
             showModal(){
                 this.modalVisible = true
                 this.modalButtons = [

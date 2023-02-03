@@ -6,24 +6,19 @@
                  style="padding: 10px 20px"
             >
                 <div @click="chooseAnswer(el)">
-                    {{el.name}}
+                    <p>{{el.name}}</p>
+                    <p style="color: #1F5EFF">{{el.link}}</p>
                 </div>
             </div>
         </div>
         <div class="background-text">
             <p>
-                Инструкция: Выбери ВСЕ подходящие сайты, которыми можно воспользоваться, чтобы посмотреть достопримечательности Москвы онлайн.
+                {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
             </p>
-            <MyButton class="white-buttons" @click="showModal" v-if="mainJSON.task1.results.ULSCLL1_Log_LLK5_1 !== 'NA' && mainJSON.task1.results.ULSCLL1_Log_LLK5_1 !== ''">Готово</MyButton>
+            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.task1.results.ULSCLL1_Log_LLK5_1 !== 'NA' && mainJSON.task1.results.ULSCLL1_Log_LLK5_1 !== ''">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
-
-    <MyModal v-model:show="modalVisible" v-model:buttons="modalButtons"
-             @update="checkAnswer"
-    >
-        {{this.modalMessage}}
-    </MyModal>
 </template>
 
 <script>
@@ -38,23 +33,8 @@
         computed: {
             ...mapGetters(['mainJSON']),
         },
-        data() {
-            return {
-                modalVisible: false,
-                modalButtons: [],
-                modalMessage: ''
-            }
-        },
         methods: {
             ...mapMutations(["push_mainJSON"]),
-            showModal() {
-                this.modalVisible = true
-                this.modalButtons = [
-                    {value: "Да", status: true},
-                    {value: "Нет", status: false}
-                ]
-                this.modalMessage = 'Ты действительно хочешь закончить выполнение этого задания? После этого уже нельзя будет изменить ответы.'
-            },
             chooseAnswer(el) {
                 let k = 0
                 this.mainJSON.task1.listOfChoosenAnswersTask12.forEach(elMass => {
@@ -70,18 +50,14 @@
                 }
                 this.mainJSON.task1.results.ULSCLL1_Log_LLK5_1 = this.mainJSON.task1.listOfChoosenAnswersTask12.join()
             },
-            checkAnswer(status) {
-                this.modalVisible = false
-
-                if (status) {
-                    screen.isShow = false
-                    this.mainJSON.task1.shownScreenID++
-                    this.mainJSON.task1.screens.forEach(el => {
-                        if (el.id === this.mainJSON.task1.shownScreenID) {
-                            el.isShow = true
-                        }
-                    })
-                }
+            checkAnswer() {
+                screen.isShow = false
+                this.mainJSON.task1.shownScreenID++
+                this.mainJSON.task1.screens.forEach(el => {
+                    if (el.id === this.mainJSON.task1.shownScreenID) {
+                        el.isShow = true
+                    }
+                })
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
                     [
