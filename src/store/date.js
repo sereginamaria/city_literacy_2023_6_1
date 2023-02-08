@@ -20,51 +20,86 @@ const date = {
     },
     "task1": {
         "results": {
-            "ULSCLL1_Log_SCK1_1": "NA",  // todo поразмислыть в контексте state machine
-            "ULSCLL1_Log_SCK1_3": "NA",
-            "ULSCLL1_Log_SCK2_1": "NA",
+            //1 ChooseBag and Moving things from bag
+            "ULSCLL1_Log_SCK1_1": "NA",
+            "ULSCLL1_Log_SCK1_2": "NA",// todo поразмислыть в контексте state machine
+            "ULSCLL1_Score_SCK1_1": "NA",
+            "ULSCLL1_Score_SCK1_2": "NA",
 
+            //2 Choose shoes
+            "ULSCLL1_Log_SCK1_3": "NA",
+            "ULSCLL1_Score_SCK1_3": "NA",
+
+            //3 Metro
+            "ULSCLL1_Log_SCK2_1": "NA",
+            "ULSCLL1_Score_SCK2_1": "NA",
+
+            //4 Workbook
             "ULSCLL1_Log_LLK1_1": "NA",
             "ULSCLL1_Log_LLK1_2": "NA",
             "ULSCLL1_Log_LLK1_3": "NA",
             "ULSCLL1_Log_LLK1_4": "NA",
+            "ULSCLL1_Score_LLK1_1": "NA",
+            "ULSCLL1_Score_LLK1_2": "NA",
+            "ULSCLL1_Score_LLK1_3": "NA",
+            "ULSCLL1_Score_LLK1_4": "NA",
 
+            //5 Museum Paintings
             "ULSCLL1_Log_SCK2_2": "NA",
             "ULSCLL1_Log_SCK2_3": "NA",
             "ULSCLL1_Log_SCK2_4": "NA",
+            "ULSCLL1_Score_SCK2_2": "NA",
+            "ULSCLL1_Score_SCK2_3": "NA",
+            "ULSCLL1_Score_SCK2_4": "NA",
 
+            //6 Escape
             "ULSCLL1_Log_SCS4_1": "NA",
+            "ULSCLL1_Score_SCS4_1": "NA",
 
+            //7 Fire
             "ULSCLL1_Log_SCK1_4": "NA",
+            "ULSCLL1_Score_SCK1_4": "NA",
 
+            //8 Statue
             "ULSCLL1_Log_SCS4_2": "NA",
             "ULSCLL1_Log_SCS4_3": "NA",
+            "ULSCLL1_Score_SCS4_2": "NA",
+            "ULSCLL1_Score_SCS4_3": "NA",
 
+            //9 Map
             "ULSCLL1_Log_LLK3_1": "NA",
+            "ULSCLL1_Score_LLK3_1": "NA",
 
-            //10
+            //10 Attractions
             "ULSCLL1_Log_LLK2_1": "NA",
+            "ULSCLL1_Score_LLK2_1": "NA",
 
-            //11
+            //11 Festival
             "ULSCLL1_Log_LLK4_1": "NA",
+            "ULSCLL1_Score_LLK4_1": "NA",
 
-            //12
+            //12 Sites
             "ULSCLL1_Log_LLK5_1": "NA",
+            "ULSCLL1_Score_LLK5_1": "NA",
 
-            //13
+            //13 Bag Weather
             "ULSCLL1_Log_SCK3_1": "NA",
+            "ULSCLL1_Score_SCK3_1": "NA",
 
-            //14
+            //14 Warning Signs
             "ULSCLL1_Log_SCK3_2": "NA",
             "ULSCLL1_Log_SCK3_3": "NA",
             "ULSCLL1_Log_SCK3_4": "NA",
             "ULSCLL1_Log_SCK3_5": "NA",
+            "ULSCLL1_Score_SCK3_2": "NA",
 
-            //15
+            //15 Weather Forecast
             "ULSCLL1_Log_LLK6_1": "NA",
             "ULSCLL1_Log_LLK6_2": "NA",
             "ULSCLL1_Log_LLK6_3": "NA",
             "ULSCLL1_Log_LLK6_4": "NA",
+            "ULSCLL1_Score_LLK6_1": "NA",
+
         },
         "isShow": true,
         "shownScreenID": 0,
@@ -240,217 +275,18 @@ const date = {
         ],
         "listOfElementsEnd": [],
 
-        //Задание в метро
-        "listOfAnswersMetro": [
-            {
-                "name": "Спустимся самостоятельно вниз и узнаем, что случилось, у дежурного.",
-                "id": 1,
-            },
-            {
-                "name": "Присядем на ступеньку и подождем, что скажут в объявлении.",
-                "id": 2,
-            },
-            {
-                "name": "Будем стоять и держаться за поручень до объявления дежурного.",
-                "id": 3,
-            }, {
-                "name": "Поднимемся самостоятельно наверх, чтобы спросить дежурного, что случилось.",
-                "id": 4,
-            },
-
-        ],
-
         //Задание рабочая тетрадь
         "modularTask1_14Show": false,
-        "listWorkBook1": [
-            {"id": 1, "value": "1123"},
-            {"id": 2, "value": "1147"},
-            {"id": 3, "value": "1174"},
-            {"id": 4, "value": "1212"},
-        ],
         //Картинки ко второму вопросу
         "modularTask1_15Show": false,
-        "listWorkBook2": [
-            {
-                "src": "Workbook1.png",
-                "value": "Князь Юрий Долгорукий",
-                "id": 1,
-            },
-            {
-                "src": "Workbook2.png",
-                "value": "Князь Иван Калита",
-                "id": 2,
-            },
-            {
-                "src": "Workbook3.png",
-                "value": "Князь Даниил Московский",
-                "id": 3,
-            },
-            {
-                "src": "Workbook4.png",
-                "value": "Боярин Степан Кучка",
-                "id": 4,
-            },
-        ],
         //Картинки к третьему вопросу
         "modularTask1_16Show": false,
-        "listWorkBook3": [
-            {
-                "src": "Workbook5.png",
-                "value": "Кремль",
-                "id": 1,
-            },
-            {
-                "src": "Workbook6.png",
-                "value": "Воскресенские ворота",
-                "id": 2,
-            },
-            {
-                "src": "Workbook7.png",
-                "value": "Птичья башня",
-                "id": 3,
-            }
-        ],
         //Картинки к четвертому вопросу
         "modularTask1_17Show": false,
-        "listWorkBook4": [
-            {
-                "value": "Кириллу и Мефодию",
-                "id": 1,
-            },
-            {
-                "value": "Минину и Пожарскому",
-                "id": 2,
-            },
-            {
-                "value": "Потемкину и Суворову",
-                "id": 3,
-            }
-        ],
-
-        //Задание 5 пункт 1
-        "listOfAnswersTask5Point1": [
-            {
-                "name": "Нельзя переходить дорогу в неположенном месте.",
-                "id": 1,
-            },
-            {
-                "name": "Нельзя создавать помехи транспортным средствам на пешеходном переходе",
-                "id": 2,
-            },
-            {
-                "name": "Нельзя переходить дорогу в обуви на каблуке.",
-                "id": 3,
-            }, {
-                "name": "Нельзя переходить дорогу без светоотражающих элементов одежды.",
-                "id": 4,
-            },
-        ],
-        //Задание 5 пункт 2
-        "listOfAnswersTask5Point2": [
-            {
-                "name": "При выходе из трамвая его нужно обходить спереди.",
-                "id": 1,
-            },
-            {
-                "name": "При выходе из трамвая его нужно обходить сзади.",
-                "id": 2,
-            },
-            {
-                "name": "В трамвае нужно снимать головной убор.",
-                "id": 3,
-            }, {
-                "name": "Из трамвая нужно выходить через переднюю дверь.",
-                "id": 4,
-            },
-        ],
-        //Задание 5 пункт 3
-        "listOfAnswersTask5Point3": [
-            {
-                "name": "Велосипедистам нельзя ездить по дороге в платье.",
-                "id": 1,
-            },
-            {
-                "name": "Велосипедистам нельзя ездить по дороге без шлема и наколенников.",
-                "id": 2,
-            },
-            {
-                "name": "Велосипедистам нельзя ездить по дороге без специального багажника.",
-                "id": 3,
-            }, {
-                "name": "Велосипедистам нельзя ездить по дороге в два ряда.",
-                "id": 4,
-            },
-        ],
-
-        //Задание 6 задание
-        "listOfAnswersTask6": [
-            {
-                "name": "Нет, ночью в городе опасно гулять без взрослых.",
-                "id": 1,
-            },
-            {
-                "name": "Да, наверняка это будет весело.",
-                "id": 2,
-            },
-            {
-                "name": "Да, но только давай позовем с собой Асю.",
-                "id": 3,
-            }, {
-                "name": "Нет, не уходим, а быстро убегаем.",
-                "id": 4,
-            },
-        ],
-
-        //Задание 7 задание
-        "listOfAnswersTask7": [
-            {
-                "name": "Взять сестру за руку и следовать за ней к выходу.",
-                "id": 1,
-            },
-            {
-                "name": "Не двигаться и ждать указаний персонала музея.",
-                "id": 2,
-            },
-            {
-                "name": "Игнорировать сигнализацию и продолжить осматривать музей, пока все ушли.",
-                "id": 3,
-            }, {
-                "name": "Подождать пока все люди уйдут и последними выйти из здания музея.",
-                "id": 4,
-            },
-        ],
-
-        //Задание 8 задание 1
-        "listOfAnswersTask8_1": [
-            {
-                "name": "Да, давай!",
-                "id": 1,
-            },
-            {
-                "name": "Нет, не стоит этого делать.",
-                "id": 2,
-            }
-        ],
-
-        //Задание 8 задание 2
-        "listOfAnswersTask8_2": [
-            {
-                "name": "Нам стоит сообщить охране музея.",
-                "id": 1,
-            },
-            {
-                "name": "Давайте сделаем фото и отправим в полицию.",
-                "id": 2,
-            },
-            {
-                "name": "Нужно сказать им, что нельзя так делать.",
-                "id": 3,
-            }, {
-                "name": "Подойдем к ним и отберем у них краску.",
-                "id": 4,
-            },
-        ],
+        "ULSCLL1_Log_LLK1_1": "NA",
+        "ULSCLL1_Log_LLK1_2": "NA",
+        "ULSCLL1_Log_LLK1_3": "NA",
+        "ULSCLL1_Log_LLK1_4": "NA",
 
         //Задание 9 задание
         "listOfElementsTask9": [  // todo контекстуальные стили? подумать про state machine
@@ -848,42 +684,168 @@ const date = {
         "checkBox1Selected": [],
     },
     "task3": {
-        "instruction": "Иструкция задание 3",
         "isShow": false,
         "results": {
-            //0
-            "ULHLDT1_Log_HLS1_1": "NA",
-            //1
-            "ULHLDT1_Log_HLS4_1": "NA",
-            //2
-            "ULHLDT1_Log_DTS2_1": "NA",
-            //3
-            "ULHLDT1_Log_HLS5_1": "NA",
-            //4
-            "ULHLDT1_Log_HLK1_1": "NA",
-            //5
-            "ULHLDT1_Log_HLK2_1": "NA",
-            //6
-            "ULHLDT1_Log_DTS1_1": "NA",
-            //7
-            "ULHLDT1_Log_HLK4_1": "NA",
-            //8
-            "ULHLDT1_Log_DTK1_1": "NA",
-            //9
-            "ULHLDT1_Log_HLK3_1": "NA",
-            //10
-            "ULHLDT1_Log_HLS3_1": "NA",
-            //11
-            "ULHLDT1_Log_HLS1_2": "NA",
-            //12
-            "ULHLDT1_Log_HLK2_2": "NA",
-            //13
-            "ULHLDT1_Log_DTS1_2": "NA",
-            //14
-            "ULHLDT1_Log_DTS3_1": "NA",
-            //15
-            "ULHLDT1_Log_HLS2_1": "NA"
+            //Who is a volunteer
+            "ULSE1_Log_SEK4_1": "NA",
+            "ULSE1_Log_SEK4_2": "NA",
+            "ULSE1_Log_SEK4_3": "NA",
+
+            //Rights and Obligations part 1
+            "ULSE1_Log_SEK3": "NA",
+
+            //Rights and Obligations part 2
+            "ULSE1_Log_SEK3_1": "NA",
+            "ULSE1_Log_SEK3_2": "NA",
+
         },
+        "shownScreenID": 0,
+        "screens": [
+            {"id": 0, "isShow": true, "imgURL": "TaskVolunteersAcquaintanceMax", "haveTask": false,
+                "description": ''},
+            {"id": 1, "isShow": false, "imgURL": "TaskVolunteersAcquaintanceAnne", "haveTask": false,
+                "description": ''},
+            {"id": 2, "isShow": false, "imgURL": "TaskVolunteersWhoIsAVolunteerMax", "haveTask": false,
+                "description": ''},
+            {"id": 3, "isShow": false, "imgURL": "TaskVolunteersAcquaintanceAnne", "haveTask": false,
+                "description": ''},
+            {"id": 4, "isShow": false, "imgURL": "TaskVolunteersAcquaintanceAnne", "haveTask": true, "taskName": "WhoIsAVolunteer",
+                "description": 'Кто такой волонтер?'},
+            {"id": 5, "isShow": false, "imgURL": "TaskVolunteersCardAboutVolunteeringMax", "haveTask": false,
+                "description": ''},
+            {"id": 6, "isShow": false, "imgURL": "TaskVolunteersCardAboutVolunteering", "haveTask": true, "taskName": "CardAboutVolunteering",
+                "description": 'Карточка о волонтерстве'},
+            {"id": 7, "isShow": false, "imgURL": "TaskVolunteersWhoIsRightsAndObligationsMax", "haveTask": false,
+                "description": ''},
+            {"id": 8, "isShow": false, "imgURL": "TaskVolunteersWhoIsRightsAndObligations", "haveTask": true, "taskName": "RightsAndObligationsPart1",
+                "description": 'Права и обязанности часть 1'},
+            {"id": 9, "isShow": false, "imgURL": "TaskVolunteersWhoIsRightsAndObligationsAnn", "haveTask": false,
+                "description": ''},
+            {"id": 10, "isShow": false, "imgURL": "TaskVolunteersWhoIsRightsAndObligationsAnn", "haveTask": true, "taskName": "RightsAndObligationsPart2",
+                "description": 'Права и обязанности часть 2'},
+            {"id": 11, "isShow": false, "imgURL": "TaskVolunteersSocialInstitutionsMax", "haveTask": false,
+                "description": ''},
+            {"id": 12, "isShow": false, "imgURL": "TaskVolunteersSocialInstitutionsAnn", "haveTask": false,
+                "description": ''},
+            {"id": 13, "isShow": false, "imgURL": "TaskVolunteersSocialInstitutionsAnn", "haveTask": true, "taskName": "SocialInstitutions",
+                "description": 'Социальные институты'},
+
+            {"id": 14, "isShow": false, "imgURL": "BackgroundModule17", "haveTask": false,
+                "description": ''},
+            {"id": 15, "isShow": false, "imgURL": "BackgroundModule18", "haveTask": false,
+                "description": ''},
+            {"id": 16, "isShow": false, "imgURL": "BackgroundModule19", "haveTask": false,
+                "description": ''},
+            {"id": 17, "isShow": false, "imgURL": "BackgroundModule20", "haveTask": true, "taskName": "MuseumPaintings1",
+                "description": 'Картины'},
+            {"id": 18, "isShow": false, "imgURL": "BackgroundModule21", "haveTask": true, "taskName": "MuseumPaintings2",
+                "description": 'Картины'},
+            {"id": 19, "isShow": false, "imgURL": "BackgroundModule22", "haveTask": true, "taskName": "MuseumPaintings3",
+                "description": 'Картины'},
+            {"id": 20, "isShow": false, "imgURL": "BackgroundModule23", "haveTask": false,
+                "description": ''},
+            {"id": 21, "isShow": false, "imgURL": "BackgroundModule25", "haveTask": true, "taskName": "Escape",
+                "description": 'Побег'},
+            {"id": 22, "isShow": false, "imgURL": "BackgroundModule26", "haveTask": false,
+                "description": '2 или 4 ответ'},
+            {"id": 23, "isShow": false, "imgURL": "BackgroundModule27", "haveTask": false,
+                "description": '2 или 4 ответ'},
+            {"id": 24, "isShow": false, "imgURL": "BackgroundModule28", "haveTask": false,
+                "description": '2 или 4 ответ'},
+            {"id": 25, "isShow": false, "imgURL": "BackgroundModule29", "haveTask": false,
+                "description": '1 ответ'},
+            {"id": 26, "isShow": false, "imgURL": "BackgroundModule28", "haveTask": false,
+                "description": '1 ответ'},
+            {"id": 27, "isShow": false, "imgURL": "BackgroundModule31", "haveTask": false,
+                "description": '3 ответ'},
+            {"id": 28, "isShow": false, "imgURL": "BackgroundModule32", "haveTask": false,
+                "description": ''},
+            {"id": 29, "isShow": false, "imgURL": "BackgroundModule34", "haveTask": true, "taskName": "Fire",
+                "description": 'Пожар'},
+            {"id": 30, "isShow": false, "imgURL": "BackgroundModule35", "haveTask": false,
+                "description": ''},
+            {"id": 31, "isShow": false, "imgURL": "BackgroundModule37", "haveTask": true, "taskName": "Statue1",
+                "description": 'Статуя'},
+            {"id": 32, "isShow": false, "imgURL": "BackgroundModule38", "haveTask": false,
+                "description": 'Ответ да'},
+            {"id": 33, "isShow": false, "imgURL": "BackgroundModule39", "haveTask": false,
+                "description": 'Ответ нет'},
+            {"id": 34, "isShow": false, "imgURL": "BackgroundModule41", "haveTask": true, "taskName": "Statue2",
+                "description": 'Вторая статуя'},
+            {"id": 35, "isShow": false, "imgURL": "BackgroundModule42", "haveTask": false,
+                "description": ''},
+            {"id": 36, "isShow": false, "imgURL": "BackgroundModule44", "haveTask": true, "taskName": "Map",
+                "description": 'Карта'},
+            {"id": 37, "isShow": false, "imgURL": "BackgroundModule45", "haveTask": false,
+                "description": ''},
+            {"id": 38, "isShow": false, "imgURL": "BackgroundModule46", "haveTask": false,
+                "description": ''},
+            {"id": 39, "isShow": false, "imgURL": "BackgroundModule46", "haveTask": true, "taskName": "Attractions",
+                "description": 'Достопримечательности'},
+            {"id": 40, "isShow": false, "imgURL": "BackgroundModule48", "haveTask": false,
+                "description": ''},
+            {"id": 41, "isShow": false, "imgURL": "BackgroundModule50", "haveTask": true, "taskName": "Festival",
+                "description": 'Фестиваль'},
+            {"id": 42, "isShow": false, "imgURL": "BackgroundModule48", "haveTask": false,
+                "description": ''},
+            {"id": 43, "isShow": false, "imgURL": "BackgroundModule52", "haveTask": true, "taskName": "Sites",
+                "description": 'Сайты'},
+            {"id": 44, "isShow": false, "imgURL": "BackgroundModule53", "haveTask": false,
+                "description": ''},
+            {"id": 45, "isShow": false, "imgURL": "BackgroundModule54", "haveTask": false,
+                "description": ''},
+            {"id": 46, "isShow": false, "imgURL": "BackgroundModule55", "haveTask": false,
+                "description": ''},
+            {"id": 47, "isShow": false, "imgURL": "BackgroundModule54", "haveTask": true, "taskName": "BadWeather",
+                "description": 'Плохая погода (и 4 раза фон меняется)'},
+            {"id": 48, "isShow": false, "imgURL": "BackgroundModule62", "haveTask": false,
+                "description": 'Предупреждающие знаки коля'},
+            {"id": 49, "isShow": false, "imgURL": "BackgroundModule63", "haveTask": false,
+                "description": ''},
+            {"id": 50, "isShow": false, "imgURL": "BackgroundModule63", "haveTask": true, "taskName": "WarningSigns",
+                "description": 'Предупреждающие знаки'},
+            {"id": 51, "isShow": false, "imgURL": "BackgroundModule64", "haveTask": false,
+                "description": ''},
+            {"id": 52, "isShow": false, "imgURL": "BackgroundModule64", "haveTask": true, "taskName": "WeatherForecast",
+                "description": 'Прогноз погоды'},
+            {"id": 53, "isShow": false, "imgURL": "BackgroundModule65", "haveTask": false,
+                "description": ''},
+        ],
+        "ULSE1_Log_SEK4_1": "Когда?",
+        "ULSE1_Log_SEK4_2": "Какую?",
+        "ULSE1_Log_SEK4_3": "0",
+        "listOfAnswersRightsAndObligationsPart2": [
+            {
+                "value": "Сохранять свое здоровье",
+                "id": 1,
+            },
+            {
+                "value": "Защищать свое Отечество",
+                "id": 2,
+            },
+            {
+                "value": "Сохранять природу",
+                "id": 3,
+            },
+            {
+                "value": "Участвовать в культурной жизни страны",
+                "id": 4,
+            },
+            {
+                "value": "Сохранять историческое и культурное наследие",
+                "id": 5,
+            },
+            {
+                "value": "Жить в благоприятной окружающей среде",
+                "id": 6,
+            }
+        ],
+        "listOfAnswersRightsAndObligationsPart2_list1": [],
+        "listOfAnswersRightsAndObligationsPart2_list2": [],
+        "listOfAnswersRightsAndObligationsPart2_list3": [],
+        "listOfAnswersRightsAndObligationsPart2_list4": [],
+        "listOfAnswersRightsAndObligationsPart2_list5": [],
+        "listOfAnswersRightsAndObligationsPart2_list6": [],
     }
 }
 

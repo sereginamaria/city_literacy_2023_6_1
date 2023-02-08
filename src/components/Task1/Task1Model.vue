@@ -106,6 +106,17 @@
     bottom: 0;
   }
 
+  .background-task {
+    background: #FFFFFF;
+    border: 1px solid #54BEDF;
+    width: calc(100%/1.2);
+    height: calc(100%/1.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   .background-text p{
     color: white;
     font-size: 18px;

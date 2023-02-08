@@ -6,7 +6,7 @@
             </p>
         </div>
         <div class="background-answers">
-            <div v-for="el in mainJSON.task1.listOfAnswersTask6" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCS4_1}"
+            <div v-for="el in constTaskNightInTheMuseum.listOfAnswersTaskEscape" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCS4_1}"
                  style="padding: 10px 20px"
             >
                 <div @click="chooseAnswer(el)">
@@ -22,11 +22,6 @@
             <MyButton class="white-buttons"  disabled v-else>Далее</MyButton>
         </div>
     </div>
-    <MyModal v-model:show="modalVisible" v-model:buttons="modalButtons"
-             @update="checkAnswer"
-    >
-        {{this.modalMessage}}
-    </MyModal>
 </template>
 
 <script>
@@ -38,26 +33,11 @@
             screen: {},
             constTaskNightInTheMuseum: {}
         },
-        data() {
-            return {
-                modalVisible: false,
-                modalButtons: [],
-                modalMessage: ''
-            }
-        },
         computed: {
             ...mapGetters(['mainJSON']),
         },
         methods: {
             ...mapMutations(["push_mainJSON"]),
-            showModal(){
-                this.modalVisible = true
-                this.modalButtons = [
-                    {value: "Да", status: true},
-                    {value: "Нет", status: false}
-                ]
-                this.modalMessage = 'Ты действительно хочешь закончить выполнение этого задания? После этого уже нельзя будет изменить ответы.'
-            },
             nextTask(screen){
                 screen.isShow = false
 
@@ -76,22 +56,14 @@
                         el.isShow = true
                     }
                 })
-            },
-            chooseAnswer(el){
-                this.mainJSON.task1.results.ULSCLL1_Log_SCS4_1 = el.id
-            },
-            checkAnswer(status){
-                this.modalVisible = false
 
-                if(status) {
-                    screen.isShow = false
-                    this.mainJSON.task1.shownScreenID++
-                    this.mainJSON.task1.screens.forEach(el => {
-                        if (el.id === this.mainJSON.task1.shownScreenID) {
-                            el.isShow = true
-                        }
-                    })
+                if(this.mainJSON.task1.results.ULSCLL1_Log_SCS4_1 === 3){
+                    this.mainJSON.task1.results.ULSCLL1_Score_SCS4_1 = 1
                 }
+                else {
+                    this.mainJSON.task1.results.ULSCLL1_Score_SCS4_1 = 0
+                }
+
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
                     [
@@ -107,7 +79,10 @@
                 this.push_mainJSON({
                     push: this.mainJSON
                 })
-            }
+            },
+            chooseAnswer(el){
+                this.mainJSON.task1.results.ULSCLL1_Log_SCS4_1 = el.id
+            },
         }
     }
 </script>

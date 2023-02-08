@@ -6,32 +6,32 @@
             </p>
         </div>
         <div>
-            <img src="../../assets/Boots1.png" alt="" :class="{colorBoots: mainJSON.task1.results.ULSCLL1_Log_SCK1_3 === '1'}"
-                 @click="addAnswer('1')" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Большой рюкзак"
+            <img src="../../assets/Boots1.png" alt="" :class="{colorBoots: mainJSON.task1.results.ULSCLL1_Log_SCK1_3 === 1}"
+                 @click="addAnswer(1)" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Большой рюкзак"
                  style="width: calc(100%/4);
     left: calc(100%/2.6);
     bottom: calc(100%/1.5);
     /* width: calc(100%/3); */
     position: absolute;"
             >
-            <img src="../../assets/Boots2.png" alt="" :class="{colorBoots: mainJSON.task1.results.ULSCLL1_Log_SCK1_3 === '2'}"
-                 @click="addAnswer('2')" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Маленький рюкзак"
+            <img src="../../assets/Boots2.png" alt="" :class="{colorBoots: mainJSON.task1.results.ULSCLL1_Log_SCK1_3 === 2}"
+                 @click="addAnswer(2)" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Маленький рюкзак"
                  style="width: calc(100%/4);
     left: calc(100%/2.6);
     bottom: calc(100%/2.1);
     /* width: calc(100%/3); */
     position: absolute;"
             >
-            <img src="../../assets/Boots3.png" alt="" :class="{colorBoots: mainJSON.task1.results.ULSCLL1_Log_SCK1_3 === '3'}"
-                 @click="addAnswer('3')" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Большой рюкзак"
+            <img src="../../assets/Boots3.png" alt="" :class="{colorBoots: mainJSON.task1.results.ULSCLL1_Log_SCK1_3 === 3}"
+                 @click="addAnswer(3)" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Большой рюкзак"
                  style="width: calc(100%/4);
     left: calc(100%/2.6);
     bottom: calc(100%/4);
     /* width: calc(100%/3); */
     position: absolute;"
             >
-            <img src="../../assets/Boots4.png" alt="" :class="{colorBoots: mainJSON.task1.results.ULSCLL1_Log_SCK1_3 === '4'}"
-                 @click="addAnswer('4')" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Маленький рюкзак"
+            <img src="../../assets/Boots4.png" alt="" :class="{colorBoots: mainJSON.task1.results.ULSCLL1_Log_SCK1_3 === 4}"
+                 @click="addAnswer(4)" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Маленький рюкзак"
                  style="width: calc(100%/4);
     left: calc(100%/2.6);
     bottom: calc(100%/15);
@@ -75,6 +75,12 @@
                         el.isShow = true
                     }
                 })
+                if(this.mainJSON.task1.results.ULSCLL1_Log_SCK1_3 === 2){
+                    this.mainJSON.task1.results.ULSCLL1_Score_SCK1_3 = 1
+                }
+                else {
+                    this.mainJSON.task1.results.ULSCLL1_Score_SCK1_3 = 0
+                }
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
                     [

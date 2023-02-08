@@ -1,11 +1,12 @@
 <template>
-    <div class="instruction-body" :class="{backgroundTaskNightInTheMuseum: mainJSON.task1.isShow, backgroundTaskChatWalk: mainJSON.task2.isShow}">
+    <div class="instruction-body" :class="{backgroundTaskNightInTheMuseum: mainJSON.task1.isShow, backgroundTaskChatWalk: mainJSON.task2.isShow,
+    backgroundTaskVolunteers: mainJSON.task3.isShow}">
         <div class="w-100 h-100 d-flex flex-column justify-content-center align-items-center">
             <div class="instruction-card">
                 <div>
                     <p v-if="mainJSON.task1.isShow">{{constTaskNightInTheMuseum.instruction}}</p>
                     <p v-if="mainJSON.task2.isShow">{{constTaskChatWalk.instruction}}</p>
-                    <p v-if="mainJSON.task3.isShow">{{mainJSON.task3.instruction}}</p>
+                    <p v-if="mainJSON.task3.isShow">{{constTaskVolunteers.instruction}}</p>
                 </div>
                 <div class="d-flex justify-content-end">
                     <p style="font-style: italic; width: 700px; text-align: right;">
@@ -26,7 +27,7 @@
     export default {
         name: "InstructionPage",
         computed: {
-            ...mapGetters(['mainJSON', 'constTaskNightInTheMuseum', 'constTaskChatWalk']),
+            ...mapGetters(['mainJSON', 'constTaskNightInTheMuseum', 'constTaskChatWalk', 'constTaskVolunteers']),
         },
         methods: {
             instruction() {
@@ -48,6 +49,9 @@
     }
     .backgroundTaskChatWalk {
         background: url("../assets/TaskChatBackground.png") rgba(255, 255, 255, 0.01) no-repeat center center fixed;
+    }
+    .backgroundTaskVolunteers {
+        background: url("../assets/TaskVolunteersBackground.png") rgba(255, 255, 255, 0.01) no-repeat center center fixed;
     }
     .instruction-card {
         display: flex;

@@ -7,7 +7,7 @@
             </p>
         </div>
         <div class="background-answers">
-            <div v-for="el in mainJSON.task1.listOfAnswersTask8_1" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCS4_2}"
+            <div v-for="el in constTaskNightInTheMuseum.listOfAnswersTaskStatue1" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCS4_2}"
                  style="padding: 10px 20px"
             >
                 <div @click="chooseAnswer(1, el)">
@@ -31,7 +31,7 @@
             </p>
         </div>
         <div class="background-answers">
-            <div v-for="el in mainJSON.task1.listOfAnswersTask8_2" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCS4_3}"
+            <div v-for="el in constTaskNightInTheMuseum.listOfAnswersTaskStatue2" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCS4_3}"
                  style="padding: 10px 20px"
             >
                 <div @click="chooseAnswer(2, el)">
@@ -93,6 +93,18 @@
                         el.isShow = true
                     }
                 })
+                if(this.mainJSON.task1.results.ULSCLL1_Log_SCS4_2 === 2){
+                    this.mainJSON.task1.results.ULSCLL1_Score_SCS4_2 = 1
+                }
+                else {
+                    this.mainJSON.task1.results.ULSCLL1_Score_SCS4_2 = 0
+                }
+                if(this.mainJSON.task1.results.ULSCLL1_Log_SCS4_3 === 1){
+                    this.mainJSON.task1.results.ULSCLL1_Score_SCS4_3 = 1
+                }
+                else {
+                    this.mainJSON.task1.results.ULSCLL1_Score_SCS4_3 = 0
+                }
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
                     [

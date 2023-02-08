@@ -103,23 +103,45 @@
                             el.isShow = true
                         }
                     })
+
+                    let answers = []
+                    let maxScore, middleScore = 0
+                    this.mainJSON.task1.listOfElementsEnd.forEach(el => {
+                        answers.push(el.id)
+                        if(el.id === 4 || el.id === 5 || el.id === 7){
+                            maxScore++
+                        }
+                        if(el.id === 1 || el.id === 2 || el.id === 3 || el.id === 6){
+                            middleScore++
+                        }
+                    })
+                    this.mainJSON.task1.results.ULSCLL1_Log_SCK1_2 = answers.join()
+                    if(this.mainJSON.task1.listOfElementsEnd.length === 3 && maxScore === 3){
+                        this.mainJSON.task1.results.ULSCLL1_Score_SCK1_2 = 2
+                    }
+                    else if(this.mainJSON.task1.listOfElementsEnd.length === 4 && maxScore === 3 && middleScore === 1){
+                        this.mainJSON.task1.results.ULSCLL1_Score_SCK1_2 = 1
+                    }
+                    else {
+                        this.mainJSON.task1.results.ULSCLL1_Score_SCK1_2 = 0
+                    }
+
+                    let t = new Date()
+                    this.mainJSON.results.dataTimeLastUpdate =
+                        [
+                            t.getFullYear(),
+                            ('0' + (t.getMonth() + 1)).slice(-2),
+                            ('0' + t.getDate()).slice(-2)
+                        ].join('-') + ' ' + [
+                            ('0' + (t.getHours())).slice(-2),
+                            ('0' + (t.getMinutes())).slice(-2),
+                            ('0' + t.getSeconds()).slice(-2)
+                        ].join(':');
+
+                    this.push_mainJSON({
+                        push: this.mainJSON
+                    })
                 }
-
-                let t = new Date()
-                this.mainJSON.results.dataTimeLastUpdate =
-                    [
-                        t.getFullYear(),
-                        ('0' + (t.getMonth() + 1)).slice(-2),
-                        ('0' + t.getDate()).slice(-2)
-                    ].join('-') + ' ' + [
-                        ('0' + (t.getHours())).slice(-2),
-                        ('0' + (t.getMinutes())).slice(-2),
-                        ('0' + t.getSeconds()).slice(-2)
-                    ].join(':');
-
-                this.push_mainJSON({
-                    push: this.mainJSON
-                })
             }
         }
     }

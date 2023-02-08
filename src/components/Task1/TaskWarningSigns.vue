@@ -157,16 +157,6 @@
         width: 100%;
         background-position: center center;
     }
-    .background-task {
-        background: #FFFFFF;
-        border: 1px solid #54BEDF;
-        width: calc(100%/1.2);
-        height: calc(100%/1.2);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
     .task14El{
         display: flex;
         flex-direction: column;

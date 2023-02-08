@@ -6,7 +6,7 @@
             </p>
         </div>
         <div class="background-answers">
-            <div v-for="el in mainJSON.task1.listOfAnswersTask7" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCK1_4}"
+            <div v-for="el in constTaskNightInTheMuseum.listOfAnswersTaskFire" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCK1_4}"
                  style="padding: 10px 20px"
             >
                 <div @click="chooseAnswer(el)">
@@ -49,6 +49,12 @@
                         el.isShow = true
                     }
                 })
+                if(this.mainJSON.task1.results.ULSCLL1_Log_SCK1_4 === 1){
+                    this.mainJSON.task1.results.ULSCLL1_Score_SCK1_4 = 1
+                }
+                else {
+                    this.mainJSON.task1.results.ULSCLL1_Score_SCK1_4 = 0
+                }
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
                     [

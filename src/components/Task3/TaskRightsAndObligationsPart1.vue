@@ -1,25 +1,28 @@
 <template>
-    <!--Задание в метро-->
     <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
         <div class="instruction-block">
-            <p>Инструкция: Что ответить Асе? Выбери один вариант ответа
+            <p>Что ответить Максу? Выбери один вариант ответа.
             </p>
         </div>
         <div class="background-answers">
-            <div v-for="el in constTaskNightInTheMuseum.listOfAnswersTaskMetro" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCK2_1}"
+            <div v-for="el in constTaskVolunteers.listOfAnswersRightsAndObligationsPart1" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task3.results.ULSE1_Log_SEK3}"
                  style="padding: 10px 20px"
             >
                 <div @click="chooseAnswer(el)">
-                    {{el.name}}
+                    {{el.value}}
                 </div>
             </div>
         </div>
-
         <div class="background-text">
-            <p>
-                {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
-            </p>
-            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.task1.results.ULSCLL1_Log_SCK2_1 !== 'NA'">Готово</MyButton>
+        <div class="d-flex">
+                <p>
+                    {{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name}}
+                </p>
+                <p>
+                    {{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].text}}
+                </p>
+            </div>
+            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.task3.results.ULSE1_Log_SEK3 !== 'NA'">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
@@ -29,10 +32,10 @@
     import {mapGetters, mapMutations} from "vuex";
 
     export default {
-        name: "TaskMetro",
+        name: "TaskRightsAndObligationsPart1",
         props: {
             screen: {},
-            constTaskNightInTheMuseum: {}
+            constTaskVolunteers: {}
         },
         computed: {
             ...mapGetters(['mainJSON']),
@@ -40,22 +43,16 @@
         methods: {
             ...mapMutations(["push_mainJSON"]),
             chooseAnswer(el){
-                this.mainJSON.task1.results.ULSCLL1_Log_SCK2_1 = el.id
+                this.mainJSON.task3.results.ULSE1_Log_SEK3 = el.id
             },
-            checkAnswer(){
+            checkAnswer() {
                 screen.isShow = false
-                this.mainJSON.task1.shownScreenID++
-                this.mainJSON.task1.screens.forEach(el => {
-                    if (el.id === this.mainJSON.task1.shownScreenID) {
+                this.mainJSON.task3.shownScreenID++
+                this.mainJSON.task3.screens.forEach(el => {
+                    if (el.id === this.mainJSON.task3.shownScreenID) {
                         el.isShow = true
                     }
                 })
-                if(this.mainJSON.task1.results.ULSCLL1_Log_SCK2_1 === 3){
-                    this.mainJSON.task1.results.ULSCLL1_Score_SCK2_1 = 1
-                }
-                else {
-                    this.mainJSON.task1.results.ULSCLL1_Score_SCK2_1 = 0
-                }
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
                     [

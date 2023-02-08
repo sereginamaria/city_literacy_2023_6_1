@@ -101,11 +101,9 @@
                     this.mainJSON.task1.listOfAnswersTask10_3.length !== 0){
                     this.mainJSON.task1.results.ULSCLL1_Log_LLK2_1 =  "Слот 1: " + this.mainJSON.task1.listOfAnswersTask10_1[0].value + ", Слот 2: " +
                         this.mainJSON.task1.listOfAnswersTask10_2[0].value + ", Слот 3: " + this.mainJSON.task1.listOfAnswersTask10_3[0].value
-                    console.log(this.mainJSON.task1.results.ULSCLL1_Log_LLK2_1)
                 }
             },
             checkAnswer() {
-                this.mainJSON.task1.results.ULSCLL1_Log_LLK2_1 = ""
                 screen.isShow = false
                 this.mainJSON.task1.shownScreenID++
                 this.mainJSON.task1.screens.forEach(el => {
@@ -113,6 +111,20 @@
                         el.isShow = true
                     }
                 })
+                if(this.mainJSON.task1.listOfAnswersTask10_1[0].id === 6 && this.mainJSON.task1.listOfAnswersTask10_2[0].id === 7 &&
+                    this.mainJSON.task1.listOfAnswersTask10_3[0].id === 8){
+                    this.mainJSON.task1.results.ULSCLL1_Score_LLK2_1 = 2
+                }
+                else if(this.mainJSON.task1.listOfAnswersTask10_1[0].id === 6 && (this.mainJSON.task1.listOfAnswersTask10_2[0].id === 7 ||
+                    this.mainJSON.task1.listOfAnswersTask10_3[0].id === 8)){
+                    this.mainJSON.task1.results.ULSCLL1_Score_LLK2_1 = 1
+                }
+                else if(this.mainJSON.task1.listOfAnswersTask10_2[0].id === 7 && this.mainJSON.task1.listOfAnswersTask10_3[0].id === 8){
+                    this.mainJSON.task1.results.ULSCLL1_Score_LLK2_1 = 1
+                }
+                else {
+                    this.mainJSON.task1.results.ULSCLL1_Score_LLK2_1 = 0
+                }
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
                     [
@@ -134,16 +146,6 @@
 </script>
 
 <style scoped>
-    .background-task {
-        background: #FFFFFF;
-        border: 1px solid #54BEDF;
-        width: calc(100%/1.2);
-        height: calc(100%/1.2);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
     .task10 {
         min-height: 40px;
         width: calc(100%/1.5);

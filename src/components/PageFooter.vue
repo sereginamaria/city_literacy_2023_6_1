@@ -58,14 +58,14 @@
                     this.mainJSON["mainPageShow"] = false
                     change++
                 }
-                if(this.mainJSON.task2Show  && change === 0){
-                    this.mainJSON["task2Show"] = false
-                    this.mainJSON["task3Show"] = true
+                if(this.mainJSON.task2.isShow  && change === 0){
+                    this.mainJSON.task2["isShow"] = false
+                    this.mainJSON.task3["isShow"] = true
                     this.mainJSON["instructionShow"] = true
                     this.mainJSON["mainPageShow"] = false
                     change++
                 }
-                if(this.mainJSON.task3Show  && change === 0){
+                if(this.mainJSON.task3.isShow  && change === 0){
                     this.mainJSON["task2Show"] = false
                     this.mainJSON["task3Show"] = true
                     this.mainJSON["instructionShow"] = true

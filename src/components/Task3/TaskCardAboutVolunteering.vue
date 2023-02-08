@@ -1,0 +1,110 @@
+<template>
+    <div class="background d-flex align-items-center flex-column" style="backdrop-filter: blur(5px);"
+         :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
+        <div class="instruction-block">
+            <p>Заполни таблицу, выбрав, что верно, а что не верно.
+            </p>
+        </div>
+        <div class="d-flex justify-content-center align-items-center w-100 h-100">
+            <div class="background-task-card-about-volunteering">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Эта информация верна?</th>
+                        <th scope="col">Да</th>
+                        <th scope="col">Нет</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Волонтер помогает изменить к лучшему жизнь в своем городе.</td>
+                        <td> <input class="form-check-input mt-0" type="radio" name="task-card-about-volunteering-1"></td>
+                        <td> <input class="form-check-input mt-0" type="radio" name="task-card-about-volunteering-1"></td>
+                    </tr>
+                    <tr>
+                        <td>Стать волонтером в возрасте до 14 лет можно без разрешения родителей.</td>
+                        <td> <input class="form-check-input mt-0" type="radio" name="task-card-about-volunteering-2"></td>
+                        <td> <input class="form-check-input mt-0" type="radio" name="task-card-about-volunteering-2"></td>
+                    </tr>
+                    <tr>
+                        <td>Личная книжка волонтера — это документ, в котором фиксируются достижения волонтера в общественной жизни города.</td>
+                        <td> <input class="form-check-input mt-0" type="radio" name="task-card-about-volunteering-3"></td>
+                        <td> <input class="form-check-input mt-0" type="radio" name="task-card-about-volunteering-3"></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <div class="background-text">
+        <div class="d-flex">
+                <p>
+                    {{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name}}
+                </p>
+                <p>
+                    {{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].text}}
+                </p>
+            </div>
+            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.task3.results.ULSE1_Log_SEK4_1 !== 'NA' ||
+            mainJSON.task3.results.ULSE1_Log_SEK4_2 !== 'NA' || mainJSON.task3.results.ULSE1_Log_SEK4_3 !== 'NA'">Готово</MyButton>
+            <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
+        </div>
+    </div>
+</template>
+
+<script>
+    import {mapGetters, mapMutations} from "vuex";
+
+    export default {
+        name: "TaskCardAboutVolunteering",
+        props: {
+            screen: {},
+            constTaskVolunteers: {}
+        },
+        computed: {
+            ...mapGetters(['mainJSON']),
+        },
+        methods: {
+            ...mapMutations(["push_mainJSON"]),
+            checkAnswer() {
+                screen.isShow = false
+                this.mainJSON.task3.shownScreenID++
+                this.mainJSON.task3.screens.forEach(el => {
+                    if (el.id === this.mainJSON.task3.shownScreenID) {
+                        el.isShow = true
+                    }
+                })
+                let t = new Date()
+                this.mainJSON.results.dataTimeLastUpdate =
+                    [
+                        t.getFullYear(),
+                        ('0' + (t.getMonth() + 1)).slice(-2),
+                        ('0' + t.getDate()).slice(-2)
+                    ].join('-') + ' ' + [
+                        ('0' + (t.getHours())).slice(-2),
+                        ('0' + (t.getMinutes())).slice(-2),
+                        ('0' + t.getSeconds()).slice(-2)
+                    ].join(':');
+
+                this.push_mainJSON({
+                    push: this.mainJSON
+                })
+            }
+        }
+    }
+</script>
+
+<style scoped>
+    .background-task-card-about-volunteering {
+        width: 40%;
+        position: absolute;
+        top: 20%;
+        left: 28%;
+    }
+
+    .table td, th {
+        border: 1px solid #54BEDF;
+        padding: 20px 40px;
+    }
+</style>

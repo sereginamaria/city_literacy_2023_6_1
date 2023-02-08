@@ -41,7 +41,6 @@
             ...mapMutations(["push_mainJSON"]),
             chooseAnswer(el) {
                 this.mainJSON.task1.results.ULSCLL1_Log_SCK3_1 = el.id
-                console.log(this.mainJSON.task1.results.ULSCLL1_Log_SCK3_1)
             },
             checkAnswer() {
                 screen.isShow = false
@@ -51,6 +50,12 @@
                         el.isShow = true
                     }
                 })
+                if(this.mainJSON.task1.results.ULSCLL1_Log_SCK3_1 === 3){
+                    this.mainJSON.task1.results.ULSCLL1_Score_SCK3_1 = 1
+                }
+                else {
+                    this.mainJSON.task1.results.ULSCLL1_Score_SCK3_1 = 0
+                }
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
                     [

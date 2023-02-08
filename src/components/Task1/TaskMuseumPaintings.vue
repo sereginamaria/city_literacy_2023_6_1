@@ -3,7 +3,7 @@
     <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}"
          v-if="mainJSON.task1.screens[this.mainJSON.task1.shownScreenID].id === 17">
         <div class="background-answers">
-            <div v-for="el in mainJSON.task1.listOfAnswersTask5Point1" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCK2_2}"
+            <div v-for="el in constTaskNightInTheMuseum.listOfAnswersTaskMuseumPaintings1" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCK2_2}"
                  style="padding: 10px 20px"
             >
                 <div @click="chooseAnswer(1, el)">
@@ -23,7 +23,7 @@
     <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}"
          v-if="mainJSON.task1.screens[this.mainJSON.task1.shownScreenID].id === 18">
         <div class="background-answers">
-            <div v-for="el in mainJSON.task1.listOfAnswersTask5Point2" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCK2_3}"
+            <div v-for="el in constTaskNightInTheMuseum.listOfAnswersTaskMuseumPaintings2" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCK2_3}"
                  style="padding: 10px 20px"
             >
                 <div @click="chooseAnswer(2, el)">
@@ -43,7 +43,7 @@
     <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}"
          v-if="mainJSON.task1.screens[this.mainJSON.task1.shownScreenID].id === 19">
         <div class="background-answers">
-            <div v-for="el in mainJSON.task1.listOfAnswersTask5Point3" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCK2_4}"
+            <div v-for="el in constTaskNightInTheMuseum.listOfAnswersTaskMuseumPaintings3" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCK2_4}"
                  style="padding: 10px 20px"
             >
                 <div @click="chooseAnswer(3, el)">
@@ -96,6 +96,24 @@
                         el.isShow = true
                     }
                 })
+                if(this.mainJSON.task1.results.ULSCLL1_Log_SCK2_2 === 1){
+                    this.mainJSON.task1.results.ULSCLL1_Score_SCK2_2 = 1
+                }
+                else {
+                    this.mainJSON.task1.results.ULSCLL1_Score_SCK2_2 = 0
+                }
+                if(this.mainJSON.task1.results.ULSCLL1_Log_SCK2_3 === 1){
+                    this.mainJSON.task1.results.ULSCLL1_Score_SCK2_3 = 1
+                }
+                else {
+                    this.mainJSON.task1.results.ULSCLL1_Score_SCK2_3 = 0
+                }
+                if(this.mainJSON.task1.results.ULSCLL1_Log_SCK2_4 === 4){
+                    this.mainJSON.task1.results.ULSCLL1_Score_SCK2_4 = 1
+                }
+                else {
+                    this.mainJSON.task1.results.ULSCLL1_Score_SCK2_4 = 0
+                }
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
                     [

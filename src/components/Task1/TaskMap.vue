@@ -74,6 +74,22 @@
                         }
                     })
                 }
+
+                let maxScore = 0
+                this.mainJSON.task1.listOfAnswersTask9.forEach( el => {
+                    if(el === "Река Ока" || el === "Пруд Королевский" || el === "Парк Таганский"){
+                        maxScore++
+                    }
+                })
+                if(this.mainJSON.task1.listOfAnswersTask9.length === 3 && maxScore === 3){
+                    this.mainJSON.task1.results.ULSCLL1_Score_LLK3_1 = 2
+                }
+                else if(this.mainJSON.task1.listOfAnswersTask9.length === 2 && maxScore === 2){
+                    this.mainJSON.task1.results.ULSCLL1_Score_LLK3_1 = 1
+                }
+                else{
+                    this.mainJSON.task1.results.ULSCLL1_Score_LLK3_1 = 0
+                }
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
                     [

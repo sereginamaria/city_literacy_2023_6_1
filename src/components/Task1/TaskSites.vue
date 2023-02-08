@@ -58,6 +58,22 @@
                         el.isShow = true
                     }
                 })
+                let maxScore = 0
+                this.mainJSON.task1.listOfChoosenAnswersTask12.forEach(el => {
+                    if(el === 1 || el === 3){
+                        maxScore++
+                    }
+                })
+                if(this.mainJSON.task1.listOfChoosenAnswersTask12.length === 2 && maxScore === 2){
+                    this.mainJSON.task1.results.ULSCLL1_Score_LLK5_1 = 2
+                }
+                else if(this.mainJSON.task1.listOfChoosenAnswersTask12.length === 1 && maxScore === 1){
+                    this.mainJSON.task1.results.ULSCLL1_Score_LLK5_1 = 1
+                }
+                else {
+                    this.mainJSON.task1.results.ULSCLL1_Score_LLK5_1 = 0
+                }
+                
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
                     [
