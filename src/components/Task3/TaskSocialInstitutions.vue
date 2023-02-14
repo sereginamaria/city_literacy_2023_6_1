@@ -1,20 +1,20 @@
 <template>
-    <div class="background d-flex justify-content-center align-items-center" style="backdrop-filter: blur(5px);"
+    <div class="background d-flex align-items-center" style="backdrop-filter: blur(5px);"
          :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
         <div class="instruction-block">
             <p>Соотнеси социальные институты и то, какой вклад они вносят в заботу о природе.
             </p>
         </div>
-        <div class="background-task">
-            Социальные институты
+        <div class="d-flex justify-content-center align-items-center w-100 h-100">
+            <div class="background-task">
+                Социальные институты
+            </div>
         </div>
 
         <div class="background-text">
-        <div class="d-flex">
+            <div class="d-flex">
                 <p>
-                    {{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name}}
-                </p>
-                <p>
+                    <span class="name-in-dialog">{{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name}}</span>
                     {{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].text}}
                 </p>
             </div>

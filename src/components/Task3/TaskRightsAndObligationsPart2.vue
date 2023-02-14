@@ -2,7 +2,7 @@
     <div class="background d-flex align-items-center flex-column" style="backdrop-filter: blur(5px);"
          :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
         <div class="instruction-block">
-            <p>Дополни схему, перетащив фразы снизу в соответствующий пустой блок.
+            <p>Что в нашей стране относится к основным правам, а что к обязанностям? Дополни схему, перетащив фразы снизу в соответствующий пустой блок.
             </p>
         </div>
         <div class="d-flex justify-content-center align-items-center w-100 h-100">
@@ -101,11 +101,9 @@
             </div>
         </div>
         <div class="background-text">
-        <div class="d-flex">
+            <div class="d-flex">
                 <p>
-                    {{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name}}
-                </p>
-                <p>
+                    <span class="name-in-dialog">{{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name}}</span>
                     {{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].text}}
                 </p>
             </div>

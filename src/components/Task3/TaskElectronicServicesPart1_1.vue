@@ -39,7 +39,7 @@
     import {mapGetters, mapMutations} from "vuex";
 
     export default {
-        name: "TaskWhoIsAVolunteer",
+        name: "TaskElectronicServicesPart1_1",
         props: {
             screen: {},
             constTaskVolunteers: {}
@@ -82,15 +82,5 @@
 </script>
 
 <style scoped>
-    .background-task-who-is-a-volunteer {
-        padding: 0 5%;
-        background: #fff;
-        border: 1px solid #54bedf;
-        width: 50%;
-        height: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+
 </style>

@@ -16,9 +16,7 @@
         <div class="background-text">
         <div class="d-flex">
                 <p>
-                    {{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name}}
-                </p>
-                <p>
+                    <span class="name-in-dialog">{{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name}}</span>
                     {{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].text}}
                 </p>
             </div>
