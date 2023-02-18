@@ -48,28 +48,37 @@
                 ]
                 this.modalMessage = 'Ты действительно хочешь завершить задание  перейти к следующему?'
             },
-            checkAnswer(){
+            checkAnswer(status){
                 this.modalVisible = false
                 let change = 0
-                if(this.mainJSON.task1.isShow && change === 0){
-                    this.mainJSON.task1["isShow"] = false
-                    this.mainJSON.task2["isShow"] = true
-                    this.mainJSON["instructionShow"] = true
-                    this.mainJSON["mainPageShow"] = false
-                    change++
+                if(status){
+                    if(this.mainJSON.task1.isShow && change === 0){
+                        this.mainJSON.task1["isShow"] = false
+                        this.mainJSON.task2["isShow"] = true
+                        this.mainJSON["instructionShow"] = true
+                        this.mainJSON["mainPageShow"] = false
+                        change++
+                    }
+                    if(this.mainJSON.task2.isShow  && change === 0){
+                        this.mainJSON.task2["isShow"] = false
+                        this.mainJSON.task3["isShow"] = true
+                        this.mainJSON["instructionShow"] = true
+                        this.mainJSON["mainPageShow"] = false
+                        change++
+                    }
+                    if(this.mainJSON.task3.isShow  && change === 0){
+                        this.modalVisible = true
+                        this.modalButtons = [
+                            {value: "Да", status: 'exit'},
+                            {value: "Нет", status: false}
+                        ]
+                        this.modalMessage = 'Ты действительно хочешь выйти?'
+                    }
                 }
-                if(this.mainJSON.task2.isShow  && change === 0){
-                    this.mainJSON.task2["isShow"] = false
-                    this.mainJSON.task3["isShow"] = true
-                    this.mainJSON["instructionShow"] = true
-                    this.mainJSON["mainPageShow"] = false
-                    change++
-                }
-                if(this.mainJSON.task3.isShow  && change === 0){
-                    this.mainJSON["task2Show"] = false
-                    this.mainJSON["task3Show"] = true
-                    this.mainJSON["instructionShow"] = true
-                    this.mainJSON["mainPageShow"] = false
+                if(status === 'exit'){
+                    this.mainJSON.task3["isShow"] = false
+                    this.mainJSON['loginShow'] = true
+                    this.mainJSON['mainPageShow'] = false
                 }
             }
         }

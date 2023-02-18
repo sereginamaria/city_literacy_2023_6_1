@@ -1,8 +1,14 @@
 <template>
     <!--Задание 10 задание-->
-    <div class="background d-flex justify-content-center align-items-center" style="backdrop-filter: blur(5px);"
+    <div class="background d-flex justify-content-center align-items-center flex-column" style="backdrop-filter: blur(5px);"
          :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
-        <div class="background-task">
+        <div class="instruction-block">
+            <p>
+                Добавь подписи к объектам на картинках, перенеси название выбранного объекта в нужное поле.
+            </p>
+        </div>
+        <div class="d-flex justify-content-center align-items-center w-100 h-100">
+            <div class="background-task">
             <div class="d-flex">
                 <div style="display: flex; align-items: center; flex-direction: column; justify-content: center;">
                     <img src="../../assets/Task10Element1.png" alt="" style="width: calc(100%/1.2);">
@@ -52,7 +58,7 @@
             </div>
 
             <draggable
-                    class="list-group d-flex list-of-answers"
+                    class="list-group d-flex list-of-answers-attractions"
                     :list="this.mainJSON.task1.listOfElementsTask10"
                     group="task10"
             >
@@ -63,7 +69,7 @@
                 </template>
             </draggable>
         </div>
-
+        </div>
         <div class="background-text">
             <p>
                 Добавь подписи к объектам на картинках, перенеси название выбранного объекта в нужное поле.
@@ -172,7 +178,7 @@
         background: #D2FFF7;
         border-radius: 4px;
     }
-    .list-of-answers {
+    .list-of-answers-attractions {
         flex-wrap: wrap;
         align-items: center;
         flex-direction: row;

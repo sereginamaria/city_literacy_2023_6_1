@@ -6,7 +6,7 @@
             </p>
         </div>
         <div class="d-flex justify-content-center align-items-center w-100 h-100">
-            <div class="background-task-who-is-a-volunteer">
+            <div class="background-task w-50 h-50">
                 <p>Волонтёр — это человек, который
                     <MySelect :list="constTaskVolunteers.listOfAnswersTaskWhoIsAVolunteer1" :listID="1" @answer="addAnswer"
                               :selected="this.mainJSON.task3.ULSE1_Log_SEK4_1"></MySelect>
@@ -23,6 +23,18 @@
 
         <div class="background-text">
             <div class="d-flex">
+                      <div class="me-2">
+                    <img src="../../assets/TaskVolunteersAvatarAnn.png" alt="" style="width: 50px"
+                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Анна Ивановна: ' ||
+                         constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Руководитель школьного клуба волонтеров Анна Ивановна: '">
+                    <img src="../../assets/TaskVolunteersAvatarMax.png" alt="" style="width: 50px"
+                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Макс: ' ||
+                         constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Гость: '">
+                    <img src="../../assets/TaskVolunteersAvatarSchoolgirl.png" alt="" style="width: 50px"
+                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Школьница: '">
+                    <img src="../../assets/TaskVolunteersAvatarSchoolboy.png" alt="" style="width: 50px"
+                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Школьник: '">
+                </div>
                 <p>
                     <span class="name-in-dialog">{{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name}}</span>
                     {{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].text}}
@@ -50,8 +62,9 @@
         methods: {
             ...mapMutations(["push_mainJSON"]),
             addAnswer(el, listID) {
-                this.mainJSON.task3["ULSE1_Log_SEK4_" + listID] = el.value
-                this.mainJSON.task3.results["ULSE1_Log_SEK4_" + listID] = el.id
+                console.log(el, listID)
+                this.mainJSON.task3["ULSE1_Log_SEK4_" + listID] = el
+                this.mainJSON.task3.results["ULSE1_Log_SEK4_" + listID] = el
             },
             checkAnswer() {
                 screen.isShow = false
@@ -61,6 +74,8 @@
                         el.isShow = true
                     }
                 })
+                console.log(this.mainJSON.task3.results.ULSE1_Log_SEK4_1)
+                console.log(this.mainJSON.task3.results)
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
                     [
@@ -88,9 +103,5 @@
         border: 1px solid #54bedf;
         width: 50%;
         height: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
     }
 </style>

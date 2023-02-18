@@ -1,9 +1,14 @@
 <template>
     <!--Задание 14 задание-->
-    <div class="background d-flex justify-content-center align-items-center"
+    <div class="background d-flex align-items-center flex-column"
          :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}" style="backdrop-filter: blur(5px);">
-        <div class="background-task justify-content-between" style="padding: 2%">
-            <div class="d-flex" style="height: 30%">
+        <div class="instruction-block">
+            <p>Перемести предупреждающие знаки под соответствующие подписи.
+            </p>
+        </div>
+        <div class="d-flex justify-content-center align-items-center w-100 h-100">
+            <div class="background-task justify-content-between" style="padding: 2%; height: 85%">
+            <div class="d-flex" style="height: 35%">
                 <div class="task14El">
                     <div class="task14El1"> Опасность падения груза</div>
                     <draggable
@@ -72,7 +77,7 @@
             <draggable
                     class="list-group list-of-answers d-flex flex-row flex-wrap justify-content-center align-items-center"
                     :list="this.mainJSON.task1.listOfAnswersTask14"
-                    group="task14" style="    height: 50%; width: 80%;"
+                    group="task14" style="height: 55%; width: 80%;"
             >
                 <template #item="{ element }">
                     <div>
@@ -82,11 +87,21 @@
                 </template>
             </draggable>
         </div>
-
+        </div>
         <div class="background-text">
-            <p>
-                {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
-            </p>
+                 <div class="d-flex">
+                <div class="me-2">
+                    <img src="../../assets/TaskNightInTheMuseumAvatarAsia.png" alt="" style="width: 50px"
+                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Ася: ' ||
+                         constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
+                    <img src="../../assets/TaskNightInTheMuseumAvatarKolia.png" alt="" style="width: 50px"
+                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Коля: '">
+                </div>
+                <p>
+                    <span class="name-in-dialog">{{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name}}</span>
+                    {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
+                </p>
+            </div>
             <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.task1.results.ULSCLL1_Log_SCK3_2 !== 'NA' || mainJSON.task1.results.ULSCLL1_Log_SCK3_3 !== 'NA'
             || mainJSON.task1.results.ULSCLL1_Log_SCK3_4 !== 'NA' || mainJSON.task1.results.ULSCLL1_Log_SCK3_5 !== 'NA'"
             >Готово</MyButton>
@@ -153,7 +168,7 @@
     .task14Triangle {
         background: url("../../assets/triangle.png") rgba(255, 255, 255, 0.01) no-repeat;
         background-size: contain;
-        height: 70%;
+        height: 60%;
         width: 100%;
         background-position: center center;
     }

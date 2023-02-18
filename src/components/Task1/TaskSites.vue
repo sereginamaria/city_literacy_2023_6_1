@@ -1,6 +1,10 @@
 <template>
     <!--Задание 12 задание-->
     <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
+        <div class="instruction-block">
+            <p>Выбери ВСЕ подходящие сайты, которыми можно воспользоваться, чтобы посмотреть достопримечательности Москвы онлайн.
+            </p>
+        </div>
         <div class="background-answers">
             <div v-for="el in mainJSON.task1.listOfAnswersTask12" :key="el.id" :class="{choosenAnswer: el.choose}"
                  style="padding: 10px 20px"
@@ -12,9 +16,19 @@
             </div>
         </div>
         <div class="background-text">
-            <p>
-                {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
-            </p>
+                 <div class="d-flex">
+                <div class="me-2">
+                    <img src="../../assets/TaskNightInTheMuseumAvatarAsia.png" alt="" style="width: 50px"
+                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Ася: ' ||
+                         constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
+                    <img src="../../assets/TaskNightInTheMuseumAvatarKolia.png" alt="" style="width: 50px"
+                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Коля: '">
+                </div>
+                <p>
+                    <span class="name-in-dialog">{{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name}}</span>
+                    {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
+                </p>
+            </div>
             <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.task1.results.ULSCLL1_Log_LLK5_1 !== 'NA' && mainJSON.task1.results.ULSCLL1_Log_LLK5_1 !== ''">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>

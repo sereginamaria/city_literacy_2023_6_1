@@ -2,7 +2,7 @@
     <!--Перетаскивание вещей из сумки-->
     <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
         <div class="instruction-block">
-            <p>Инструкция: Какие вещи в сумке небезопасно проносить в музей? Выложи их, перетащив из сумки на стол. Чтобы вернуть вещь в сумку, снова перетащи ее.</p>
+            <p>Какие вещи в сумке небезопасно проносить в музей? Выложи их, перетащив из сумки на стол. Чтобы вернуть вещь в сумку, снова перетащи ее.</p>
         </div>
         <draggable
                 class="list-group draggable-backpack-end"
@@ -28,9 +28,19 @@
             </draggable>
         </div>
         <div class="background-text">
-            <p>
-                {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
-            </p>
+                 <div class="d-flex">
+                <div class="me-2">
+                    <img src="../../assets/TaskNightInTheMuseumAvatarAsia.png" alt="" style="width: 50px"
+                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Ася: ' ||
+                         constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
+                    <img src="../../assets/TaskNightInTheMuseumAvatarKolia.png" alt="" style="width: 50px"
+                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Коля: '">
+                </div>
+                <p>
+                    <span class="name-in-dialog">{{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name}}</span>
+                    {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
+                </p>
+            </div>
             <MyButton class="white-buttons" @click="showModal" v-if="mainJSON.task1.listOfElementsEnd.length !== 0">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
@@ -155,8 +165,8 @@
         left: calc(100%/2.3);
     }
     .draggable-backpack-end {
-        height: calc(100%/3);
-        width: calc(100%/3.3);
+        height: 50%;
+        width: 30%;
         left: calc(100%/8.192);
         bottom: calc(100%/5);
         position: absolute;

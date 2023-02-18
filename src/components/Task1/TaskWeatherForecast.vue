@@ -1,9 +1,14 @@
 <template>
     <!--Задание 15 задание-->
-    <div class="background d-flex justify-content-center align-items-center"
+    <div class="background d-flex align-items-center flex-column"
          :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}" style="backdrop-filter: blur(5px);">
-        <div class="background-task justify-content-between">
-            <div class="d-flex" style="height: 70%">
+        <div class="instruction-block">
+            <p>Построй план прогулки по времени. Выбери, когда лучше посетить то или иное место. Перетащи подходящую активность в нужный временной промежуток.
+            </p>
+        </div>
+        <div class="d-flex justify-content-center align-items-center w-100 h-100">
+            <div class="background-task" style="height: 85%">
+            <div class="d-flex" style="height: 60%">
                 <div class="task15El">
                     <div class="d-flex justify-content-center align-items-center flex-column">
                         <p  style="font-weight: 700; font-size: 30px;">11:00</p>
@@ -11,7 +16,7 @@
                     </div>
                     <draggable
                             @add="error(1)"
-                            class="list-group list-group-el"
+                            class="list-group list-group-el-weather-forecast"
                             :list="this.mainJSON.task1.listOfAnswersTask15_1"
                             group="task15"
                     >
@@ -25,11 +30,11 @@
                 <div class="task15El">
                     <div class="d-flex justify-content-center align-items-center flex-column">
                         <p  style="font-weight: 700; font-size: 30px;">13:00</p>
-                        <img src="../../assets/task15El2.png" alt="" style="width: 100%;">
+                        <img src="../../assets/task15El3.png" alt="" style="width: 100%;">
                     </div>
                     <draggable
                             @add="error(2)"
-                            class="list-group list-group-el"
+                            class="list-group list-group-el-weather-forecast"
                             :list="this.mainJSON.task1.listOfAnswersTask15_2"
                             group="task15"
                     >
@@ -47,7 +52,7 @@
                     </div>
                     <draggable
                             @add="error(3)"
-                            class="list-group list-group-el"
+                            class="list-group list-group-el-weather-forecast"
                             :list="this.mainJSON.task1.listOfAnswersTask15_3"
                             group="task15"
                     >
@@ -61,11 +66,11 @@
                 <div class="task15El">
                     <div class="d-flex justify-content-center align-items-center flex-column">
                         <p  style="font-weight: 700; font-size: 30px;">18:00</p>
-                        <img src="../../assets/task15El3.png" alt="" style="width: 100%;">
+                        <img src="../../assets/task15El2.png" alt="" style="width: 100%;">
                     </div>
                     <draggable
                             @add="error(4)"
-                            class="list-group list-group-el"
+                            class="list-group list-group-el-weather-forecast"
                             :list="this.mainJSON.task1.listOfAnswersTask15_4"
                             group="task15"
                     >
@@ -78,9 +83,9 @@
                 </div>
             </div>
             <draggable
-                    class="list-group list-of-answers d-flex flex-row flex-wrap justify-content-center align-items-center"
+                    class="list-group list-of-answers-weather-forecast d-flex flex-row flex-wrap justify-content-center align-items-center"
                     :list="this.mainJSON.task1.listOfAnswersTask15"
-                    group="task15" style="    height: 50%; width: 80%;"
+                    group="task15"
             >
                 <template #item="{ element }">
                     <div class="task15List">
@@ -89,11 +94,21 @@
                 </template>
             </draggable>
         </div>
-
+        </div>
         <div class="background-text">
-            <p>
-                {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
-            </p>
+                 <div class="d-flex">
+                <div class="me-2">
+                    <img src="../../assets/TaskNightInTheMuseumAvatarAsia.png" alt="" style="width: 50px"
+                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Ася: ' ||
+                         constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
+                    <img src="../../assets/TaskNightInTheMuseumAvatarKolia.png" alt="" style="width: 50px"
+                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Коля: '">
+                </div>
+                <p>
+                    <span class="name-in-dialog">{{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name}}</span>
+                    {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
+                </p>
+            </div>
             <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.task1.results.ULSCLL1_Log_LLK6_1 !== 'NA' || mainJSON.task1.results.ULSCLL1_Log_LLK6_2 !== 'NA'
             || mainJSON.task1.results.ULSCLL1_Log_LLK6_3 !== 'NA' || mainJSON.task1.results.ULSCLL1_Log_LLK6_4 !== 'NA'"
             >Готово</MyButton>
@@ -156,7 +171,12 @@
 </script>
 
 <style scoped>
-    .list-group-el {
+    .list-of-answers-weather-forecast {
+        text-align: center;
+        height: 30%;
+        width: 100%;
+    }
+    .list-group-el-weather-forecast {
         background: #FFFFFF;
         border: 1px dashed #333333;
         border-radius: 4px;
@@ -185,7 +205,7 @@
         justify-content: center;
         align-items: center;
         margin: 20px;
-        width: 25%;
+        width: 20%;
         padding: 20px;
         background: #d2fff7;
         border-radius: 4px;

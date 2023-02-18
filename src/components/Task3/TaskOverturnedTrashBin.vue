@@ -2,34 +2,42 @@
     <div class="background d-flex align-items-center flex-column" style="backdrop-filter: blur(5px);"
          :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
         <div class="instruction-block">
-            <p>Заполни пропуски, выбирая слова, которые больше всего подходят.
+            <p>Выбери все подходящие варианты ответа.
             </p>
         </div>
         <div class="d-flex justify-content-center align-items-center w-100 h-100">
-            <div class="background-task-who-is-a-volunteer">
-                <p>Волонтёр — это человек, который
-                    <MySelect :list="constTaskVolunteers.listOfAnswersTaskWhoIsAVolunteer1" :listID="1" @answer="addAnswer"
-                              :selected="this.mainJSON.task3.ULSE1_Log_SEK4_1"></MySelect>
-                    осуществляет
-                    <MySelect :list="constTaskVolunteers.listOfAnswersTaskWhoIsAVolunteer2" :listID="2" @answer="addAnswer"
-                              :selected="this.mainJSON.task3.ULSE1_Log_SEK4_2"></MySelect>
-                    общественно полезную деятельность
-                    <MySelect :list="constTaskVolunteers.listOfAnswersTaskWhoIsAVolunteer3" :listID="3" @answer="addAnswer"
-                              :selected="this.mainJSON.task3.ULSE1_Log_SEK4_3"></MySelect>
-                </p>
+            <div class="background-answers">
+                <div v-for="el in constTaskVolunteers.listOfAnswersOverturnedTrashBin" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task3.results.ULSE1_Log_SES4}"
+                     style="padding: 10px 20px"
+                >
+                    <div @click="chooseAnswer(el)">
+                        {{el.value}}
+                    </div>
+                </div>
             </div>
         </div>
 
 
         <div class="background-text">
             <div class="d-flex">
+                      <div class="me-2">
+                    <img src="../../assets/TaskVolunteersAvatarAnn.png" alt="" style="width: 50px"
+                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Анна Ивановна: ' ||
+                         constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Руководитель школьного клуба волонтеров Анна Ивановна: '">
+                    <img src="../../assets/TaskVolunteersAvatarMax.png" alt="" style="width: 50px"
+                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Макс: ' ||
+                         constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Гость: '">
+                    <img src="../../assets/TaskVolunteersAvatarSchoolgirl.png" alt="" style="width: 50px"
+                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Школьница: '">
+                    <img src="../../assets/TaskVolunteersAvatarSchoolboy.png" alt="" style="width: 50px"
+                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Школьник: '">
+                </div>
                 <p>
                     <span class="name-in-dialog">{{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name}}</span>
                     {{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].text}}
                 </p>
             </div>
-            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.task3.results.ULSE1_Log_SEK4_1 !== 'NA' ||
-            mainJSON.task3.results.ULSE1_Log_SEK4_2 !== 'NA' || mainJSON.task3.results.ULSE1_Log_SEK4_3 !== 'NA'">Готово</MyButton>
+            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.task3.results.ULSE1_Log_SES4 !== 'NA'">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
@@ -49,9 +57,8 @@
         },
         methods: {
             ...mapMutations(["push_mainJSON"]),
-            addAnswer(el, listID) {
-                this.mainJSON.task3["ULSE1_Log_SEK4_" + listID] = el.value
-                this.mainJSON.task3.results["ULSE1_Log_SEK4_" + listID] = el.id
+            chooseAnswer(el){
+                this.mainJSON.task3.results.ULSE1_Log_SES4 = el.id
             },
             checkAnswer() {
                 screen.isShow = false

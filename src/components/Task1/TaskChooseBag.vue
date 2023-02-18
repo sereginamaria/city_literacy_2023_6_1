@@ -1,6 +1,9 @@
 <template>
     <!--Выбор рюкзака-->
     <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
+        <div class="instruction-block">
+            <p>Выбери рюкзак, с которым пойдешь в музей.</p>
+        </div>
         <div>
             <img src="../../assets/BigBackpack.png" alt="" class="big-backpack" :class="{colorBackpack: mainJSON.task1.results.ULSCLL1_Log_SCK1_1 === 2}"
                  @click="addAnswer(2)" @mouseover="onHover($event, 'Большой рюкзак')" @mouseout="this.toolTipVisible = false">
@@ -8,9 +11,19 @@
                  @click="addAnswer(1)" @mouseover="onHover($event, 'Маленький рюкзак')" @mouseout="this.toolTipVisible = false">
         </div>
         <div class="background-text">
-            <p>
-                {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
-            </p>
+                 <div class="d-flex">
+                <div class="me-2">
+                    <img src="../../assets/TaskNightInTheMuseumAvatarAsia.png" alt="" style="width: 50px"
+                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Ася: ' ||
+                         constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
+                    <img src="../../assets/TaskNightInTheMuseumAvatarKolia.png" alt="" style="width: 50px"
+                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Коля: '">
+                </div>
+                <p>
+                    <span class="name-in-dialog">{{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name}}</span>
+                    {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
+                </p>
+            </div>
             <MyButton class="white-buttons" @click="showModal" v-if="mainJSON.task1.results.ULSCLL1_Log_SCK1_1 !== 'NA'">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>

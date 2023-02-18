@@ -1,6 +1,10 @@
 <template>
     <!--Задание рабочая тетрадь-->
     <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
+        <div class="instruction-block">
+            <p>Заполни пропуски в тексте.
+            </p>
+        </div>
         <div class="background-task1">
             <div style="line-height: 3;" id="collapseModularTask4">
                 Москва была основана в
@@ -123,9 +127,19 @@
         </div>
 
         <div class="background-text">
-            <p>
-                {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
-            </p>
+                 <div class="d-flex">
+                <div class="me-2">
+                    <img src="../../assets/TaskNightInTheMuseumAvatarAsia.png" alt="" style="width: 50px"
+                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Ася: ' ||
+                         constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
+                    <img src="../../assets/TaskNightInTheMuseumAvatarKolia.png" alt="" style="width: 50px"
+                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Коля: '">
+                </div>
+                <p>
+                    <span class="name-in-dialog">{{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name}}</span>
+                    {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
+                </p>
+            </div>
             <MyButton class="white-buttons" @click="checkAnswer"
                       v-if="mainJSON.task1.results.ULSCLL1_Log_LLK1_1 !== 'NA' || mainJSON.task1.results.ULSCLL1_Log_LLK1_2 !== 'NA'
                       || mainJSON.task1.results.ULSCLL1_Log_LLK1_3 !== 'NA' || mainJSON.task1.results.ULSCLL1_Log_LLK1_4 !== 'NA'"

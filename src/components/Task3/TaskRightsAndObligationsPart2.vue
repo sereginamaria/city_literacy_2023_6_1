@@ -6,8 +6,8 @@
             </p>
         </div>
         <div class="d-flex justify-content-center align-items-center w-100 h-100">
-            <div class="background-task">
-                <div class="d-flex justify-content-center w-100" style="height: 70%">
+            <div class="background-task" style="justify-content: unset;">
+                <div class="d-flex justify-content-center w-100" style="height: 50%">
                     <div class="top-block ">
                         <div>Права</div>
                         <draggable
@@ -90,7 +90,7 @@
                 <draggable
                         class="list-group d-flex flex-row flex-wrap justify-content-center align-items-center"
                         :list="this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2"
-                        group="listOfAnswersRightsAndObligationsPart2" style="height: 50%; width: 80%;"
+                        group="listOfAnswersRightsAndObligationsPart2" style="height: 30%; width: 100%"
                 >
                     <template #item="{ element }">
                         <div class="list-of-answers">
@@ -102,13 +102,27 @@
         </div>
         <div class="background-text">
             <div class="d-flex">
+                      <div class="me-2">
+                    <img src="../../assets/TaskVolunteersAvatarAnn.png" alt="" style="width: 50px"
+                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Анна Ивановна: ' ||
+                         constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Руководитель школьного клуба волонтеров Анна Ивановна: '">
+                    <img src="../../assets/TaskVolunteersAvatarMax.png" alt="" style="width: 50px"
+                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Макс: ' ||
+                         constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Гость: '">
+                    <img src="../../assets/TaskVolunteersAvatarSchoolgirl.png" alt="" style="width: 50px"
+                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Школьница: '">
+                    <img src="../../assets/TaskVolunteersAvatarSchoolboy.png" alt="" style="width: 50px"
+                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Школьник: '">
+                </div>
                 <p>
                     <span class="name-in-dialog">{{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name}}</span>
                     {{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].text}}
                 </p>
             </div>
-            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.task3.results.ULSE1_Log_SEK4_1 !== 'NA' ||
-            mainJSON.task3.results.ULSE1_Log_SEK4_2 !== 'NA' || mainJSON.task3.results.ULSE1_Log_SEK4_3 !== 'NA'">Готово</MyButton>
+            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list1.length !== 0 ||
+            mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list2.length !== 0 || mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list3.length !== 0 ||
+            mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list4.length !== 0 || mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list5.length !== 0 ||
+            mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list6.length !== 0">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
@@ -146,6 +160,38 @@
                         el.isShow = true
                     }
                 })
+
+                let list1 = []
+                let list2 = []
+                console.log(list1.length)
+                console.log(list2.length)
+                if(this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list1.length !== 0 ){
+                    list1.push(this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list1[0].id)
+                }
+                if(this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list2.length !== 0 ){
+                    list1.push(this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list2[0].id)
+                }
+                if(this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list3.length !== 0 ){
+                    list1.push(this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list3[0].id)
+                }
+
+                if(this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list4.length !== 0 ){
+                    list2.push(this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list4[0].id)
+                }
+                if(this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list5.length !== 0 ){
+                    list2.push(this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list5[0].id)
+                }
+                if(this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list6.length !== 0 ){
+                    list2.push(this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list6[0].id)
+                }
+
+                if(list1.length !== 0){
+                    this.mainJSON.task3.results.ULSE1_Log_SEK3_1 = list1.join()
+                }
+                if(list2.length !== 0){
+                    this.mainJSON.task3.results.ULSE1_Log_SEK3_2 = list2.join()
+                }
+
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
                     [
@@ -167,26 +213,6 @@
 </script>
 
 <style scoped>
-    .list-of-answers {
-        margin: 10px;
-        width: 20%;
-        background: #d2fff7;
-        border-radius: 4px;
-        padding: 10px 20px;
-        height: 30%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-    .list-group-el {
-        margin: 20px;
-        width: 80%;
-        padding: 20px;
-        background: #FFFFFF;
-        border: 1px dashed #333333;
-        border-radius: 4px;
-    }
     .top-block {
         margin: 0 5%;
         background: #EDFFF6;

@@ -238,50 +238,60 @@
   .transparent-buttons {
     background: transparent;
     border-color: transparent;
+    border-radius: unset;
   }
   .transparent-buttons:hover {
     background: transparent;
     border-color: transparent;
+    border-radius: unset;
   }
   .transparent-buttons:active {
     background: transparent !important;
     border-color: transparent !important;
+    border-radius: unset;
   }
   .transparent-buttons:focus-visible {
     background: transparent;
     border-color: transparent;
     box-shadow: none;
+    border-radius: unset;
   }
   .blue-buttons {
     background: #2a94d6;
-    border-color: #2a94d6;;
+    border-color: #2a94d6;
+    border-radius: unset;
   }
   .white-buttons {
     background: #FCFCFC;
     border: 1px solid #54BEDF;
     color: #333333;
+    border-radius: unset;
   }
   .white-buttons:hover {
     background: #FCFCFC;
     border: 1px solid #54BEDF;
     color: #333333;
+    border-radius: unset;
   }
   .white-buttons:active {
     background: #FCFCFC !important;
     border: 1px solid #54BEDF !important;
     color: #333333 !important;
+    border-radius: unset !important;
   }
   .white-buttons:focus-visible {
     background: #FCFCFC;
     border: 1px solid #54BEDF;
     color: #333333;
     box-shadow: none;
+    border-radius: unset;
   }
   .white-buttons:disabled {
     background: #FCFCFC;
     border: 1px solid #54BEDF;
     color: #333333;
     box-shadow: none;
+    border-radius: unset;
   }
 
   .dialog {

@@ -141,9 +141,18 @@
     border: 5px solid #54BEDF;
     width: 70%;
     padding: 20px;
+    position: relative;
+    z-index: 9;
   }
 
   .instruction-block p {
     font-size: 18px;
+  }
+
+  .name-in-dialog {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
   }
 </style>

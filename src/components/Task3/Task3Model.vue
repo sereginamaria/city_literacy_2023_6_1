@@ -108,12 +108,14 @@
     .background-task {
         background: #FFFFFF;
         border: 1px solid #54BEDF;
-        width: calc(100%/1.2);
-        height: calc(100%/1.2);
+        width: 85%;
+        max-height: 85%;
+        height: max-content;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        padding: 3%;
     }
 
     .background-text p{
@@ -140,6 +142,8 @@
         border: 5px solid #54BEDF;
         width: 70%;
         padding: 20px;
+        position: relative;
+        z-index: 9;
     }
 
     .instruction-block p {
@@ -151,5 +155,37 @@
         font-weight: bold;
         font-size: 18px;
         color: white;
+    }
+
+    .list-of-answers {
+        margin: 10px;
+        width: 20%;
+        background: #d2fff7;
+        border-radius: 4px;
+        padding: 10px 20px;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .list-group-el {
+        margin: 20px;
+        width: 80%;
+        padding: 20px;
+        background: #FFFFFF;
+        border: 1px dashed #333333;
+        border-radius: 4px;
+    }
+
+    .electronic_services_part1_img_block {
+        display: flex;
+        width: 45%;
+        height: 45%;
+        align-items: center;
+        justify-content: center;
+    }
+    .electronic_services_part1_img_block img{
+        height: 100%;
     }
 </style>

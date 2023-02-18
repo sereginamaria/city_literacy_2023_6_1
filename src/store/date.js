@@ -221,7 +221,7 @@ const date = {
                 "src_dop": "Element1_dop.png",
                 "id": 1,
                 "style": "width: calc(100%/5); position: absolute; bottom: calc(100%/1.8); left: calc(100%/6)",
-                "style_dop": "width: calc(100%/5); position: absolute; bottom: calc(100%/1.8); left: calc(100%/6)",
+                "style_dop": "width: calc(100%/5); position: absolute; bottom: 20%; left: calc(100%/6)",
                 "toolTip": "термокружка с чаем"
             },
             {
@@ -268,8 +268,8 @@ const date = {
                 "src": "Element7.png",
                 "src_dop": "Element7_dop.png",
                 "id": 7,
-                "style": "width: calc(100%/13); position: absolute; bottom: calc(100%/1.64); left: calc(100%/2.1)",
-                "style_dop": "rotate: 90deg; width: calc(100%/13); position: absolute; bottom: 0; left: calc(100%/2.1)",
+                "style": "width: 6.5%; position: absolute; bottom: calc(100%/1.64); left: calc(100%/2.1)",
+                "style_dop": "rotate: 90deg; width: 6.5%; position: absolute; bottom: 0; left: calc(100%/2.1)",
                 "toolTip": "ручка"
             },
         ],
@@ -295,91 +295,91 @@ const date = {
                 "name": "Парк Таганский",
                 "id": 1,
                 "choose": false,
-                "style": "width: calc(100%/13); position: absolute; bottom: calc(100%/6.8); left: calc(100%/4)"
+                "style": "width: 6.5%; position: absolute; bottom: calc(100%/6.8); left: calc(100%/4)"
             },
             {
                 "src": "Stiker2.png",
                 "name": "Пруд Королевский",
                 "id": 2,
                 "choose": false,
-                "style": "width: calc(100%/13); position: absolute; bottom: calc(100%/1.6); left: calc(100%/3.8)"
+                "style": "width: 6.5%; position: absolute; bottom: calc(100%/1.6); left: calc(100%/3.8)"
             },
             {
                 "src": "Stiker3.png",
                 "name": "Красная Площадь",
                 "id": 3,
                 "choose": false,
-                "style": "width: calc(100%/13); position: absolute; bottom: calc(100%/1.95); left: calc(100%/2.1)"
+                "style": "width: 6.5%; position: absolute; bottom: calc(100%/1.95); left: calc(100%/2.1)"
             },
             {
                 "src": "Stiker4.png",
                 "name": "Кремль",
                 "id": 4,
                 "choose": false,
-                "style": "width: calc(100%/13); position: absolute; bottom: calc(100%/2.4); left: calc(100%/2.25)"
+                "style": "width: 6.5%; position: absolute; bottom: calc(100%/2.4); left: calc(100%/2.25)"
             },
             {
                 "src": "Stiker5.png",
                 "name": "Патриаршие пруды",
                 "id": 5,
                 "choose": false,
-                "style": "width: calc(100%/13); position: absolute; bottom: calc(100%/1.65); left: calc(100%/3)"
+                "style": "width: 6.5%; position: absolute; bottom: calc(100%/1.65); left: calc(100%/3)"
             },
             {
                 "src": "Stiker6.png",
                 "name": "Тверская улица",
                 "id": 6,
                 "choose": false,
-                "style": "width: calc(100%/13); position: absolute; bottom: calc(100%/1.65); left: calc(100%/2.4)"
+                "style": "width: 6.5%; position: absolute; bottom: calc(100%/1.65); left: calc(100%/2.4)"
             },
             {
                 "src": "Stiker7.png",
                 "name": "Садовое кольцо",
                 "id": 7,
                 "choose": false,
-                "style": "width: calc(100%/13); position: absolute; bottom: calc(100%/1.3); left: calc(100%/2.4)"
+                "style": "width: 6.5%; position: absolute; bottom: calc(100%/1.3); left: calc(100%/2.4)"
             },
             {
                 "src": "Stiker8.png",
                 "name": "Бульварное кольцо",
                 "id": 8,
                 "choose": false,
-                "style": "width: calc(100%/13); position: absolute; bottom: calc(100%/1.5); left: calc(100%/2)"
+                "style": "width: 6.5%; position: absolute; bottom: calc(100%/1.5); left: calc(100%/2)"
             },
             {
                 "src": "Stiker9.png",
                 "name": "Река Ока",
                 "id": 9,
                 "choose": false,
-                "style": "width: calc(100%/13); position: absolute; bottom: calc(100%/7); left: calc(100%/1.32)"
+                "style": "width: 6.5%; position: absolute; bottom: calc(100%/7); left: calc(100%/1.32)"
             },
             {
                 "src": "Stiker10.png",
                 "name": "Река Яуза",
                 "id": 10,
                 "choose": false,
-                "style": "width: calc(100%/13); position: absolute; bottom: calc(100%/1.8); left: calc(100%/1.4)"
+                "style": "width: 6.5%; position: absolute; bottom: calc(100%/1.8); left: calc(100%/1.4)"
             },
             {
                 "src": "Stiker11.png",
                 "name": "Чистые пруды",
                 "id": 11,
                 "choose": false,
-                "style": "width: calc(100%/13); position: absolute; bottom: calc(100%/1.8); left: calc(100%/1.7)"
+                "style": "width: 6.5%; position: absolute; bottom: calc(100%/1.8); left: calc(100%/1.7)"
             },
             {
                 "src": "Stiker12.png",
                 "name": "Парк Зарядье",
                 "id": 12,
                 "choose": false,
-                "style": "width: calc(100%/13); position: absolute; bottom: calc(100%/2.4); left: calc(100%/2)"
+                "style": "width: 6.5%; position: absolute; bottom: calc(100%/2.4); left: calc(100%/2)"
             },
             {
                 "src": "Stiker13.png",
                 "name": "Музеон",
                 "id": 13,
                 "choose": false,
-                "style": "width: calc(100%/13); position: absolute; bottom: calc(100%/4.7); left: calc(100%/2.4)"
+                "style": "width: 6.5%; position: absolute; bottom: calc(100%/4.7); left: calc(100%/2.4)"
             },
         ],
         "listOfAnswersTask9": [],
@@ -691,12 +691,56 @@ const date = {
             "ULSE1_Log_SEK4_2": "NA",
             "ULSE1_Log_SEK4_3": "NA",
 
+            //Card about volunteering
+            "ULSE1_Log_SEK4_4": "NA",
+
             //Rights and Obligations part 1
             "ULSE1_Log_SEK3": "NA",
 
             //Rights and Obligations part 2
             "ULSE1_Log_SEK3_1": "NA",
             "ULSE1_Log_SEK3_2": "NA",
+
+            //Social institutions
+            "ULSE1_Log1_SEK2_1": "NA",
+            "ULSE1_Log2_SEK2_1": "NA",
+            "ULSE1_Log3_SEK2_1": "NA",
+            "ULSE1_Log4_SEK2_1": "NA",
+
+            //Who planted the tree
+            "ULSE1_Log_SEK2_2": "NA",
+
+            //Urban problems
+            "ULSE1_Log1_SEK1_1": "NA",
+            "ULSE1_Log2_SEK1_1": "NA",
+            "ULSE1_Log3_SEK1_1": "NA",
+
+            //Electronic Services 1_1
+            "ULSE1_Log1_SEK5_1": "NA",
+
+            //Electronic Services 1_2
+            "ULSE1_Log2_SEK5_1": "NA",
+
+            //Electronic Services 2
+            "ULSE1_Log_SEK6_1": "NA",
+
+            //Cristmas Tree
+            "ULSE1_Log_SES1_1": "NA",
+
+            //OverternedTrashBin
+            "ULSE1_Log_SES4": "NA",
+
+            //Woman with stroller
+            "ULSE1_Log_SES5": "NA",
+
+            //Taske off the backpack
+            "ULSE1_Log_SES6": "NA",
+
+            //Annn feels bad
+            "ULSE1_Log_SES7": "NA",
+
+            //Waxwing
+            "ULSE1_Log_SES1": "NA",
 
         },
         "shownScreenID": 0,
@@ -870,6 +914,70 @@ const date = {
         "listOfAnswersRightsAndObligationsPart2_list4": [],
         "listOfAnswersRightsAndObligationsPart2_list5": [],
         "listOfAnswersRightsAndObligationsPart2_list6": [],
+        "listOfAnswersSocialInstitutions": [
+            {
+                "value": "Исследует экологические проблемы и ищет пути их решения",
+                "id": 1,
+            },
+            {
+                "value": "Воспитывает в детях бережное отношение к природе",
+                "id": 2,
+            },
+            {
+                "value": "Помогает защищать окружающую среду на добровольной основе",
+                "id": 3,
+            },
+            {
+                "value": "Разрабатывает и принимает законы об охране окружающей среды",
+                "id": 4,
+            },
+        ],
+        "listOfAnswersSocialInstitutions_list1": [],
+        "listOfAnswersSocialInstitutions_list2": [],
+        "listOfAnswersSocialInstitutions_list3": [],
+        "listOfAnswersSocialInstitutions_list4": [],
+        "listOfAnswersUrbanProblems": [
+            {
+                "value": "Большие площади ненужной земли используются с пользой",
+                "id": 1,
+            },
+            {
+                "value": "Выделяются парниковые газы, и повышается температура на планете",
+                "id": 2,
+            },
+            {
+                "value": "Растут траты на системы водоочистки и фильтрации",
+                "id": 3,
+            },
+            {
+                "value": "Идет выработка полезных для промышленности газов",
+                "id": 4,
+            },
+            {
+                "value": "В районы с новейшей застройкой приезжает больше туристов",
+                "id": 5,
+            },
+            {
+                "value": "Появляются альтернативные источники питья",
+                "id": 6,
+            },
+            {
+                "value": "Теряется исторический облик городских районов",
+                "id": 7,
+            },
+            {
+                "value": "Построенные взамен старых здания украшают облик города",
+                "id": 8,
+            },
+            {
+                "value": "Реки становятся более пригодными для городского хозяйства",
+                "id": 9,
+            }
+        ],
+        "listOfAnswersUrbanProblems_list1": [],
+        "listOfAnswersUrbanProblems_list2": [],
+        "listOfAnswersUrbanProblems_list3": [],
+
     }
 }
 

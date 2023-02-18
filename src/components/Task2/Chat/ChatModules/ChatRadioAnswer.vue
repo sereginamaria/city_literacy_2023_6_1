@@ -2,7 +2,7 @@
     <div>
         <div>
             <p class="text-bold" style="color: #2A91D6;">Что ответить?</p>
-            <p class="text-bold" style="color: #2A91D6;">Выбери один подходящий ответ</p>
+            <p class="text-bold" style="color: #2A91D6;">Выбери один вариант ответа.</p>
         </div>
 
         <div class="message-answer" v-for="element in screenConst.answers"

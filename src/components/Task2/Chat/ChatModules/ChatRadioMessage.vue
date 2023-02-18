@@ -11,9 +11,13 @@
                 <p>
                     {{message.text}}
                 </p>
-                <img :src=" require('../../../../assets/' + currentScreenConst.src + '.png') " alt=""
-                     v-if="currentScreenConst.src !== '' && currentScreenConst.message.indexOf(message) === (currentScreenConst.message.length - 1)" style="width: 100%"
-                >
+                <div v-if="currentScreenConst.src !== '' && currentScreenConst.message.indexOf(message) === (currentScreenConst.message.length - 1)">
+                    <p style="font-style: italic">Нажми на картинку, чтобы ее развернуть</p>
+                    <img :src=" require('../../../../assets/' + currentScreenConst.src + '.png') " alt="" @click="openModalDialog(currentScreenConst.src)"
+                         style="width: 40%"
+                    >
+                </div>
+
             </div>
 
         </div>
@@ -31,6 +35,22 @@
             </p>
         </div>
     </div>
+
+    <div v-if="showModal" class="dialog">
+        <div class="dialog-content" style="max-width: 80%; max-height: 85%; padding: 0; margin: 0 auto">
+            <div class="d-flex justify-content-end align-items-center handle" style="padding: 0 10px">
+                <p class="close-button" @click="closeModalDialog" style="color: white; margin-right: 10px; font-size: 24px;">
+                    &times;
+                </p>
+            </div>
+            <div style="height: calc(100% - 36px);">
+                <div style="height: 100%">
+                    <img :src=" require('../../../../assets/' + modalSrc + '.png') " alt="" style="width: 100%; height: 100%;" class="p-3">
+                </div>
+
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -38,6 +58,12 @@
 
     export default {
         name: "ChatRadioMessage",
+        data() {
+            return {
+                showModal: false,
+                modalSrc: '',
+            }
+        },
         props: {
             currentScreenConst: {},
             currentScreen: {}
@@ -45,9 +71,23 @@
         computed: {
             ...mapGetters(['mainJSON']),
         },
+        methods: {
+            openModalDialog(src){
+                this.showModal = true
+                this.modalSrc = src
+            },
+            closeModalDialog(){
+                this.showModal = false
+            }
+        }
     }
 </script>
 
 <style scoped>
-
+    .handle{
+        height: 36px;
+        background: #45607B;
+        box-shadow: 0px 0px 5px rgba(201, 201, 201, 0.5);
+        border-radius: 10px 10px 0px 0px;
+    }
 </style>

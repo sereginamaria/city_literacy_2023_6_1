@@ -17,7 +17,7 @@
             <div class="d-flex align-items-center">
                 <p style="color: #FFFFFF;">Чат</p>
             </div>
-            <p class="close-button" @click="closeChat" style="color: white; margin-right: 10px;">
+            <p class="close-button" style="color: white; margin-right: 10px; font-size: 24px;">
                 &times;
             </p>
         </div>
@@ -38,7 +38,7 @@
             /*      const tH = 700;*/
             return {
                 handlers: ["r", "rb", "b", "lb", "l", "lt", "t", "rt"],
-                left: 20,
+                left: 100,
                 top: 70,
                 height: `80%`,
                 width: '70%',
@@ -58,11 +58,6 @@
             ChatBody,
             VueResizable
         },
-        methods: {
-            closeChat(){
-                this.mainJSON.task2.chatShow = false
-            }
-        }
     }
 </script>
 

@@ -3,13 +3,25 @@
          :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}"
     >
         <div class="background-text">
-        <div class="d-flex">
+            <div class="d-flex">
+                <div class="me-2">
+                    <img src="../../assets/TaskVolunteersAvatarAnn.png" alt="" style="width: 50px"
+                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Анна Ивановна: ' ||
+                         constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Руководитель школьного клуба волонтеров Анна Ивановна: '">
+                    <img src="../../assets/TaskVolunteersAvatarMax.png" alt="" style="width: 50px"
+                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Макс: ' ||
+                         constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Гость: '">
+                    <img src="../../assets/TaskVolunteersAvatarSchoolgirl.png" alt="" style="width: 50px"
+                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Школьница: '">
+                    <img src="../../assets/TaskVolunteersAvatarSchoolboy.png" alt="" style="width: 50px"
+                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Школьник: '">
+                </div>
                 <p>
                     <span class="name-in-dialog">{{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name}}</span>
                     {{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].text}}
                 </p>
             </div>
-            <MyButton class="white-buttons" @click="nextTask(screen)">Далее</MyButton>
+            <MyButton class="white-buttons" @click="nextTask(screen)" style="height: 40px">Далее</MyButton>
         </div>
     </div>
     <MyModal v-model:show="modalVisible" v-model:buttons="modalButtons"
@@ -68,7 +80,7 @@
                 })
             },
             nextTask(screen){
-                if(screen.id === 53){
+                if(screen.id === 65){
                     this.modalVisible = true
                     this.modalButtons = [
                         {value: "Хорошо", status: true}

@@ -4,7 +4,7 @@
     background6: mainJSON.task1.results.ULSCLL1_Log_SCK3_1 === 2, background7: mainJSON.task1.results.ULSCLL1_Log_SCK3_1 === 3, background8: mainJSON.task1.results.ULSCLL1_Log_SCK3_1 === 4}"
     >
         <div class="instruction-block">
-            <p>Инструкция: Что ответишь Коле? Где можно спрятаться от непогоды? Выбери все верные варианты ответа, кликнув на картинку.
+            <p>Что ответишь Коле? Где можно спрятаться от непогоды? Выбери все верные варианты ответа, кликнув на картинку.
             </p>
         </div>
         <div class="task13">
@@ -16,9 +16,19 @@
             </div>
         </div>
         <div class="background-text">
-            <p>
-                {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
-            </p>
+            <div class="d-flex">
+                <div class="me-2">
+                    <img src="../../assets/TaskNightInTheMuseumAvatarAsia.png" alt="" style="width: 50px"
+                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Ася: ' ||
+                         constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
+                    <img src="../../assets/TaskNightInTheMuseumAvatarKolia.png" alt="" style="width: 50px"
+                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Коля: '">
+                </div>
+                <p>
+                    <span class="name-in-dialog">{{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name}}</span>
+                    {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
+                </p>
+            </div>
             <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.task1.results.ULSCLL1_Log_SCK3_1 !== 'NA'">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>

@@ -2,7 +2,7 @@
     <div>
         <div>
             <p class="text-bold" style="color: #2A91D6;">Что ответить?</p>
-            <p class="text-bold" style="color: #2A91D6;">Выбери все подходящие ответы</p>
+            <p class="text-bold" style="color: #2A91D6;">Выбери один или несколько вариантов ответа.</p>
         </div>
 
         <div class="form-check" v-for="option in screenConst.answers"

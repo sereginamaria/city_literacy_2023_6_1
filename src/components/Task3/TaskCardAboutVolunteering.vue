@@ -18,18 +18,18 @@
                     <tbody>
                     <tr>
                         <td>Волонтер помогает изменить к лучшему жизнь в своем городе.</td>
-                        <td> <input class="form-check-input mt-0" type="radio" name="task-card-about-volunteering-1"></td>
-                        <td> <input class="form-check-input mt-0" type="radio" name="task-card-about-volunteering-1"></td>
+                        <td> <input class="form-check-input mt-0" type="radio" name="task-card-about-volunteering-1" @click="addAnswer(1)"></td>
+                        <td> <input class="form-check-input mt-0" type="radio" name="task-card-about-volunteering-1" @click="addAnswer(2)"></td>
                     </tr>
                     <tr>
                         <td>Стать волонтером в возрасте до 14 лет можно без разрешения родителей.</td>
-                        <td> <input class="form-check-input mt-0" type="radio" name="task-card-about-volunteering-2"></td>
-                        <td> <input class="form-check-input mt-0" type="radio" name="task-card-about-volunteering-2"></td>
+                        <td> <input class="form-check-input mt-0" type="radio" name="task-card-about-volunteering-2" @click="addAnswer(3)"></td>
+                        <td> <input class="form-check-input mt-0" type="radio" name="task-card-about-volunteering-2" @click="addAnswer(4)"></td>
                     </tr>
                     <tr>
                         <td>Личная книжка волонтера — это документ, в котором фиксируются достижения волонтера в общественной жизни города.</td>
-                        <td> <input class="form-check-input mt-0" type="radio" name="task-card-about-volunteering-3"></td>
-                        <td> <input class="form-check-input mt-0" type="radio" name="task-card-about-volunteering-3"></td>
+                        <td> <input class="form-check-input mt-0" type="radio" name="task-card-about-volunteering-3" @click="addAnswer(5)"></td>
+                        <td> <input class="form-check-input mt-0" type="radio" name="task-card-about-volunteering-3" @click="addAnswer(6)"></td>
                     </tr>
                     </tbody>
                 </table>
@@ -39,13 +39,24 @@
 
         <div class="background-text">
         <div class="d-flex">
+                      <div class="me-2">
+                    <img src="../../assets/TaskVolunteersAvatarAnn.png" alt="" style="width: 50px"
+                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Анна Ивановна: ' ||
+                         constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Руководитель школьного клуба волонтеров Анна Ивановна: '">
+                    <img src="../../assets/TaskVolunteersAvatarMax.png" alt="" style="width: 50px"
+                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Макс: ' ||
+                         constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Гость: '">
+                    <img src="../../assets/TaskVolunteersAvatarSchoolgirl.png" alt="" style="width: 50px"
+                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Школьница: '">
+                    <img src="../../assets/TaskVolunteersAvatarSchoolboy.png" alt="" style="width: 50px"
+                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Школьник: '">
+                </div>
                 <p>
                     <span class="name-in-dialog">{{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name}}</span>
                     {{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].text}}
                 </p>
             </div>
-            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.task3.results.ULSE1_Log_SEK4_1 !== 'NA' ||
-            mainJSON.task3.results.ULSE1_Log_SEK4_2 !== 'NA' || mainJSON.task3.results.ULSE1_Log_SEK4_3 !== 'NA'">Готово</MyButton>
+            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.task3.results.ULSE1_Log_SEK4_4 !== 'NA'">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
@@ -63,8 +74,32 @@
         computed: {
             ...mapGetters(['mainJSON']),
         },
+        data() {
+            return {
+                list1: [],
+                list2: [],
+                list3: []
+            }
+        },
         methods: {
             ...mapMutations(["push_mainJSON"]),
+            addAnswer(id) {
+                if(id === 1 || id === 2){
+                    this.list1 = []
+                    this.list1.push(id)
+                }
+                if(id === 3 || id === 4){
+                    this.list2 = []
+                    this.list2.push(id)
+                }
+                if(id === 5 || id === 6){
+                    this.list3 = []
+                    this.list3.push(id)
+                }
+                let answer = this.list1.concat(this.list2).concat(this.list3)
+                this.mainJSON.task3.results.ULSE1_Log_SEK4_4 = answer.join()
+                console.log(this.mainJSON.task3.results.ULSE1_Log_SEK4_4)
+            },
             checkAnswer() {
                 screen.isShow = false
                 this.mainJSON.task3.shownScreenID++
