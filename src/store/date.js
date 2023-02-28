@@ -107,9 +107,9 @@ const date = {
 
         },
         "isShow": false,
-        "shownScreenID": 52,
+        "shownScreenID": 0,
         "screens": [
-            {"id": 0, "isShow": false, "imgURL": "BackgroundModule0", "haveTask": false,
+            {"id": 0, "isShow": true, "imgURL": "BackgroundModule0", "haveTask": false,
                 "description": ''},
             {"id": 1, "isShow": false, "imgURL": "BackgroundModule1", "haveTask": true, "taskName": "ChooseBag",
                 "description": 'Выбор рюкзака'},
@@ -213,7 +213,7 @@ const date = {
                 "description": 'Предупреждающие знаки'},
             {"id": 51, "isShow": false, "imgURL": "BackgroundModule64", "haveTask": false,
                 "description": ''},
-            {"id": 52, "isShow": true, "imgURL": "BackgroundModule64", "haveTask": true, "taskName": "WeatherForecast",
+            {"id": 52, "isShow": false, "imgURL": "BackgroundModule64", "haveTask": true, "taskName": "WeatherForecast",
                 "description": 'Прогноз погоды'},
             {"id": 53, "isShow": false, "imgURL": "BackgroundModule65", "haveTask": false,
                 "description": ''},
@@ -755,9 +755,9 @@ const date = {
             "ULSE1_Log_SES1": "NA",
 
         },
-        "shownScreenID": 64,
+        "shownScreenID": 0,
         "screens": [
-            {"id": 0, "isShow": false, "imgURL": "TaskVolunteersAcquaintanceMax", "haveTask": false,
+            {"id": 0, "isShow": true, "imgURL": "TaskVolunteersAcquaintanceMax", "haveTask": false,
                 "description": ''},
             {"id": 1, "isShow": false, "imgURL": "TaskVolunteersAcquaintanceAnn", "haveTask": false,
                 "description": ''},
@@ -885,7 +885,7 @@ const date = {
                 "description": 'Свиристель'},
             {"id": 63, "isShow": false, "imgURL": "TaskVolunteersWaxwingAnn2", "haveTask": false,
                 "description": ''},
-            {"id": 64, "isShow": true, "imgURL": "TaskVolunteersEndMax", "haveTask": false,
+            {"id": 64, "isShow": false, "imgURL": "TaskVolunteersEndMax", "haveTask": false,
                 "description": ''},
             {"id": 65, "isShow": false, "imgURL": "TaskVolunteersEndAnn", "haveTask": false,
                 "description": ''},
