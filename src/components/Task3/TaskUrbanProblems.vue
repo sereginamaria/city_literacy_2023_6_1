@@ -23,7 +23,7 @@
                                 <draggable
                                         @add="error(1)"
                                         class="list-group list-group-el"
-                                        :list="this.mainJSON.task3.listOfAnswersUrbanProblems_list1"
+                                        :list="this.mainJSON.taskVolunteers.listOfAnswersUrbanProblems_list1"
                                         group="listOfAnswersUrbanProblems"
                                 >
                                     <template #item="{ element }">
@@ -40,7 +40,7 @@
                                 <draggable
                                         @add="error(2)"
                                         class="list-group list-group-el"
-                                        :list="this.mainJSON.task3.listOfAnswersUrbanProblems_list2"
+                                        :list="this.mainJSON.taskVolunteers.listOfAnswersUrbanProblems_list2"
                                         group="listOfAnswersUrbanProblems"
                                 >
                                     <template #item="{ element }">
@@ -57,7 +57,7 @@
                                 <draggable
                                         @add="error(3)"
                                         class="list-group list-group-el"
-                                        :list="this.mainJSON.task3.listOfAnswersUrbanProblems_list3"
+                                        :list="this.mainJSON.taskVolunteers.listOfAnswersUrbanProblems_list3"
                                         group="listOfAnswersUrbanProblems"
                                 >
                                     <template #item="{ element }">
@@ -72,7 +72,7 @@
                     </table>
                     <draggable
                             class="list-group d-flex flex-row flex-wrap justify-content-center align-items-center"
-                            :list="this.mainJSON.task3.listOfAnswersUrbanProblems"
+                            :list="this.mainJSON.taskVolunteers.listOfAnswersUrbanProblems"
                             group="listOfAnswersUrbanProblems" style="background: #EDFFF6;"
                     >
                         <template #item="{ element }">
@@ -91,23 +91,23 @@
             <div class="d-flex">
                       <div class="me-2">
                     <img src="../../assets/TaskVolunteersAvatarAnn.png" alt="" style="width: 50px"
-                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Анна Ивановна: ' ||
-                         constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Руководитель школьного клуба волонтеров Анна Ивановна: '">
+                         v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Анна Ивановна: ' ||
+                         constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Руководитель школьного клуба волонтеров Анна Ивановна: '">
                     <img src="../../assets/TaskVolunteersAvatarMax.png" alt="" style="width: 50px"
-                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Макс: ' ||
-                         constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Гость: '">
+                         v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Макс: ' ||
+                         constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Гость: '">
                     <img src="../../assets/TaskVolunteersAvatarSchoolgirl.png" alt="" style="width: 50px"
-                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Школьница: '">
+                         v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Школьница: '">
                     <img src="../../assets/TaskVolunteersAvatarSchoolboy.png" alt="" style="width: 50px"
-                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Школьник: '">
+                         v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Школьник: '">
                 </div>
                 <p>
-                    <span class="name-in-dialog">{{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name}}</span>
-                    {{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].text}}
+                    <span class="name-in-dialog">{{constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name}}</span>
+                    {{constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].text}}
                 </p>
             </div>
-            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.task3.listOfAnswersUrbanProblems_list1.length !== 0 ||
-            mainJSON.task3.listOfAnswersUrbanProblems_list2.length !== 0 || mainJSON.task3.listOfAnswersUrbanProblems_list3.length !== 0">Готово</MyButton>
+            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.taskVolunteers.listOfAnswersUrbanProblems_list1.length !== 0 ||
+            mainJSON.taskVolunteers.listOfAnswersUrbanProblems_list2.length !== 0 || mainJSON.taskVolunteers.listOfAnswersUrbanProblems_list3.length !== 0">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
@@ -132,27 +132,27 @@
         methods: {
             ...mapMutations(["push_mainJSON"]),
             error(id) {
-                if(this.mainJSON.task3["listOfAnswersUrbanProblems_list" + id].length > 1){
-                    this.mainJSON.task3.listOfAnswersUrbanProblems.push(this.mainJSON.task3["listOfAnswersUrbanProblems_list" + id][1])
-                    this.mainJSON.task3["listOfAnswersUrbanProblems_list" + id].splice(1, 1)
+                if(this.mainJSON.taskVolunteers["listOfAnswersUrbanProblems_list" + id].length > 1){
+                    this.mainJSON.taskVolunteers.listOfAnswersUrbanProblems.push(this.mainJSON.taskVolunteers["listOfAnswersUrbanProblems_list" + id][1])
+                    this.mainJSON.taskVolunteers["listOfAnswersUrbanProblems_list" + id].splice(1, 1)
                 }
             },
             checkAnswer() {
                 screen.isShow = false
-                this.mainJSON.task3.shownScreenID++
-                this.mainJSON.task3.screens.forEach(el => {
-                    if (el.id === this.mainJSON.task3.shownScreenID) {
+                this.mainJSON.taskVolunteers.shownScreenID++
+                this.mainJSON.taskVolunteers.screens.forEach(el => {
+                    if (el.id === this.mainJSON.taskVolunteers.shownScreenID) {
                         el.isShow = true
                     }
                 })
-                if(this.mainJSON.task3.listOfAnswersUrbanProblems_list1.length !== 0) {
-                    this.mainJSON.task3.results.ULSE1_Log1_SEK1_1 = this.mainJSON.task3.listOfAnswersUrbanProblems_list1[0].id
+                if(this.mainJSON.taskVolunteers.listOfAnswersUrbanProblems_list1.length !== 0) {
+                    this.mainJSON.taskVolunteers.results.ULSE1_Log1_SEK1_1 = this.mainJSON.taskVolunteers.listOfAnswersUrbanProblems_list1[0].id
                 }
-                if(this.mainJSON.task3.listOfAnswersUrbanProblems_list2.length !== 0) {
-                    this.mainJSON.task3.results.ULSE1_Log2_SEK1_1 = this.mainJSON.task3.listOfAnswersUrbanProblems_list2[0].id
+                if(this.mainJSON.taskVolunteers.listOfAnswersUrbanProblems_list2.length !== 0) {
+                    this.mainJSON.taskVolunteers.results.ULSE1_Log2_SEK1_1 = this.mainJSON.taskVolunteers.listOfAnswersUrbanProblems_list2[0].id
                 }
-                if(this.mainJSON.task3.listOfAnswersUrbanProblems_list3.length !== 0) {
-                    this.mainJSON.task3.results.ULSE1_Log3_SEK1_1 = this.mainJSON.task3.listOfAnswersUrbanProblems_list3[0].id
+                if(this.mainJSON.taskVolunteers.listOfAnswersUrbanProblems_list3.length !== 0) {
+                    this.mainJSON.taskVolunteers.results.ULSE1_Log3_SEK1_1 = this.mainJSON.taskVolunteers.listOfAnswersUrbanProblems_list3[0].id
                 }
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =

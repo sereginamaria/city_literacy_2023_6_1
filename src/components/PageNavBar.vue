@@ -1,6 +1,6 @@
 <template>
-    <div class="container-fluid d-flex justify-content-end nav-bar" :class="{'justify-content-between': this.mainJSON.task2.isShow}">
-        <div v-if="this.mainJSON.task2.isShow">
+    <div class="container-fluid d-flex justify-content-end nav-bar" :class="{'justify-content-between': this.mainJSON.taskChatWalk.isShow}">
+        <div v-if="this.mainJSON.taskChatWalk.isShow">
             <div class="d-flex align-items-center h-100">
                 <MyButton data-bs-toggle="collapse" data-bs-target="#collapse-instruction" aria-expanded="false"
                           aria-controls="collapse-instruction" style="background: transparent; border-color: white">
@@ -67,6 +67,9 @@
             checkAnswer(status){
                 this.modalVisible = false
                 if(status){
+                    this.mainJSON.taskVolunteers["isShow"] = false
+                    this.mainJSON.taskChatWalk["isShow"] = false
+                    this.mainJSON.taskNightInTheMuseum["isShow"] = false
                     this.mainJSON['loginShow'] = true
                     this.mainJSON['mainPageShow'] = false
 

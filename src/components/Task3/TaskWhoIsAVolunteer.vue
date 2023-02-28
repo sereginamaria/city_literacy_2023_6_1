@@ -9,13 +9,13 @@
             <div class="background-task h-50" style="width: 70%">
                 <p style="font-size: 20px">Волонтёр — это человек, который
                     <MySelect :list="constTaskVolunteers.listOfAnswersTaskWhoIsAVolunteer1" :listID="1" @answer="addAnswer"
-                              :selected="this.mainJSON.task3.ULSE1_Log_SEK4_1" style="font-size: 20px"></MySelect>
+                              :selected="this.mainJSON.taskVolunteers.ULSE1_Log_SEK4_1" style="font-size: 20px"></MySelect>
                     осуществляет
                     <MySelect :list="constTaskVolunteers.listOfAnswersTaskWhoIsAVolunteer2" :listID="2" @answer="addAnswer"
-                              :selected="this.mainJSON.task3.ULSE1_Log_SEK4_2" style="font-size: 20px"></MySelect>
+                              :selected="this.mainJSON.taskVolunteers.ULSE1_Log_SEK4_2" style="font-size: 20px"></MySelect>
                     общественно полезную деятельность
                     <MySelect :list="constTaskVolunteers.listOfAnswersTaskWhoIsAVolunteer3" :listID="3" @answer="addAnswer"
-                              :selected="this.mainJSON.task3.ULSE1_Log_SEK4_3" style="font-size: 20px"></MySelect>.
+                              :selected="this.mainJSON.taskVolunteers.ULSE1_Log_SEK4_3" style="font-size: 20px"></MySelect>.
                 </p>
             </div>
         </div>
@@ -25,23 +25,23 @@
             <div class="d-flex">
                       <div class="me-2">
                     <img src="../../assets/TaskVolunteersAvatarAnn.png" alt="" style="width: 50px"
-                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Анна Ивановна: ' ||
-                         constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Руководитель школьного клуба волонтеров Анна Ивановна: '">
+                         v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Анна Ивановна: ' ||
+                         constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Руководитель школьного клуба волонтеров Анна Ивановна: '">
                     <img src="../../assets/TaskVolunteersAvatarMax.png" alt="" style="width: 50px"
-                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Макс: ' ||
-                         constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Гость: '">
+                         v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Макс: ' ||
+                         constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Гость: '">
                     <img src="../../assets/TaskVolunteersAvatarSchoolgirl.png" alt="" style="width: 50px"
-                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Школьница: '">
+                         v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Школьница: '">
                     <img src="../../assets/TaskVolunteersAvatarSchoolboy.png" alt="" style="width: 50px"
-                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Школьник: '">
+                         v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Школьник: '">
                 </div>
                 <p>
-                    <span class="name-in-dialog">{{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name}}</span>
-                    {{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].text}}
+                    <span class="name-in-dialog">{{constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name}}</span>
+                    {{constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].text}}
                 </p>
             </div>
-            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.task3.results.ULSE1_Log_SEK4_1 !== 'NA' ||
-            mainJSON.task3.results.ULSE1_Log_SEK4_2 !== 'NA' || mainJSON.task3.results.ULSE1_Log_SEK4_3 !== 'NA'">Готово</MyButton>
+            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.taskVolunteers.results.ULSE1_Log_SEK4_1 !== 'NA' ||
+            mainJSON.taskVolunteers.results.ULSE1_Log_SEK4_2 !== 'NA' || mainJSON.taskVolunteers.results.ULSE1_Log_SEK4_3 !== 'NA'">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
@@ -62,14 +62,14 @@
         methods: {
             ...mapMutations(["push_mainJSON"]),
             addAnswer(el, listID) {
-                this.mainJSON.task3["ULSE1_Log_SEK4_" + listID] = el
-                this.mainJSON.task3.results["ULSE1_Log_SEK4_" + listID] = el
+                this.mainJSON.taskVolunteers["ULSE1_Log_SEK4_" + listID] = el
+                this.mainJSON.taskVolunteers.results["ULSE1_Log_SEK4_" + listID] = el
             },
             checkAnswer() {
                 screen.isShow = false
-                this.mainJSON.task3.shownScreenID++
-                this.mainJSON.task3.screens.forEach(el => {
-                    if (el.id === this.mainJSON.task3.shownScreenID) {
+                this.mainJSON.taskVolunteers.shownScreenID++
+                this.mainJSON.taskVolunteers.screens.forEach(el => {
+                    if (el.id === this.mainJSON.taskVolunteers.shownScreenID) {
                         el.isShow = true
                     }
                 })

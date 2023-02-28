@@ -1,20 +1,20 @@
 <template>
     <div>
        <!-- <PageNavBar/>-->
-        <Task1Model v-if="this.mainJSON.task1.isShow"/>
-        <Task2Model v-if="this.mainJSON.task2.isShow"/>
-        <Task3Model v-if="this.mainJSON.task3.isShow"/>
+        <ModelTaskNightInTheMuseum v-if="this.mainJSON.taskNightInTheMuseum.isShow"/>
+        <ModelTaskChatWalk v-if="this.mainJSON.taskChatWalk.isShow"/>
+        <ModelTaskVolunteers v-if="this.mainJSON.taskVolunteers.isShow"/>
     </div>
 </template>
 
 <script>
-    import Task1Model from "@/components/Task1/Task1Model";
+    import ModelTaskNightInTheMuseum from "@/components/Task1/ModelTaskNightInTheMuseum";
     import {mapGetters} from "vuex";
-    import Task2Model from "@/components/Task2/Task2Model";
-    import Task3Model from "@/components/Task3/Task3Model";
+    import ModelTaskChatWalk from "@/components/Task2/ModelTaskChatWalk";
+    import ModelTaskVolunteers from "@/components/Task3/ModelTaskVolunteers";
     export default {
         name: "PageBody",
-        components: {Task3Model, Task2Model, Task1Model},
+        components: {ModelTaskVolunteers, ModelTaskChatWalk, ModelTaskNightInTheMuseum},
         computed: {
             ...mapGetters(['mainJSON']),
         },

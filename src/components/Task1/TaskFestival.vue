@@ -6,7 +6,7 @@
             </p>
         </div>
         <div class="option-answers-background">
-            <div v-for="el in mainJSON.task1.listOfAnswersTask11" :key="el.id" :class="{choosenAnswer: el.choose}"
+            <div v-for="el in mainJSON.taskNightInTheMuseum.listOfAnswersTask11" :key="el.id" :class="{choosenAnswer: el.choose}"
                  class="option-answers-border"
             >
                 <div @click="chooseAnswer(el)">
@@ -18,17 +18,17 @@
                  <div class="d-flex">
                 <div class="me-2">
                     <img src="../../assets/TaskNightInTheMuseumAvatarAsia.png" alt="" style="width: 50px"
-                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Ася: ' ||
-                         constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
+                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Ася: ' ||
+                         constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
                     <img src="../../assets/TaskNightInTheMuseumAvatarKolia.png" alt="" style="width: 50px"
-                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Коля: '">
+                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Коля: '">
                 </div>
                 <p>
-                    <span class="name-in-dialog">{{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name}}</span>
-                    {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
+                    <span class="name-in-dialog">{{constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name}}</span>
+                    {{constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].text}}
                 </p>
             </div>
-            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.task1.results.ULSCLL1_Log_LLK4_1 !== 'NA' && mainJSON.task1.results.ULSCLL1_Log_LLK4_1 !== ''">Готово</MyButton>
+            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_LLK4_1 !== 'NA' && mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_LLK4_1 !== ''">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
@@ -50,41 +50,41 @@
             ...mapMutations(["push_mainJSON"]),
             chooseAnswer(el) {
                 let k = 0
-                this.mainJSON.task1.listOfChoosenAnswersTask11.forEach(elMass => {
+                this.mainJSON.taskNightInTheMuseum.listOfChoosenAnswersTask11.forEach(elMass => {
                     if(elMass === el.id){
-                        this.mainJSON.task1.listOfChoosenAnswersTask11.splice(this.mainJSON.task1.listOfChoosenAnswersTask11.indexOf(elMass), 1)
+                        this.mainJSON.taskNightInTheMuseum.listOfChoosenAnswersTask11.splice(this.mainJSON.taskNightInTheMuseum.listOfChoosenAnswersTask11.indexOf(elMass), 1)
                         el.choose = false
                         k++
                     }
                 })
                 if(k === 0){
-                    this.mainJSON.task1.listOfChoosenAnswersTask11.push(el.id)
+                    this.mainJSON.taskNightInTheMuseum.listOfChoosenAnswersTask11.push(el.id)
                     el.choose = true
                 }
-                this.mainJSON.task1.results.ULSCLL1_Log_LLK4_1 = this.mainJSON.task1.listOfChoosenAnswersTask11.join()
+                this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_LLK4_1 = this.mainJSON.taskNightInTheMuseum.listOfChoosenAnswersTask11.join()
             },
             checkAnswer() {
                 screen.isShow = false
-                this.mainJSON.task1.shownScreenID++
-                this.mainJSON.task1.screens.forEach(el => {
-                    if (el.id === this.mainJSON.task1.shownScreenID) {
+                this.mainJSON.taskNightInTheMuseum.shownScreenID++
+                this.mainJSON.taskNightInTheMuseum.screens.forEach(el => {
+                    if (el.id === this.mainJSON.taskNightInTheMuseum.shownScreenID) {
                         el.isShow = true
                     }
                 })
                 let maxScore = 0
-                this.mainJSON.task1.listOfChoosenAnswersTask11.forEach(el => {
+                this.mainJSON.taskNightInTheMuseum.listOfChoosenAnswersTask11.forEach(el => {
                     if(el === 11 || el === 12){
                         maxScore++
                     }
                 })
-                if(this.mainJSON.task1.listOfChoosenAnswersTask11.length === 2 && maxScore === 2){
-                    this.mainJSON.task1.results.ULSCLL1_Score_LLK4_1 = 2
+                if(this.mainJSON.taskNightInTheMuseum.listOfChoosenAnswersTask11.length === 2 && maxScore === 2){
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_LLK4_1 = 2
                 }
-                else if(this.mainJSON.task1.listOfChoosenAnswersTask11.length === 1 && maxScore === 1){
-                    this.mainJSON.task1.results.ULSCLL1_Score_LLK4_1 = 1
+                else if(this.mainJSON.taskNightInTheMuseum.listOfChoosenAnswersTask11.length === 1 && maxScore === 1){
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_LLK4_1 = 1
                 }
                 else {
-                    this.mainJSON.task1.results.ULSCLL1_Score_LLK4_1 = 0
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_LLK4_1 = 0
                 }
 
                 let t = new Date()

@@ -17,7 +17,7 @@
                     <draggable
                             @add="error(1)"
                             class="list-group list-group-el-weather-forecast"
-                            :list="this.mainJSON.task1.listOfAnswersTask15_1"
+                            :list="this.mainJSON.taskNightInTheMuseum.listOfAnswersTask15_1"
                             group="task15"
                     >
                         <template #item="{ element }">
@@ -35,7 +35,7 @@
                     <draggable
                             @add="error(2)"
                             class="list-group list-group-el-weather-forecast"
-                            :list="this.mainJSON.task1.listOfAnswersTask15_2"
+                            :list="this.mainJSON.taskNightInTheMuseum.listOfAnswersTask15_2"
                             group="task15"
                     >
                         <template #item="{ element }">
@@ -53,7 +53,7 @@
                     <draggable
                             @add="error(3)"
                             class="list-group list-group-el-weather-forecast"
-                            :list="this.mainJSON.task1.listOfAnswersTask15_3"
+                            :list="this.mainJSON.taskNightInTheMuseum.listOfAnswersTask15_3"
                             group="task15"
                     >
                         <template #item="{ element }">
@@ -71,7 +71,7 @@
                     <draggable
                             @add="error(4)"
                             class="list-group list-group-el-weather-forecast"
-                            :list="this.mainJSON.task1.listOfAnswersTask15_4"
+                            :list="this.mainJSON.taskNightInTheMuseum.listOfAnswersTask15_4"
                             group="task15"
                     >
                         <template #item="{ element }">
@@ -84,7 +84,7 @@
             </div>
             <draggable
                     class="list-group list-of-answers-weather-forecast d-flex flex-row flex-wrap justify-content-center align-items-center"
-                    :list="this.mainJSON.task1.listOfAnswersTask15"
+                    :list="this.mainJSON.taskNightInTheMuseum.listOfAnswersTask15"
                     group="task15"
             >
                 <template #item="{ element }">
@@ -99,18 +99,18 @@
                  <div class="d-flex">
                 <div class="me-2">
                     <img src="../../assets/TaskNightInTheMuseumAvatarAsia.png" alt="" style="width: 50px"
-                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Ася: ' ||
-                         constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
+                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Ася: ' ||
+                         constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
                     <img src="../../assets/TaskNightInTheMuseumAvatarKolia.png" alt="" style="width: 50px"
-                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Коля: '">
+                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Коля: '">
                 </div>
                 <p>
-                    <span class="name-in-dialog">{{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name}}</span>
-                    {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
+                    <span class="name-in-dialog">{{constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name}}</span>
+                    {{constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].text}}
                 </p>
             </div>
-            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.task1.results.ULSCLL1_Log_LLK6_1 !== 'NA' || mainJSON.task1.results.ULSCLL1_Log_LLK6_2 !== 'NA'
-            || mainJSON.task1.results.ULSCLL1_Log_LLK6_3 !== 'NA' || mainJSON.task1.results.ULSCLL1_Log_LLK6_4 !== 'NA'"
+            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_LLK6_1 !== 'NA' || mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_LLK6_2 !== 'NA'
+            || mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_LLK6_3 !== 'NA' || mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_LLK6_4 !== 'NA'"
             >Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
@@ -136,17 +136,17 @@
         methods: {
             ...mapMutations(["push_mainJSON"]),
             error(id) {
-                if(this.mainJSON.task1["listOfAnswersTask15_" + id].length > 1){
-                    this.mainJSON.task1.listOfAnswersTask15.push(this.mainJSON.task1["listOfAnswersTask15_" + id][1])
-                    this.mainJSON.task1["listOfAnswersTask15_" + id].splice(1, 1)
+                if(this.mainJSON.taskNightInTheMuseum["listOfAnswersTask15_" + id].length > 1){
+                    this.mainJSON.taskNightInTheMuseum.listOfAnswersTask15.push(this.mainJSON.taskNightInTheMuseum["listOfAnswersTask15_" + id][1])
+                    this.mainJSON.taskNightInTheMuseum["listOfAnswersTask15_" + id].splice(1, 1)
                 }
-                this.mainJSON.task1.results['ULSCLL1_Log_LLK6_' + id] = this.mainJSON.task1["listOfAnswersTask15_" + id][0].id
+                this.mainJSON.taskNightInTheMuseum.results['ULSCLL1_Log_LLK6_' + id] = this.mainJSON.taskNightInTheMuseum["listOfAnswersTask15_" + id][0].id
             },
             checkAnswer() {
                 screen.isShow = false
-                this.mainJSON.task1.shownScreenID++
-                this.mainJSON.task1.screens.forEach(el => {
-                    if (el.id === this.mainJSON.task1.shownScreenID) {
+                this.mainJSON.taskNightInTheMuseum.shownScreenID++
+                this.mainJSON.taskNightInTheMuseum.screens.forEach(el => {
+                    if (el.id === this.mainJSON.taskNightInTheMuseum.shownScreenID) {
                         el.isShow = true
                     }
                 })

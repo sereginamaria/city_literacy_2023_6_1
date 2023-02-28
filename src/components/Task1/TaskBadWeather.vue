@@ -1,14 +1,14 @@
 <template>
     <!--Задание 13 задание-->
-    <div class="background backimp" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}" :class="{background5: mainJSON.task1.results.ULSCLL1_Log_SCK3_1 === 1,
-    background6: mainJSON.task1.results.ULSCLL1_Log_SCK3_1 === 2, background7: mainJSON.task1.results.ULSCLL1_Log_SCK3_1 === 3, background8: mainJSON.task1.results.ULSCLL1_Log_SCK3_1 === 4}"
+    <div class="background backimp" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}" :class="{background5: mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK3_1 === 1,
+    background6: mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK3_1 === 2, background7: mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK3_1 === 3, background8: mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK3_1 === 4}"
     >
         <div class="instruction-block">
             <p>Что ответишь Коле? Где можно спрятаться от непогоды? Выбери один ответ.
             </p>
         </div>
         <div class="task13">
-            <div v-for="el in mainJSON.task1.listOfAnswersTask13" :key="el.id" class="task13El" :class="{choosenAnswer1: el.id === mainJSON.task1.results.ULSCLL1_Log_SCK3_1}"
+            <div v-for="el in mainJSON.taskNightInTheMuseum.listOfAnswersTask13" :key="el.id" class="task13El" :class="{choosenAnswer1: el.id === mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK3_1}"
                  @click="chooseAnswer(el)">
                 <div>
                     {{el.name}}
@@ -19,17 +19,17 @@
             <div class="d-flex">
                 <div class="me-2">
                     <img src="../../assets/TaskNightInTheMuseumAvatarAsia.png" alt="" style="width: 50px"
-                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Ася: ' ||
-                         constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
+                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Ася: ' ||
+                         constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
                     <img src="../../assets/TaskNightInTheMuseumAvatarKolia.png" alt="" style="width: 50px"
-                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Коля: '">
+                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Коля: '">
                 </div>
                 <p>
-                    <span class="name-in-dialog">{{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name}}</span>
-                    {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
+                    <span class="name-in-dialog">{{constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name}}</span>
+                    {{constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].text}}
                 </p>
             </div>
-            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.task1.results.ULSCLL1_Log_SCK3_1 !== 'NA'">Готово</MyButton>
+            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK3_1 !== 'NA'">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
@@ -50,21 +50,21 @@
         methods: {
             ...mapMutations(["push_mainJSON"]),
             chooseAnswer(el) {
-                this.mainJSON.task1.results.ULSCLL1_Log_SCK3_1 = el.id
+                this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK3_1 = el.id
             },
             checkAnswer() {
                 screen.isShow = false
-                this.mainJSON.task1.shownScreenID++
-                this.mainJSON.task1.screens.forEach(el => {
-                    if (el.id === this.mainJSON.task1.shownScreenID) {
+                this.mainJSON.taskNightInTheMuseum.shownScreenID++
+                this.mainJSON.taskNightInTheMuseum.screens.forEach(el => {
+                    if (el.id === this.mainJSON.taskNightInTheMuseum.shownScreenID) {
                         el.isShow = true
                     }
                 })
-                if(this.mainJSON.task1.results.ULSCLL1_Log_SCK3_1 === 3){
-                    this.mainJSON.task1.results.ULSCLL1_Score_SCK3_1 = 1
+                if(this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK3_1 === 3){
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_SCK3_1 = 1
                 }
                 else {
-                    this.mainJSON.task1.results.ULSCLL1_Score_SCK3_1 = 0
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_SCK3_1 = 0
                 }
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =

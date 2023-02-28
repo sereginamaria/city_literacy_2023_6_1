@@ -8,7 +8,7 @@
         <div class="form-check" v-for="option in screenConst.answers"
              :key="option.id">
             <input class="form-check-input" type="checkbox" :id=option.id
-                   :value=option v-model="this.mainJSON.task2.checkBox1Selected"
+                   :value=option v-model="this.mainJSON.taskChatWalk.checkBox1Selected"
             />
             <label :for=option.id>{{option.value}}</label>
         </div>
@@ -29,12 +29,12 @@
         },
         methods: {
             save() {
-                this.mainJSON.task2.results[this.screenConst.resultIndicator] = this.mainJSON.task2.checkBox1Selected
-                this.mainJSON.task2.checkBox1Selected = []
+                this.mainJSON.taskChatWalk.results[this.screenConst.resultIndicator] = this.mainJSON.taskChatWalk.checkBox1Selected
+                this.mainJSON.taskChatWalk.checkBox1Selected = []
 
-                this.mainJSON.task2.shownScreenID++
-                this.mainJSON.task2.screens.forEach(el => {
-                    if (el.id === this.mainJSON.task2.shownScreenID) {
+                this.mainJSON.taskChatWalk.shownScreenID++
+                this.mainJSON.taskChatWalk.screens.forEach(el => {
+                    if (el.id === this.mainJSON.taskChatWalk.shownScreenID) {
                         el.isShow = true
                     }
                 })

@@ -17,7 +17,7 @@ export default new Vuex.Store({
     actions: {
         get_mainJSON({commit}){
             if (!localStorage.login && !localStorage.hash) {
-                commit('set_mainJSON', date.date)
+                commit('first_set_mainJSON', date.date)
                 commit('set_constTaskNightInTheMuseum', constTaskNightInTheMuseum.constTaskNightInTheMuseum)
                 commit('set_constTaskChatWalk', constTaskChatWalk.constTaskChatWalk)
                 commit('set_constTaskVolunteers', constTaskVolunteers.constTaskVolunteers)
@@ -49,6 +49,12 @@ export default new Vuex.Store({
         }
     },
     mutations: {
+        first_set_mainJSON: (state, el) => {
+            state.mainJSON = el
+
+            let randomElement = state.mainJSON.listOfTasks[Math.floor(Math.random()*state.mainJSON.listOfTasks.length)]
+            state.mainJSON[randomElement.name].isShow = true
+        },
         set_mainJSON: (state, el) => {
             state.mainJSON = el
         },

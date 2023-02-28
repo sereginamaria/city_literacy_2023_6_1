@@ -32,19 +32,19 @@
             <div class="d-flex">
                       <div class="me-2">
                     <img src="../../assets/TaskVolunteersAvatarAnn.png" alt="" style="width: 50px"
-                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Анна Ивановна: ' ||
-                         constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Руководитель школьного клуба волонтеров Анна Ивановна: '">
+                         v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Анна Ивановна: ' ||
+                         constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Руководитель школьного клуба волонтеров Анна Ивановна: '">
                     <img src="../../assets/TaskVolunteersAvatarMax.png" alt="" style="width: 50px"
-                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Макс: ' ||
-                         constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Гость: '">
+                         v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Макс: ' ||
+                         constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Гость: '">
                     <img src="../../assets/TaskVolunteersAvatarSchoolgirl.png" alt="" style="width: 50px"
-                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Школьница: '">
+                         v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Школьница: '">
                     <img src="../../assets/TaskVolunteersAvatarSchoolboy.png" alt="" style="width: 50px"
-                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Школьник: '">
+                         v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Школьник: '">
                 </div>
                 <p>
-                    <span class="name-in-dialog">{{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name}}</span>
-                    {{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].text}}
+                    <span class="name-in-dialog">{{constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name}}</span>
+                    {{constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].text}}
                 </p>
             </div>
             <MyButton class="white-buttons" @click="checkAnswer" v-if="this.answerHomelessPerson !== null || this.answerCat !== null ||
@@ -189,9 +189,9 @@
             },
             checkAnswer() {
                 screen.isShow = false
-                this.mainJSON.task3.shownScreenID++
-                this.mainJSON.task3.screens.forEach(el => {
-                    if (el.id === this.mainJSON.task3.shownScreenID) {
+                this.mainJSON.taskVolunteers.shownScreenID++
+                this.mainJSON.taskVolunteers.screens.forEach(el => {
+                    if (el.id === this.mainJSON.taskVolunteers.shownScreenID) {
                         el.isShow = true
                     }
                 })
@@ -210,7 +210,7 @@
                     ans.push(7)
                 } else ans.push(8)
 
-                this.mainJSON.task3.results.ULSE1_Log_SEK6_1 = ans.join()
+                this.mainJSON.taskVolunteers.results.ULSE1_Log_SEK6_1 = ans.join()
 
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =

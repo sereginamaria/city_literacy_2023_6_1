@@ -1,6 +1,6 @@
 <template>
-    <div class="container-fluid d-flex justify-content-end align-items-center footer" :class="{'justify-content-between': this.mainJSON.task2.isShow}">
-        <div v-if="this.mainJSON.task2.isShow">
+    <div class="container-fluid d-flex justify-content-end align-items-center footer" :class="{'justify-content-between': this.mainJSON.taskChatWalk.isShow}">
+        <div v-if="this.mainJSON.taskChatWalk.isShow">
             <MyButton class="ml-3 transparent-buttons"
                       data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Чат"
                       @click="openChat"
@@ -31,13 +31,15 @@
             return {
                 modalVisible: false,
                 modalButtons: [],
-                modalMessage: ''
+                modalMessage: '',
+                listOfNotDoneTasks: [],
+                change: 0
             }
         },
         methods: {
             openChat(){
-                if(this.mainJSON.task2.isShow){
-                    this.mainJSON.task2.chatShow = !this.mainJSON.task2.chatShow
+                if(this.mainJSON.taskChatWalk.isShow){
+                    this.mainJSON.taskChatWalk.chatShow = !this.mainJSON.taskChatWalk.chatShow
                 }
             },
             showModal(){
@@ -50,37 +52,55 @@
             },
             checkAnswer(status){
                 this.modalVisible = false
-                let change = 0
+
                 if(status){
-                    if(this.mainJSON.task1.isShow && change === 0){
-                        this.mainJSON.task1["isShow"] = false
-                        this.mainJSON.task2["isShow"] = true
-                        this.mainJSON["instructionShow"] = true
-                        this.mainJSON["mainPageShow"] = false
-                        change++
+                    this.change = 0
+                    if(this.mainJSON.taskNightInTheMuseum.isShow && this.change === 0){
+                        this.mainJSON.taskNightInTheMuseum["isShow"] = false
+                        this.nextTask('taskNightInTheMuseum')
                     }
-                    if(this.mainJSON.task2.isShow  && change === 0){
-                        this.mainJSON.task2["isShow"] = false
-                        this.mainJSON.task3["isShow"] = true
-                        this.mainJSON["instructionShow"] = true
-                        this.mainJSON["mainPageShow"] = false
-                        change++
+                    if(this.mainJSON.taskChatWalk.isShow  && this.change === 0){
+                        this.mainJSON.taskChatWalk["isShow"] = false
+                        this.nextTask('taskChatWalk')
                     }
-                    if(this.mainJSON.task3.isShow  && change === 0){
-                        this.modalVisible = true
-                        this.modalButtons = [
-                            {value: "Да", status: 'exit'},
-                            {value: "Нет", status: false}
-                        ]
-                        this.modalMessage = 'Ты действительно хочешь выйти?'
+                    if(this.mainJSON.taskVolunteers.isShow  && this.change === 0){
+                        this.mainJSON.taskVolunteers["isShow"] = false
+                        this.nextTask('taskVolunteers')
                     }
                 }
                 if(status === 'exit'){
-                    this.mainJSON.task3["isShow"] = false
                     this.mainJSON['loginShow'] = true
                     this.mainJSON['mainPageShow'] = false
                 }
-            }
+            },
+            nextTask(taskName){
+                this.mainJSON.listOfTasks.forEach( el => {
+                    if(el.name === taskName){
+                        el.done = true
+                    }
+                    if(el.done === false){
+                        this.listOfNotDoneTasks.push(el.name)
+                    }
+                })
+                if (this.listOfNotDoneTasks.length === 0){
+                    this.endTask()
+                }
+                else {
+                    let randomElement = this.listOfNotDoneTasks[Math.floor(Math.random()*this.listOfNotDoneTasks.length)]
+                    this.mainJSON[randomElement].isShow = true
+                    this.mainJSON["instructionShow"] = true
+                    this.mainJSON["mainPageShow"] = false
+                    this.change++
+                    this.listOfNotDoneTasks = []
+                }
+            },
+            endTask(){
+                this.modalVisible = true
+                this.modalButtons = [
+                    {value: "Выйти", status: 'exit'}
+                ]
+                this.modalMessage = 'Ты завершил все задания, нажми кнопку "Выйти" для выхода из системы.'
+            },
         }
     }
 </script>

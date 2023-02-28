@@ -10,7 +10,7 @@
                 Москва была основана в
                 <span data-bs-toggle="collapse" data-bs-target="#collapseWorkBookQ1" aria-expanded="false" aria-controls="collapseWorkBookQ1"
                       @click="openWorkBookQ(14)" style="text-decoration: underline"
-                >{{this.mainJSON.task1.ULSCLL1_Log_LLK1_1 !== "NA" ? mainJSON.task1.ULSCLL1_Log_LLK1_1 : "_______"}}</span>
+                >{{this.mainJSON.taskNightInTheMuseum.ULSCLL1_Log_LLK1_1 !== "NA" ? mainJSON.taskNightInTheMuseum.ULSCLL1_Log_LLK1_1 : "_______"}}</span>
                 <div class="collapse" id="collapseWorkBookQ1" style="position: absolute" data-bs-parent="#collapseModularTask4">
                     <div class="card card-body">
                         <p>
@@ -21,7 +21,7 @@
                 году
                 <span data-bs-toggle="collapse" data-bs-target="#collapseWorkBookQ2" aria-expanded="false" aria-controls="collapseWorkBookQ2"
                       @click="openWorkBookQ(15)" style="text-decoration: underline"
-                >{{this.mainJSON.task1.ULSCLL1_Log_LLK1_2 !== "NA" ? mainJSON.task1.ULSCLL1_Log_LLK1_2 : "_______"}}</span>.
+                >{{this.mainJSON.taskNightInTheMuseum.ULSCLL1_Log_LLK1_2 !== "NA" ? mainJSON.taskNightInTheMuseum.ULSCLL1_Log_LLK1_2 : "_______"}}</span>.
                 <div class="collapse" id="collapseWorkBookQ2" style="position: absolute" data-bs-parent="#collapseModularTask4">
                     <div class="card card-body">
                         <p>
@@ -35,7 +35,7 @@
                 По его указу на берегу Москвы-реки была возведена деревянная крепость. Сейчас на этом месте мы видим
                 <span data-bs-toggle="collapse" data-bs-target="#collapseWorkBookQ3" aria-expanded="false" aria-controls="collapseWorkBookQ3"
                       @click="openWorkBookQ(16)" style="text-decoration: underline"
-                >{{this.mainJSON.task1.ULSCLL1_Log_LLK1_3 !== "NA" ? mainJSON.task1.ULSCLL1_Log_LLK1_3 : "_______"}}</span>.
+                >{{this.mainJSON.taskNightInTheMuseum.ULSCLL1_Log_LLK1_3 !== "NA" ? mainJSON.taskNightInTheMuseum.ULSCLL1_Log_LLK1_3 : "_______"}}</span>.
                 <div class="collapse" id="collapseWorkBookQ3" style="position: absolute" data-bs-parent="#collapseModularTask4">
                     <div class="card card-body">
                         <p>
@@ -49,7 +49,7 @@
                 В наше время рядом с этим местом находится памятник
                 <span data-bs-toggle="collapse" data-bs-target="#collapseWorkBookQ4" aria-expanded="false" aria-controls="collapseWorkBookQ4"
                       @click="openWorkBookQ(17)" style="text-decoration: underline"
-                >{{this.mainJSON.task1.ULSCLL1_Log_LLK1_4 !== "NA" ? mainJSON.task1.ULSCLL1_Log_LLK1_4 : "_______"}}</span>.
+                >{{this.mainJSON.taskNightInTheMuseum.ULSCLL1_Log_LLK1_4 !== "NA" ? mainJSON.taskNightInTheMuseum.ULSCLL1_Log_LLK1_4 : "_______"}}</span>.
                 <div class="collapse" id="collapseWorkBookQ4" style="position: absolute" data-bs-parent="#collapseModularTask4">
                     <div class="card card-body">
                         <p>
@@ -64,7 +64,7 @@
         </div>
 
         <!--Первый вопрос-->
-        <div class="background-task2" v-if="mainJSON.task1.modularTask1_14Show">
+        <div class="background-task2" v-if="mainJSON.taskNightInTheMuseum.modularTask1_14Show">
             <div v-for="el in constTaskNightInTheMuseum.listOfAnswersTaskWorkBook1" :key="el.id">
                 <div class="d-flex mt-2" @click="chooseWorkBookEl(1, 14, el)"
                      data-bs-toggle="collapse" data-bs-target="#collapseWorkBookQ1" aria-expanded="false" aria-controls="collapseWorkBookQ1"
@@ -79,7 +79,7 @@
         </div>
 
         <!--Второй вопрос-->
-        <div class="background-task2" v-if="mainJSON.task1.modularTask1_15Show">
+        <div class="background-task2" v-if="mainJSON.taskNightInTheMuseum.modularTask1_15Show">
             <div v-for="el in constTaskNightInTheMuseum.listOfAnswersTaskWorkBook2" :key="el.id">
                 <div class="d-flex mt-2" @click="chooseWorkBookEl(2, 15, el)"
                      data-bs-toggle="collapse" data-bs-target="#collapseWorkBookQ2" aria-expanded="false" aria-controls="collapseWorkBookQ2"
@@ -95,7 +95,7 @@
         </div>
 
         <!--Третий вопрос-->
-        <div class="background-task2" v-if="mainJSON.task1.modularTask1_16Show">
+        <div class="background-task2" v-if="mainJSON.taskNightInTheMuseum.modularTask1_16Show">
             <div v-for="el in constTaskNightInTheMuseum.listOfAnswersTaskWorkBook3" :key="el.id">
                 <div class="d-flex mt-2" @click="chooseWorkBookEl(3, 16, el)"
                      data-bs-toggle="collapse" data-bs-target="#collapseWorkBookQ3" aria-expanded="false" aria-controls="collapseWorkBookQ3"
@@ -111,10 +111,10 @@
         </div>
 
         <!--Четвертый вопрос-->
-        <div class="background-task2" v-if="mainJSON.task1.modularTask1_17Show">
+        <div class="background-task2" v-if="mainJSON.taskNightInTheMuseum.modularTask1_17Show">
             <img src="../../assets/Workbook8.png" alt="" style="width: 90%">
             <div style="background: #fff; border: 1px solid #54bedf;" class="mt-2">
-                <div v-for="el in constTaskNightInTheMuseum.listOfAnswersTaskWorkBook4" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_LLK1_4}"
+                <div v-for="el in constTaskNightInTheMuseum.listOfAnswersTaskWorkBook4" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_LLK1_4}"
                      class="option-answers-border"
                 >
                     <div @click="chooseAnswer(el)"
@@ -128,8 +128,8 @@
 
         <div class="background-text justify-content-end">
             <MyButton class="white-buttons" @click="checkAnswer"
-                      v-if="mainJSON.task1.results.ULSCLL1_Log_LLK1_1 !== 'NA' || mainJSON.task1.results.ULSCLL1_Log_LLK1_2 !== 'NA'
-                      || mainJSON.task1.results.ULSCLL1_Log_LLK1_3 !== 'NA' || mainJSON.task1.results.ULSCLL1_Log_LLK1_4 !== 'NA'"
+                      v-if="mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_LLK1_1 !== 'NA' || mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_LLK1_2 !== 'NA'
+                      || mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_LLK1_3 !== 'NA' || mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_LLK1_4 !== 'NA'"
             >
                 Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
@@ -153,80 +153,80 @@
         methods: {
             ...mapMutations(["push_mainJSON"]),
             chooseAnswer(el){
-                this.mainJSON.task1.results.ULSCLL1_Log_LLK1_4 = el.id
-                this.mainJSON.task1.ULSCLL1_Log_LLK1_4 = el.value
-                this.mainJSON.task1.modularTask1_17Show = false
+                this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_LLK1_4 = el.id
+                this.mainJSON.taskNightInTheMuseum.ULSCLL1_Log_LLK1_4 = el.value
+                this.mainJSON.taskNightInTheMuseum.modularTask1_17Show = false
             },
             chooseWorkBookEl(workBookID, id, el){
-                this.mainJSON.task1.results["ULSCLL1_Log_LLK1_" + workBookID] = el.id
+                this.mainJSON.taskNightInTheMuseum.results["ULSCLL1_Log_LLK1_" + workBookID] = el.id
                 if(workBookID === 2){
                     if(el.value === 'Князь Юрий Долгорукий'){
-                        this.mainJSON.task1["ULSCLL1_Log_LLK1_" + workBookID] = 'Князем Юрием Долгоруким'
+                        this.mainJSON.taskNightInTheMuseum["ULSCLL1_Log_LLK1_" + workBookID] = 'Князем Юрием Долгоруким'
                     }
                     if(el.value === 'Князь Иван Калита'){
-                        this.mainJSON.task1["ULSCLL1_Log_LLK1_" + workBookID] = 'Князем Иваном Калитой'
+                        this.mainJSON.taskNightInTheMuseum["ULSCLL1_Log_LLK1_" + workBookID] = 'Князем Иваном Калитой'
                     }
                     if(el.value === 'Князь Даниил Московский'){
-                        this.mainJSON.task1["ULSCLL1_Log_LLK1_" + workBookID] = 'Князем Даниилом Московским'
+                        this.mainJSON.taskNightInTheMuseum["ULSCLL1_Log_LLK1_" + workBookID] = 'Князем Даниилом Московским'
                     }
                     if(el.value === 'Князь Степан Кучка'){
-                        this.mainJSON.task1["ULSCLL1_Log_LLK1_" + workBookID] = 'Князем Степаном Кучкой'
+                        this.mainJSON.taskNightInTheMuseum["ULSCLL1_Log_LLK1_" + workBookID] = 'Князем Степаном Кучкой'
                     }
                 }
                 if(workBookID === 3){
                     if(el.value === 'Птичья башня'){
-                        this.mainJSON.task1["ULSCLL1_Log_LLK1_" + workBookID] = 'Птичью башню'
+                        this.mainJSON.taskNightInTheMuseum["ULSCLL1_Log_LLK1_" + workBookID] = 'Птичью башню'
                     }
                     else {
-                        this.mainJSON.task1["ULSCLL1_Log_LLK1_" + workBookID] = el.value
+                        this.mainJSON.taskNightInTheMuseum["ULSCLL1_Log_LLK1_" + workBookID] = el.value
                     }
                 }
                 if(workBookID === 1 || workBookID === 4){
-                    this.mainJSON.task1["ULSCLL1_Log_LLK1_" + workBookID] = el.value
+                    this.mainJSON.taskNightInTheMuseum["ULSCLL1_Log_LLK1_" + workBookID] = el.value
                 }
-                this.mainJSON.task1["modularTask1_" + id + "Show"] = false
+                this.mainJSON.taskNightInTheMuseum["modularTask1_" + id + "Show"] = false
             },
             openWorkBookQ(id){
                 let k = 15
                 while (k !== 18){
                     if(k !== id){
-                        this.mainJSON.task1["modularTask1_" + k + "Show"] = false
+                        this.mainJSON.taskNightInTheMuseum["modularTask1_" + k + "Show"] = false
                     }
                     k++
                 }
-                this.mainJSON.task1["modularTask1_" + id + "Show"] = !this.mainJSON.task1["modularTask1_" + id + "Show"]
+                this.mainJSON.taskNightInTheMuseum["modularTask1_" + id + "Show"] = !this.mainJSON.taskNightInTheMuseum["modularTask1_" + id + "Show"]
             },
             checkAnswer(){
                 screen.isShow = false
-                this.mainJSON.task1.shownScreenID++
-                this.mainJSON.task1.screens.forEach(el => {
-                    if (el.id === this.mainJSON.task1.shownScreenID) {
+                this.mainJSON.taskNightInTheMuseum.shownScreenID++
+                this.mainJSON.taskNightInTheMuseum.screens.forEach(el => {
+                    if (el.id === this.mainJSON.taskNightInTheMuseum.shownScreenID) {
                         el.isShow = true
                     }
                 })
-                if(this.mainJSON.task1.results.ULSCLL1_Log_LLK1_1 ===  2){
-                    this.mainJSON.task1.results.ULSCLL1_Score_LLK1_1 = 1
+                if(this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_LLK1_1 ===  2){
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_LLK1_1 = 1
                 }
                 else {
-                    this.mainJSON.task1.results.ULSCLL1_Score_LLK1_1 = 0
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_LLK1_1 = 0
                 }
-                if(this.mainJSON.task1.results.ULSCLL1_Log_LLK1_2 ===  1){
-                    this.mainJSON.task1.results.ULSCLL1_Score_LLK1_2 = 1
-                }
-                else {
-                    this.mainJSON.task1.results.ULSCLL1_Score_LLK1_2 = 0
-                }
-                if(this.mainJSON.task1.results.ULSCLL1_Log_LLK1_3 ===  1){
-                    this.mainJSON.task1.results.ULSCLL1_Score_LLK1_3 = 1
+                if(this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_LLK1_2 ===  1){
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_LLK1_2 = 1
                 }
                 else {
-                    this.mainJSON.task1.results.ULSCLL1_Score_LLK1_3 = 0
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_LLK1_2 = 0
                 }
-                if(this.mainJSON.task1.results.ULSCLL1_Log_LLK1_4 ===  2){
-                    this.mainJSON.task1.results.ULSCLL1_Score_LLK1_4 = 1
+                if(this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_LLK1_3 ===  1){
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_LLK1_3 = 1
                 }
                 else {
-                    this.mainJSON.task1.results.ULSCLL1_Score_LLK1_4 = 0
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_LLK1_3 = 0
+                }
+                if(this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_LLK1_4 ===  2){
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_LLK1_4 = 1
+                }
+                else {
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_LLK1_4 = 0
                 }
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =

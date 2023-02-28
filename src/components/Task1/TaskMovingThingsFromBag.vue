@@ -6,7 +6,7 @@
         </div>
         <draggable
                 class="list-group draggable-backpack-end"
-                :list="this.mainJSON.task1.listOfElementsEnd"
+                :list="this.mainJSON.taskNightInTheMuseum.listOfElementsEnd"
                 group="draggingThings"
         >
             <template #item="{ element }">
@@ -18,7 +18,7 @@
             <img src="../../assets/LittleBackpackOpen.png" alt="" class="little-backpack" style="bottom: calc(100%/5);">
             <draggable
                     class="list-group draggable-backpack-start"
-                    :list="this.mainJSON.task1.listOfElementsStart"
+                    :list="this.mainJSON.taskNightInTheMuseum.listOfElementsStart"
                     group="draggingThings"
             >
                 <template #item="{ element }">
@@ -31,17 +31,17 @@
                  <div class="d-flex">
                 <div class="me-2">
                     <img src="../../assets/TaskNightInTheMuseumAvatarAsia.png" alt="" style="width: 50px"
-                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Ася: ' ||
-                         constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
+                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Ася: ' ||
+                         constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
                     <img src="../../assets/TaskNightInTheMuseumAvatarKolia.png" alt="" style="width: 50px"
-                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Коля: '">
+                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Коля: '">
                 </div>
                 <p>
-                    <span class="name-in-dialog">{{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name}}</span>
-                    {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
+                    <span class="name-in-dialog">{{constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name}}</span>
+                    {{constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].text}}
                 </p>
             </div>
-            <MyButton class="white-buttons" @click="showModal" v-if="mainJSON.task1.listOfElementsEnd.length !== 0">Готово</MyButton>
+            <MyButton class="white-buttons" @click="showModal" v-if="mainJSON.taskNightInTheMuseum.listOfElementsEnd.length !== 0">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
@@ -82,7 +82,7 @@
         computed: {
             ...mapGetters(['mainJSON', 'constTaskNightInTheMuseum']),
             screenID(){
-                return this.mainJSON.task1.shownScreenID
+                return this.mainJSON.taskNightInTheMuseum.shownScreenID
             }
         },
         methods: {
@@ -107,16 +107,16 @@
 
                 if(status){
                     screen.isShow = false
-                    this.mainJSON.task1.shownScreenID++
-                    this.mainJSON.task1.screens.forEach(el => {
-                        if (el.id === this.mainJSON.task1.shownScreenID) {
+                    this.mainJSON.taskNightInTheMuseum.shownScreenID++
+                    this.mainJSON.taskNightInTheMuseum.screens.forEach(el => {
+                        if (el.id === this.mainJSON.taskNightInTheMuseum.shownScreenID) {
                             el.isShow = true
                         }
                     })
 
                     let answers = []
                     let maxScore, middleScore = 0
-                    this.mainJSON.task1.listOfElementsEnd.forEach(el => {
+                    this.mainJSON.taskNightInTheMuseum.listOfElementsEnd.forEach(el => {
                         answers.push(el.id)
                         if(el.id === 4 || el.id === 5 || el.id === 7){
                             maxScore++
@@ -125,15 +125,15 @@
                             middleScore++
                         }
                     })
-                    this.mainJSON.task1.results.ULSCLL1_Log_SCK1_2 = answers.join()
-                    if(this.mainJSON.task1.listOfElementsEnd.length === 3 && maxScore === 3){
-                        this.mainJSON.task1.results.ULSCLL1_Score_SCK1_2 = 2
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK1_2 = answers.join()
+                    if(this.mainJSON.taskNightInTheMuseum.listOfElementsEnd.length === 3 && maxScore === 3){
+                        this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_SCK1_2 = 2
                     }
-                    else if(this.mainJSON.task1.listOfElementsEnd.length === 4 && maxScore === 3 && middleScore === 1){
-                        this.mainJSON.task1.results.ULSCLL1_Score_SCK1_2 = 1
+                    else if(this.mainJSON.taskNightInTheMuseum.listOfElementsEnd.length === 4 && maxScore === 3 && middleScore === 1){
+                        this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_SCK1_2 = 1
                     }
                     else {
-                        this.mainJSON.task1.results.ULSCLL1_Score_SCK1_2 = 0
+                        this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_SCK1_2 = 0
                     }
 
                     let t = new Date()

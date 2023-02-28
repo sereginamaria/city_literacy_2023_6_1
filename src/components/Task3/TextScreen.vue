@@ -6,19 +6,19 @@
             <div class="d-flex">
                 <div class="me-2">
                     <img src="../../assets/TaskVolunteersAvatarAnn.png" alt="" style="width: 50px"
-                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Анна Ивановна: ' ||
-                         constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Руководитель школьного клуба волонтеров Анна Ивановна: '">
+                         v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Анна Ивановна: ' ||
+                         constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Руководитель школьного клуба волонтеров Анна Ивановна: '">
                     <img src="../../assets/TaskVolunteersAvatarMax.png" alt="" style="width: 50px"
-                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Макс: ' ||
-                         constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Гость: '">
+                         v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Макс: ' ||
+                         constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Гость: '">
                     <img src="../../assets/TaskVolunteersAvatarSchoolgirl.png" alt="" style="width: 50px"
-                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Школьница: '">
+                         v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Школьница: '">
                     <img src="../../assets/TaskVolunteersAvatarSchoolboy.png" alt="" style="width: 50px"
-                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Школьник: '">
+                         v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Школьник: '">
                 </div>
                 <p>
-                    <span class="name-in-dialog">{{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name}}</span>
-                    {{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].text}}
+                    <span class="name-in-dialog">{{constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name}}</span>
+                    {{constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].text}}
                 </p>
             </div>
             <MyButton class="white-buttons" @click="nextTask(screen)" style="height: 40px">Далее</MyButton>
@@ -44,7 +44,8 @@
             return {
                 modalVisible: false,
                 modalButtons: [],
-                modalMessage: ''
+                modalMessage: '',
+                listOfNotDoneTasks: [],
             }
         },
         computed: {
@@ -56,13 +57,37 @@
                 this.modalVisible = false
 
                 if (status) {
-                    screen.isShow = false
-
-                    this.mainJSON.task3['isShow'] = false
-                    this.mainJSON.task4['isShow'] = true
-                    this.mainJSON['instructionShow'] = true
-                    this.mainJSON['mainPageShow'] = false
+                    this.mainJSON.listOfTasks.forEach( el => {
+                        if(el.name === 'taskVolunteers'){
+                            el.done = true
+                        }
+                        if(el.done === false){
+                            this.listOfNotDoneTasks.push(el.name)
+                        }
+                    })
+                    if(this.listOfNotDoneTasks.length === 0){
+                        console.log('modal')
+                        this.modalVisible = true
+                        this.modalButtons = [
+                            {value: "Выйти", status: 'exit'}
+                        ]
+                        this.modalMessage = 'Ты завершил все задания, нажми кнопку "Выйти" для выхода из системы.'
+                    }
+                    else {
+                        let randomElement = this.listOfNotDoneTasks[Math.floor(Math.random()*this.listOfNotDoneTasks.length)]
+                        this.mainJSON[randomElement].isShow = true
+                        this.mainJSON["instructionShow"] = true
+                        this.mainJSON["mainPageShow"] = false
+                        this.listOfNotDoneTasks = []
+                        this.mainJSON.taskVolunteers["isShow"] = false
+                    }
                 }
+                if(status === 'exit'){
+                    this.mainJSON['loginShow'] = true
+                    this.mainJSON['mainPageShow'] = false
+                    this.mainJSON.taskVolunteers["isShow"] = false
+                }
+
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
                     [
@@ -89,9 +114,9 @@
                 }
                 else {
                     screen.isShow = false
-                    this.mainJSON.task3.shownScreenID++
-                    this.mainJSON.task3.screens.forEach(el => {
-                        if (el.id === this.mainJSON.task3.shownScreenID) {
+                    this.mainJSON.taskVolunteers.shownScreenID++
+                    this.mainJSON.taskVolunteers.screens.forEach(el => {
+                        if (el.id === this.mainJSON.taskVolunteers.shownScreenID) {
                             el.isShow = true
                         }
                     })

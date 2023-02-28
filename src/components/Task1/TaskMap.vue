@@ -6,7 +6,7 @@
             </p>
         </div>
         <div>
-            <div v-for="el in mainJSON.task1.listOfElementsTask9" :key="el.id">
+            <div v-for="el in mainJSON.taskNightInTheMuseum.listOfElementsTask9" :key="el.id">
                 <img :src=" require('../../assets/' + el.src) " :class="{choose: el.choose}" @click="addAnswer(el)"
                      alt="Avatar" :style="el.style"/>
             </div>
@@ -16,17 +16,17 @@
                  <div class="d-flex">
                 <div class="me-2">
                     <img src="../../assets/TaskNightInTheMuseumAvatarAsia.png" alt="" style="width: 50px"
-                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Ася: ' ||
-                         constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
+                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Ася: ' ||
+                         constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
                     <img src="../../assets/TaskNightInTheMuseumAvatarKolia.png" alt="" style="width: 50px"
-                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Коля: '">
+                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Коля: '">
                 </div>
                 <p>
-                    <span class="name-in-dialog">{{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name}}</span>
-                    {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
+                    <span class="name-in-dialog">{{constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name}}</span>
+                    {{constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].text}}
                 </p>
             </div>
-            <MyButton class="white-buttons" @click="showModal" v-if="mainJSON.task1.results.ULSCLL1_Log_LLK3_1 !== 'NA'">Готово</MyButton>
+            <MyButton class="white-buttons" @click="showModal" v-if="mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_LLK3_1 !== 'NA'">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
@@ -69,36 +69,36 @@
             },
             addAnswer(el){
                 el.choose = !el.choose
-                this.mainJSON.task1.listOfAnswersTask9.push(el.name)
-                this.mainJSON.task1.results.ULSCLL1_Log_LLK3_1 = this.mainJSON.task1.listOfAnswersTask9.join()
+                this.mainJSON.taskNightInTheMuseum.listOfAnswersTask9.push(el.name)
+                this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_LLK3_1 = this.mainJSON.taskNightInTheMuseum.listOfAnswersTask9.join()
             },
             checkAnswer(status) {
                 this.modalVisible = false
 
                 if (status) {
                     screen.isShow = false
-                    this.mainJSON.task1.shownScreenID++
-                    this.mainJSON.task1.screens.forEach(el => {
-                        if (el.id === this.mainJSON.task1.shownScreenID) {
+                    this.mainJSON.taskNightInTheMuseum.shownScreenID++
+                    this.mainJSON.taskNightInTheMuseum.screens.forEach(el => {
+                        if (el.id === this.mainJSON.taskNightInTheMuseum.shownScreenID) {
                             el.isShow = true
                         }
                     })
                 }
 
                 let maxScore = 0
-                this.mainJSON.task1.listOfAnswersTask9.forEach( el => {
+                this.mainJSON.taskNightInTheMuseum.listOfAnswersTask9.forEach( el => {
                     if(el === "Река Ока" || el === "Пруд Королевский" || el === "Парк Таганский"){
                         maxScore++
                     }
                 })
-                if(this.mainJSON.task1.listOfAnswersTask9.length === 3 && maxScore === 3){
-                    this.mainJSON.task1.results.ULSCLL1_Score_LLK3_1 = 2
+                if(this.mainJSON.taskNightInTheMuseum.listOfAnswersTask9.length === 3 && maxScore === 3){
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_LLK3_1 = 2
                 }
-                else if(this.mainJSON.task1.listOfAnswersTask9.length === 2 && maxScore === 2){
-                    this.mainJSON.task1.results.ULSCLL1_Score_LLK3_1 = 1
+                else if(this.mainJSON.taskNightInTheMuseum.listOfAnswersTask9.length === 2 && maxScore === 2){
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_LLK3_1 = 1
                 }
                 else{
-                    this.mainJSON.task1.results.ULSCLL1_Score_LLK3_1 = 0
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_LLK3_1 = 0
                 }
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =

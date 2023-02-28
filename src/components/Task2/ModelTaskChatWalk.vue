@@ -1,6 +1,6 @@
 <template>
     <div class="background" :style="{ background: 'url(' + require('../../assets/TaskChatBackground.png') + ')'}">
-        <ChatModel v-if="this.mainJSON.task2.chatShow"/>
+        <ChatModel v-if="this.mainJSON.taskChatWalk.chatShow"/>
     </div>
 </template>
 
@@ -9,7 +9,7 @@
     import ChatModel from "@/components/Task2/Chat/ChatModel";
 
     export default {
-        name: "Task2Model",
+        name: "ModelTaskChatWalk",
         components: {ChatModel},
         computed: {
             ...mapGetters(['mainJSON']),

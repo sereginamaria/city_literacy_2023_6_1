@@ -13,7 +13,7 @@
                         <draggable
                                 @add="error(1)"
                                 class="list-group list-group-el"
-                                :list="this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list1"
+                                :list="this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list1"
                                 group="listOfAnswersRightsAndObligationsPart2"
                         >
                             <template #item="{ element }">
@@ -25,7 +25,7 @@
                         <draggable
                                 @add="error(2)"
                                 class="list-group list-group-el"
-                                :list="this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list2"
+                                :list="this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list2"
                                 group="listOfAnswersRightsAndObligationsPart2"
                         >
                             <template #item="{ element }">
@@ -37,7 +37,7 @@
                         <draggable
                                 @add="error(3)"
                                 class="list-group list-group-el"
-                                :list="this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list3"
+                                :list="this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list3"
                                 group="listOfAnswersRightsAndObligationsPart2"
                         >
                             <template #item="{ element }">
@@ -52,7 +52,7 @@
                         <draggable
                                 @add="error(4)"
                                 class="list-group list-group-el"
-                                :list="this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list4"
+                                :list="this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list4"
                                 group="listOfAnswersRightsAndObligationsPart2"
                         >
                             <template #item="{ element }">
@@ -64,7 +64,7 @@
                         <draggable
                                 @add="error(5)"
                                 class="list-group list-group-el"
-                                :list="this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list5"
+                                :list="this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list5"
                                 group="listOfAnswersRightsAndObligationsPart2"
                         >
                             <template #item="{ element }">
@@ -76,7 +76,7 @@
                         <draggable
                                 @add="error(6)"
                                 class="list-group list-group-el"
-                                :list="this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list6"
+                                :list="this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list6"
                                 group="listOfAnswersRightsAndObligationsPart2"
                         >
                             <template #item="{ element }">
@@ -89,7 +89,7 @@
                 </div>
                 <draggable
                         class="list-group d-flex flex-row flex-wrap justify-content-center align-items-center"
-                        :list="this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2"
+                        :list="this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2"
                         group="listOfAnswersRightsAndObligationsPart2" style="height: 30%; width: 100%"
                 >
                     <template #item="{ element }">
@@ -104,25 +104,25 @@
             <div class="d-flex">
                       <div class="me-2">
                     <img src="../../assets/TaskVolunteersAvatarAnn.png" alt="" style="width: 50px"
-                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Анна Ивановна: ' ||
-                         constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Руководитель школьного клуба волонтеров Анна Ивановна: '">
+                         v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Анна Ивановна: ' ||
+                         constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Руководитель школьного клуба волонтеров Анна Ивановна: '">
                     <img src="../../assets/TaskVolunteersAvatarMax.png" alt="" style="width: 50px"
-                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Макс: ' ||
-                         constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Гость: '">
+                         v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Макс: ' ||
+                         constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Гость: '">
                     <img src="../../assets/TaskVolunteersAvatarSchoolgirl.png" alt="" style="width: 50px"
-                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Школьница: '">
+                         v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Школьница: '">
                     <img src="../../assets/TaskVolunteersAvatarSchoolboy.png" alt="" style="width: 50px"
-                         v-if="constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name === 'Школьник: '">
+                         v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Школьник: '">
                 </div>
                 <p>
-                    <span class="name-in-dialog">{{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].name}}</span>
-                    {{constTaskVolunteers.screens[this.mainJSON.task3.shownScreenID].text}}
+                    <span class="name-in-dialog">{{constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name}}</span>
+                    {{constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].text}}
                 </p>
             </div>
-            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list1.length !== 0 ||
-            mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list2.length !== 0 || mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list3.length !== 0 ||
-            mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list4.length !== 0 || mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list5.length !== 0 ||
-            mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list6.length !== 0">Готово</MyButton>
+            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list1.length !== 0 ||
+            mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list2.length !== 0 || mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list3.length !== 0 ||
+            mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list4.length !== 0 || mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list5.length !== 0 ||
+            mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list6.length !== 0">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
@@ -147,47 +147,47 @@
         methods: {
             ...mapMutations(["push_mainJSON"]),
             error(id) {
-                if(this.mainJSON.task3["listOfAnswersRightsAndObligationsPart2_list" + id].length > 1){
-                    this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2.push(this.mainJSON.task3["listOfAnswersRightsAndObligationsPart2_list" + id][1])
-                    this.mainJSON.task3["listOfAnswersRightsAndObligationsPart2_list" + id].splice(1, 1)
+                if(this.mainJSON.taskVolunteers["listOfAnswersRightsAndObligationsPart2_list" + id].length > 1){
+                    this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2.push(this.mainJSON.taskVolunteers["listOfAnswersRightsAndObligationsPart2_list" + id][1])
+                    this.mainJSON.taskVolunteers["listOfAnswersRightsAndObligationsPart2_list" + id].splice(1, 1)
                 }
             },
             checkAnswer() {
                 screen.isShow = false
-                this.mainJSON.task3.shownScreenID++
-                this.mainJSON.task3.screens.forEach(el => {
-                    if (el.id === this.mainJSON.task3.shownScreenID) {
+                this.mainJSON.taskVolunteers.shownScreenID++
+                this.mainJSON.taskVolunteers.screens.forEach(el => {
+                    if (el.id === this.mainJSON.taskVolunteers.shownScreenID) {
                         el.isShow = true
                     }
                 })
 
                 let list1 = []
                 let list2 = []
-                if(this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list1.length !== 0 ){
-                    list1.push(this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list1[0].id)
+                if(this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list1.length !== 0 ){
+                    list1.push(this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list1[0].id)
                 }
-                if(this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list2.length !== 0 ){
-                    list1.push(this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list2[0].id)
+                if(this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list2.length !== 0 ){
+                    list1.push(this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list2[0].id)
                 }
-                if(this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list3.length !== 0 ){
-                    list1.push(this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list3[0].id)
+                if(this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list3.length !== 0 ){
+                    list1.push(this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list3[0].id)
                 }
 
-                if(this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list4.length !== 0 ){
-                    list2.push(this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list4[0].id)
+                if(this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list4.length !== 0 ){
+                    list2.push(this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list4[0].id)
                 }
-                if(this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list5.length !== 0 ){
-                    list2.push(this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list5[0].id)
+                if(this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list5.length !== 0 ){
+                    list2.push(this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list5[0].id)
                 }
-                if(this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list6.length !== 0 ){
-                    list2.push(this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list6[0].id)
+                if(this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list6.length !== 0 ){
+                    list2.push(this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list6[0].id)
                 }
 
                 if(list1.length !== 0){
-                    this.mainJSON.task3.results.ULSE1_Log_SEK3_1 = list1.join()
+                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SEK3_1 = list1.join()
                 }
                 if(list2.length !== 0){
-                    this.mainJSON.task3.results.ULSE1_Log_SEK3_2 = list2.join()
+                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SEK3_2 = list2.join()
                 }
 
                 let t = new Date()

@@ -25,10 +25,10 @@
         },
         methods: {
             save(el) {
-                this.mainJSON.task2.results[this.screenConst.resultIndicator] = el.value
-                this.mainJSON.task2.shownScreenID++
-                this.mainJSON.task2.screens.forEach(el => {
-                    if (el.id === this.mainJSON.task2.shownScreenID) {
+                this.mainJSON.taskChatWalk.results[this.screenConst.resultIndicator] = el.value
+                this.mainJSON.taskChatWalk.shownScreenID++
+                this.mainJSON.taskChatWalk.screens.forEach(el => {
+                    if (el.id === this.mainJSON.taskChatWalk.shownScreenID) {
                         el.isShow = true
                     }
                 })

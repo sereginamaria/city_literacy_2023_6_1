@@ -56,7 +56,7 @@
     import TaskWarningSigns from "@/components/Task1/TaskWarningSigns";
     import TaskWeatherForecast from "@/components/Task1/TaskWeatherForecast";
     export default {
-        name: "Task1Model",
+        name: "ModelTaskNightInTheMuseum",
         components: {
           TaskWeatherForecast,
           TaskWarningSigns,
@@ -79,10 +79,10 @@
         computed: {
             ...mapGetters(['mainJSON', 'constTaskNightInTheMuseum']),
           screenID(){
-            return this.mainJSON.task1.shownScreenID
+            return this.mainJSON.taskNightInTheMuseum.shownScreenID
           },
           screen(){
-            return this.mainJSON.task1.screens[this.screenID]
+            return this.mainJSON.taskNightInTheMuseum.screens[this.screenID]
           }
         },
     }

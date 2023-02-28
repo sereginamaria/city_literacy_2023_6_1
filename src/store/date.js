@@ -18,7 +18,12 @@ const date = {
         "dataTimeEnd": null,
         "dataTimeLastUpdate": null
     },
-    "task1": {
+    "listOfTasks": [
+        {'name': 'taskNightInTheMuseum', 'done': false},
+        {'name': 'taskChatWalk', 'done': false},
+        {'name': 'taskVolunteers', 'done': false}
+    ],
+    "taskNightInTheMuseum": {
         "results": {
             //1 ChooseBag and Moving things from bag
             "ULSCLL1_Log_SCK1_1": "NA",
@@ -101,10 +106,10 @@ const date = {
             "ULSCLL1_Score_LLK6_1": "NA",
 
         },
-        "isShow": true,
-        "shownScreenID": 0,
+        "isShow": false,
+        "shownScreenID": 52,
         "screens": [
-            {"id": 0, "isShow": true, "imgURL": "BackgroundModule0", "haveTask": false,
+            {"id": 0, "isShow": false, "imgURL": "BackgroundModule0", "haveTask": false,
                 "description": ''},
             {"id": 1, "isShow": false, "imgURL": "BackgroundModule1", "haveTask": true, "taskName": "ChooseBag",
                 "description": 'Выбор рюкзака'},
@@ -208,7 +213,7 @@ const date = {
                 "description": 'Предупреждающие знаки'},
             {"id": 51, "isShow": false, "imgURL": "BackgroundModule64", "haveTask": false,
                 "description": ''},
-            {"id": 52, "isShow": false, "imgURL": "BackgroundModule64", "haveTask": true, "taskName": "WeatherForecast",
+            {"id": 52, "isShow": true, "imgURL": "BackgroundModule64", "haveTask": true, "taskName": "WeatherForecast",
                 "description": 'Прогноз погоды'},
             {"id": 53, "isShow": false, "imgURL": "BackgroundModule65", "haveTask": false,
                 "description": ''},
@@ -580,7 +585,7 @@ const date = {
         "listOfAnswersTask15_4": [],
 
     },
-    "task2": {
+    "taskChatWalk": {
         "isShow": false,
         "results": {
             //0
@@ -690,7 +695,7 @@ const date = {
         "chatShow": true,
         "checkBox1Selected": [],
     },
-    "task3": {
+    "taskVolunteers": {
         "isShow": false,
         "results": {
             //Who is a volunteer
@@ -750,9 +755,9 @@ const date = {
             "ULSE1_Log_SES1": "NA",
 
         },
-        "shownScreenID": 0,
+        "shownScreenID": 64,
         "screens": [
-            {"id": 0, "isShow": true, "imgURL": "TaskVolunteersAcquaintanceMax", "haveTask": false,
+            {"id": 0, "isShow": false, "imgURL": "TaskVolunteersAcquaintanceMax", "haveTask": false,
                 "description": ''},
             {"id": 1, "isShow": false, "imgURL": "TaskVolunteersAcquaintanceAnn", "haveTask": false,
                 "description": ''},
@@ -880,7 +885,7 @@ const date = {
                 "description": 'Свиристель'},
             {"id": 63, "isShow": false, "imgURL": "TaskVolunteersWaxwingAnn2", "haveTask": false,
                 "description": ''},
-            {"id": 64, "isShow": false, "imgURL": "TaskVolunteersEndMax", "haveTask": false,
+            {"id": 64, "isShow": true, "imgURL": "TaskVolunteersEndMax", "haveTask": false,
                 "description": ''},
             {"id": 65, "isShow": false, "imgURL": "TaskVolunteersEndAnn", "haveTask": false,
                 "description": ''},

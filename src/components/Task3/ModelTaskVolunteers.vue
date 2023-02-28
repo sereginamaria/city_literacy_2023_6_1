@@ -58,7 +58,7 @@
     import TaskWaxwing from "@/components/Task3/TaskWaxwing";
 
     export default {
-        name: "Task3Model",
+        name: "ModelTaskVolunteers",
         components: {
             TaskWaxwing,
             TaskAnnFeelsBad,
@@ -78,10 +78,10 @@
         computed: {
             ...mapGetters(['mainJSON', 'constTaskVolunteers']),
             screenID(){
-                return this.mainJSON.task3.shownScreenID
+                return this.mainJSON.taskVolunteers.shownScreenID
             },
             screen(){
-                return this.mainJSON.task3.screens[this.screenID]
+                return this.mainJSON.taskVolunteers.screens[this.screenID]
             }
         },
     }

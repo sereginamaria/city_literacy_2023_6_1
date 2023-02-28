@@ -15,7 +15,7 @@
                     <draggable
                             @add="error(1)"
                             class="list-group task10"
-                            :list="this.mainJSON.task1.listOfAnswersTask10_1"
+                            :list="this.mainJSON.taskNightInTheMuseum.listOfAnswersTask10_1"
                             group="task10"
                     >
                         <template #item="{ element }">
@@ -30,7 +30,7 @@
                     <draggable
                             @add="error(2)"
                             class="list-group task10"
-                            :list="this.mainJSON.task1.listOfAnswersTask10_2"
+                            :list="this.mainJSON.taskNightInTheMuseum.listOfAnswersTask10_2"
                             group="task10"
                     >
                         <template #item="{ element }">
@@ -45,7 +45,7 @@
                     <draggable
                             @add="error(3)"
                             class="list-group task10"
-                            :list="this.mainJSON.task1.listOfAnswersTask10_3"
+                            :list="this.mainJSON.taskNightInTheMuseum.listOfAnswersTask10_3"
                             group="task10"
                     >
                         <template #item="{ element }">
@@ -59,7 +59,7 @@
 
             <draggable
                     class="list-group d-flex list-of-answers-attractions"
-                    :list="this.mainJSON.task1.listOfElementsTask10"
+                    :list="this.mainJSON.taskNightInTheMuseum.listOfElementsTask10"
                     group="task10"
             >
                 <template #item="{ element }">
@@ -74,7 +74,7 @@
             <p>
                 Добавь подписи к объектам на картинках, перенеси название выбранного объекта в нужное поле.
             </p>
-            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.task1.results.ULSCLL1_Log_LLK2_1 !== 'NA'">Готово</MyButton>
+            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_LLK2_1 !== 'NA'">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
@@ -99,37 +99,37 @@
         methods: {
             ...mapMutations(["push_mainJSON"]),
             error(id) {
-                if(this.mainJSON.task1["listOfAnswersTask10_" + id].length > 1){
-                    this.mainJSON.task1.listOfElementsTask10.push(this.mainJSON.task1["listOfAnswersTask10_" + id][1])
-                    this.mainJSON.task1["listOfAnswersTask10_" + id].splice(1, 1)
+                if(this.mainJSON.taskNightInTheMuseum["listOfAnswersTask10_" + id].length > 1){
+                    this.mainJSON.taskNightInTheMuseum.listOfElementsTask10.push(this.mainJSON.taskNightInTheMuseum["listOfAnswersTask10_" + id][1])
+                    this.mainJSON.taskNightInTheMuseum["listOfAnswersTask10_" + id].splice(1, 1)
                 }
-                if(this.mainJSON.task1.listOfAnswersTask10_1.length !== 0 && this.mainJSON.task1.listOfAnswersTask10_2.length !== 0 &&
-                    this.mainJSON.task1.listOfAnswersTask10_3.length !== 0){
-                    this.mainJSON.task1.results.ULSCLL1_Log_LLK2_1 =  "Слот 1: " + this.mainJSON.task1.listOfAnswersTask10_1[0].value + ", Слот 2: " +
-                        this.mainJSON.task1.listOfAnswersTask10_2[0].value + ", Слот 3: " + this.mainJSON.task1.listOfAnswersTask10_3[0].value
+                if(this.mainJSON.taskNightInTheMuseum.listOfAnswersTask10_1.length !== 0 && this.mainJSON.taskNightInTheMuseum.listOfAnswersTask10_2.length !== 0 &&
+                    this.mainJSON.taskNightInTheMuseum.listOfAnswersTask10_3.length !== 0){
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_LLK2_1 =  "Слот 1: " + this.mainJSON.taskNightInTheMuseum.listOfAnswersTask10_1[0].value + ", Слот 2: " +
+                        this.mainJSON.taskNightInTheMuseum.listOfAnswersTask10_2[0].value + ", Слот 3: " + this.mainJSON.taskNightInTheMuseum.listOfAnswersTask10_3[0].value
                 }
             },
             checkAnswer() {
                 screen.isShow = false
-                this.mainJSON.task1.shownScreenID++
-                this.mainJSON.task1.screens.forEach(el => {
-                    if (el.id === this.mainJSON.task1.shownScreenID) {
+                this.mainJSON.taskNightInTheMuseum.shownScreenID++
+                this.mainJSON.taskNightInTheMuseum.screens.forEach(el => {
+                    if (el.id === this.mainJSON.taskNightInTheMuseum.shownScreenID) {
                         el.isShow = true
                     }
                 })
-                if(this.mainJSON.task1.listOfAnswersTask10_1[0].id === 6 && this.mainJSON.task1.listOfAnswersTask10_2[0].id === 7 &&
-                    this.mainJSON.task1.listOfAnswersTask10_3[0].id === 8){
-                    this.mainJSON.task1.results.ULSCLL1_Score_LLK2_1 = 2
+                if(this.mainJSON.taskNightInTheMuseum.listOfAnswersTask10_1[0].id === 6 && this.mainJSON.taskNightInTheMuseum.listOfAnswersTask10_2[0].id === 7 &&
+                    this.mainJSON.taskNightInTheMuseum.listOfAnswersTask10_3[0].id === 8){
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_LLK2_1 = 2
                 }
-                else if(this.mainJSON.task1.listOfAnswersTask10_1[0].id === 6 && (this.mainJSON.task1.listOfAnswersTask10_2[0].id === 7 ||
-                    this.mainJSON.task1.listOfAnswersTask10_3[0].id === 8)){
-                    this.mainJSON.task1.results.ULSCLL1_Score_LLK2_1 = 1
+                else if(this.mainJSON.taskNightInTheMuseum.listOfAnswersTask10_1[0].id === 6 && (this.mainJSON.taskNightInTheMuseum.listOfAnswersTask10_2[0].id === 7 ||
+                    this.mainJSON.taskNightInTheMuseum.listOfAnswersTask10_3[0].id === 8)){
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_LLK2_1 = 1
                 }
-                else if(this.mainJSON.task1.listOfAnswersTask10_2[0].id === 7 && this.mainJSON.task1.listOfAnswersTask10_3[0].id === 8){
-                    this.mainJSON.task1.results.ULSCLL1_Score_LLK2_1 = 1
+                else if(this.mainJSON.taskNightInTheMuseum.listOfAnswersTask10_2[0].id === 7 && this.mainJSON.taskNightInTheMuseum.listOfAnswersTask10_3[0].id === 8){
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_LLK2_1 = 1
                 }
                 else {
-                    this.mainJSON.task1.results.ULSCLL1_Score_LLK2_1 = 0
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_LLK2_1 = 0
                 }
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =

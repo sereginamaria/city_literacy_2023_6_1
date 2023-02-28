@@ -6,19 +6,20 @@
             <div class="d-flex">
                 <div class="me-2">
                     <img src="../../assets/TaskNightInTheMuseumAvatarAsia.png" alt="" style="width: 50px"
-                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Ася: ' ||
-                         constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
+                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Ася: ' ||
+                         constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
                     <img src="../../assets/TaskNightInTheMuseumAvatarKolia.png" alt="" style="width: 50px"
-                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Коля: '">
+                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Коля: '">
                 </div>
                 <p>
-                    <span class="name-in-dialog">{{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name}}</span>
-                    {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
+                    <span class="name-in-dialog">{{constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name}}</span>
+                    {{constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].text}}
                 </p>
             </div>
             <MyButton class="white-buttons" @click="nextTask(screen)" style="height: 40px">Далее</MyButton>
         </div>
     </div>
+
     <MyModal v-model:show="modalVisible" v-model:buttons="modalButtons"
              @update="checkAnswer"
     >
@@ -39,7 +40,8 @@
             return {
                 modalVisible: false,
                 modalButtons: [],
-                modalMessage: ''
+                modalMessage: '',
+                listOfNotDoneTasks: [],
             }
         },
         computed: {
@@ -51,12 +53,35 @@
                 this.modalVisible = false
 
                 if (status) {
-                    screen.isShow = false
+                    this.mainJSON.listOfTasks.forEach( el => {
+                        if(el.name === 'taskNightInTheMuseum'){
+                            el.done = true
+                        }
+                        if(el.done === false){
+                            this.listOfNotDoneTasks.push(el.name)
+                        }
+                    })
 
-                    this.mainJSON.task1['isShow'] = false
-                    this.mainJSON.task2['isShow'] = true
-                    this.mainJSON['instructionShow'] = true
+                    if(this.listOfNotDoneTasks.length === 0){
+                        this.modalVisible = true
+                        this.modalButtons = [
+                            {value: "Выйти", status: 'exit'}
+                        ]
+                        this.modalMessage = 'Ты завершил все задания, нажми кнопку "Выйти" для выхода из системы.'
+                    }
+                    else {
+                        let randomElement = this.listOfNotDoneTasks[Math.floor(Math.random()*this.listOfNotDoneTasks.length)]
+                        this.mainJSON[randomElement].isShow = true
+                        this.mainJSON["instructionShow"] = true
+                        this.mainJSON["mainPageShow"] = false
+                        this.listOfNotDoneTasks = []
+                        this.mainJSON.taskNightInTheMuseum["isShow"] = false
+                    }
+                }
+                if(status === 'exit'){
+                    this.mainJSON['loginShow'] = true
                     this.mainJSON['mainPageShow'] = false
+                    this.mainJSON.taskNightInTheMuseum["isShow"] = false
                 }
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
@@ -85,17 +110,17 @@
                 else {
                     screen.isShow = false
                     if(screen.id === 24 || screen.id === 26){
-                        this.mainJSON.task1.shownScreenID = 28
+                        this.mainJSON.taskNightInTheMuseum.shownScreenID = 28
                     }
                     if(screen.id === 32){
-                        this.mainJSON.task1.shownScreenID = 34
+                        this.mainJSON.taskNightInTheMuseum.shownScreenID = 34
                     }
                     if(screen.id !== 24 && screen.id !== 26 && screen.id !== 32) {
-                        this.mainJSON.task1.shownScreenID++
+                        this.mainJSON.taskNightInTheMuseum.shownScreenID++
                     }
 
-                    this.mainJSON.task1.screens.forEach(el => {
-                        if (el.id === this.mainJSON.task1.shownScreenID) {
+                    this.mainJSON.taskNightInTheMuseum.screens.forEach(el => {
+                        if (el.id === this.mainJSON.taskNightInTheMuseum.shownScreenID) {
                             el.isShow = true
                         }
                     })

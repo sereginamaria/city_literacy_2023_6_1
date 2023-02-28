@@ -23,14 +23,14 @@
         </div>
     </div>
 
-    <div class="d-flex justify-content-end" v-if="this.mainJSON.task2.results[currentScreenConst.resultIndicator] !== 'NA'">
-        <div v-if="typeof this.mainJSON.task2.results[currentScreenConst.resultIndicator] === 'string'">
+    <div class="d-flex justify-content-end" v-if="this.mainJSON.taskChatWalk.results[currentScreenConst.resultIndicator] !== 'NA'">
+        <div v-if="typeof this.mainJSON.taskChatWalk.results[currentScreenConst.resultIndicator] === 'string'">
             <p class="chat-message-answer chat-message">
-                {{this.mainJSON.task2.results[currentScreenConst.resultIndicator]}}
+                {{this.mainJSON.taskChatWalk.results[currentScreenConst.resultIndicator]}}
             </p>
         </div>
         <div v-else>
-            <p class="chat-message-answer chat-message" v-for="el in this.mainJSON.task2.results[currentScreenConst.resultIndicator]" :key="el">
+            <p class="chat-message-answer chat-message" v-for="el in this.mainJSON.taskChatWalk.results[currentScreenConst.resultIndicator]" :key="el">
                 {{el.value}}
             </p>
         </div>

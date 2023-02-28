@@ -1,12 +1,12 @@
 <template>
-    <div class="instruction-body" :class="{backgroundTaskNightInTheMuseum: mainJSON.task1.isShow, backgroundTaskChatWalk: mainJSON.task2.isShow,
-    backgroundTaskVolunteers: mainJSON.task3.isShow}">
+    <div class="instruction-body" :class="{backgroundTaskNightInTheMuseum: mainJSON.taskNightInTheMuseum.isShow, backgroundTaskChatWalk: mainJSON.taskChatWalk.isShow,
+    backgroundTaskVolunteers: mainJSON.taskVolunteers.isShow}">
         <div class="w-100 h-100 d-flex flex-column justify-content-center align-items-center">
             <div class="instruction-card">
                 <div>
-                    <p v-if="mainJSON.task1.isShow">{{constTaskNightInTheMuseum.instruction}}</p>
-                    <p v-if="mainJSON.task2.isShow">{{constTaskChatWalk.instruction}}</p>
-                    <p v-if="mainJSON.task3.isShow">{{constTaskVolunteers.instruction}}</p>
+                    <p v-if="mainJSON.taskNightInTheMuseum.isShow">{{constTaskNightInTheMuseum.instruction}}</p>
+                    <p v-if="mainJSON.taskChatWalk.isShow">{{constTaskChatWalk.instruction}}</p>
+                    <p v-if="mainJSON.taskVolunteers.isShow">{{constTaskVolunteers.instruction}}</p>
                 </div>
                 <div class="d-flex justify-content-end">
                     <p style="font-style: italic; width: 700px; text-align: right;">

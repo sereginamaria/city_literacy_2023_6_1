@@ -1,13 +1,13 @@
 <template>
     <!--Задание 5 пункт 1-->
     <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}"
-         v-if="mainJSON.task1.screens[this.mainJSON.task1.shownScreenID].id === 17">
+         v-if="mainJSON.taskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].id === 17">
         <div class="instruction-block">
             <p>Какое современное правило дорожного движения нарушается на картине? Выбери один ответ.
             </p>
         </div>
         <div class="option-answers-background">
-            <div v-for="el in constTaskNightInTheMuseum.listOfAnswersTaskMuseumPaintings1" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCK2_2}"
+            <div v-for="el in constTaskNightInTheMuseum.listOfAnswersTaskMuseumPaintings1" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK2_2}"
                  class="option-answers-border"
             >
                 <div @click="chooseAnswer(1, el)">
@@ -16,19 +16,19 @@
             </div>
         </div>
         <div class="background-text justify-content-end">
-            <MyButton class="white-buttons" @click="nextTask(screen)" v-if="mainJSON.task1.results.ULSCLL1_Log_SCK2_2 !== 'NA'">Готово</MyButton>
+            <MyButton class="white-buttons" @click="nextTask(screen)" v-if="mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK2_2 !== 'NA'">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
     <!--Задание 5 пункт 2-->
     <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}"
-         v-if="mainJSON.task1.screens[this.mainJSON.task1.shownScreenID].id === 18">
+         v-if="mainJSON.taskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].id === 18">
         <div class="instruction-block">
             <p>Какое современное правило дорожного движения нарушается на картине? Выбери один ответ.
             </p>
         </div>
         <div class="option-answers-background">
-            <div v-for="el in constTaskNightInTheMuseum.listOfAnswersTaskMuseumPaintings2" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCK2_3}"
+            <div v-for="el in constTaskNightInTheMuseum.listOfAnswersTaskMuseumPaintings2" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK2_3}"
                  class="option-answers-border"
             >
                 <div @click="chooseAnswer(2, el)">
@@ -37,19 +37,19 @@
             </div>
         </div>
         <div class="background-text justify-content-end">
-            <MyButton class="white-buttons" @click="nextTask(screen)" v-if="mainJSON.task1.results.ULSCLL1_Log_SCK2_3 !== 'NA'">Готово</MyButton>
+            <MyButton class="white-buttons" @click="nextTask(screen)" v-if="mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK2_3 !== 'NA'">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
     <!--Задание 5 пункт 3-->
     <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}"
-         v-if="mainJSON.task1.screens[this.mainJSON.task1.shownScreenID].id === 19">
+         v-if="mainJSON.taskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].id === 19">
         <div class="instruction-block">
             <p>Какое современное правило дорожного движения нарушается на картине? Выбери один ответ.
             </p>
         </div>
         <div class="option-answers-background">
-            <div v-for="el in constTaskNightInTheMuseum.listOfAnswersTaskMuseumPaintings3" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCK2_4}"
+            <div v-for="el in constTaskNightInTheMuseum.listOfAnswersTaskMuseumPaintings3" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK2_4}"
                  class="option-answers-border"
             >
                 <div @click="chooseAnswer(3, el)">
@@ -58,7 +58,7 @@
             </div>
         </div>
         <div class="background-text justify-content-end">
-            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.task1.results.ULSCLL1_Log_SCK2_4 !== 'NA'">Готово</MyButton>
+            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK2_4 !== 'NA'">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
@@ -80,42 +80,42 @@
             ...mapMutations(["push_mainJSON"]),
             nextTask(screen){
                 screen.isShow = false
-                this.mainJSON.task1.shownScreenID++
-                this.mainJSON.task1.screens.forEach(el => {
-                    if (el.id === this.mainJSON.task1.shownScreenID) {
+                this.mainJSON.taskNightInTheMuseum.shownScreenID++
+                this.mainJSON.taskNightInTheMuseum.screens.forEach(el => {
+                    if (el.id === this.mainJSON.taskNightInTheMuseum.shownScreenID) {
                         el.isShow = true
                     }
                 })
             },
             chooseAnswer(id, el){
                 id++
-                this.mainJSON.task1.results["ULSCLL1_Log_SCK2_" + id] = el.id
+                this.mainJSON.taskNightInTheMuseum.results["ULSCLL1_Log_SCK2_" + id] = el.id
             },
             checkAnswer(){
                 screen.isShow = false
-                this.mainJSON.task1.shownScreenID++
-                this.mainJSON.task1.screens.forEach(el => {
-                    if (el.id === this.mainJSON.task1.shownScreenID) {
+                this.mainJSON.taskNightInTheMuseum.shownScreenID++
+                this.mainJSON.taskNightInTheMuseum.screens.forEach(el => {
+                    if (el.id === this.mainJSON.taskNightInTheMuseum.shownScreenID) {
                         el.isShow = true
                     }
                 })
-                if(this.mainJSON.task1.results.ULSCLL1_Log_SCK2_2 === 1){
-                    this.mainJSON.task1.results.ULSCLL1_Score_SCK2_2 = 1
+                if(this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK2_2 === 1){
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_SCK2_2 = 1
                 }
                 else {
-                    this.mainJSON.task1.results.ULSCLL1_Score_SCK2_2 = 0
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_SCK2_2 = 0
                 }
-                if(this.mainJSON.task1.results.ULSCLL1_Log_SCK2_3 === 1){
-                    this.mainJSON.task1.results.ULSCLL1_Score_SCK2_3 = 1
-                }
-                else {
-                    this.mainJSON.task1.results.ULSCLL1_Score_SCK2_3 = 0
-                }
-                if(this.mainJSON.task1.results.ULSCLL1_Log_SCK2_4 === 4){
-                    this.mainJSON.task1.results.ULSCLL1_Score_SCK2_4 = 1
+                if(this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK2_3 === 1){
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_SCK2_3 = 1
                 }
                 else {
-                    this.mainJSON.task1.results.ULSCLL1_Score_SCK2_4 = 0
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_SCK2_3 = 0
+                }
+                if(this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK2_4 === 4){
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_SCK2_4 = 1
+                }
+                else {
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_SCK2_4 = 0
                 }
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =

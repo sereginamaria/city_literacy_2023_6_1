@@ -16,7 +16,7 @@
         <div class="d-flex flex-column" style="width: 80%">
             <div  class="body-message" style="padding: 10px;border-bottom: 1px solid #A7B0C6; height: 60%" >
                 <div id="main" style="overflow-y: scroll; padding-right: 10px; height: 100%">
-                    <div v-for="screen in mainJSON.task2.screens" :key="screen.id">
+                    <div v-for="screen in mainJSON.taskChatWalk.screens" :key="screen.id">
                         <ChatRadioMessage v-if="screen.isShow" :currentScreenConst="this.constTaskChatWalk.screens[screen.id]" :currentScreen="currentScreen"/>
                     </div>
                 </div>
@@ -35,10 +35,16 @@
             </div>
         </div>
     </div>
+
+    <MyModal v-model:show="modalVisible" v-model:buttons="modalButtons"
+             @update="checkAnswer"
+    >
+        {{this.modalMessage}}
+    </MyModal>
 </template>
 
 <script>
-    import {mapGetters} from "vuex";
+    import {mapGetters, mapMutations} from "vuex";
     import ChatRadioAnswer from "@/components/Task2/Chat/ChatModules/ChatRadioAnswer";
     import ChatRadioMessage from "@/components/Task2/Chat/ChatModules/ChatRadioMessage";
     import ChatCheckBoxAnswer from "@/components/Task2/Chat/ChatModules/ChatCheckBoxAnswer";
@@ -49,13 +55,21 @@
             ChatRadioMessage,
             ChatRadioAnswer,
         },
+        data() {
+            return {
+                modalVisible: false,
+                modalButtons: [],
+                modalMessage: '',
+                listOfNotDoneTasks: [],
+            }
+        },
         computed: {
             ...mapGetters(['mainJSON', 'constTaskChatWalk']),
             screenID(){
-                return this.mainJSON.task2.shownScreenID
+                return this.mainJSON.taskChatWalk.shownScreenID
             },
             currentScreen(){
-                return this.mainJSON.task2.screens[this.screenID]
+                return this.mainJSON.taskChatWalk.screens[this.screenID]
             },
             screenConst(){
                 return this.constTaskChatWalk.screens[this.screenID]
@@ -71,11 +85,54 @@
             block1.scrollTop = block1.scrollHeight;
         },
         methods: {
+            ...mapMutations(["push_mainJSON"]),
             endTask(){
-                this.mainJSON.task2["isShow"] = false
-                this.mainJSON.task3["isShow"] = true
-                this.mainJSON["instructionShow"] = true
-                this.mainJSON["mainPageShow"] = false
+                this.mainJSON.listOfTasks.forEach( el => {
+                    if(el.name === 'taskChatWalk'){
+                        el.done = true
+                    }
+                    if(el.done === false){
+                        this.listOfNotDoneTasks.push(el.name)
+                    }
+                })
+                if(this.listOfNotDoneTasks.length === 0){
+                    this.modalVisible = true
+                    this.modalButtons = [
+                        {value: "Выйти", status: 'exit'}
+                    ]
+                    this.modalMessage = 'Ты завершил все задания, нажми кнопку "Выйти" для выхода из системы.'
+                }
+                else {
+                    let randomElement = this.listOfNotDoneTasks[Math.floor(Math.random()*this.listOfNotDoneTasks.length)]
+                    this.mainJSON[randomElement].isShow = true
+                    this.mainJSON["instructionShow"] = true
+                    this.mainJSON["mainPageShow"] = false
+                    this.listOfNotDoneTasks = []
+                    this.mainJSON.taskChatWalk["isShow"] = false
+                }
+
+                let t = new Date()
+                this.mainJSON.results.dataTimeLastUpdate =
+                    [
+                        t.getFullYear(),
+                        ('0' + (t.getMonth() + 1)).slice(-2),
+                        ('0' + t.getDate()).slice(-2)
+                    ].join('-') + ' ' + [
+                        ('0' + (t.getHours())).slice(-2),
+                        ('0' + (t.getMinutes())).slice(-2),
+                        ('0' + t.getSeconds()).slice(-2)
+                    ].join(':');
+
+                this.push_mainJSON({
+                    push: this.mainJSON
+                })
+            }
+        },
+        checkAnswer(status) {
+            if(status === 'exit'){
+                this.mainJSON['loginShow'] = true
+                this.mainJSON['mainPageShow'] = false
+                this.mainJSON.taskChatWalk["isShow"] = false
             }
         },
     }

@@ -5,26 +5,26 @@
             <p>Выбери рюкзак, с которым пойдешь в музей.</p>
         </div>
         <div>
-            <img src="../../assets/BigBackpack.png" alt="" class="big-backpack" :class="{colorBackpack: mainJSON.task1.results.ULSCLL1_Log_SCK1_1 === 2}"
+            <img src="../../assets/BigBackpack.png" alt="" class="big-backpack" :class="{colorBackpack: mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK1_1 === 2}"
                  @click="addAnswer(2)" @mouseover="onHover($event, 'Большой рюкзак')" @mouseout="this.toolTipVisible = false">
-            <img src="../../assets/LittleBackpack.png" alt="" class="little-backpack" :class="{colorBackpack: mainJSON.task1.results.ULSCLL1_Log_SCK1_1 === 1}"
+            <img src="../../assets/LittleBackpack.png" alt="" class="little-backpack" :class="{colorBackpack: mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK1_1 === 1}"
                  @click="addAnswer(1)" @mouseover="onHover($event, 'Маленький рюкзак')" @mouseout="this.toolTipVisible = false">
         </div>
         <div class="background-text">
                  <div class="d-flex">
                 <div class="me-2">
                     <img src="../../assets/TaskNightInTheMuseumAvatarAsia.png" alt="" style="width: 50px"
-                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Ася: ' ||
-                         constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
+                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Ася: ' ||
+                         constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
                     <img src="../../assets/TaskNightInTheMuseumAvatarKolia.png" alt="" style="width: 50px"
-                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Коля: '">
+                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Коля: '">
                 </div>
                 <p>
-                    <span class="name-in-dialog">{{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name}}</span>
-                    {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
+                    <span class="name-in-dialog">{{constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name}}</span>
+                    {{constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].text}}
                 </p>
             </div>
-            <MyButton class="white-buttons" @click="showModal" v-if="mainJSON.task1.results.ULSCLL1_Log_SCK1_1 !== 'NA'">Готово</MyButton>
+            <MyButton class="white-buttons" @click="showModal" v-if="mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK1_1 !== 'NA'">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
@@ -79,7 +79,7 @@
                 this.modalMessage = 'Ты действительно хочешь закончить выполнение этого задания? После этого уже нельзя будет изменить ответы.'
             },
             addAnswer(id){
-                this.mainJSON.task1.results.ULSCLL1_Log_SCK1_1 = id
+                this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK1_1 = id
             },
             checkAnswer(status){
                 this.modalVisible = false
@@ -87,17 +87,17 @@
                 if(status) {
                     screen.isShow = false
 
-                    if(this.mainJSON.task1.results.ULSCLL1_Log_SCK1_1 === 2) {
-                        this.mainJSON.task1.shownScreenID++
-                        this.mainJSON.task1.results.ULSCLL1_Score_SCK1_1 = 1
+                    if(this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK1_1 === 2) {
+                        this.mainJSON.taskNightInTheMuseum.shownScreenID++
+                        this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_SCK1_1 = 1
                     }
-                    if(this.mainJSON.task1.results.ULSCLL1_Log_SCK1_1 === 1) {
-                        this.mainJSON.task1.shownScreenID+=2
-                        this.mainJSON.task1.results.ULSCLL1_Score_SCK1_1 = 0
+                    if(this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK1_1 === 1) {
+                        this.mainJSON.taskNightInTheMuseum.shownScreenID+=2
+                        this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_SCK1_1 = 0
                     }
 
-                    this.mainJSON.task1.screens.forEach(el => {
-                        if (el.id === this.mainJSON.task1.shownScreenID) {
+                    this.mainJSON.taskNightInTheMuseum.screens.forEach(el => {
+                        if (el.id === this.mainJSON.taskNightInTheMuseum.shownScreenID) {
                             el.isShow = true
                         }
                     })
