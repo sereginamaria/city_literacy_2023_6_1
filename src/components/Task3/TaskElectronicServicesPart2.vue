@@ -58,16 +58,19 @@
     <div v-if="this.showModalDialog" class="dialog">
         <div class="dialog-content">
             <div class="mb-3">
-                <img :src=" require('../../assets/' + this.imgSrc + '.png') " alt="">
+                <img :src=" require('../../assets/' + this.imgSrc + '.png') " alt="" style="width: 100%">
                 <div>
                     {{this.message}}
                 </div>
             </div>
-            <MyButton v-for="button in this.modalButtons" :key="button.value" @click="addAnswer(this.type, button.status)"
-                      class="me-3 blue-buttons" :class="{yesButtonTrue: this.yesButtonTrue && button.status, noButtonTrue: this.noButtonTrue && !button.status}"
-            >
-                {{button.value}}
-            </MyButton>
+            <div class="d-flex justify-content-center">
+                <MyButton v-for="button in this.modalButtons" :key="button.value" @click="addAnswer(this.type, button.status)" style="width: 45%"
+                          class="me-3 blue-buttons" :class="{yesButtonTrue: this.yesButtonTrue && button.status, noButtonTrue: this.noButtonTrue && !button.status}"
+                >
+                    {{button.value}}
+                </MyButton>
+            </div>
+
         </div>
     </div>
 </template>
@@ -113,7 +116,7 @@
                     {value: "Нет", status: false}
                 ]
                 if (type === 'Noise'){
-                    this.imgSrc = 'TaskVolunteersElectronicServicesIconNoise'
+                    this.imgSrc = 'TaskVolunteersElectronicServicesIconModalNoise'
                     this.message = 'В 7 вечера, когда я делаю домашнюю работу, мой сосед слушает музыку и мешает'
                     for(const [key, value] of Object.entries(this.answers)){
                         if(key === 'answerNoise' && value === true){
@@ -127,7 +130,7 @@
                     }
                 }
                 if (type === 'HomelessPerson'){
-                    this.imgSrc = 'TaskVolunteersElectronicServicesIconHomelessPerson'
+                    this.imgSrc = 'TaskVolunteersElectronicServicesIconModalHomelessPerson'
                     this.message = 'В городских парках и у метро живут бездомные люди'
                     for(const [key, value] of Object.entries(this.answers)){
                         if(key === 'answerHomelessPerson' && value === true){
@@ -141,7 +144,7 @@
                     }
                 }
                 if (type === 'Pollution'){
-                    this.imgSrc = 'TaskVolunteersElectronicServicesIconPollution'
+                    this.imgSrc = 'TaskVolunteersElectronicServicesIconModalPollution'
                     this.message = 'В водоем на окраине города регулярно выливают какую-то жидкость из цистерн'
                     for(const [key, value] of Object.entries(this.answers)){
                         if(key === 'answerPollution' && value === true){
@@ -155,7 +158,7 @@
                     }
                 }
                 if (type === 'Cat'){
-                    this.imgSrc = 'TaskVolunteersElectronicServicesIconCat'
+                    this.imgSrc = 'TaskVolunteersElectronicServicesIconModalCat'
                     this.message = 'Во дворе сидит и мяукает потерявшийся котенок с ошейником'
                     for(const [key, value] of Object.entries(this.answers)){
                         if(key === 'answerCat' && value === true){

@@ -4,7 +4,7 @@
     background6: mainJSON.task1.results.ULSCLL1_Log_SCK3_1 === 2, background7: mainJSON.task1.results.ULSCLL1_Log_SCK3_1 === 3, background8: mainJSON.task1.results.ULSCLL1_Log_SCK3_1 === 4}"
     >
         <div class="instruction-block">
-            <p>Что ответишь Коле? Где можно спрятаться от непогоды? Выбери все верные варианты ответа, кликнув на картинку.
+            <p>Что ответишь Коле? Где можно спрятаться от непогоды? Выбери один ответ.
             </p>
         </div>
         <div class="task13">

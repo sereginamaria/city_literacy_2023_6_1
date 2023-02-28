@@ -127,7 +127,7 @@
         background: rgba(84, 190, 223, 0.15);
     }
 
-    .background-answers {
+    .option-answers-background {
         background: #FFFFFF;
         border: 1px solid #54BEDF;
         left: calc(100%/1.8);
@@ -135,7 +135,10 @@
         position: absolute;
         bottom: calc(100%/2.5);
     }
-
+    .option-answers-border {
+        border: 2px solid #54BEDF;
+        padding: 10px 20px;
+    }
     .instruction-block {
         margin: auto;
         background: #FFFFFF;

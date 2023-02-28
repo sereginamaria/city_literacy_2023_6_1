@@ -11,10 +11,10 @@
                 <div style="border: 2px solid #54BEDF">
                     <table class="table">
                         <thead>
-                        <tr>
-                            <th scope="col">Проблемы</th>
-                            <th scope="col">Последствия</th>
-                        </tr>
+                            <tr style="background: #EDFFF6;">
+                                <th scope="col" class="w-50">Проблемы</th>
+                                <th scope="col" class="w-50">Последствия</th>
+                            </tr>
                         </thead>
                         <tbody>
                         <tr>
@@ -34,7 +34,7 @@
                                 </draggable>
                             </td>
                         </tr>
-                        <tr>
+                        <tr style="background: #EDFFF6;">
                             <td>Снос исторических зданий</td>
                             <td>
                                 <draggable
@@ -73,7 +73,7 @@
                     <draggable
                             class="list-group d-flex flex-row flex-wrap justify-content-center align-items-center"
                             :list="this.mainJSON.task3.listOfAnswersUrbanProblems"
-                            group="listOfAnswersUrbanProblems"
+                            group="listOfAnswersUrbanProblems" style="background: #EDFFF6;"
                     >
                         <template #item="{ element }">
                             <div class="list-of-answers" style="width: unset">

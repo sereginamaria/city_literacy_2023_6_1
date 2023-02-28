@@ -26,8 +26,6 @@
         methods: {
             save(el) {
                 this.mainJSON.task2.results[this.screenConst.resultIndicator] = el.value
-
-                console.log(typeof this.mainJSON.task2.results[this.screenConst.resultIndicator])
                 this.mainJSON.task2.shownScreenID++
                 this.mainJSON.task2.screens.forEach(el => {
                     if (el.id === this.mainJSON.task2.shownScreenID) {

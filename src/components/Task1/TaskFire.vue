@@ -5,9 +5,9 @@
             <p>Что нужно делать в этой ситуации? Выбери один вариант ответа.
             </p>
         </div>
-        <div class="background-answers">
+        <div class="option-answers-background">
             <div v-for="el in constTaskNightInTheMuseum.listOfAnswersTaskFire" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCK1_4}"
-                 style="padding: 10px 20px"
+                 class="option-answers-border"
             >
                 <div @click="chooseAnswer(el)">
                     {{el.name}}

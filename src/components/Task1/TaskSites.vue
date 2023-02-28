@@ -5,9 +5,9 @@
             <p>Выбери ВСЕ подходящие сайты, которыми можно воспользоваться, чтобы посмотреть достопримечательности Москвы онлайн.
             </p>
         </div>
-        <div class="background-answers">
+        <div class="option-answers-background">
             <div v-for="el in mainJSON.task1.listOfAnswersTask12" :key="el.id" :class="{choosenAnswer: el.choose}"
-                 style="padding: 10px 20px"
+                 class="option-answers-border"
             >
                 <div @click="chooseAnswer(el)">
                     <p>{{el.name}}</p>

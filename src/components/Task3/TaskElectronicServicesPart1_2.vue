@@ -2,7 +2,7 @@
     <div class="background d-flex align-items-center flex-column" style="backdrop-filter: blur(5px);"
          :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
         <div class="instruction-block">
-            <p>Заполни пропуски, выбирая слова, которые больше всего подходят.
+            <p>Какой электронный сервис поможет пожилой соседке Макса записаться на танцы в группу ровесников? Кликни на нужную картинку.
             </p>
         </div>
         <div class="d-flex justify-content-center align-items-center w-100 h-100">

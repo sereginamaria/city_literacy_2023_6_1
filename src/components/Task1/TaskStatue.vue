@@ -6,9 +6,9 @@
             <p>Что ответишь Коле? Выбери один ответ
             </p>
         </div>
-        <div class="background-answers">
+        <div class="option-answers-background">
             <div v-for="el in constTaskNightInTheMuseum.listOfAnswersTaskStatue1" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCS4_2}"
-                 style="padding: 10px 20px"
+                 class="option-answers-border"
             >
                 <div @click="chooseAnswer(1, el)">
                     {{el.name}}
@@ -40,9 +40,9 @@
             <p>Что ответишь Коле? Выбери один вариант ответа.
             </p>
         </div>
-        <div class="background-answers">
+        <div class="option-answers-background">
             <div v-for="el in constTaskNightInTheMuseum.listOfAnswersTaskStatue2" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCS4_3}"
-                 style="padding: 10px 20px"
+                 class="option-answers-border"
             >
                 <div @click="chooseAnswer(2, el)">
                     {{el.name}}

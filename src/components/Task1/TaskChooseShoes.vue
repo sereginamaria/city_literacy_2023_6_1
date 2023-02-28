@@ -113,6 +113,6 @@
 
 <style scoped>
     .colorBoots {
-        filter: drop-shadow(0px 0px 55px #FFFFFF) drop-shadow(12.7928px 8.52851px 8.52851px rgba(0, 0, 0, 0.4));
+        filter: drop-shadow(0px 0px 35px #FFFFFF) drop-shadow(12.7928px 8.52851px 8.52851px rgba(0, 0, 0, 0.0));
     }
 </style>

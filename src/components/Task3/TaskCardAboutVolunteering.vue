@@ -98,7 +98,6 @@
                 }
                 let answer = this.list1.concat(this.list2).concat(this.list3)
                 this.mainJSON.task3.results.ULSE1_Log_SEK4_4 = answer.join()
-                console.log(this.mainJSON.task3.results.ULSE1_Log_SEK4_4)
             },
             checkAnswer() {
                 screen.isShow = false

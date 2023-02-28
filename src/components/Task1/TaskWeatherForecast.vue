@@ -12,7 +12,7 @@
                 <div class="task15El">
                     <div class="d-flex justify-content-center align-items-center flex-column">
                         <p  style="font-weight: 700; font-size: 30px;">11:00</p>
-                        <img src="../../assets/task15El1.png" alt="" style="width: 100%;">
+                        <img src="../../assets/task15El1.png" alt="" style="width: 90%;">
                     </div>
                     <draggable
                             @add="error(1)"
@@ -30,7 +30,7 @@
                 <div class="task15El">
                     <div class="d-flex justify-content-center align-items-center flex-column">
                         <p  style="font-weight: 700; font-size: 30px;">13:00</p>
-                        <img src="../../assets/task15El3.png" alt="" style="width: 100%;">
+                        <img src="../../assets/task15El3.png" alt="" style="width: 90%;">
                     </div>
                     <draggable
                             @add="error(2)"
@@ -48,7 +48,7 @@
                 <div class="task15El">
                     <div class="d-flex justify-content-center align-items-center flex-column">
                         <p style="font-weight: 700; font-size: 30px;">16:00</p>
-                        <img src="../../assets/task15El1.png" alt="" style="width: 100%;">
+                        <img src="../../assets/task15El1.png" alt="" style="width: 90%;">
                     </div>
                     <draggable
                             @add="error(3)"
@@ -66,7 +66,7 @@
                 <div class="task15El">
                     <div class="d-flex justify-content-center align-items-center flex-column">
                         <p  style="font-weight: 700; font-size: 30px;">18:00</p>
-                        <img src="../../assets/task15El2.png" alt="" style="width: 100%;">
+                        <img src="../../assets/task15El2.png" alt="" style="width: 90%;">
                     </div>
                     <draggable
                             @add="error(4)"
@@ -186,6 +186,7 @@
         align-items: center;
         width: 90%;
         height: 15%;
+        min-height: 15%;
     }
     .task15El{
         display: flex;

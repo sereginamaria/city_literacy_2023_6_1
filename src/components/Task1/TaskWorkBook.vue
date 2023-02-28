@@ -115,7 +115,7 @@
             <img src="../../assets/Workbook8.png" alt="" style="width: 90%">
             <div style="background: #fff; border: 1px solid #54bedf;" class="mt-2">
                 <div v-for="el in constTaskNightInTheMuseum.listOfAnswersTaskWorkBook4" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_LLK1_4}"
-                     style="padding: 10px 20px"
+                     class="option-answers-border"
                 >
                     <div @click="chooseAnswer(el)"
                          data-bs-toggle="collapse" data-bs-target="#collapseWorkBookQ4" aria-expanded="false" aria-controls="collapseWorkBookQ4"
@@ -126,20 +126,7 @@
             </div>
         </div>
 
-        <div class="background-text">
-                 <div class="d-flex">
-                <div class="me-2">
-                    <img src="../../assets/TaskNightInTheMuseumAvatarAsia.png" alt="" style="width: 50px"
-                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Ася: ' ||
-                         constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
-                    <img src="../../assets/TaskNightInTheMuseumAvatarKolia.png" alt="" style="width: 50px"
-                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Коля: '">
-                </div>
-                <p>
-                    <span class="name-in-dialog">{{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name}}</span>
-                    {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
-                </p>
-            </div>
+        <div class="background-text justify-content-end">
             <MyButton class="white-buttons" @click="checkAnswer"
                       v-if="mainJSON.task1.results.ULSCLL1_Log_LLK1_1 !== 'NA' || mainJSON.task1.results.ULSCLL1_Log_LLK1_2 !== 'NA'
                       || mainJSON.task1.results.ULSCLL1_Log_LLK1_3 !== 'NA' || mainJSON.task1.results.ULSCLL1_Log_LLK1_4 !== 'NA'"
@@ -208,7 +195,6 @@
                     k++
                 }
                 this.mainJSON.task1["modularTask1_" + id + "Show"] = !this.mainJSON.task1["modularTask1_" + id + "Show"]
-                console.log(this.mainJSON.task1)
             },
             checkAnswer(){
                 screen.isShow = false

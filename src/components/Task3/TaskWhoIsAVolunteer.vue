@@ -6,16 +6,16 @@
             </p>
         </div>
         <div class="d-flex justify-content-center align-items-center w-100 h-100">
-            <div class="background-task w-50 h-50">
-                <p>Волонтёр — это человек, который
+            <div class="background-task h-50" style="width: 70%">
+                <p style="font-size: 20px">Волонтёр — это человек, который
                     <MySelect :list="constTaskVolunteers.listOfAnswersTaskWhoIsAVolunteer1" :listID="1" @answer="addAnswer"
-                              :selected="this.mainJSON.task3.ULSE1_Log_SEK4_1"></MySelect>
+                              :selected="this.mainJSON.task3.ULSE1_Log_SEK4_1" style="font-size: 20px"></MySelect>
                     осуществляет
                     <MySelect :list="constTaskVolunteers.listOfAnswersTaskWhoIsAVolunteer2" :listID="2" @answer="addAnswer"
-                              :selected="this.mainJSON.task3.ULSE1_Log_SEK4_2"></MySelect>
+                              :selected="this.mainJSON.task3.ULSE1_Log_SEK4_2" style="font-size: 20px"></MySelect>
                     общественно полезную деятельность
                     <MySelect :list="constTaskVolunteers.listOfAnswersTaskWhoIsAVolunteer3" :listID="3" @answer="addAnswer"
-                              :selected="this.mainJSON.task3.ULSE1_Log_SEK4_3"></MySelect>
+                              :selected="this.mainJSON.task3.ULSE1_Log_SEK4_3" style="font-size: 20px"></MySelect>.
                 </p>
             </div>
         </div>
@@ -62,7 +62,6 @@
         methods: {
             ...mapMutations(["push_mainJSON"]),
             addAnswer(el, listID) {
-                console.log(el, listID)
                 this.mainJSON.task3["ULSE1_Log_SEK4_" + listID] = el
                 this.mainJSON.task3.results["ULSE1_Log_SEK4_" + listID] = el
             },
@@ -74,8 +73,6 @@
                         el.isShow = true
                     }
                 })
-                console.log(this.mainJSON.task3.results.ULSE1_Log_SEK4_1)
-                console.log(this.mainJSON.task3.results)
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
                     [

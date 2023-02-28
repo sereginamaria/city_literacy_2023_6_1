@@ -5,9 +5,9 @@
             <p>Что ответишь Коле? Выбери один вариант ответа.
             </p>
         </div>
-        <div class="background-answers">
+        <div class="option-answers-background">
             <div v-for="el in constTaskNightInTheMuseum.listOfAnswersTaskEscape" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCS4_1}"
-                 style="padding: 10px 20px"
+                 class="option-answers-border"
             >
                 <div @click="chooseAnswer(el)">
                     {{el.name}}
@@ -28,8 +28,8 @@
                     {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
                 </p>
             </div>
-            <MyButton class="white-buttons" @click="nextTask(screen)" v-if="mainJSON.task1.results.ULSCLL1_Log_SCS4_1 !== 'NA'">Далее</MyButton>
-            <MyButton class="white-buttons"  disabled v-else>Далее</MyButton>
+            <MyButton class="white-buttons" @click="nextTask(screen)" v-if="mainJSON.task1.results.ULSCLL1_Log_SCS4_1 !== 'NA'">Готово</MyButton>
+            <MyButton class="white-buttons"  disabled v-else>Готово</MyButton>
         </div>
     </div>
 </template>

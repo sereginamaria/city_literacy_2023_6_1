@@ -4,11 +4,13 @@
             <div class="mb-3">
                 <slot></slot>  <!-- todo именовать слоты -->
             </div>
-            <MyButton v-for="button in buttons" :key="button.value"  @click="$emit('update', button.status)"
-                      class="me-3 blue-buttons"
-            >
-                {{button.value}}
-            </MyButton>
+            <div class="d-flex justify-content-center">
+                <MyButton v-for="button in buttons" :key="button.value"  @click="$emit('update', button.status)"
+                          class="me-3 blue-buttons" style="width: 25%"
+                >
+                    {{button.value}}
+                </MyButton>
+            </div>
         </div>
     </div>
 </template>

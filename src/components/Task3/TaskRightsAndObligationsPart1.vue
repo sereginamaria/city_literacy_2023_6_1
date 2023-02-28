@@ -4,9 +4,9 @@
             <p>Что ответить Максу? Выбери один вариант ответа.
             </p>
         </div>
-        <div class="background-answers">
+        <div class="option-answers-background">
             <div v-for="el in constTaskVolunteers.listOfAnswersRightsAndObligationsPart1" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task3.results.ULSE1_Log_SEK3}"
-                 style="padding: 10px 20px"
+                 class="option-answers-border"
             >
                 <div @click="chooseAnswer(el)">
                     {{el.value}}

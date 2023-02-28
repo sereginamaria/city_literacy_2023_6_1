@@ -5,9 +5,9 @@
             <p>Выбери из списка все фестивали, которые проходят в Москве.
             </p>
         </div>
-        <div class="background-answers">
+        <div class="option-answers-background">
             <div v-for="el in mainJSON.task1.listOfAnswersTask11" :key="el.id" :class="{choosenAnswer: el.choose}"
-                 style="padding: 10px 20px"
+                 class="option-answers-border"
             >
                 <div @click="chooseAnswer(el)">
                     {{el.name}}

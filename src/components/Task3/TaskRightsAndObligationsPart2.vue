@@ -163,8 +163,6 @@
 
                 let list1 = []
                 let list2 = []
-                console.log(list1.length)
-                console.log(list2.length)
                 if(this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list1.length !== 0 ){
                     list1.push(this.mainJSON.task3.listOfAnswersRightsAndObligationsPart2_list1[0].id)
                 }

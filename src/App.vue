@@ -187,7 +187,7 @@
       this.startPushTimer();
 
       window.addEventListener('beforeunload', () => {
-        this.pushMainJSON()
+        this.push_mainJSON()
       });
     },
   }

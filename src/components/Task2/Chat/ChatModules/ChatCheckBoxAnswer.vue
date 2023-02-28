@@ -29,9 +29,6 @@
         },
         methods: {
             save() {
-                this.mainJSON.task2.checkBox1Selected.forEach(el => {
-                    console.log(el.value)
-                })
                 this.mainJSON.task2.results[this.screenConst.resultIndicator] = this.mainJSON.task2.checkBox1Selected
                 this.mainJSON.task2.checkBox1Selected = []
 

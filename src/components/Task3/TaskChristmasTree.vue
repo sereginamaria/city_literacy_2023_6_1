@@ -2,13 +2,13 @@
     <div class="background d-flex align-items-center flex-column" style="backdrop-filter: blur(5px);"
          :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
         <div class="instruction-block">
-            <p>Заполни пропуски, выбирая слова, которые больше всего подходят.
+            <p>Ответь на вопрос Макса. Выбери один вариант ответа.
             </p>
         </div>
         <div class="d-flex justify-content-center align-items-center w-100 h-100">
-            <div class="background-answers">
+            <div class="option-answers-background">
                 <div v-for="el in constTaskVolunteers.listOfAnswersChristmasTree" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task3.results.ULSE1_Log_SES1_1}"
-                     style="padding: 10px 20px"
+                     class="option-answers-border"
                 >
                     <div @click="chooseAnswer(el)">
                         {{el.value}}

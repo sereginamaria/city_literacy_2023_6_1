@@ -62,18 +62,12 @@
             },
         },
         updated(){
-            /*   console.log('update')
-               console.log(document.getElementById("main"))
-   */
             let el =  document.getElementById("main")
             el.addEventListener("DOMSubtreeModified", function () {
-                /*    console.log("Размеры элемента: " + el.scrollWidth + " X " + el.scrollHeight);*/
                 this.counth = el.scrollHeight
             }, false);
 
             let block1 = document.getElementById("main");
-            /*     console.log(block1)
-                 console.log(block1.scrollHeight)*/
             block1.scrollTop = block1.scrollHeight;
         },
         methods: {

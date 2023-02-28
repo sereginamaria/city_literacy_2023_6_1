@@ -6,31 +6,18 @@
             <p>Какое современное правило дорожного движения нарушается на картине? Выбери один ответ.
             </p>
         </div>
-        <div class="background-answers">
+        <div class="option-answers-background">
             <div v-for="el in constTaskNightInTheMuseum.listOfAnswersTaskMuseumPaintings1" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCK2_2}"
-                 style="padding: 10px 20px"
+                 class="option-answers-border"
             >
                 <div @click="chooseAnswer(1, el)">
                     {{el.name}}
                 </div>
             </div>
         </div>
-        <div class="background-text">
-                 <div class="d-flex">
-                <div class="me-2">
-                    <img src="../../assets/TaskNightInTheMuseumAvatarAsia.png" alt="" style="width: 50px"
-                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Ася: ' ||
-                         constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
-                    <img src="../../assets/TaskNightInTheMuseumAvatarKolia.png" alt="" style="width: 50px"
-                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Коля: '">
-                </div>
-                <p>
-                    <span class="name-in-dialog">{{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name}}</span>
-                    {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
-                </p>
-            </div>
-            <MyButton class="white-buttons" @click="nextTask(screen)" v-if="mainJSON.task1.results.ULSCLL1_Log_SCK2_2 !== 'NA'">Далее</MyButton>
-            <MyButton class="white-buttons" disabled v-else>Далее</MyButton>
+        <div class="background-text justify-content-end">
+            <MyButton class="white-buttons" @click="nextTask(screen)" v-if="mainJSON.task1.results.ULSCLL1_Log_SCK2_2 !== 'NA'">Готово</MyButton>
+            <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
     <!--Задание 5 пункт 2-->
@@ -40,31 +27,18 @@
             <p>Какое современное правило дорожного движения нарушается на картине? Выбери один ответ.
             </p>
         </div>
-        <div class="background-answers">
+        <div class="option-answers-background">
             <div v-for="el in constTaskNightInTheMuseum.listOfAnswersTaskMuseumPaintings2" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCK2_3}"
-                 style="padding: 10px 20px"
+                 class="option-answers-border"
             >
                 <div @click="chooseAnswer(2, el)">
                     {{el.name}}
                 </div>
             </div>
         </div>
-        <div class="background-text">
-                 <div class="d-flex">
-                <div class="me-2">
-                    <img src="../../assets/TaskNightInTheMuseumAvatarAsia.png" alt="" style="width: 50px"
-                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Ася: ' ||
-                         constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
-                    <img src="../../assets/TaskNightInTheMuseumAvatarKolia.png" alt="" style="width: 50px"
-                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Коля: '">
-                </div>
-                <p>
-                    <span class="name-in-dialog">{{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name}}</span>
-                    {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
-                </p>
-            </div>
-            <MyButton class="white-buttons" @click="nextTask(screen)" v-if="mainJSON.task1.results.ULSCLL1_Log_SCK2_3 !== 'NA'">Далее</MyButton>
-            <MyButton class="white-buttons" disabled v-else>Далее</MyButton>
+        <div class="background-text justify-content-end">
+            <MyButton class="white-buttons" @click="nextTask(screen)" v-if="mainJSON.task1.results.ULSCLL1_Log_SCK2_3 !== 'NA'">Готово</MyButton>
+            <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
     <!--Задание 5 пункт 3-->
@@ -74,29 +48,16 @@
             <p>Какое современное правило дорожного движения нарушается на картине? Выбери один ответ.
             </p>
         </div>
-        <div class="background-answers">
+        <div class="option-answers-background">
             <div v-for="el in constTaskNightInTheMuseum.listOfAnswersTaskMuseumPaintings3" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.task1.results.ULSCLL1_Log_SCK2_4}"
-                 style="padding: 10px 20px"
+                 class="option-answers-border"
             >
                 <div @click="chooseAnswer(3, el)">
                     {{el.name}}
                 </div>
             </div>
         </div>
-        <div class="background-text">
-                 <div class="d-flex">
-                <div class="me-2">
-                    <img src="../../assets/TaskNightInTheMuseumAvatarAsia.png" alt="" style="width: 50px"
-                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Ася: ' ||
-                         constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
-                    <img src="../../assets/TaskNightInTheMuseumAvatarKolia.png" alt="" style="width: 50px"
-                         v-if="constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name === 'Коля: '">
-                </div>
-                <p>
-                    <span class="name-in-dialog">{{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].name}}</span>
-                    {{constTaskNightInTheMuseum.screens[this.mainJSON.task1.shownScreenID].text}}
-                </p>
-            </div>
+        <div class="background-text justify-content-end">
             <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.task1.results.ULSCLL1_Log_SCK2_4 !== 'NA'">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>

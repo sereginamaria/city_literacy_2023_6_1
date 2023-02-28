@@ -87,11 +87,11 @@
                 if(status) {
                     screen.isShow = false
 
-                    if(this.mainJSON.task1.results.ULSCLL1_Log_SCK1_1 === 1) {
+                    if(this.mainJSON.task1.results.ULSCLL1_Log_SCK1_1 === 2) {
                         this.mainJSON.task1.shownScreenID++
                         this.mainJSON.task1.results.ULSCLL1_Score_SCK1_1 = 1
                     }
-                    if(this.mainJSON.task1.results.ULSCLL1_Log_SCK1_1 === 2) {
+                    if(this.mainJSON.task1.results.ULSCLL1_Log_SCK1_1 === 1) {
                         this.mainJSON.task1.shownScreenID+=2
                         this.mainJSON.task1.results.ULSCLL1_Score_SCK1_1 = 0
                     }
@@ -139,6 +139,6 @@
         left: calc(100%/2.3);
     }
     .colorBackpack {
-        filter: drop-shadow(0px 0px 55px #FFFFFF) drop-shadow(12.7928px 8.52851px 8.52851px rgba(0, 0, 0, 0.4));
+        filter: drop-shadow(0px 0px 50px #FFFFFF) drop-shadow(12.7928px 8.52851px 8.52851px rgba(0, 0, 0, .0));
     }
 </style>
