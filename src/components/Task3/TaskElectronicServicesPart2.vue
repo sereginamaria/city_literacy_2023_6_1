@@ -2,7 +2,8 @@
     <div class="background d-flex align-items-center flex-column" style="backdrop-filter: blur(5px);"
          :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
         <div class="instruction-block">
-            <p>Перед тобой карта важных проблем нашего города. Кликнув на объект на карте, ты увидишь описание проблемы. Укажи, можно ли решить эту проблему, отправив заявку в электронный сервис?
+            <p>
+                Перед тобой карта важных проблем нашего города. Кликнув на объект на карте, ты увидишь описание проблемы. Укажи, можно ли решить эту проблему, отправив заявку в электронный сервис?
             </p>
         </div>
         <div class="d-flex justify-content-center w-100 h-100">
@@ -47,31 +48,39 @@
                     {{constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].text}}
                 </p>
             </div>
-            <MyButton class="white-buttons" @click="checkAnswer" v-if="this.answerHomelessPerson !== null || this.answerCat !== null ||
-                      this.answerPollution !== null || this.answerNoise !== null">
+            <MyButton class="white-buttons" @click="checkAnswer" v-if="this.answers.answerHomelessPerson !== null || this.answers.answerCat !== null ||
+                      this.answers.answerPollution !== null || this.answers.answerNoise !== null">
                 Готово
             </MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
 
-    <div v-if="this.showModalDialog" class="dialog">
-        <div class="dialog-content">
-            <div class="mb-3">
-                <img :src=" require('../../assets/' + this.imgSrc + '.png') " alt="" style="width: 100%">
-                <div>
-                    {{this.message}}
+    <div v-if="this.showModalDialog" class="dialog d-flex flex-column">
+        <div style="margin: auto">
+            <div class="dialog-content mb-3" style="margin: unset">
+                <div class="mb-3">
+                    Перед тобой карта важных проблем нашего города. Кликнув на объект на карте, ты увидишь описание проблемы.
+                    Укажи, можно ли решить эту проблему, отправив заявку в электронный сервис?
                 </div>
             </div>
-            <div class="d-flex justify-content-center">
-                <MyButton v-for="button in this.modalButtons" :key="button.value" @click="addAnswer(this.type, button.status)" style="width: 45%"
-                          class="me-3 blue-buttons" :class="{yesButtonTrue: this.yesButtonTrue && button.status, noButtonTrue: this.noButtonTrue && !button.status}"
-                >
-                    {{button.value}}
-                </MyButton>
+            <div class="dialog-content" style="margin: unset">
+                <div class="mb-3">
+                    <img :src=" require('../../assets/' + this.imgSrc + '.png') " alt="" style="width: 100%">
+                    <div>
+                        {{this.message}}
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <MyButton v-for="button in this.modalButtons" :key="button.value" @click="addAnswer(this.type, button.status)" style="width: 45%"
+                              class="me-3 blue-buttons" :class="{yesButtonTrue: this.yesButtonTrue && button.status, noButtonTrue: this.noButtonTrue && !button.status}"
+                    >
+                        {{button.value}}
+                    </MyButton>
+                </div>
             </div>
-
         </div>
+
     </div>
 </template>
 
@@ -197,20 +206,38 @@
                 })
 
                 let ans = []
+                let results = 0
                 if(this.answerHomelessPerson){
                     ans.push(1)
-                } else ans.push(2)
+                } else {
+                    ans.push(2)
+                    results++
+                }
                 if(this.answerCat){
                     ans.push(3)
+                    results++
                 } else ans.push(4)
                 if(this.answerPollution){
                     ans.push(5)
-                } else ans.push(6)
+                } else {
+                    ans.push(6)
+                    results++
+                }
                 if(this.answerNoise){
                     ans.push(7)
-                } else ans.push(8)
+                } else {
+                    ans.push(8)
+                    results++
+                }
 
                 this.mainJSON.taskVolunteers.results.ULSE1_Log_SEK6_1 = ans.join()
+                if(results === 4){
+                    this.mainJSON.taskVolunteers.results.ULSE1_Score_SEK6_1 = 2
+                }
+                else if(results === 3 || results === 2){
+                    this.mainJSON.taskVolunteers.results.ULSE1_Score_SEK6_1 = 1
+                }
+                else this.mainJSON.taskVolunteers.results.ULSE1_Score_SEK6_1 = 0
 
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =

@@ -163,18 +163,39 @@
                         el.isShow = true
                     }
                 })
+                let results = 0
                 if(this.mainJSON.taskVolunteers.listOfAnswersSocialInstitutions_list1.length !== 0){
                     this.mainJSON.taskVolunteers.results.ULSE1_Log1_SEK2_1 = this.mainJSON.taskVolunteers.listOfAnswersSocialInstitutions_list1[0].id
+                    if(this.mainJSON.taskVolunteers.results.ULSE1_Log1_SEK2_1 === 1){
+                        results++
+                    }
                 }
                 if(this.mainJSON.taskVolunteers.listOfAnswersSocialInstitutions_list2.length !== 0){
                     this.mainJSON.taskVolunteers.results.ULSE1_Log2_SEK2_1 = this.mainJSON.taskVolunteers.listOfAnswersSocialInstitutions_list2[0].id
+                    if(this.mainJSON.taskVolunteers.results.ULSE1_Log2_SEK2_1 === 2){
+                        results++
+                    }
                 }
                 if(this.mainJSON.taskVolunteers.listOfAnswersSocialInstitutions_list3.length !== 0){
                     this.mainJSON.taskVolunteers.results.ULSE1_Log3_SEK2_1 = this.mainJSON.taskVolunteers.listOfAnswersSocialInstitutions_list3[0].id
+                    if(this.mainJSON.taskVolunteers.results.ULSE1_Log3_SEK2_1 === 4){
+                        results++
+                    }
                 }
                 if(this.mainJSON.taskVolunteers.listOfAnswersSocialInstitutions_list4.length !== 0){
                     this.mainJSON.taskVolunteers.results.ULSE1_Log4_SEK2_1 = this.mainJSON.taskVolunteers.listOfAnswersSocialInstitutions_list4[0].id
+                    if(this.mainJSON.taskVolunteers.results.ULSE1_Log4_SEK2_1 === 3){
+                        results++
+                    }
                 }
+
+                if(results === 4){
+                    this.mainJSON.taskVolunteers.results.ULSE1_Score1_SEK2_1 = 2
+                }
+                else if(results === 2){
+                    this.mainJSON.taskVolunteers.results.ULSE1_Score1_SEK2_1 = 1
+                }
+                else this.mainJSON.taskVolunteers.results.ULSE1_Score1_SEK2_1 = 0
 
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =

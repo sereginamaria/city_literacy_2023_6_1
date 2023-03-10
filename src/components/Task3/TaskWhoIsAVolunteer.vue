@@ -40,11 +40,18 @@
                     {{constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].text}}
                 </p>
             </div>
-            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.taskVolunteers.results.ULSE1_Log_SEK4_1 !== 'NA' ||
+            <MyButton class="white-buttons" @click="showModal" v-if="mainJSON.taskVolunteers.results.ULSE1_Log_SEK4_1 !== 'NA' ||
             mainJSON.taskVolunteers.results.ULSE1_Log_SEK4_2 !== 'NA' || mainJSON.taskVolunteers.results.ULSE1_Log_SEK4_3 !== 'NA'">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
+
+    <MyModal v-model:show="modalVisible" v-model:buttons="modalButtons"
+             @update="checkAnswer"
+    >
+        {{this.modalMessage}}
+    </MyModal>
+
 </template>
 
 <script>
@@ -56,38 +63,63 @@
             screen: {},
             constTaskVolunteers: {}
         },
+        data() {
+            return {
+                modalVisible: false,
+                modalButtons: [],
+                modalMessage: ''
+            }
+        },
         computed: {
             ...mapGetters(['mainJSON']),
         },
         methods: {
             ...mapMutations(["push_mainJSON"]),
+            showModal(){
+                this.modalVisible = true
+                this.modalButtons = [
+                    {value: "Да", status: true},
+                    {value: "Нет", status: false}
+                ]
+                this.modalMessage = 'Ты действительно хочешь закончить выполнение этого задания? После этого уже нельзя будет изменить ответы.'
+            },
             addAnswer(el, listID) {
                 this.mainJSON.taskVolunteers["ULSE1_Log_SEK4_" + listID] = el
                 this.mainJSON.taskVolunteers.results["ULSE1_Log_SEK4_" + listID] = el
             },
-            checkAnswer() {
-                screen.isShow = false
-                this.mainJSON.taskVolunteers.shownScreenID++
-                this.mainJSON.taskVolunteers.screens.forEach(el => {
-                    if (el.id === this.mainJSON.taskVolunteers.shownScreenID) {
-                        el.isShow = true
-                    }
-                })
-                let t = new Date()
-                this.mainJSON.results.dataTimeLastUpdate =
-                    [
-                        t.getFullYear(),
-                        ('0' + (t.getMonth() + 1)).slice(-2),
-                        ('0' + t.getDate()).slice(-2)
-                    ].join('-') + ' ' + [
-                        ('0' + (t.getHours())).slice(-2),
-                        ('0' + (t.getMinutes())).slice(-2),
-                        ('0' + t.getSeconds()).slice(-2)
-                    ].join(':');
+            checkAnswer(status) {
+                this.modalVisible = false
 
-                this.push_mainJSON({
-                    push: this.mainJSON
-                })
+                if(status) {
+                    screen.isShow = false
+                    this.mainJSON.taskVolunteers.shownScreenID++
+                    this.mainJSON.taskVolunteers.screens.forEach(el => {
+                        if (el.id === this.mainJSON.taskVolunteers.shownScreenID) {
+                            el.isShow = true
+                        }
+                    })
+                    if(this.mainJSON.taskVolunteers.results.ULSE1_Log_SEK4_1 === 'в свободное от работы или учебы время' &&
+                        this.mainJSON.taskVolunteers.results.ULSE1_Log_SEK4_2 === 'добровольную' &&
+                        this.mainJSON.taskVolunteers.results.ULSE1_Log_SEK4_3 === 'без получения денежного вознаграждения') {
+                        this.mainJSON.taskVolunteers.results.ULSE1_Score_SEK4_1 = 1
+                    }
+                    else this.mainJSON.taskVolunteers.results.ULSE1_Score_SEK4_1 = 0
+                    let t = new Date()
+                    this.mainJSON.results.dataTimeLastUpdate =
+                        [
+                            t.getFullYear(),
+                            ('0' + (t.getMonth() + 1)).slice(-2),
+                            ('0' + t.getDate()).slice(-2)
+                        ].join('-') + ' ' + [
+                            ('0' + (t.getHours())).slice(-2),
+                            ('0' + (t.getMinutes())).slice(-2),
+                            ('0' + t.getSeconds()).slice(-2)
+                        ].join(':');
+
+                    this.push_mainJSON({
+                        push: this.mainJSON
+                    })
+                }
             }
         }
     }

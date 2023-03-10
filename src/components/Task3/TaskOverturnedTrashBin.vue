@@ -68,6 +68,10 @@
                         el.isShow = true
                     }
                 })
+                if (this.mainJSON.taskVolunteers.results.ULSE1_Log_SES4 === 2){
+                    this.mainJSON.taskVolunteers.results.ULSE1_Score_SES4 = 1
+                }
+                else this.mainJSON.taskVolunteers.results.ULSE1_Score_SES4 = 0
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
                     [

@@ -145,14 +145,28 @@
                         el.isShow = true
                     }
                 })
+
                 if(this.mainJSON.taskVolunteers.listOfAnswersUrbanProblems_list1.length !== 0) {
                     this.mainJSON.taskVolunteers.results.ULSE1_Log1_SEK1_1 = this.mainJSON.taskVolunteers.listOfAnswersUrbanProblems_list1[0].id
+                    if(this.mainJSON.taskVolunteers.listOfAnswersUrbanProblems_list1[0].id === 4){
+                        this.mainJSON.taskVolunteers.results.ULSE1_Score1_SEK1_1 = 1
+                    }
+                    else this.mainJSON.taskVolunteers.results.ULSE1_Score1_SEK1_1 = 0
                 }
                 if(this.mainJSON.taskVolunteers.listOfAnswersUrbanProblems_list2.length !== 0) {
                     this.mainJSON.taskVolunteers.results.ULSE1_Log2_SEK1_1 = this.mainJSON.taskVolunteers.listOfAnswersUrbanProblems_list2[0].id
+                    if(this.mainJSON.taskVolunteers.listOfAnswersUrbanProblems_list2[0].id === 6){
+                        this.mainJSON.taskVolunteers.results.ULSE1_Score2_SEK1_1 = 1
+                    }
+                    else this.mainJSON.taskVolunteers.results.ULSE1_Score2_SEK1_1 = 0
                 }
                 if(this.mainJSON.taskVolunteers.listOfAnswersUrbanProblems_list3.length !== 0) {
                     this.mainJSON.taskVolunteers.results.ULSE1_Log3_SEK1_1 = this.mainJSON.taskVolunteers.listOfAnswersUrbanProblems_list3[0].id
+
+                    if(this.mainJSON.taskVolunteers.listOfAnswersUrbanProblems_list3[0].id === 2){
+                        this.mainJSON.taskVolunteers.results.ULSE1_Score3_SEK1_1 = 1
+                    }
+                    else this.mainJSON.taskVolunteers.results.ULSE1_Score3_SEK1_1 = 0
                 }
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =

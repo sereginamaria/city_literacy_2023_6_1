@@ -83,8 +83,9 @@
                     }
                 }
                 if(status === 'exit'){
-                    this.mainJSON['loginShow'] = true
-                    this.mainJSON['mainPageShow'] = false
+                    this.mainJSON['resultsShow'] = true
+                 /*   this.mainJSON['loginShow'] = true
+                    this.mainJSON['mainPageShow'] = false*/
                     this.mainJSON.taskVolunteers["isShow"] = false
                 }
 

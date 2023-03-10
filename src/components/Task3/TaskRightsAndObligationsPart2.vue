@@ -2,7 +2,7 @@
     <div class="background d-flex align-items-center flex-column" style="backdrop-filter: blur(5px);"
          :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
         <div class="instruction-block">
-            <p>Что в нашей стране относится к основным правам, а что к обязанностям? Дополни схему, перетащив фразы снизу в соответствующий пустой блок.
+            <p>Что в нашей стране относится к основным правам, а что - к обязанностям?Дополни схему, перетащив фразы снизу в соответствующий пустой блок.
             </p>
         </div>
         <div class="d-flex justify-content-center align-items-center w-100 h-100">
@@ -163,25 +163,53 @@
 
                 let list1 = []
                 let list2 = []
+                let answers = 0
+
                 if(this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list1.length !== 0 ){
                     list1.push(this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list1[0].id)
+                    if(this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list1[0].id === 1){
+                        answers++
+                    }
                 }
                 if(this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list2.length !== 0 ){
                     list1.push(this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list2[0].id)
+                    if(this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list2[0].id === 2){
+                        answers++
+                    }
                 }
                 if(this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list3.length !== 0 ){
                     list1.push(this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list3[0].id)
+                    if(this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list3[0].id === 3){
+                        answers++
+                    }
                 }
 
                 if(this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list4.length !== 0 ){
                     list2.push(this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list4[0].id)
+                    if(this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list4[0].id === 4){
+                        answers++
+                    }
                 }
                 if(this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list5.length !== 0 ){
                     list2.push(this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list5[0].id)
+                    if(this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list5[0].id === 5){
+                        answers++
+                    }
                 }
                 if(this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list6.length !== 0 ){
                     list2.push(this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list6[0].id)
+                    if(this.mainJSON.taskVolunteers.listOfAnswersRightsAndObligationsPart2_list6[0].id === 6){
+                        answers++
+                    }
                 }
+
+                if(answers === 6){
+                    this.mainJSON.taskVolunteers.results.ULSE1_Score_SEK3_1 = 2
+                }
+                else if(answers === 5 || answers === 4){
+                    this.mainJSON.taskVolunteers.results.ULSE1_Score_SEK3_1 = 1
+                }
+                else this.mainJSON.taskVolunteers.results.ULSE1_Score_SEK3_1 = 0
 
                 if(list1.length !== 0){
                     this.mainJSON.taskVolunteers.results.ULSE1_Log_SEK3_1 = list1.join()

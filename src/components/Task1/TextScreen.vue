@@ -79,8 +79,9 @@
                     }
                 }
                 if(status === 'exit'){
-                    this.mainJSON['loginShow'] = true
-                    this.mainJSON['mainPageShow'] = false
+                    this.mainJSON['resultsShow'] = true
+                 /*   this.mainJSON['loginShow'] = true
+                    this.mainJSON['mainPageShow'] = false*/
                     this.mainJSON.taskNightInTheMuseum["isShow"] = false
                 }
                 let t = new Date()

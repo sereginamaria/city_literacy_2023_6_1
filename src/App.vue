@@ -9,6 +9,7 @@
   </div>
 
   <PausePage v-if="this.mainJSON.pauseShow"/>
+  <ResultsPage v-if="this.mainJSON.resultsShow"/>
 </template>
 
 <script>
@@ -20,10 +21,12 @@
   import InstructionPage from "@/components/InstructionPage";
   import PausePage from "@/components/PausePage";
   import PageNavBar from "@/components/PageNavBar";
+  import ResultsPage from "@/components/ResultsPage";
 
   export default {
     name: 'App',
     components: {
+      ResultsPage,
       PageNavBar,
       PausePage,
       InstructionPage,
@@ -31,7 +34,7 @@
       PageFooter,
       PageBody,
     },
-    date() {
+    data() {
       return {
         timer: '',
         timerPush: '',

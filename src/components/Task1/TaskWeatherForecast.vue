@@ -150,6 +150,13 @@
                         el.isShow = true
                     }
                 })
+                if((this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_LLK6_1 === 1 || this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_LLK6_1 === 3) &&
+                    (this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_LLK6_3 === 1 || this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_LLK6_3 === 3)) {
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_LLK6_1 = 1
+                }
+                else {
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_LLK6_1 = 0
+                }
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
                     [

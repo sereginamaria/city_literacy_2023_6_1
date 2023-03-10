@@ -144,6 +144,20 @@
                         el.isShow = true
                     }
                 })
+                let k = 0
+                if(this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK3_2 === 5 && this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK3_3 === 7 &&
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK3_4 === 3 && this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK3_5 === 1){
+                    k++
+                }
+                if(k === 4){
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_SCK3_2 = 2
+                }
+                else if(k === 3){
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_SCK3_2 = 1
+                }
+                else {
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_SCK3_2 = 0
+                }
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
                     [

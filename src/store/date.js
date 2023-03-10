@@ -5,6 +5,7 @@ const date = {
     "instructionShow": false,
     "mainPageShow": false,
     "pauseShow": false,
+    "resultsShow": false,
     "currentPushTime": 0,
     "currentTime": 5400,
     "ret": '',
@@ -104,7 +105,6 @@ const date = {
             "ULSCLL1_Log_LLK6_3": "NA",
             "ULSCLL1_Log_LLK6_4": "NA",
             "ULSCLL1_Score_LLK6_1": "NA",
-
         },
         "isShow": false,
         "shownScreenID": 0,
@@ -590,36 +590,52 @@ const date = {
         "results": {
             //0
             "ULHLDT1_Log_HLS1_1": "NA",
+            "ULHLDT1_Score_HLS1_1": "NA",
             //1
             "ULHLDT1_Log_HLS4_1": "NA",
+            "ULHLDT1_Score_HLS4_1": "NA",
             //2
             "ULHLDT1_Log_DTS2_1": "NA",
+            "ULHLDT1_Score_DTS2_1": "NA",
             //3
             "ULHLDT1_Log_HLS5_1": "NA",
+            "ULHLDT1_Score_HLS5_1": "NA",
             //4
             "ULHLDT1_Log_HLK1_1": "NA",
+            "ULHLDT1_Score_HLK1_1": "NA",
             //5
             "ULHLDT1_Log_HLK2_1": "NA",
+            "ULHLDT1_Score_HLK2_1": "NA",
             //6
             "ULHLDT1_Log_DTS1_1": "NA",
+            "ULHLDT1_Score_DTS1_1": "NA",
             //7
             "ULHLDT1_Log_HLK4_1": "NA",
+            "ULHLDT1_Score_HLK4_1": "NA",
             //8
             "ULHLDT1_Log_DTK1_1": "NA",
+            "ULHLDT1_Score_DTK1_1": "NA",
             //9
             "ULHLDT1_Log_HLK3_1": "NA",
+            "ULHLDT1_Score_HLK3_1": "NA",
             //10
             "ULHLDT1_Log_HLS3_1": "NA",
+            "ULHLDT1_Score_HLS3_1": "NA",
             //11
             "ULHLDT1_Log_HLS1_2": "NA",
+            "ULHLDT1_Score_HLS1_2": "NA",
             //12
             "ULHLDT1_Log_HLK2_2": "NA",
+            "ULHLDT1_Score_HLK2_2": "NA",
             //13
             "ULHLDT1_Log_DTS1_2": "NA",
+            "ULHLDT1_Score_DTS1_2": "NA",
             //14
             "ULHLDT1_Log_DTS3_1": "NA",
+            "ULHLDT1_Score_DTS3_1": "NA",
             //15
-            "ULHLDT1_Log_HLS2_1": "NA"
+            "ULHLDT1_Log_HLS2_1": "NA",
+            "ULHLDT1_Score_HLS2_1": "NA",
         },
         "shownScreenID": 0,
         "screens": [
@@ -702,60 +718,88 @@ const date = {
             "ULSE1_Log_SEK4_1": "NA",
             "ULSE1_Log_SEK4_2": "NA",
             "ULSE1_Log_SEK4_3": "NA",
+            "ULSE1_Score_SEK4_1": "NA",
 
             //Card about volunteering
             "ULSE1_Log_SEK4_4": "NA",
+            "ULSE1_Score_SEK4_2": "NA",
 
             //Rights and Obligations part 1
             "ULSE1_Log_SEK3": "NA",
+            "ULSE1_Score_SEK3": "NA",
 
             //Rights and Obligations part 2
             "ULSE1_Log_SEK3_1": "NA",
             "ULSE1_Log_SEK3_2": "NA",
+            "ULSE1_Score_SEK3_1": "NA",
 
             //Social institutions
             "ULSE1_Log1_SEK2_1": "NA",
             "ULSE1_Log2_SEK2_1": "NA",
             "ULSE1_Log3_SEK2_1": "NA",
             "ULSE1_Log4_SEK2_1": "NA",
+            "ULSE1_Score1_SEK2_1": "NA",
 
             //Who planted the tree
             "ULSE1_Log_SEK2_2": "NA",
+            "ULSE1_Score_SEK2_2": "NA",
 
             //Urban problems
             "ULSE1_Log1_SEK1_1": "NA",
             "ULSE1_Log2_SEK1_1": "NA",
             "ULSE1_Log3_SEK1_1": "NA",
+            "ULSE1_Score1_SEK1_1": "NA",
+            "ULSE1_Score2_SEK1_1": "NA",
+            "ULSE1_Score3_SEK1_1": "NA",
 
             //Electronic Services 1_1
             "ULSE1_Log1_SEK5_1": "NA",
+            "ULSE1_Score1_SEK5_1": "NA",
 
             //Electronic Services 1_2
             "ULSE1_Log2_SEK5_1": "NA",
+            "ULSE1_Score2_SEK5_1": "NA",
 
             //Electronic Services 2
             "ULSE1_Log_SEK6_1": "NA",
+            "ULSE1_Score_SEK6_1": "NA",
 
             //Cristmas Tree
             "ULSE1_Log_SES1_1": "NA",
+            "ULSE1_Score_SES1_1": "NA",
+
+            //Sorting Garbage
+            "ULSE1_Log_SES2_1": "NA",
+            "ULSE1_Log_SES2_2": "NA",
+            "ULSE1_Log_SES2_3": "NA",
+            "ULSE1_Log_SES2_4": "NA",
+            "ULSE1_Log_SES2_5": "NA",
+            "ULSE1_Log_SES3": "NA",
+            "ULSE1_Score_SES2": "NA",
+            "ULSE1_Score_SES3": "NA",
 
             //OverternedTrashBin
             "ULSE1_Log_SES4": "NA",
+            "ULSE1_Score_SES4": "NA",
 
             //Woman with stroller
             "ULSE1_Log_SES5": "NA",
+            "ULSE1_Score_SES5": "NA",
 
             //Taske off the backpack
             "ULSE1_Log_SES6": "NA",
+            "ULSE1_Score_SES6": "NA",
 
             //Annn feels bad
             "ULSE1_Log_SES7": "NA",
+            "ULSE1_Score_SES7": "NA",
 
             //Waxwing
             "ULSE1_Log_SES1": "NA",
+            "ULSE1_Score_SES1": "NA",
 
         },
-        "shownScreenID": 0,
+        "shownScreenID": 0, 
         "screens": [
             {"id": 0, "isShow": true, "imgURL": "TaskVolunteersAcquaintanceMax", "haveTask": false,
                 "description": ''},
