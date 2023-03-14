@@ -29,8 +29,8 @@
                     {{constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].text}}
                 </p>
             </div>
-            <MyButton class="white-buttons" @click="nextTask(screen)" v-if="mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCS4_2 !== 'NA'">Далее</MyButton>
-            <MyButton class="white-buttons" disabled v-else>Далее</MyButton>
+            <MyButton class="white-buttons" @click="nextTask(screen)" v-if="mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCS4_2 !== 'NA'">Готово</MyButton>
+            <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
     <!--Задание 7 задание 2-->

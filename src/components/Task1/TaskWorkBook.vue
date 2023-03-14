@@ -6,10 +6,10 @@
             </p>
         </div>
         <div class="background-task1">
-            <div style="line-height: 3;" id="collapseModularTask4">
+            <div style="line-height: 3; text-align: justify; font-size: 18px" id="collapseModularTask4">
                 Москва была основана в
                 <span data-bs-toggle="collapse" data-bs-target="#collapseWorkBookQ1" aria-expanded="false" aria-controls="collapseWorkBookQ1"
-                      @click="openWorkBookQ(14)" style="text-decoration: underline"
+                      @click="openWorkBookQ(14)" style="text-decoration: underline; font-size: 18px" :class="{colorAnswers: this.mainJSON.taskNightInTheMuseum.ULSCLL1_Log_LLK1_1 === 'NA'}"
                 >{{this.mainJSON.taskNightInTheMuseum.ULSCLL1_Log_LLK1_1 !== "NA" ? mainJSON.taskNightInTheMuseum.ULSCLL1_Log_LLK1_1 : "_______"}}</span>
                 <div class="collapse" id="collapseWorkBookQ1" style="position: absolute" data-bs-parent="#collapseModularTask4">
                     <div class="card card-body">
@@ -20,7 +20,7 @@
                 </div>
                 году
                 <span data-bs-toggle="collapse" data-bs-target="#collapseWorkBookQ2" aria-expanded="false" aria-controls="collapseWorkBookQ2"
-                      @click="openWorkBookQ(15)" style="text-decoration: underline"
+                      @click="openWorkBookQ(15)" style="text-decoration: underline; font-size: 18px; font-size: 18px" :class="{colorAnswers: this.mainJSON.taskNightInTheMuseum.ULSCLL1_Log_LLK1_2 === 'NA'}"
                 >{{this.mainJSON.taskNightInTheMuseum.ULSCLL1_Log_LLK1_2 !== "NA" ? mainJSON.taskNightInTheMuseum.ULSCLL1_Log_LLK1_2 : "_______"}}</span>.
                 <div class="collapse" id="collapseWorkBookQ2" style="position: absolute" data-bs-parent="#collapseModularTask4">
                     <div class="card card-body">
@@ -34,7 +34,7 @@
                 </div>
                 По его указу на берегу Москвы-реки была возведена деревянная крепость. Сейчас на этом месте мы видим
                 <span data-bs-toggle="collapse" data-bs-target="#collapseWorkBookQ3" aria-expanded="false" aria-controls="collapseWorkBookQ3"
-                      @click="openWorkBookQ(16)" style="text-decoration: underline"
+                      @click="openWorkBookQ(16)" style="text-decoration: underline; font-size: 18px" :class="{colorAnswers: this.mainJSON.taskNightInTheMuseum.ULSCLL1_Log_LLK1_3 === 'NA'}"
                 >{{this.mainJSON.taskNightInTheMuseum.ULSCLL1_Log_LLK1_3 !== "NA" ? mainJSON.taskNightInTheMuseum.ULSCLL1_Log_LLK1_3 : "_______"}}</span>.
                 <div class="collapse" id="collapseWorkBookQ3" style="position: absolute" data-bs-parent="#collapseModularTask4">
                     <div class="card card-body">
@@ -48,7 +48,7 @@
                 </div>
                 В наше время рядом с этим местом находится памятник
                 <span data-bs-toggle="collapse" data-bs-target="#collapseWorkBookQ4" aria-expanded="false" aria-controls="collapseWorkBookQ4"
-                      @click="openWorkBookQ(17)" style="text-decoration: underline"
+                      @click="openWorkBookQ(17)" style="text-decoration: underline; font-size: 18px" :class="{colorAnswers: this.mainJSON.taskNightInTheMuseum.ULSCLL1_Log_LLK1_4 === 'NA'}"
                 >{{this.mainJSON.taskNightInTheMuseum.ULSCLL1_Log_LLK1_4 !== "NA" ? mainJSON.taskNightInTheMuseum.ULSCLL1_Log_LLK1_4 : "_______"}}</span>.
                 <div class="collapse" id="collapseWorkBookQ4" style="position: absolute" data-bs-parent="#collapseModularTask4">
                     <div class="card card-body">
@@ -169,8 +169,8 @@
                     if(el.value === 'Князь Даниил Московский'){
                         this.mainJSON.taskNightInTheMuseum["ULSCLL1_Log_LLK1_" + workBookID] = 'Князем Даниилом Московским'
                     }
-                    if(el.value === 'Князь Степан Кучка'){
-                        this.mainJSON.taskNightInTheMuseum["ULSCLL1_Log_LLK1_" + workBookID] = 'Князем Степаном Кучкой'
+                    if(el.value === 'Боярин Степан Кучка'){
+                        this.mainJSON.taskNightInTheMuseum["ULSCLL1_Log_LLK1_" + workBookID] = 'Боярином Степаном Кучкой'
                     }
                 }
                 if(workBookID === 3){
@@ -264,5 +264,14 @@
     .card {
         background: #FFFFFF;
         border: 1px solid #54BEDF;
+    }
+    .colorAnswers {
+        border-bottom-right-radius: 10%;
+        border-bottom-left-radius: 10%;
+        border-top-right-radius: 50%;
+        box-shadow: 0px 0px 5px 3px rgba(84, 190, 223, 0.5);
+        text-decoration: underline;
+        border-top-left-radius: 50%;
+        background: rgba(84, 190, 223, 0.5);
     }
 </style>

@@ -67,7 +67,7 @@
                     }
                 })
 
-                if(this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCS4_1 === 3){
+                if(this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCS4_1 === 3 || this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCS4_1 === 1){
                     this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_SCS4_1 = 1
                 }
                 else {

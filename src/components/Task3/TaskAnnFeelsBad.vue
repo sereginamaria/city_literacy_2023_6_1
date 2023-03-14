@@ -1,13 +1,14 @@
 <template>
     <div class="background d-flex align-items-center flex-column" style="backdrop-filter: blur(5px);"
          :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
-        <div class="instruction-block">
+        <div class="instruction-block" id="instruction-block">
             <p>Ответь на вопрос Макса. Выбери один из вариантов ответа
             </p>
         </div>
-        <div class="d-flex justify-content-center align-items-center w-100 h-100">
+        <div class="d-flex justify-content-center align-items-center w-100"
+             :style="'height: calc(100% - ' + this.height + 'px)'">
             <div class="option-answers-background">
-                <div v-for="el in constTaskVolunteers.listOfAnswersAnnFeelsBad" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.taskVolunteers.results.ULSE1_Log_SES7}"
+                <div v-for="el in constTaskVolunteers.listOfAnswersAnnFeelsBad" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.taskVolunteers.results.ULSE1_Log_SES5_1}"
                      class="option-answers-border"
                 >
                     <div @click="chooseAnswer(el)">
@@ -17,7 +18,7 @@
             </div>
         </div>
 
-        <div class="background-text">
+        <div class="background-text" id="background-text">
             <div class="d-flex">
                       <div class="me-2">
                     <img src="../../assets/TaskVolunteersAvatarAnn.png" alt="" style="width: 50px"
@@ -36,7 +37,7 @@
                     {{constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].text}}
                 </p>
             </div>
-            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.taskVolunteers.results.ULSE1_Log_SES7 !== 'NA'">Готово</MyButton>
+            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.taskVolunteers.results.ULSE1_Log_SES5_1 !== 'NA'">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
@@ -51,13 +52,18 @@
             screen: {},
             constTaskVolunteers: {}
         },
+        data() {
+            return {
+                height: 0
+            }
+        },
         computed: {
             ...mapGetters(['mainJSON']),
         },
         methods: {
             ...mapMutations(["push_mainJSON"]),
             chooseAnswer(el){
-                this.mainJSON.taskVolunteers.results.ULSE1_Log_SES7 = el.id
+                this.mainJSON.taskVolunteers.results.ULSE1_Log_SES5_1 = el.id
             },
             checkAnswer() {
                 screen.isShow = false
@@ -67,10 +73,10 @@
                         el.isShow = true
                     }
                 })
-                if (this.mainJSON.taskVolunteers.results.ULSE1_Log_SES7 === 1){
-                    this.mainJSON.taskVolunteers.results.ULSE1_Score_SES7 = 1
+                if (this.mainJSON.taskVolunteers.results.ULSE1_Log_SES5_1 === 1){
+                    this.mainJSON.taskVolunteers.results.ULSE1_Score_SES5_1 = 1
                 }
-                else this.mainJSON.taskVolunteers.results.ULSE1_Score_SES7 = 0
+                else this.mainJSON.taskVolunteers.results.ULSE1_Score_SES5_1 = 0
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
                     [
@@ -87,6 +93,9 @@
                     push: this.mainJSON
                 })
             }
+        },
+        mounted(){
+            this.height = document.getElementById('background-text').offsetHeight + document.getElementById('instruction-block').offsetHeight
         }
     }
 </script>

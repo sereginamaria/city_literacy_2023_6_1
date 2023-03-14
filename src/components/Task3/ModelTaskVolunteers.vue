@@ -101,8 +101,8 @@
         background: linear-gradient(180deg, rgba(0, 0, 0, 0) 3.79%, rgba(0, 0, 0, 0.72) 12.58%);
         padding: 20px;
         width: 100%;
-        position: fixed;
-        bottom: 0;
+     /*   position: fixed;
+        bottom: 0;*/
     }
 
     .background-task {
@@ -140,7 +140,7 @@
         padding: 10px 20px;
     }
     .instruction-block {
-        margin: auto;
+        margin: 0 auto;
         background: #FFFFFF;
         border: 5px solid #54BEDF;
         width: 70%;

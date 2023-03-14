@@ -2,7 +2,7 @@
     <div class="background d-flex align-items-center flex-column" style="backdrop-filter: blur(5px);"
          :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
         <div class="instruction-block" id="instruction-block">
-            <p>Рассортируй отходы по контейнерам.
+            <p>Ответь на вопрос Макса. Выбери контейнер, куда выбросить батарейку.
             </p>
         </div>
         <div class="d-flex justify-content-center align-items-center w-100"
@@ -12,7 +12,7 @@
                     <div class="position-relative d-flex justify-content-center" style="width: 16%">
                         <img src="../../assets/TaskVolunteersSortingGarbagePlastic.png" alt="" class="little-backpack">
                         <draggable
-                                
+                                @add="this.nextTask = true"
                                 class="list-group list-group-el-sorting-garbage position-relative"
                                 :list="this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list1"
                                 group="listOfAnswersSocialInstitutions"
@@ -26,7 +26,7 @@
                     <div class="position-relative d-flex justify-content-center" style="width: 16%">
                         <img src="../../assets/TaskVolunteersSortingGarbagePaper.png" alt="" class="little-backpack">
                         <draggable
-                                
+                                @add="this.nextTask = true"
                                 class="list-group list-group-el-sorting-garbage position-relative"
                                 :list="this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list2"
                                 group="listOfAnswersSocialInstitutions"
@@ -40,7 +40,7 @@
                     <div class="position-relative d-flex justify-content-center" style="width: 16%">
                         <img src="../../assets/TaskVolunteersSortingGarbageGlass.png" alt="" class="little-backpack">
                         <draggable
-                                
+                                @add="this.nextTask = true"
                                 class="list-group list-group-el-sorting-garbage position-relative"
                                 :list="this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list3"
                                 group="listOfAnswersSocialInstitutions"
@@ -54,7 +54,7 @@
                     <div class="position-relative d-flex justify-content-center" style="width: 16%">
                         <img src="../../assets/TaskVolunteersSortingGarbageMetal.png" alt="" class="little-backpack">
                         <draggable
-                                
+                                @add="this.nextTask = true"
                                 class="list-group list-group-el-sorting-garbage position-relative"
                                 :list="this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list4"
                                 group="listOfAnswersSocialInstitutions"
@@ -68,7 +68,7 @@
                     <div class="position-relative d-flex justify-content-center" style="width: 16%">
                         <img src="../../assets/TaskVolunteersSortingGarbageFoodWaste.png" alt="" class="little-backpack">
                         <draggable
-                                
+                                @add="this.nextTask = true"
                                 class="list-group list-group-el-sorting-garbage position-relative"
                                 :list="this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list5"
                                 group="listOfAnswersSocialInstitutions"
@@ -82,7 +82,7 @@
                     <div class="position-relative d-flex justify-content-center" style="width: 16%">
                         <img src="../../assets/TaskVolunteersSortingGarbageHazardousWaste.png" alt="" class="little-backpack">
                         <draggable
-                                
+                                @add="this.nextTask = true"
                                 class="list-group list-group-el-sorting-garbage position-relative "
                                 :list="this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list6"
                                 group="listOfAnswersSocialInstitutions"
@@ -100,7 +100,7 @@
                         group="listOfAnswersSocialInstitutions" style="width: 100%; height: 25%"
                 >
                     <template #item="{ element }">
-                        <img :src=" require('../../assets/' + element.src + '.png')" style="height: 100%" v-if="element.isShown"
+                        <img :src=" require('../../assets/' + element.src + '.png')" style="height: 100%"
                              alt="Avatar"  @mouseover="onHover($event, element.toolTip)" @mouseout="this.toolTipVisible = false"/>
                     </template>
                 </draggable>
@@ -127,11 +127,7 @@
                     {{constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].text}}
                 </p>
             </div>
-            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list1.length !== 0 ||
-            mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list2.length !== 0 || mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list3.length !== 0 ||
-            mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list4.length !== 0 || mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list5.length !== 0 ||
-            mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list6.length !== 0">Готово</MyButton>
-            <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
+            <MyButton class="white-buttons" @click="checkAnswer" v-if="this.nextTask">Готово</MyButton>
         </div>
     </div>
 
@@ -155,7 +151,16 @@
                 toolTipMessage: '',
                 clientX: 0,
                 clientY: 0,
-                height: 0
+                height: 0,
+                nextTask: false,
+                listOfAnswersSortingGarbage: [
+                    {
+                        "src": "TaskVolunteersSortingGarbageBattery",
+                        "id": 6,
+                        "style": "width: calc(100%/4); position: absolute; bottom: calc(100%/30); left: calc(100%/1.34)",
+                        "toolTip": "Батарейка"
+                    }
+                ]
             }
         },
         components: {
@@ -186,11 +191,54 @@
                     }
                 })
 
-                this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage.forEach(el => {
-                    if (el.id === 6){
-                        el.isShown = true
+                let answers = 0
+                if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list1.length !== 0){
+                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_1 = this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list1[0].id
+                    if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list1[0].id === 1){
+                        answers++
                     }
-                })
+                }
+                if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list2.length !== 0){
+                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_2 = this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list2[0].id
+                    if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list2[0].id === 2){
+                        answers++
+                    }
+                }
+                if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list3.length !== 0){
+                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_3 = this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list3[0].id
+                    if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list3[0].id === 3){
+                        answers++
+                    }
+                }
+                if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list4.length !== 0){
+                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_4 = this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list4[0].id
+                    if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list4[0].id === 4){
+                        answers++
+                    }
+                }
+                if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list5.length !== 0){
+                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_5 = this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list5[0].id
+                    if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list5[0].id === 5){
+                        answers++
+                    }
+                }
+
+                if(answers === 5){
+                    this.mainJSON.taskVolunteers.results.ULSE1_Score_SES2 = 2
+                }
+                else if (answers === 4 || answers === 3){
+                    this.mainJSON.taskVolunteers.results.ULSE1_Score_SES2 = 1
+                }
+                else this.mainJSON.taskVolunteers.results.ULSE1_Score_SES2 = 0
+
+                if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list6.length !== 0){
+                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SES3 = this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list6[0].id
+                    if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list6[0].id === 6){
+                        this.mainJSON.taskVolunteers.results.ULSE1_Score_SES3 = 1
+                    }
+                    else this.mainJSON.taskVolunteers.results.ULSE1_Score_SES3 = 0
+                }
+
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
                     [

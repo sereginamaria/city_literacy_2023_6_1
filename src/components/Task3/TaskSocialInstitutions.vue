@@ -1,11 +1,12 @@
 <template>
     <div class="background d-flex align-items-center flex-column" style="backdrop-filter: blur(5px);"
          :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
-        <div class="instruction-block">
+        <div class="instruction-block" id="instruction-block">
             <p>Соотнеси социальные институты и то, какой вклад они вносят в заботу о природе.
             </p>
         </div>
-        <div class="d-flex justify-content-center align-items-center w-100 h-100">
+        <div class="d-flex justify-content-center align-items-center w-100"
+             :style="'height: calc(100% - ' + this.height + 'px)'">
             <div class="background-task flex-row">
                 <div class="d-flex justify-content-center flex-column" style="width: 45%; background: #EDFFF6;">
                     <div class="d-flex">
@@ -104,7 +105,7 @@
             </div>
         </div>
 
-        <div class="background-text">
+        <div class="background-text" id="background-text">
             <div class="d-flex">
                       <div class="me-2">
                     <img src="../../assets/TaskVolunteersAvatarAnn.png" alt="" style="width: 50px"
@@ -140,6 +141,11 @@
         props: {
             screen: {},
             constTaskVolunteers: {}
+        },
+        data() {
+            return {
+                height: 0
+            }
         },
         components: {
             draggable
@@ -213,6 +219,9 @@
                     push: this.mainJSON
                 })
             }
+        },
+        mounted(){
+            this.height = document.getElementById('background-text').offsetHeight + document.getElementById('instruction-block').offsetHeight
         }
     }
 </script>

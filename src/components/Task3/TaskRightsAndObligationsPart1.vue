@@ -1,19 +1,22 @@
 <template>
     <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
-        <div class="instruction-block">
+        <div class="instruction-block" id="instruction-block">
             <p>Что ответить Максу? Выбери один вариант ответа.
             </p>
         </div>
-        <div class="option-answers-background">
-            <div v-for="el in constTaskVolunteers.listOfAnswersRightsAndObligationsPart1" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.taskVolunteers.results.ULSE1_Log_SEK3}"
-                 class="option-answers-border"
-            >
-                <div @click="chooseAnswer(el)">
-                    {{el.value}}
+        <div class="d-flex justify-content-center align-items-center w-100"
+             :style="'height: calc(100% - ' + this.height + 'px)'">
+            <div class="option-answers-background">
+                <div v-for="el in constTaskVolunteers.listOfAnswersRightsAndObligationsPart1" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.taskVolunteers.results.ULSE1_Log_SEK3}"
+                     class="option-answers-border"
+                >
+                    <div @click="chooseAnswer(el)">
+                        {{el.value}}
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="background-text">
+        <div class="background-text" id="background-text">
             <div class="d-flex">
                       <div class="me-2">
                     <img src="../../assets/TaskVolunteersAvatarAnn.png" alt="" style="width: 50px"
@@ -58,6 +61,7 @@
                 modalVisible: false,
                 modalButtons: [],
                 modalMessage: '',
+                height: 0
             }
         },
         computed: {
@@ -108,6 +112,9 @@
                     })
                 }
             }
+        },
+        mounted(){
+            this.height = document.getElementById('background-text').offsetHeight + document.getElementById('instruction-block').offsetHeight
         }
     }
 </script>

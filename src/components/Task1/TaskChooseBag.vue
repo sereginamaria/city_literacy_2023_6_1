@@ -89,11 +89,11 @@
 
                     if(this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK1_1 === 2) {
                         this.mainJSON.taskNightInTheMuseum.shownScreenID++
-                        this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_SCK1_1 = 1
+                        this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_SCK1_1 = 0
                     }
                     if(this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK1_1 === 1) {
                         this.mainJSON.taskNightInTheMuseum.shownScreenID+=2
-                        this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_SCK1_1 = 0
+                        this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_SCK1_1 = 1
                     }
 
                     this.mainJSON.taskNightInTheMuseum.screens.forEach(el => {
@@ -139,6 +139,6 @@
         left: calc(100%/2.3);
     }
     .colorBackpack {
-        filter: drop-shadow(0px 0px 50px #FFFFFF) drop-shadow(12.7928px 8.52851px 8.52851px rgba(0, 0, 0, .0));
+        filter: drop-shadow(0 0 30px crimson);
     }
 </style>

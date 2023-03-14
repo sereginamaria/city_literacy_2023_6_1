@@ -1,11 +1,12 @@
 <template>
     <div class="background d-flex align-items-center flex-column" style="backdrop-filter: blur(5px);"
          :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
-        <div class="instruction-block">
+        <div class="instruction-block" id="instruction-block">
             <p>Какой электронный сервис поможет решить проблему раскрученных болтов у качелей в парке? Кликни на нужную картинку.
             </p>
         </div>
-        <div class="d-flex justify-content-center align-items-center w-100 h-100">
+        <div class="d-flex justify-content-center align-items-center w-100"
+             :style="'height: calc(100% - ' + this.height + 'px)'">
             <div class="background-task flex-row flex-wrap" style="height: 85%; padding: 0">
                 <div class="electronic_services_part1_img_block">
                     <img @click="choose(1)" src="../../assets/TaskVolunteersElectronicServices1.png" alt="" :class="{choose: mainJSON.taskVolunteers.results.ULSE1_Log1_SEK5_1 === 1}">
@@ -22,7 +23,7 @@
             </div>
         </div>
 
-        <div class="background-text">
+        <div class="background-text" id="background-text">
             <div class="d-flex">
                       <div class="me-2">
                     <img src="../../assets/TaskVolunteersAvatarAnn.png" alt="" style="width: 50px"
@@ -55,6 +56,11 @@
         props: {
             screen: {},
             constTaskVolunteers: {}
+        },
+        data() {
+            return {
+                height: 0
+            }
         },
         computed: {
             ...mapGetters(['mainJSON']),
@@ -92,6 +98,9 @@
                     push: this.mainJSON
                 })
             }
+        },
+        mounted(){
+            this.height = document.getElementById('background-text').offsetHeight + document.getElementById('instruction-block').offsetHeight
         }
     }
 </script>

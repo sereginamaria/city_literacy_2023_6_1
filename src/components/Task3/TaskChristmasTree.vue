@@ -1,11 +1,12 @@
 <template>
     <div class="background d-flex align-items-center flex-column" style="backdrop-filter: blur(5px);"
          :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
-        <div class="instruction-block">
+        <div class="instruction-block" id="instruction-block">
             <p>Ответь на вопрос Макса. Выбери один вариант ответа.
             </p>
         </div>
-        <div class="d-flex justify-content-center align-items-center w-100 h-100">
+        <div class="d-flex justify-content-center align-items-center w-100"
+             :style="'height: calc(100% - ' + this.height + 'px)'">
             <div class="option-answers-background">
                 <div v-for="el in constTaskVolunteers.listOfAnswersChristmasTree" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.taskVolunteers.results.ULSE1_Log_SES1_1}"
                      class="option-answers-border"
@@ -18,7 +19,7 @@
         </div>
 
 
-        <div class="background-text">
+        <div class="background-text" id="background-text">
             <div class="d-flex">
                       <div class="me-2">
                     <img src="../../assets/TaskVolunteersAvatarAnn.png" alt="" style="width: 50px"
@@ -52,6 +53,11 @@
             screen: {},
             constTaskVolunteers: {}
         },
+        data() {
+            return {
+                height: 0
+            }
+        },
         computed: {
             ...mapGetters(['mainJSON']),
         },
@@ -68,7 +74,7 @@
                         el.isShow = true
                     }
                 })
-                if (this.mainJSON.taskVolunteers.results.ULSE1_Log_SES1_1 === 4){
+                if (this.mainJSON.taskVolunteers.results.ULSE1_Log_SES1_1 === 3){
                     this.mainJSON.taskVolunteers.results.ULSE1_Score_SES1_1 = 1
                 }
                 else this.mainJSON.taskVolunteers.results.ULSE1_Score_SES1_1 = 0
@@ -88,6 +94,9 @@
                     push: this.mainJSON
                 })
             }
+        },
+        mounted(){
+            this.height = document.getElementById('background-text').offsetHeight + document.getElementById('instruction-block').offsetHeight
         }
     }
 </script>

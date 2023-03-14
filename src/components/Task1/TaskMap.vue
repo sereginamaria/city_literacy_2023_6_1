@@ -69,13 +69,19 @@
             },
             addAnswer(el){
                 el.choose = !el.choose
-                this.mainJSON.taskNightInTheMuseum.listOfAnswersTask9.push(el.name)
                 this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_LLK3_1 = this.mainJSON.taskNightInTheMuseum.listOfAnswersTask9.join()
             },
             checkAnswer(status) {
                 this.modalVisible = false
 
                 if (status) {
+                    this.mainJSON.taskNightInTheMuseum.listOfElementsTask9.forEach( el => {
+                        if(el.choose === true){
+                            this.mainJSON.taskNightInTheMuseum.listOfAnswersTask9.push(el.name)
+                        }
+                    })
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_LLK3_1 = this.mainJSON.taskNightInTheMuseum.listOfAnswersTask9.join()
+
                     screen.isShow = false
                     this.mainJSON.taskNightInTheMuseum.shownScreenID++
                     this.mainJSON.taskNightInTheMuseum.screens.forEach(el => {
@@ -87,7 +93,7 @@
 
                 let maxScore = 0
                 this.mainJSON.taskNightInTheMuseum.listOfAnswersTask9.forEach( el => {
-                    if(el === "Река Ока" || el === "Пруд Королевский" || el === "Парк Таганский"){
+                    if(el === "Река Ока" || el === "Пруд Королевский" || el === "Парк Таганай"){
                         maxScore++
                     }
                 })

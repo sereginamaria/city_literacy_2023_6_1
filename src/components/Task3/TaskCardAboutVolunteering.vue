@@ -1,11 +1,12 @@
 <template>
     <div class="background d-flex align-items-center flex-column" style="backdrop-filter: blur(5px);"
          :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
-        <div class="instruction-block">
+        <div class="instruction-block" id="instruction-block">
             <p>Заполни таблицу, выбрав, что верно, а что не верно.
             </p>
         </div>
-        <div class="d-flex justify-content-center align-items-center w-100 h-100">
+        <div class="d-flex justify-content-center align-items-center w-100"
+             :style="'height: calc(100% - ' + this.height + 'px)'">
             <div class="background-task-card-about-volunteering">
                 <table class="table">
                     <thead>
@@ -37,7 +38,7 @@
             </div>
         </div>
 
-        <div class="background-text">
+        <div class="background-text" id="background-text">
         <div class="d-flex">
                       <div class="me-2">
                     <img src="../../assets/TaskVolunteersAvatarAnn.png" alt="" style="width: 50px"
@@ -87,7 +88,8 @@
                 list1: [],
                 list2: [],
                 list3: [],
-                rightAnswers: 0
+                rightAnswers: 0,
+                height: 0
             }
         },
         methods: {
@@ -151,6 +153,9 @@
                     })
                 }
             }
+        },
+        mounted(){
+            this.height = document.getElementById('background-text').offsetHeight + document.getElementById('instruction-block').offsetHeight
         }
     }
 </script>

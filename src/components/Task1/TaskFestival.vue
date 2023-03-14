@@ -73,7 +73,7 @@
                 })
                 let maxScore = 0
                 this.mainJSON.taskNightInTheMuseum.listOfChoosenAnswersTask11.forEach(el => {
-                    if(el === 11 || el === 12){
+                    if(el === 1 || el === 2){
                         maxScore++
                     }
                 })

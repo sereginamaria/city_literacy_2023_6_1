@@ -3,6 +3,12 @@
         <div class="dialog-content">
             <div class="d-flex">
                 <div class="m-3">
+                    <p>TIME</p>
+                    <div v-for="result in this.resultsTime" :key="result">
+                        {{result.key}}: {{result.value}}
+                    </div>
+                </div>
+                <div class="m-3">
                     <p>Ночь в музее</p>
                     <div v-for="result in this.resultsTaskNightInTheMuseum" :key="result">
                         {{result.key}}: {{result.value}}
@@ -35,7 +41,8 @@
             return {
                 resultsTaskNightInTheMuseum: [],
                 resultsTaskChatWalk: [],
-                resultsTaskVolunteers: []
+                resultsTaskVolunteers: [],
+                resultsTime: []
             }
         },
         computed: {
@@ -63,6 +70,12 @@
             }
             for (const [key, value] of Object.entries(this.mainJSON.taskVolunteers.results)) {
                 this.resultsTaskVolunteers.push({
+                    key: `${key}`,
+                    value: `${value}`
+                })
+            }
+            for (const [key, value] of Object.entries(this.mainJSON.results)) {
+                this.resultsTime.push({
                     key: `${key}`,
                     value: `${value}`
                 })

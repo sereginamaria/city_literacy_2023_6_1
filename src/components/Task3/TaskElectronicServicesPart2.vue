@@ -1,12 +1,13 @@
 <template>
     <div class="background d-flex align-items-center flex-column" style="backdrop-filter: blur(5px);"
          :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
-        <div class="instruction-block">
+        <div class="instruction-block" id="instruction-block" v-if="!this.showModalDialog">
             <p>
                 Перед тобой карта важных проблем нашего города. Кликнув на объект на карте, ты увидишь описание проблемы. Укажи, можно ли решить эту проблему, отправив заявку в электронный сервис?
             </p>
         </div>
-        <div class="d-flex justify-content-center w-100 h-100">
+        <div class="d-flex justify-content-center w-100"
+             :style="'height: calc(100% - ' + this.height + 'px)'">
             <div class="background-task-ElectronicServices2">
                 <img src="../../assets/TaskVolunteersElectronicServicesMap.png" alt="">
                 <img src="../../assets/TaskVolunteersElectronicServicesIconNoise.png" alt="" @click="openModalDialog('Noise')" style="width: 12%;
@@ -29,7 +30,7 @@
         </div>
 
 
-        <div class="background-text">
+        <div class="background-text" id="background-text">
             <div class="d-flex">
                       <div class="me-2">
                     <img src="../../assets/TaskVolunteersAvatarAnn.png" alt="" style="width: 50px"
@@ -103,7 +104,8 @@
                     answerCat: null,
                     answerPollution: null,
                     answerNoise: null,
-                }
+                },
+                height: 0
             }
         },
         props: {
@@ -255,6 +257,9 @@
                     push: this.mainJSON
                 })
             }
+        },
+        mounted(){
+            this.height = document.getElementById('background-text').offsetHeight + document.getElementById('instruction-block').offsetHeight
         }
     }
 </script>

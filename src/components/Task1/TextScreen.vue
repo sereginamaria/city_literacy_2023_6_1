@@ -2,7 +2,19 @@
     <div class="background"
          :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}"
     >
-        <div class="background-text">
+        <div v-if="screen.id === 6 || screen.id === 27 || screen.id === 29">
+            <div class="background-text-center">
+                <p>
+                    <span class="name-in-dialog">{{constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name}}</span>
+                    {{constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].text}}
+                </p>
+            </div>
+            <div class="background-text" style="background: none; justify-content: end;">
+                <MyButton class="white-buttons" @click="nextTask(screen)" style="height: 40px">Далее</MyButton>
+            </div>
+        </div>
+
+        <div class="background-text" v-else>
             <div class="d-flex">
                 <div class="me-2">
                     <img src="../../assets/TaskNightInTheMuseumAvatarAsia.png" alt="" style="width: 50px"
@@ -101,7 +113,7 @@
                 })
             },
             nextTask(screen){
-                if(screen.id === 53){
+                if(screen.id === 52){
                     this.modalVisible = true
                     this.modalButtons = [
                         {value: "Хорошо", status: true}
@@ -110,13 +122,13 @@
                 }
                 else {
                     screen.isShow = false
-                    if(screen.id === 24 || screen.id === 26){
-                        this.mainJSON.taskNightInTheMuseum.shownScreenID = 28
+                    if(screen.id === 23 || screen.id === 25){
+                        this.mainJSON.taskNightInTheMuseum.shownScreenID = 27
                     }
-                    if(screen.id === 32){
-                        this.mainJSON.taskNightInTheMuseum.shownScreenID = 34
+                    if(screen.id === 31){
+                        this.mainJSON.taskNightInTheMuseum.shownScreenID = 33
                     }
-                    if(screen.id !== 24 && screen.id !== 26 && screen.id !== 32) {
+                    if(screen.id !== 23 && screen.id !== 25 && screen.id !== 31) {
                         this.mainJSON.taskNightInTheMuseum.shownScreenID++
                     }
 
