@@ -635,6 +635,37 @@ const date = {
             "ULHLDT1_Log_HLS2_1": "NA",
             "ULHLDT1_Score_HLS2_1": "NA",
         },
+        "ULHLDT1_Log_HLS1_1": "NA",
+        //1
+        "ULHLDT1_Log_HLS4_1": "NA",
+        //2
+        "ULHLDT1_Log_DTS2_1": "NA",
+        //3
+        "ULHLDT1_Log_HLS5_1": "NA",
+        //4
+        "ULHLDT1_Log_HLK1_1": "NA",
+        //5
+        "ULHLDT1_Log_HLK2_1": "NA",
+        //6
+        "ULHLDT1_Log_DTS1_1": "NA",
+        //7
+        "ULHLDT1_Log_HLK4_1": "NA",
+        //8
+        "ULHLDT1_Log_DTK1_1": "NA",
+        //9
+        "ULHLDT1_Log_HLK3_1": "NA",
+        //10
+        "ULHLDT1_Log_HLS3_1": "NA",
+        //11
+        "ULHLDT1_Log_HLS1_2": "NA",
+        //12
+        "ULHLDT1_Log_HLK2_2": "NA",
+        //13
+        "ULHLDT1_Log_DTS1_2": "NA",
+        //14
+        "ULHLDT1_Log_DTS3_1": "NA",
+        //15
+        "ULHLDT1_Log_HLS2_1": "NA",
         "shownScreenID": 0,
         "screens": [
             {

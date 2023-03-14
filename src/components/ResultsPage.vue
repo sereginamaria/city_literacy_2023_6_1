@@ -2,12 +2,12 @@
     <div class="dialog">
         <div class="dialog-content">
             <div class="d-flex">
-                <div class="m-3">
+               <!-- <div class="m-3">
                     <p>TIME</p>
                     <div v-for="result in this.resultsTime" :key="result">
                         {{result.key}}: {{result.value}}
                     </div>
-                </div>
+                </div>-->
                 <div class="m-3">
                     <p>Ночь в музее</p>
                     <div v-for="result in this.resultsTaskNightInTheMuseum" :key="result">

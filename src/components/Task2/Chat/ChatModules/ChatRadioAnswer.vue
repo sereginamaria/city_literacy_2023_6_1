@@ -26,6 +26,7 @@
         methods: {
             ...mapMutations(["push_mainJSON"]),
             save(el) {
+                this.mainJSON.taskChatWalk[this.screenConst.resultIndicator] = el.value
                 this.mainJSON.taskChatWalk.results[this.screenConst.resultIndicator] = el.id
                 this.mainJSON.taskChatWalk.shownScreenID++
                 this.mainJSON.taskChatWalk.screens.forEach(el => {

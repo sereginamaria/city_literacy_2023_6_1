@@ -30,7 +30,12 @@
         methods: {
             ...mapMutations(["push_mainJSON"]),
             save() {
-                this.mainJSON.taskChatWalk.results[this.screenConst.resultIndicator] = this.mainJSON.taskChatWalk.checkBox1Selected
+                let answersID = []
+                this.mainJSON.taskChatWalk.checkBox1Selected.forEach(el => {
+                    answersID.push(el.id)
+                })
+                this.mainJSON.taskChatWalk[this.screenConst.resultIndicator] = this.mainJSON.taskChatWalk.checkBox1Selected
+                this.mainJSON.taskChatWalk.results[this.screenConst.resultIndicator] = answersID.join()
                 this.mainJSON.taskChatWalk.checkBox1Selected = []
 
                 this.mainJSON.taskChatWalk.shownScreenID++

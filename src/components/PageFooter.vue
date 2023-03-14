@@ -60,6 +60,7 @@
                         this.nextTask('taskNightInTheMuseum')
                     }
                     if(this.mainJSON.taskChatWalk.isShow  && this.change === 0){
+                        this.addAnswersTaskChatWalk()
                         this.mainJSON.taskChatWalk["isShow"] = false
                         this.nextTask('taskChatWalk')
                     }
@@ -103,6 +104,87 @@
                 ]
                 this.modalMessage = 'Ты завершил все задания, нажми кнопку "Выйти" для выхода из системы.'
             },
+            addAnswersTaskChatWalk(){
+                if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLS1_1 === 3){
+                    this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLS1_1 = 1
+                }
+                else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLS1_1 = 0
+
+                if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLS4_1 === 1){
+                    this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLS4_1 = 1
+                }
+                else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLS4_1 = 0
+
+                if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_DTS2_1 === 2){
+                    this.mainJSON.taskChatWalk.results.ULHLDT1_Score_DTS2_1 = 1
+                }
+                else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_DTS2_1 = 0
+
+                if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLS5_1 === 2){
+                    this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLS5_1 = 1
+                }
+                else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLS5_1 = 0
+
+                if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLK1_1 === ""){
+                    this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLK1_1 = 1
+                }
+                else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLK1_1 = 0
+
+                if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLK2_1 === ""){
+                    this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLK2_1 = 1
+                }
+                else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLK2_1 = 0
+
+                if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_DTS1_1 === 3){
+                    this.mainJSON.taskChatWalk.results.ULHLDT1_Score_DTS1_1 = 1
+                }
+                else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_DTS1_1 = 0
+
+                if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLK4_1 === ""){
+                    this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLK4_1 = 1
+                }
+                else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLK4_1 = 0
+
+                if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_DTK1_1 === 2){
+                    this.mainJSON.taskChatWalk.results.ULHLDT1_Score_DTK1_1 = 1
+                }
+                else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_DTK1_1 = 0
+
+                if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLK3_1 === 2){
+                    this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLK3_1 = 1
+                }
+                else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLK3_1 = 0
+
+                if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLS3_1 === 2){
+                    this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLS3_1 = 1
+                }
+                else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLS3_1 = 0
+
+                if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLS1_2 === 2){
+                    this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLS1_2 = 1
+                }
+                else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLS1_2 = 0
+
+                if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLK2_2 === 1){
+                    this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLK2_2 = 1
+                }
+                else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLK2_2 = 0
+
+                if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_DTS1_2 === 3){
+                    this.mainJSON.taskChatWalk.results.ULHLDT1_Score_DTS1_2 = 1
+                }
+                else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_DTS1_2 = 0
+
+                if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_DTS3_1 === 4){
+                    this.mainJSON.taskChatWalk.results.ULHLDT1_Score_DTS3_1 = 1
+                }
+                else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_DTS3_1 = 0
+
+                if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLS2_1 === 3){
+                    this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLS2_1 = 1
+                }
+                else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLS2_1 = 0
+            }
         }
     }
 </script>
