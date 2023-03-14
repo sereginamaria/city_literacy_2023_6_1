@@ -23,7 +23,7 @@ export default new Vuex.Store({
                 commit('set_constTaskVolunteers', constTaskVolunteers.constTaskVolunteers)
             }
             else {
-                axios.post( "/city_literacy/server_request/auth_city.php", {
+                axios.post( "/city_literacy/2023_6_1/server_request/auth_city.php", {
                     login: localStorage.login,
                     hash: localStorage.hash
                 })
@@ -68,7 +68,7 @@ export default new Vuex.Store({
             state.constTaskVolunteers = el
         },
         push_login: (state, auth) => {
-            axios.post("/city_literacy/server_request/auth_city.php", {  // todo разница между авторизацией и аутентификацией
+            axios.post("/city_literacy/2023_6_1/server_request/auth_city.php", {  // todo разница между авторизацией и аутентификацией
                 loginJSON: {
                     login: auth.login,
                     password: auth.password
@@ -99,7 +99,7 @@ export default new Vuex.Store({
         },
         push_mainJSON: (state, push) => {
             if (localStorage.login && localStorage.hash){
-                axios.post( "/city_literacy/server_request/receiver.php", {
+                axios.post( "/city_literacy/2023_6_1/server_request/receiver.php", {
                     mainJSON: push.push
                 })
                     .then(function () {

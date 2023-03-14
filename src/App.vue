@@ -150,24 +150,26 @@
 
       },
       startPushTimer() {
-        this.timerPush = setInterval(() => {
-          this.mainJSON.currentPushTime++
-          var sec_num_all = parseInt(this.mainJSON.currentPushTime, 10)
-          var hours_all = Math.floor(sec_num_all / 3600)
-          var minutes_all = Math.floor((sec_num_all - (hours_all*3600))/60)
-          var seconds_all = sec_num_all - (hours_all * 3600) - (minutes_all * 60)
+        if(this.mainJSON.loginShow === false) {
+          this.timerPush = setInterval(() => {
+            this.mainJSON.currentPushTime++
+            var sec_num_all = parseInt(this.mainJSON.currentPushTime, 10)
+            var hours_all = Math.floor(sec_num_all / 3600)
+            var minutes_all = Math.floor((sec_num_all - (hours_all * 3600)) / 60)
+            var seconds_all = sec_num_all - (hours_all * 3600) - (minutes_all * 60)
 
-          if (hours_all < 10) {
-            hours_all = "0" + hours_all
-          }
-          if (minutes_all < 10) {
-            minutes_all = "0" + minutes_all
-          }
-          if (seconds_all < 10) {
-            seconds_all = "0" + seconds_all
-          }
-          this.mainJSON['retPush'] = hours_all + ":" + minutes_all + ":" + seconds_all
-        }, 1000)
+            if (hours_all < 10) {
+              hours_all = "0" + hours_all
+            }
+            if (minutes_all < 10) {
+              minutes_all = "0" + minutes_all
+            }
+            if (seconds_all < 10) {
+              seconds_all = "0" + seconds_all
+            }
+            this.mainJSON['retPush'] = hours_all + ":" + minutes_all + ":" + seconds_all
+          }, 1000)
+        }
       },
       stopTimer() {
         clearTimeout(this.timer)
