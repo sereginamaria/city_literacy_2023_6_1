@@ -209,23 +209,23 @@
 
                 let ans = []
                 let results = 0
-                if(this.answerHomelessPerson){
+                if(this.answers.answerHomelessPerson){
                     ans.push(1)
                 } else {
                     ans.push(2)
                     results++
                 }
-                if(this.answerCat){
+                if(this.answers.answerCat){
                     ans.push(3)
                     results++
                 } else ans.push(4)
-                if(this.answerPollution){
+                if(this.answers.answerPollution){
                     ans.push(5)
+                    results++
                 } else {
                     ans.push(6)
-                    results++
                 }
-                if(this.answerNoise){
+                if(this.answers.answerNoise){
                     ans.push(7)
                 } else {
                     ans.push(8)

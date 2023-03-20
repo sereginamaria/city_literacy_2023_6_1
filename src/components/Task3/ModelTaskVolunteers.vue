@@ -24,6 +24,8 @@
                        :screen="screen" :constTaskVolunteers="constTaskVolunteers"/>
     <TaskSortingGarbage v-if="screen.isShow && screen.haveTask && screen.taskName === 'SortingGarbage'"
                         :screen="screen" :constTaskVolunteers="constTaskVolunteers"/>
+    <TaskSortingGarbageBattery v-if="screen.isShow && screen.haveTask && screen.taskName === 'TaskSortingGarbageBattery'"
+                        :screen="screen" :constTaskVolunteers="constTaskVolunteers"/>
     <TaskOverturnedTrashBin v-if="screen.isShow && screen.haveTask && screen.taskName === 'OverturnedTrashBin'"
                             :screen="screen" :constTaskVolunteers="constTaskVolunteers"/>
     <TaskWomanWithStroller v-if="screen.isShow && screen.haveTask && screen.taskName === 'WomanWithStroller'"
@@ -56,10 +58,12 @@
     import TaskTakeOffTheBackpack from "@/components/Task3/TaskTakeOffTheBackpack";
     import TaskAnnFeelsBad from "@/components/Task3/TaskAnnFeelsBad";
     import TaskWaxwing from "@/components/Task3/TaskWaxwing";
+    import TaskSortingGarbageBattery from "@/components/Task3/TaskSortingGarbageBattery";
 
     export default {
         name: "ModelTaskVolunteers",
         components: {
+            TaskSortingGarbageBattery,
             TaskWaxwing,
             TaskAnnFeelsBad,
             TaskTakeOffTheBackpack,

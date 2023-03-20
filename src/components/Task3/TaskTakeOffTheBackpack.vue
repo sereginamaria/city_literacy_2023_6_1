@@ -74,10 +74,10 @@
                         el.isShow = true
                     }
                 })
-                if (this.mainJSON.taskVolunteers.results.ULSE1_Log_SES6 === 3){
-                    this.mainJSON.taskVolunteers.results.ULSE1_Score_SES6 = 1
+                if (this.mainJSON.taskVolunteers.results.ULSE1_Log_SEK3_3 === 3){
+                    this.mainJSON.taskVolunteers.results.ULSE1_Score_SEK3_3 = 1
                 }
-                else this.mainJSON.taskVolunteers.results.ULSE1_Score_SES6 = 0
+                else this.mainJSON.taskVolunteers.results.ULSE1_Score_SEK3_3 = 0
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
                     [

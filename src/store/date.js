@@ -224,7 +224,7 @@ const date = {
                 "src_dop": "Element1_dop.png",
                 "id": 5,
                 "style": "width: calc(100%/5); position: absolute; bottom: calc(100%/1.8); left: calc(100%/6)",
-                "style_dop": "width: calc(100%/5); position: absolute; bottom: 20%; left: calc(100%/6)",
+                "style_dop": "width: calc(100%/5); position: absolute; bottom: 15%; left: calc(100%/6)",
                 "toolTip": "термокружка с чаем"
             },
             {
@@ -816,8 +816,8 @@ const date = {
             "ULSE1_Score_SES5": "NA",
 
             //Taske off the backpack
-            "ULSE1_Log_SES6": "NA",
-            "ULSE1_Score_SES6": "NA",
+            "ULSE1_Log_SEK3_3": "NA",
+            "ULSE1_Score_SEK3_3": "NA",
 
             //Annn feels bad
             "ULSE1_Log_SES5_1": "NA",
@@ -912,8 +912,8 @@ const date = {
                 "description": 'Сортировка мусора'},
             {"id": 40, "isShow": false, "imgURL": "TaskVolunteersSortingGarbageMax2", "haveTask": false,
                 "description": ''},
-            {"id": 41, "isShow": false, "imgURL": "TaskVolunteersSortingGarbage", "haveTask": true, "taskName": "SortingGarbage",
-                "description": 'Сортировка мусора'},
+            {"id": 41, "isShow": false, "imgURL": "TaskVolunteersSortingGarbage", "haveTask": true, "taskName": "TaskSortingGarbageBattery",
+                "description": 'Сортировка мусора батарейка'},
             {"id": 42, "isShow": false, "imgURL": "TaskVolunteersOverturnedTrashBinMax", "haveTask": false,
                 "description": ''},
             {"id": 43, "isShow": false, "imgURL": "TaskVolunteersOverturnedTrashBinBackground", "haveTask": false,

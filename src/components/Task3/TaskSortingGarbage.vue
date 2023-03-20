@@ -191,6 +191,60 @@
                         el.isShown = true
                     }
                 })
+
+                let answers = 0
+                if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list1.length !== 0){
+                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_1 = this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list1[0].id
+                    if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list1[0].id === 1){
+                        answers++
+                    }
+                }
+                if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list2.length !== 0){
+                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_2 = this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list2[0].id
+                    if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list2[0].id === 2){
+                        answers++
+                    }
+                }
+                if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list3.length !== 0){
+                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_3 = this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list3[0].id
+                    if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list3[0].id === 3){
+                        answers++
+                    }
+                }
+                if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list4.length !== 0){
+                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_4 = this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list4[0].id
+                    if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list4[0].id === 4){
+                        answers++
+                    }
+                }
+                if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list5.length !== 0){
+                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_5 = this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list5[0].id
+                    if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list5[0].id === 5){
+                        answers++
+                    }
+                }
+                if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list6.length !== 0){
+                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SES3 = this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list6[0].id
+                    if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list6[0].id === 6){
+                        answers++
+                    }
+                }
+
+                if(answers === 5){
+                    this.mainJSON.taskVolunteers.results.ULSE1_Score_SES2 = 2
+                }
+                else if (answers === 4 || answers === 3){
+                    this.mainJSON.taskVolunteers.results.ULSE1_Score_SES2 = 1
+                }
+                else this.mainJSON.taskVolunteers.results.ULSE1_Score_SES2 = 0
+
+
+                this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list1 = []
+                this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list2 = []
+                this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list3 = []
+                this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list4 = []
+                this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list5 = []
+                this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list6 = []
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
                     [

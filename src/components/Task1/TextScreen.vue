@@ -2,7 +2,7 @@
     <div class="background"
          :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}"
     >
-        <div v-if="screen.id === 6 || screen.id === 27 || screen.id === 29">
+        <div v-if="screen.id === 6 || screen.id === 9 || screen.id === 27 || screen.id === 29 || screen.id === 36 || screen.id === 44">
             <div class="background-text-center">
                 <p>
                     <span class="name-in-dialog">{{constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name}}</span>

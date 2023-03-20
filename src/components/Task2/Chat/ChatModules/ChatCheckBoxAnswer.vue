@@ -12,7 +12,7 @@
             />
             <label :for=option.id>{{option.value}}</label>
         </div>
-        <MyButton @click="save">Отправить</MyButton>
+        <MyButton @click="save">Готово</MyButton>
     </div>
 </template>
 

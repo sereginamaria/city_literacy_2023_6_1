@@ -145,8 +145,16 @@
                     }
                 })
                 let k = 0
-                if(this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK3_2 === 5 && this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK3_3 === 7 &&
-                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK3_4 === 3 && this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK3_5 === 1){
+                if(this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK3_2 === 5){
+                    k++
+                }
+                if(this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK3_3 === 7){
+                    k++
+                }
+                if(this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK3_4 === 3){
+                    k++
+                }
+                if(this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK3_5 === 1){
                     k++
                 }
                 if(k === 4){

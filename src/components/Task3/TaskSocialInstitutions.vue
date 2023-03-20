@@ -184,13 +184,13 @@
                 }
                 if(this.mainJSON.taskVolunteers.listOfAnswersSocialInstitutions_list3.length !== 0){
                     this.mainJSON.taskVolunteers.results.ULSE1_Log3_SEK2_1 = this.mainJSON.taskVolunteers.listOfAnswersSocialInstitutions_list3[0].id
-                    if(this.mainJSON.taskVolunteers.results.ULSE1_Log3_SEK2_1 === 4){
+                    if(this.mainJSON.taskVolunteers.results.ULSE1_Log3_SEK2_1 === 3){
                         results++
                     }
                 }
                 if(this.mainJSON.taskVolunteers.listOfAnswersSocialInstitutions_list4.length !== 0){
                     this.mainJSON.taskVolunteers.results.ULSE1_Log4_SEK2_1 = this.mainJSON.taskVolunteers.listOfAnswersSocialInstitutions_list4[0].id
-                    if(this.mainJSON.taskVolunteers.results.ULSE1_Log4_SEK2_1 === 3){
+                    if(this.mainJSON.taskVolunteers.results.ULSE1_Log4_SEK2_1 === 4){
                         results++
                     }
                 }

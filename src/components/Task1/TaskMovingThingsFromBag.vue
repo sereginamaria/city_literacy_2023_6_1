@@ -115,7 +115,8 @@
                     })
 
                     let answers = []
-                    let maxScore, middleScore = 0
+                    let maxScore = 0
+                    let middleScore = 0
                     this.mainJSON.taskNightInTheMuseum.listOfElementsEnd.forEach(el => {
                         answers.push(el.id)
                         if(el.id === 4 || el.id === 5 || el.id === 7){
