@@ -1,5 +1,4 @@
 <template>
-  <BrowserCheck/>
   <AuthForm v-if="mainJSON.loginShow"/>
   <InstructionPage v-if="mainJSON.instructionShow"/>
 
@@ -23,12 +22,10 @@
   import PausePage from "@/components/PausePage";
   import PageNavBar from "@/components/PageNavBar";
   import ResultsPage from "@/components/ResultsPage";
-  import BrowserCheck from "@/components/BrowserCheck";
 
   export default {
     name: 'App',
     components: {
-      BrowserCheck,
       ResultsPage,
       PageNavBar,
       PausePage,

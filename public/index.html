@@ -19,7 +19,6 @@
           -moz-transition: opacity 400ms ease-in;
           transition: opacity 400ms ease-in;
           display: none;
-          pointer-events: none;
         }
 
         .old-browser-dialog-content {
@@ -28,9 +27,21 @@
           border-radius: 12px;
           min-height: 100px;
           min-width: 300px;
-          max-width: 600px;
+          max-width: 800px;
+          max-height: 600px;
           padding: 20px;
           position: relative;
+          text-align: center;
+        }
+
+        .download-browser-link {
+          text-align: center;
+          margin: 20px;
+          text-decoration: none;
+        }
+
+        .download-browser-link p{
+          color: #0054a6;
         }
       </style>
   </head>
@@ -40,24 +51,19 @@
     <div id="openModal" class="old-browser-dialog">
       <div class="old-browser-dialog-content">
         <h2>Ваша версия браузера устарела!</h2>
-        <p>Обновите браузер для правильной работы приложения.</p>
-
-        <a href="https://www.google.ru/chrome/" target="_blank">sdfghvjbknl</a>
-
-        <div>
-          <p>Браузеры, последние версии которых рекомендованны к установке</p>
-          <div style="display: flex;">
-            <div>
-              <a href="https://www.google.ru/chrome/" id="chrome">
+        <p>Обновите браузер до последней версии для правильной работы приложения.</p>
+        <div style="display: flex;">
+            <div style="display: flex;">
+              <a href="https://www.google.ru/chrome/" target="_blank" class="download-browser-link">
                 <img src="img/iconBrowserChrome.png" alt="">
-                <p>Google Chrome</p>
+                <p style="width: max-content">Google Chrome</p>
                 <span>
                   <p>Скачать</p>
                 </span>
               </a>
             </div>
-            <div>
-              <a id="yandex_browser">
+            <div style="display: flex;">
+              <a href="https://browser.yandex.ru/?from=link_updater___&banerid=0435000000" target="_blank" class="download-browser-link">
                 <img src="img/iconBrowserYandex.png" alt="">
                 <p>Яндекс.Браузер</p>
                 <div>
@@ -65,8 +71,8 @@
                 </div>
               </a>
             </div>
-            <div>
-              <a id="opera">
+            <div style="display: flex;">
+              <a href="https://www.opera.com/ru" target="_blank" class="download-browser-link">
                 <img src="img/iconBrowserOpera.png" alt="">
                 <p>Opera</p>
                 <div>
@@ -74,8 +80,8 @@
                 </div>
               </a>
             </div>
-            <div>
-              <a id="firefox">
+            <div style="display: flex;">
+              <a href="https://www.mozilla.org/ru/firefox/new/" target="_blank" class="download-browser-link">
                 <img src="img/iconBrowserFirefox.png" alt="">
                 <p>Mozilla Firefox</p>
                 <div>
@@ -83,8 +89,8 @@
                 </div>
               </a>
             </div>
-            <div>
-              <a id="edge">
+            <div style="display: flex;">
+              <a href="https://www.microsoft.com/ru-ru/edge?form=MA13FJ" target="_blank" class="download-browser-link">
                 <img src="img/iconBrowserEdge.png" alt="">
                 <p>Microsoft Edge</p>
                 <div>
@@ -93,7 +99,6 @@
               </a>
             </div>
           </div>
-        </div>
       </div>
     </div>
 
@@ -119,9 +124,6 @@
         return M;
       })();
 
-      console.log( navigator.sayswho);
-      console.log(typeof navigator.sayswho);
-
       if(typeof navigator.sayswho === 'string'){
         if((navigator.sayswho.split(' ')[0] === "Opera" && navigator.sayswho.split(' ')[1] <= 90) ||
                 (navigator.sayswho.split(' ')[0] === "trident") || (navigator.sayswho.split(' ')[0] === "msie")){
@@ -138,7 +140,6 @@
           document.getElementById('openModal').style.display = 'flex'
         }
       }
-
 
       function fullscreen() {
         var elem = document.getElementById("body");
