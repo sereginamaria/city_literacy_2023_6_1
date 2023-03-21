@@ -6,15 +6,140 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title>Городская грамотность</title>
+      <style>
+        .old-browser-dialog {
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          background: rgba(0,0,0,.5);
+          position: fixed;
+          z-index: 99999;
+          -webkit-transition: opacity 400ms ease-in;
+          -moz-transition: opacity 400ms ease-in;
+          transition: opacity 400ms ease-in;
+          display: none;
+          pointer-events: none;
+        }
+
+        .old-browser-dialog-content {
+          margin: auto;
+          background: #fff;
+          border-radius: 12px;
+          min-height: 100px;
+          min-width: 300px;
+          max-width: 600px;
+          padding: 20px;
+          position: relative;
+        }
+      </style>
   </head>
   <!--  onclick="fullscreen()" //добавить в боди-->
   <body onclick="fullscreen()" id="body">
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
+
+    <div id="openModal" class="old-browser-dialog">
+      <div class="old-browser-dialog-content">
+        <h2>Ваша версия браузера устарела!</h2>
+        <p>Обновите браузер для правильной работы приложения.</p>
+
+        <a href="https://www.google.ru/chrome/" target="_blank">sdfghvjbknl</a>
+
+        <div>
+          <p>Браузеры, последние версии которых рекомендованны к установке</p>
+          <div style="display: flex;">
+            <div>
+              <a href="https://www.google.ru/chrome/" id="chrome">
+                <img src="img/iconBrowserChrome.png" alt="">
+                <p>Google Chrome</p>
+                <span>
+                  <p>Скачать</p>
+                </span>
+              </a>
+            </div>
+            <div>
+              <a id="yandex_browser">
+                <img src="img/iconBrowserYandex.png" alt="">
+                <p>Яндекс.Браузер</p>
+                <div>
+                  <p>Скачать</p>
+                </div>
+              </a>
+            </div>
+            <div>
+              <a id="opera">
+                <img src="img/iconBrowserOpera.png" alt="">
+                <p>Opera</p>
+                <div>
+                  <p>Скачать</p>
+                </div>
+              </a>
+            </div>
+            <div>
+              <a id="firefox">
+                <img src="img/iconBrowserFirefox.png" alt="">
+                <p>Mozilla Firefox</p>
+                <div>
+                  <p>Скачать</p>
+                </div>
+              </a>
+            </div>
+            <div>
+              <a id="edge">
+                <img src="img/iconBrowserEdge.png" alt="">
+                <p>Microsoft Edge</p>
+                <div>
+                  <p>Скачать</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div id="app"></div>
-    <!-- built files will be auto injected -->
+
     <script>
+      "use strict";
+
+      navigator.sayswho= (function(){
+        var ua= navigator.userAgent;
+        var tem;
+        var M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+        if(/trident/i.test(M[1])){
+          tem=  /\brv[ :]+(\d+)/g.exec(ua) || [];
+          return 'IE '+(tem[1] || '');
+        }
+        if(M[1]=== 'Chrome'){
+          tem= ua.match(/\b(OPR|Edge)\/(\d+)/);
+          if(tem!= null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
+        }
+        M= M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+        if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
+        return M;
+      })();
+
+      console.log( navigator.sayswho);
+      console.log(typeof navigator.sayswho);
+
+      if(typeof navigator.sayswho === 'string'){
+        if((navigator.sayswho.split(' ')[0] === "Opera" && navigator.sayswho.split(' ')[1] <= 90) ||
+                (navigator.sayswho.split(' ')[0] === "trident") || (navigator.sayswho.split(' ')[0] === "msie")){
+          document.getElementById('openModal').style.removeProperty('display')
+          document.getElementById('openModal').style.display = 'flex'
+        }
+      }
+      if(typeof navigator.sayswho === 'object'){
+        if((navigator.sayswho[0] === "Chrome" && navigator.sayswho[1] <= 106) ||
+                (navigator.sayswho[0] === "Firefox" && navigator.sayswho[1] <= 106) ||
+                (navigator.sayswho[0] === "Safari" && navigator.sayswho[1] <= 5) ||
+                (navigator.sayswho[0] === "trident") || (navigator.sayswho[0] === "msie")){
+          document.getElementById('openModal').style.removeProperty('display')
+          document.getElementById('openModal').style.display = 'flex'
+        }
+      }
+
+
       function fullscreen() {
         var elem = document.getElementById("body");
         elem.requestFullscreen();

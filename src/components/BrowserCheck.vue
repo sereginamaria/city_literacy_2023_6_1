@@ -7,7 +7,7 @@
 </template>
 
 <script>
-    import detect from "detect.js";
+ /*   import detect from "detect.js";*/
     export default {
         name: "BrowserCheck",
         data() {
@@ -30,7 +30,26 @@
             }
         },
         created() {
-            var browser = detect.parse(navigator.userAgent);
+            navigator.sayswho= (function(){
+                var ua= navigator.userAgent;
+                var tem;
+                var M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+                if(/trident/i.test(M[1])){
+                    tem=  /\brv[ :]+(\d+)/g.exec(ua) || [];
+                    return 'IE '+(tem[1] || '');
+                }
+                if(M[1]=== 'Chrome'){
+                    tem= ua.match(/\b(OPR|Edge)\/(\d+)/);
+                    if(tem!= null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
+                }
+                M= M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+                if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
+                return M.join(' ');
+            })();
+
+            console.log(navigator.sayswho);
+
+            /*var browser = detect.parse(navigator.userAgent);
 
             console.log(browser.browser.family )
             if(browser.browser.family === 'Opera' && browser.browser.version <= '90'){
@@ -41,7 +60,7 @@
             }
             if(browser.browser.family === 'Firefox' && browser.browser.version <= '108'){
                 this.showModal()
-            }
+            }*/
 
         }
     }
