@@ -1,8 +1,8 @@
 <template>
     <div class="d-flex chat-message-body" v-for="message in currentScreenConst.message" :key="message.text">
-        <img src="../../../../assets/TaskChatWalkZhenya.webp" alt="Аватар Женя" style="margin-right: 20px; width: 50px; height: 50px" v-if="message.name === 'Женя'">
-        <img src="../../../../assets/TaskChatWalkDima.webp" alt="Аватар Дима" style="margin-right: 20px; width: 50px; height: 50px" v-if="message.name === 'Дима'">
-        <img src="../../../../assets/TaskChatWalkMasha.webp" alt="Аватар Маша" style="margin-right: 20px; width: 50px; height: 50px" v-if="message.name === 'Маша'">
+        <img src="../../../../assets/TaskChatWalkZhenya.png" alt="Аватар Женя" style="margin-right: 20px; width: 50px; height: 50px" v-if="message.name === 'Женя'">
+        <img src="../../../../assets/TaskChatWalkDima.png" alt="Аватар Дима" style="margin-right: 20px; width: 50px; height: 50px" v-if="message.name === 'Дима'">
+        <img src="../../../../assets/TaskChatWalkMasha.png" alt="Аватар Маша" style="margin-right: 20px; width: 50px; height: 50px" v-if="message.name === 'Маша'">
         <div>
             <p class="text-bold">
                 {{message.name}}

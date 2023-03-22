@@ -220,56 +220,56 @@ const date = {
         //Перетаскивание вещей в рюкзаке
         "listOfElementsStart": [  // todo контекстуальные стили? подумать про state machine
             {
-                "src": "Element1.webp",
-                "src_dop": "Element1_dop.webp",
+                "src": "Element1.png",
+                "src_dop": "Element1_dop.png",
                 "id": 5,
                 "style": "width: calc(100%/5); position: absolute; bottom: calc(100%/1.8); left: calc(100%/6)",
                 "style_dop": "width: calc(100%/5); position: absolute; bottom: 15%; left: calc(100%/6)",
                 "toolTip": "термокружка с чаем"
             },
             {
-                "src": "Element2.webp",
-                "src_dop": "Element2_dop.webp",
+                "src": "Element2.png",
+                "src_dop": "Element2_dop.png",
                 "id": 6,
                 "style": "width: calc(100%/10); position: absolute; bottom: calc(100%/6); left: calc(100%/25)",
                 "style_dop": "rotate: 90deg; width: calc(100%/10); position: absolute; bottom: 0; left: calc(100%/25)",
                 "toolTip": "бумажные платочки"
             },
             {
-                "src": "Element3.webp",
-                "src_dop": "Element3.webp",
+                "src": "Element3.png",
+                "src_dop": "Element3.png",
                 "id": 1,
                 "style": "width: calc(100%/5); position: absolute; bottom: calc(100%/12); left: calc(100%/5)",
                 "style_dop": "width: calc(100%/5); position: absolute; bottom: calc(100%/12); left: calc(100%/1.2)",
                 "toolTip": "упаковка леденцов"
             },
             {
-                "src": "Element4.webp",
-                "src_dop": "Element4_dop.webp",
+                "src": "Element4.png",
+                "src_dop": "Element4_dop.png",
                 "id": 2,
                 "style": "width: calc(100%/3); position: absolute; bottom: calc(100%/30); left: calc(100%/2.5)",
                 "style_dop": "width: calc(100%/3); position: absolute; bottom: calc(100%/30); left: calc(100%/2.5)",
                 "toolTip": "блокнот"
             },
             {
-                "src": "Element5.webp",
-                "src_dop": "Element5.webp",
+                "src": "Element5.png",
+                "src_dop": "Element5.png",
                 "id": 7,
                 "style": "width: calc(100%/4); position: absolute; bottom: calc(100%/30); left: calc(100%/1.34)",
                 "style_dop": "width: calc(100%/4); position: absolute; bottom: calc(100%/30); left: calc(100%/1.34)",
                 "toolTip": "зонт-трость"
             },
             {
-                "src": "Element6.webp",
-                "src_dop": "Element6_dop.webp",
+                "src": "Element6.png",
+                "src_dop": "Element6_dop.png",
                 "id": 4,
                 "style": "width: calc(100%/6); position: absolute; bottom: calc(100%/1.7); left: calc(100%/1.83)",
                 "style_dop": "rotate: 90deg; width: calc(100%/6); position: absolute; bottom: 0; left: calc(100%/1.83)",
                 "toolTip": "ножницы"
             },
             {
-                "src": "Element7.webp",
-                "src_dop": "Element7_dop.webp",
+                "src": "Element7.png",
+                "src_dop": "Element7_dop.png",
                 "id": 3,
                 "style": "width: 6.5%; position: absolute; bottom: calc(100%/1.64); left: calc(100%/2.1)",
                 "style_dop": "rotate: 90deg; width: 6.5%; position: absolute; bottom: 0; left: calc(100%/2.1)",
@@ -294,98 +294,98 @@ const date = {
         //Задание 9 задание
         "listOfElementsTask9": [  // todo контекстуальные стили? подумать про state machine
             {
-                "src": "Stiker1.webp",
+                "src": "Stiker1.png",
                 "name": "Парк Таганай",
                 "id": 1,
                 "choose": false,
                 "style": "width: 6.5%; position: absolute; bottom: calc(100%/6.8); left: calc(100%/4)"
             },
             {
-                "src": "Stiker2.webp",
+                "src": "Stiker2.png",
                 "name": "Пруд Королевский",
                 "id": 2,
                 "choose": false,
                 "style": "width: 6.5%; position: absolute; bottom: calc(100%/1.6); left: calc(100%/3.8)"
             },
             {
-                "src": "Stiker3.webp",
+                "src": "Stiker3.png",
                 "name": "Красная Площадь",
                 "id": 3,
                 "choose": false,
                 "style": "width: 6.5%; position: absolute; bottom: calc(100%/1.95); left: calc(100%/2.1)"
             },
             {
-                "src": "Stiker4.webp",
+                "src": "Stiker4.png",
                 "name": "Кремль",
                 "id": 4,
                 "choose": false,
                 "style": "width: 6.5%; position: absolute; bottom: calc(100%/2.4); left: calc(100%/2.25)"
             },
             {
-                "src": "Stiker5.webp",
+                "src": "Stiker5.png",
                 "name": "Патриаршие пруды",
                 "id": 5,
                 "choose": false,
                 "style": "width: 6.5%; position: absolute; bottom: calc(100%/1.65); left: calc(100%/3)"
             },
             {
-                "src": "Stiker6.webp",
+                "src": "Stiker6.png",
                 "name": "Тверская улица",
                 "id": 6,
                 "choose": false,
                 "style": "width: 6.5%; position: absolute; bottom: calc(100%/1.65); left: calc(100%/2.4)"
             },
             {
-                "src": "Stiker7.webp",
+                "src": "Stiker7.png",
                 "name": "Садовое кольцо",
                 "id": 7,
                 "choose": false,
                 "style": "width: 6.5%; position: absolute; bottom: calc(100%/1.3); left: calc(100%/2.4)"
             },
             {
-                "src": "Stiker8.webp",
+                "src": "Stiker8.png",
                 "name": "Бульварное кольцо",
                 "id": 8,
                 "choose": false,
                 "style": "width: 6.5%; position: absolute; bottom: calc(100%/1.5); left: calc(100%/2)"
             },
             {
-                "src": "Stiker9.webp",
+                "src": "Stiker9.png",
                 "name": "Река Ока",
                 "id": 9,
                 "choose": false,
                 "style": "width: 6.5%; position: absolute; bottom: calc(100%/7); left: calc(100%/1.32)"
             },
             {
-                "src": "Stiker10.webp",
+                "src": "Stiker10.png",
                 "name": "Река Яуза",
                 "id": 10,
                 "choose": false,
                 "style": "width: 6.5%; position: absolute; bottom: calc(100%/1.8); left: calc(100%/1.4)"
             },
             {
-                "src": "Stiker11.webp",
+                "src": "Stiker11.png",
                 "name": "Чистые пруды",
                 "id": 11,
                 "choose": false,
                 "style": "width: 6.5%; position: absolute; bottom: calc(100%/1.8); left: calc(100%/1.7)"
             },
             {
-                "src": "Stiker12.webp",
+                "src": "Stiker12.png",
                 "name": "Парк Зарядье",
                 "id": 12,
                 "choose": false,
                 "style": "width: 6.5%; position: absolute; bottom: calc(100%/2.4); left: calc(100%/2)"
             },
             {
-                "src": "Stiker13.webp",
+                "src": "Stiker13.png",
                 "name": "Музеон",
                 "id": 13,
                 "choose": false,
                 "style": "width: 6.5%; position: absolute; bottom: calc(100%/4.7); left: calc(100%/2.4)"
             },
             {
-                "src": "Stiker14.webp",
+                "src": "Stiker14.png",
                 "name": "Москва Река",
                 "id": 14,
                 "choose": false,
@@ -513,35 +513,35 @@ const date = {
         //Задание 14 задание
         "listOfAnswersTask14": [
             {
-                "src": "task14EL1.webp",
+                "src": "task14EL1.png",
                 "id": 1,
             },
             {
-                "src": "task14EL2.webp",
+                "src": "task14EL2.png",
                 "id": 2,
             },
             {
-                "src": "task14EL3.webp",
+                "src": "task14EL3.png",
                 "id": 3,
             },
             {
-                "src": "task14EL4.webp",
+                "src": "task14EL4.png",
                 "id": 4,
             },
             {
-                "src": "task14EL5.webp",
+                "src": "task14EL5.png",
                 "id": 5,
             },
             {
-                "src": "task14EL6.webp",
+                "src": "task14EL6.png",
                 "id": 6,
             },
             {
-                "src": "task14EL7.webp",
+                "src": "task14EL7.png",
                 "id": 7,
             },
             {
-                "src": "task14EL8.webp",
+                "src": "task14EL8.png",
                 "id": 8,
             },
         ],

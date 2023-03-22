@@ -10,7 +10,7 @@
             <div class="background-task-sorting-garbage">
                 <div class="d-flex w-100" style="height: 65%">
                     <div class="position-relative d-flex justify-content-center" style="width: 16%">
-                        <img src="../../assets/TaskVolunteersSortingGarbagePlastic.webp" alt="" class="little-backpack">
+                        <img src="../../assets/TaskVolunteersSortingGarbagePlastic.png" alt="" class="little-backpack">
                         <draggable
                                 @add="this.nextTask = true"
                                 class="list-group list-group-el-sorting-garbage position-relative"
@@ -18,13 +18,13 @@
                                 group="listOfAnswersSocialInstitutions"
                         >
                             <template #item="{ element }">
-                                <img :src=" require('../../assets/' + element.src + '.webp') "
+                                <img :src=" require('../../assets/' + element.src + '.png') "
                                      alt="Avatar" style="z-index: 99; width: 50%; position: absolute"/>
                             </template>
                         </draggable>
                     </div>
                     <div class="position-relative d-flex justify-content-center" style="width: 16%">
-                        <img src="../../assets/TaskVolunteersSortingGarbagePaper.webp" alt="" class="little-backpack">
+                        <img src="../../assets/TaskVolunteersSortingGarbagePaper.png" alt="" class="little-backpack">
                         <draggable
                                 @add="this.nextTask = true"
                                 class="list-group list-group-el-sorting-garbage position-relative"
@@ -32,13 +32,13 @@
                                 group="listOfAnswersSocialInstitutions"
                         >
                             <template #item="{ element }">
-                                <img :src=" require('../../assets/' + element.src + '.webp') "
+                                <img :src=" require('../../assets/' + element.src + '.png') "
                                      alt="Avatar" style="z-index: 99; width: 50%; position: absolute"/>
                             </template>
                         </draggable>
                     </div>
                     <div class="position-relative d-flex justify-content-center" style="width: 16%">
-                        <img src="../../assets/TaskVolunteersSortingGarbageGlass.webp" alt="" class="little-backpack">
+                        <img src="../../assets/TaskVolunteersSortingGarbageGlass.png" alt="" class="little-backpack">
                         <draggable
                                 @add="this.nextTask = true"
                                 class="list-group list-group-el-sorting-garbage position-relative"
@@ -46,13 +46,13 @@
                                 group="listOfAnswersSocialInstitutions"
                         >
                             <template #item="{ element }">
-                                <img :src=" require('../../assets/' + element.src + '.webp') "
+                                <img :src=" require('../../assets/' + element.src + '.png') "
                                      alt="Avatar" style="z-index: 99; width: 50%; position: absolute"/>
                             </template>
                         </draggable>
                     </div>
                     <div class="position-relative d-flex justify-content-center" style="width: 16%">
-                        <img src="../../assets/TaskVolunteersSortingGarbageMetal.webp" alt="" class="little-backpack">
+                        <img src="../../assets/TaskVolunteersSortingGarbageMetal.png" alt="" class="little-backpack">
                         <draggable
                                 @add="this.nextTask = true"
                                 class="list-group list-group-el-sorting-garbage position-relative"
@@ -60,13 +60,13 @@
                                 group="listOfAnswersSocialInstitutions"
                         >
                             <template #item="{ element }">
-                                <img :src=" require('../../assets/' + element.src + '.webp') "
+                                <img :src=" require('../../assets/' + element.src + '.png') "
                                      alt="Avatar" style="z-index: 99; width: 50%; position: absolute"/>
                             </template>
                         </draggable>
                     </div>
                     <div class="position-relative d-flex justify-content-center" style="width: 16%">
-                        <img src="../../assets/TaskVolunteersSortingGarbageFoodWaste.webp" alt="" class="little-backpack">
+                        <img src="../../assets/TaskVolunteersSortingGarbageFoodWaste.png" alt="" class="little-backpack">
                         <draggable
                                 @add="this.nextTask = true"
                                 class="list-group list-group-el-sorting-garbage position-relative"
@@ -74,13 +74,13 @@
                                 group="listOfAnswersSocialInstitutions"
                         >
                             <template #item="{ element }">
-                                <img :src=" require('../../assets/' + element.src + '.webp') "
+                                <img :src=" require('../../assets/' + element.src + '.png') "
                                      alt="Avatar" style="z-index: 99; width: 50%; position: absolute"/>
                             </template>
                         </draggable>
                     </div>
                     <div class="position-relative d-flex justify-content-center" style="width: 16%">
-                        <img src="../../assets/TaskVolunteersSortingGarbageHazardousWaste.webp" alt="" class="little-backpack">
+                        <img src="../../assets/TaskVolunteersSortingGarbageHazardousWaste.png" alt="" class="little-backpack">
                         <draggable
                                 @add="this.nextTask = true"
                                 class="list-group list-group-el-sorting-garbage position-relative "
@@ -88,7 +88,7 @@
                                 group="listOfAnswersSocialInstitutions"
                         >
                             <template #item="{ element }">
-                                <img :src=" require('../../assets/' + element.src + '.webp') "
+                                <img :src=" require('../../assets/' + element.src + '.png') "
                                      alt="Avatar" style="z-index: 99; width: 50%; position: absolute"/>
                             </template>
                         </draggable>
@@ -100,7 +100,7 @@
                         group="listOfAnswersSocialInstitutions" style="width: 100%; height: 25%"
                 >
                     <template #item="{ element }">
-                        <img :src=" require('../../assets/' + element.src + '.webp')" style="height: 100%"
+                        <img :src=" require('../../assets/' + element.src + '.png')" style="height: 100%"
                              alt="Avatar"  @mouseover="onHover($event, element.toolTip)" @mouseout="this.toolTipVisible = false"/>
                     </template>
                 </draggable>
@@ -111,15 +111,15 @@
         <div class="background-text" id="background-text">
             <div class="d-flex">
                       <div class="me-2">
-                    <img src="../../assets/TaskVolunteersAvatarAnn.webp" alt="" style="width: 50px"
+                    <img src="../../assets/TaskVolunteersAvatarAnn.png" alt="" style="width: 50px"
                          v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Анна Ивановна: ' ||
                          constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Руководитель школьного клуба волонтеров Анна Ивановна: '">
-                    <img src="../../assets/TaskVolunteersAvatarMax.webp" alt="" style="width: 50px"
+                    <img src="../../assets/TaskVolunteersAvatarMax.png" alt="" style="width: 50px"
                          v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Макс: ' ||
                          constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Гость: '">
-                    <img src="../../assets/TaskVolunteersAvatarSchoolgirl.webp" alt="" style="width: 50px"
+                    <img src="../../assets/TaskVolunteersAvatarSchoolgirl.png" alt="" style="width: 50px"
                          v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Школьница: '">
-                    <img src="../../assets/TaskVolunteersAvatarSchoolboy.webp" alt="" style="width: 50px"
+                    <img src="../../assets/TaskVolunteersAvatarSchoolboy.png" alt="" style="width: 50px"
                          v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Школьник: '">
                 </div>
                 <p>

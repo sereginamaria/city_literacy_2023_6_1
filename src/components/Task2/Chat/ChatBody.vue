@@ -3,7 +3,7 @@
         <!--Левая часть-->
         <div style="border-right: 1px solid #A7B0C6; width: 20%; padding: 20px">
             <div class="d-flex align-items-center">
-                <img src="../../../assets/TaskChatWalkChat.webp" alt="Аватар чат" style="margin-right: 20px">
+                <img src="../../../assets/TaskChatWalkChat.png" alt="Аватар чат" style="margin-right: 20px">
                 <div>
                     <p class="text-bold">
                         Чат

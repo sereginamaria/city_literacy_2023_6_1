@@ -11,7 +11,7 @@
                 <div class="d-flex justify-content-center flex-column" style="width: 45%; background: #EDFFF6;">
                     <div class="d-flex">
                         <div style="width: 20%" class="d-flex justify-content-center align-items-center">
-                            <img src="../../assets/TaskVolunteersSocialInstitutions1.webp" alt="" style="width: 100%">
+                            <img src="../../assets/TaskVolunteersSocialInstitutions1.png" alt="" style="width: 100%">
                         </div>
                         <div style="width: 80%" class="d-flex flex-column align-items-center justify-content-center">
                             <div>Волонтёрство</div>
@@ -31,7 +31,7 @@
                     </div>
                     <div class="d-flex">
                         <div style="width: 20%" class="d-flex justify-content-center align-items-center">
-                            <img src="../../assets/TaskVolunteersSocialInstitutions2.webp" alt="" style="width: 100%">
+                            <img src="../../assets/TaskVolunteersSocialInstitutions2.png" alt="" style="width: 100%">
                         </div>
                         <div style="width: 80%" class="d-flex flex-column align-items-center justify-content-center">
                             <div>Правительство</div>
@@ -51,7 +51,7 @@
                     </div>
                     <div class="d-flex">
                         <div style="width: 20%" class="d-flex justify-content-center align-items-center">
-                            <img src="../../assets/TaskVolunteersSocialInstitutions3.webp" alt="" style="width: 100%">
+                            <img src="../../assets/TaskVolunteersSocialInstitutions3.png" alt="" style="width: 100%">
                         </div>
                         <div style="width: 80%" class="d-flex flex-column align-items-center justify-content-center">
                             <div>Семья</div>
@@ -71,7 +71,7 @@
                     </div>
                     <div class="d-flex">
                         <div style="width: 20%" class="d-flex justify-content-center align-items-center">
-                            <img src="../../assets/TaskVolunteersSocialInstitutions4.webp" alt="" style="width: 100%">
+                            <img src="../../assets/TaskVolunteersSocialInstitutions4.png" alt="" style="width: 100%">
                         </div>
                         <div style="width: 80%" class="d-flex flex-column align-items-center justify-content-center">
                             <div>Наука</div>
@@ -108,15 +108,15 @@
         <div class="background-text" id="background-text">
             <div class="d-flex">
                       <div class="me-2">
-                    <img src="../../assets/TaskVolunteersAvatarAnn.webp" alt="" style="width: 50px"
+                    <img src="../../assets/TaskVolunteersAvatarAnn.png" alt="" style="width: 50px"
                          v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Анна Ивановна: ' ||
                          constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Руководитель школьного клуба волонтеров Анна Ивановна: '">
-                    <img src="../../assets/TaskVolunteersAvatarMax.webp" alt="" style="width: 50px"
+                    <img src="../../assets/TaskVolunteersAvatarMax.png" alt="" style="width: 50px"
                          v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Макс: ' ||
                          constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Гость: '">
-                    <img src="../../assets/TaskVolunteersAvatarSchoolgirl.webp" alt="" style="width: 50px"
+                    <img src="../../assets/TaskVolunteersAvatarSchoolgirl.png" alt="" style="width: 50px"
                          v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Школьница: '">
-                    <img src="../../assets/TaskVolunteersAvatarSchoolboy.webp" alt="" style="width: 50px"
+                    <img src="../../assets/TaskVolunteersAvatarSchoolboy.png" alt="" style="width: 50px"
                          v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Школьник: '">
                 </div>
                 <p>
