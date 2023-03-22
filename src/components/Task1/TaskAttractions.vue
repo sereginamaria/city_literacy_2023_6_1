@@ -1,7 +1,7 @@
 <template>
     <!--Задание 10 задание-->
     <div class="background d-flex justify-content-center align-items-center flex-column" style="backdrop-filter: blur(5px);"
-         :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
+         :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.webp') + ')'}">
         <div class="instruction-block">
             <p>
                 Добавь подписи к объектам на картинках, перенеси название выбранного объекта в нужное поле.
@@ -11,7 +11,7 @@
             <div class="background-task">
             <div class="d-flex">
                 <div style="display: flex; align-items: center; flex-direction: column; justify-content: center;">
-                    <img src="../../assets/Task10Element1.png" alt="" style="width: calc(100%/1.2);">
+                    <img src="../../assets/Task10Element1.webp" alt="" style="width: calc(100%/1.2);">
                     <draggable
                             @add="error(1)"
                             class="list-group task10"
@@ -26,7 +26,7 @@
                     </draggable>
                 </div>
                 <div style="display: flex; align-items: center; flex-direction: column; justify-content: center;">
-                    <img src="../../assets/Task10Element2.png" alt="" style="width: calc(100%/1.2);">
+                    <img src="../../assets/Task10Element2.webp" alt="" style="width: calc(100%/1.2);">
                     <draggable
                             @add="error(2)"
                             class="list-group task10"
@@ -41,7 +41,7 @@
                     </draggable>
                 </div>
                 <div style="display: flex; align-items: center; flex-direction: column; justify-content: center;">
-                    <img src="../../assets/Task10Element3.png" alt="" style="width: calc(100%/1.2);">
+                    <img src="../../assets/Task10Element3.webp" alt="" style="width: calc(100%/1.2);">
                     <draggable
                             @add="error(3)"
                             class="list-group task10"

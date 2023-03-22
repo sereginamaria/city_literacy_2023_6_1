@@ -1,7 +1,7 @@
 <template>
     <!--Задание 15 задание-->
     <div class="background d-flex align-items-center flex-column"
-         :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}" style="backdrop-filter: blur(5px);">
+         :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.webp') + ')'}" style="backdrop-filter: blur(5px);">
         <div class="instruction-block">
             <p>Построй план прогулки по времени. Выбери, когда лучше посетить то или иное место. Перетащи подходящую активность в нужный временной промежуток.
             </p>
@@ -12,7 +12,7 @@
                 <div class="task15El">
                     <div class="d-flex justify-content-center align-items-center flex-column" style="height: 80%">
                         <p  style="font-weight: 700; font-size: 30px;">11:00</p>
-                        <img src="../../assets/task15El1.png" alt="" style="width: 90%;">
+                        <img src="../../assets/task15El1.webp" alt="" style="width: 90%;">
                     </div>
                     <draggable
                             @add="error(1)"
@@ -30,7 +30,7 @@
                 <div class="task15El">
                     <div class="d-flex justify-content-center align-items-center flex-column" style="height: 80%">
                         <p  style="font-weight: 700; font-size: 30px;">13:00</p>
-                        <img src="../../assets/task15El3.png" alt="" style="width: 90%;">
+                        <img src="../../assets/task15El3.webp" alt="" style="width: 90%;">
                     </div>
                     <draggable
                             @add="error(2)"
@@ -48,7 +48,7 @@
                 <div class="task15El">
                     <div class="d-flex justify-content-center align-items-center flex-column" style="height: 80%">
                         <p style="font-weight: 700; font-size: 30px;">16:00</p>
-                        <img src="../../assets/task15El1.png" alt="" style="width: 90%;">
+                        <img src="../../assets/task15El1.webp" alt="" style="width: 90%;">
                     </div>
                     <draggable
                             @add="error(3)"
@@ -66,7 +66,7 @@
                 <div class="task15El">
                     <div class="d-flex justify-content-center align-items-center flex-column" style="height: 80%">
                         <p  style="font-weight: 700; font-size: 30px;">18:00</p>
-                        <img src="../../assets/task15El2.png" alt="" style="width: 90%;">
+                        <img src="../../assets/task15El2.webp" alt="" style="width: 90%;">
                     </div>
                     <draggable
                             @add="error(4)"
@@ -98,10 +98,10 @@
         <div class="background-text">
                  <div class="d-flex">
                 <div class="me-2">
-                    <img src="../../assets/TaskNightInTheMuseumAvatarAsia.png" alt="" style="width: 50px"
+                    <img src="../../assets/TaskNightInTheMuseumAvatarAsia.webp" alt="" style="width: 50px"
                          v-if="constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Ася: ' ||
                          constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
-                    <img src="../../assets/TaskNightInTheMuseumAvatarKolia.png" alt="" style="width: 50px"
+                    <img src="../../assets/TaskNightInTheMuseumAvatarKolia.webp" alt="" style="width: 50px"
                          v-if="constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Коля: '">
                 </div>
                 <p>

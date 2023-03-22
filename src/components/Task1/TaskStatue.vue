@@ -1,6 +1,6 @@
 <template>
     <!--Задание 7 задание 1-->
-    <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}"
+    <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.webp') + ')'}"
          v-if="mainJSON.taskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].id === 30">
         <div class="instruction-block">
             <p>Что ответишь Коле? Выбери один ответ
@@ -18,10 +18,10 @@
         <div class="background-text">
                  <div class="d-flex">
                 <div class="me-2">
-                    <img src="../../assets/TaskNightInTheMuseumAvatarAsia.png" alt="" style="width: 50px"
+                    <img src="../../assets/TaskNightInTheMuseumAvatarAsia.webp" alt="" style="width: 50px"
                          v-if="constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Ася: ' ||
                          constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
-                    <img src="../../assets/TaskNightInTheMuseumAvatarKolia.png" alt="" style="width: 50px"
+                    <img src="../../assets/TaskNightInTheMuseumAvatarKolia.webp" alt="" style="width: 50px"
                          v-if="constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Коля: '">
                 </div>
                 <p>
@@ -34,7 +34,7 @@
         </div>
     </div>
     <!--Задание 7 задание 2-->
-    <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}"
+    <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.webp') + ')'}"
          v-if="mainJSON.taskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].id === 33">
         <div class="instruction-block">
             <p>Что ответишь Коле? Выбери один вариант ответа.
@@ -52,10 +52,10 @@
         <div class="background-text">
                  <div class="d-flex">
                 <div class="me-2">
-                    <img src="../../assets/TaskNightInTheMuseumAvatarAsia.png" alt="" style="width: 50px"
+                    <img src="../../assets/TaskNightInTheMuseumAvatarAsia.webp" alt="" style="width: 50px"
                          v-if="constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Ася: ' ||
                          constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
-                    <img src="../../assets/TaskNightInTheMuseumAvatarKolia.png" alt="" style="width: 50px"
+                    <img src="../../assets/TaskNightInTheMuseumAvatarKolia.webp" alt="" style="width: 50px"
                          v-if="constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Коля: '">
                 </div>
                 <p>

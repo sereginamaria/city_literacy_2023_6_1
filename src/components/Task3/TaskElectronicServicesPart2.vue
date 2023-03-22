@@ -1,6 +1,6 @@
 <template>
     <div class="background d-flex align-items-center flex-column" style="backdrop-filter: blur(5px);"
-         :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
+         :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.webp') + ')'}">
         <div class="instruction-block" id="instruction-block" v-if="!this.showModalDialog">
             <p>
                 Перед тобой карта важных проблем нашего города. Кликнув на объект на карте, ты увидишь описание проблемы. Укажи, можно ли решить эту проблему, отправив заявку в электронный сервис?
@@ -9,20 +9,20 @@
         <div class="d-flex justify-content-center w-100"
              :style="'height: calc(100% - ' + this.height + 'px)'">
             <div class="background-task-ElectronicServices2">
-                <img src="../../assets/TaskVolunteersElectronicServicesMap.png" alt="">
-                <img src="../../assets/TaskVolunteersElectronicServicesIconNoise.png" alt="" @click="openModalDialog('Noise')" style="width: 12%;
+                <img src="../../assets/TaskVolunteersElectronicServicesMap.webp" alt="">
+                <img src="../../assets/TaskVolunteersElectronicServicesIconNoise.webp" alt="" @click="openModalDialog('Noise')" style="width: 12%;
     position: absolute;
     top: 52%;
     left: 18%;">
-                <img src="../../assets/TaskVolunteersElectronicServicesIconHomelessPerson.png" alt="" @click="openModalDialog('HomelessPerson')" style="    width: 12%;
+                <img src="../../assets/TaskVolunteersElectronicServicesIconHomelessPerson.webp" alt="" @click="openModalDialog('HomelessPerson')" style="    width: 12%;
     position: absolute;
     top: 42%;
     left: 33%;">
-                <img src="../../assets/TaskVolunteersElectronicServicesIconPollution.png" alt="" @click="openModalDialog('Pollution')" style="width: 12%;
+                <img src="../../assets/TaskVolunteersElectronicServicesIconPollution.webp" alt="" @click="openModalDialog('Pollution')" style="width: 12%;
     position: absolute;
     top: 70%;
     left: 55%;">
-                <img src="../../assets/TaskVolunteersElectronicServicesIconCat.png" alt="" @click="openModalDialog('Cat')" style="    width: 12%;
+                <img src="../../assets/TaskVolunteersElectronicServicesIconCat.webp" alt="" @click="openModalDialog('Cat')" style="    width: 12%;
     position: absolute;
     top: 5%;
     left: 70%;">
@@ -33,15 +33,15 @@
         <div class="background-text" id="background-text">
             <div class="d-flex">
                       <div class="me-2">
-                    <img src="../../assets/TaskVolunteersAvatarAnn.png" alt="" style="width: 50px"
+                    <img src="../../assets/TaskVolunteersAvatarAnn.webp" alt="" style="width: 50px"
                          v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Анна Ивановна: ' ||
                          constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Руководитель школьного клуба волонтеров Анна Ивановна: '">
-                    <img src="../../assets/TaskVolunteersAvatarMax.png" alt="" style="width: 50px"
+                    <img src="../../assets/TaskVolunteersAvatarMax.webp" alt="" style="width: 50px"
                          v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Макс: ' ||
                          constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Гость: '">
-                    <img src="../../assets/TaskVolunteersAvatarSchoolgirl.png" alt="" style="width: 50px"
+                    <img src="../../assets/TaskVolunteersAvatarSchoolgirl.webp" alt="" style="width: 50px"
                          v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Школьница: '">
-                    <img src="../../assets/TaskVolunteersAvatarSchoolboy.png" alt="" style="width: 50px"
+                    <img src="../../assets/TaskVolunteersAvatarSchoolboy.webp" alt="" style="width: 50px"
                          v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Школьник: '">
                 </div>
                 <p>
@@ -67,7 +67,7 @@
             </div>
             <div class="dialog-content" style="margin: unset">
                 <div class="mb-3">
-                    <img :src=" require('../../assets/' + this.imgSrc + '.png') " alt="" style="width: 100%">
+                    <img :src=" require('../../assets/' + this.imgSrc + '.webp') " alt="" style="width: 100%">
                     <div>
                         {{this.message}}
                     </div>

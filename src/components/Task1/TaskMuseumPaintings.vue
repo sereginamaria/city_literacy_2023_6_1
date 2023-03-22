@@ -1,6 +1,6 @@
 <template>
     <!--Задание 5 пункт 1-->
-    <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}"
+    <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.webp') + ')'}"
          v-if="mainJSON.taskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].id === 17">
         <div class="instruction-block">
             <p>Какое современное правило дорожного движения нарушается на картине? Выбери один ответ.
@@ -21,7 +21,7 @@
         </div>
     </div>
     <!--Задание 5 пункт 2-->
-    <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}"
+    <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.webp') + ')'}"
          v-if="mainJSON.taskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].id === 18">
         <div class="instruction-block">
             <p>Какое современное правило дорожного движения нарушается на картине? Выбери один ответ.
@@ -42,7 +42,7 @@
         </div>
     </div>
     <!--Задание 5 пункт 3-->
-    <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}"
+    <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.webp') + ')'}"
          v-if="mainJSON.taskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].id === 19">
         <div class="instruction-block">
             <p>Какое современное правило дорожного движения нарушается на картине? Выбери один ответ.

@@ -25,7 +25,7 @@
 
 <style scoped>
     .dialog {
-        background: url("../assets/Pause.png") no-repeat;
+        background: url("../assets/Pause.webp") no-repeat;
         background-size: 100% 100%;
     }
 </style>

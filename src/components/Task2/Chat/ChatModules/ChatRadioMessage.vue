@@ -1,8 +1,8 @@
 <template>
     <div class="d-flex chat-message-body" v-for="message in currentScreenConst.message" :key="message.text">
-        <img src="../../../../assets/TaskChatWalkZhenya.png" alt="Аватар Женя" style="margin-right: 20px; width: 50px; height: 50px" v-if="message.name === 'Женя'">
-        <img src="../../../../assets/TaskChatWalkDima.png" alt="Аватар Дима" style="margin-right: 20px; width: 50px; height: 50px" v-if="message.name === 'Дима'">
-        <img src="../../../../assets/TaskChatWalkMasha.png" alt="Аватар Маша" style="margin-right: 20px; width: 50px; height: 50px" v-if="message.name === 'Маша'">
+        <img src="../../../../assets/TaskChatWalkZhenya.webp" alt="Аватар Женя" style="margin-right: 20px; width: 50px; height: 50px" v-if="message.name === 'Женя'">
+        <img src="../../../../assets/TaskChatWalkDima.webp" alt="Аватар Дима" style="margin-right: 20px; width: 50px; height: 50px" v-if="message.name === 'Дима'">
+        <img src="../../../../assets/TaskChatWalkMasha.webp" alt="Аватар Маша" style="margin-right: 20px; width: 50px; height: 50px" v-if="message.name === 'Маша'">
         <div>
             <p class="text-bold">
                 {{message.name}}
@@ -13,7 +13,7 @@
                 </p>
                 <div v-if="currentScreenConst.src !== '' && currentScreenConst.message.indexOf(message) === (currentScreenConst.message.length - 1)">
                     <p style="font-style: italic">Нажми на картинку, чтобы ее развернуть</p>
-                    <img :src=" require('../../../../assets/' + currentScreenConst.src + '.png') " alt="" @click="openModalDialog(currentScreenConst.src)"
+                    <img :src=" require('../../../../assets/' + currentScreenConst.src + '.webp') " alt="" @click="openModalDialog(currentScreenConst.src)"
                          style="width: 40%"
                     >
                 </div>
@@ -45,7 +45,7 @@
             </div>
             <div style="height: calc(100% - 36px);">
                 <div style="height: 100%">
-                    <img :src=" require('../../../../assets/' + modalSrc + '.png') " alt="" style="width: 100%; height: 100%;" class="p-3">
+                    <img :src=" require('../../../../assets/' + modalSrc + '.webp') " alt="" style="width: 100%; height: 100%;" class="p-3">
                 </div>
 
             </div>

@@ -1,6 +1,6 @@
 <template>
     <!--Задание 13 задание-->
-    <div class="background backimp" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}" :class="{background5: mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK3_1 === 1,
+    <div class="background backimp" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.webp') + ')'}" :class="{background5: mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK3_1 === 1,
     background6: mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK3_1 === 2, background7: mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK3_1 === 3, background8: mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK3_1 === 4}"
     >
         <div class="instruction-block">
@@ -18,10 +18,10 @@
         <div class="background-text">
             <div class="d-flex">
                 <div class="me-2">
-                    <img src="../../assets/TaskNightInTheMuseumAvatarAsia.png" alt="" style="width: 50px"
+                    <img src="../../assets/TaskNightInTheMuseumAvatarAsia.webp" alt="" style="width: 50px"
                          v-if="constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Ася: ' ||
                          constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
-                    <img src="../../assets/TaskNightInTheMuseumAvatarKolia.png" alt="" style="width: 50px"
+                    <img src="../../assets/TaskNightInTheMuseumAvatarKolia.webp" alt="" style="width: 50px"
                          v-if="constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Коля: '">
                 </div>
                 <p>
@@ -116,19 +116,19 @@
         background-position: unset !important;
     }
     .background5 {
-        background: url("../../assets/BackgroundModule58.png") !important;
+        background: url("../../assets/BackgroundModule58.webp") !important;
         background-size: cover!important;
     }
     .background6 {
-        background: url("../../assets/BackgroundModule59.png") rgba(255, 255, 255, 0.01)  !important;
+        background: url("../../assets/BackgroundModule59.webp") rgba(255, 255, 255, 0.01)  !important;
         background-size: cover!important;
     }
     .background7 {
-        background: url("../../assets/BackgroundModule60.png") rgba(255, 255, 255, 0.01)  !important;
+        background: url("../../assets/BackgroundModule60.webp") rgba(255, 255, 255, 0.01)  !important;
         background-size: cover!important;
     }
     .background8 {
-        background: url("../../assets/BackgroundModule61.png") rgba(255, 255, 255, 0.01) !important;
+        background: url("../../assets/BackgroundModule61.webp") rgba(255, 255, 255, 0.01) !important;
         background-size: cover!important;
     }
 </style>

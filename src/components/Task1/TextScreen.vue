@@ -1,6 +1,6 @@
 <template>
     <div class="background"
-         :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}"
+         :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.webp') + ')'}"
     >
         <div v-if="screen.id === 6 || screen.id === 9 || screen.id === 27 || screen.id === 29 || screen.id === 36 || screen.id === 44">
             <div class="background-text-center">
@@ -17,10 +17,10 @@
         <div class="background-text" v-else>
             <div class="d-flex">
                 <div class="me-2">
-                    <img src="../../assets/TaskNightInTheMuseumAvatarAsia.png" alt="" style="width: 50px"
+                    <img src="../../assets/TaskNightInTheMuseumAvatarAsia.webp" alt="" style="width: 50px"
                          v-if="constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Ася: ' ||
                          constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
-                    <img src="../../assets/TaskNightInTheMuseumAvatarKolia.png" alt="" style="width: 50px"
+                    <img src="../../assets/TaskNightInTheMuseumAvatarKolia.webp" alt="" style="width: 50px"
                          v-if="constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Коля: '">
                 </div>
                 <p>

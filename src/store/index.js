@@ -89,6 +89,9 @@ export default new Vuex.Store({
 
                         localStorage.hash = response.data.hash
                         localStorage.login = response.data.login
+                        axios.post( "/city_literacy/2023_6_1/server_request/receiver.php", {
+                            mainJSON: state.mainJSON
+                        })
                     }
                     if (response.data.status === "error") {  // todo constants to enums
                         state.loginResponse = response.data

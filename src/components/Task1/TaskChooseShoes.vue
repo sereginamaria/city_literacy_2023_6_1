@@ -1,12 +1,12 @@
 <template>
     <!--Выбор обуви-->
-    <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
+    <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.webp') + ')'}">
         <div class="instruction-block">
             <p>Выбери ту полку, на которой находится подходящая обувь для тебя и для Аси. Помни, что обувь должна подходить для музея, где будет много людей.
             </p>
         </div>
         <div>
-            <img src="../../assets/Boots1.png" alt="" :class="{colorBoots: mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK1_3 === 1}"
+            <img src="../../assets/Boots1.webp" alt="" :class="{colorBoots: mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK1_3 === 1}"
                  @click="addAnswer(1)" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Большой рюкзак"
                  style="width: calc(100%/4);
     left: calc(100%/2.6);
@@ -14,7 +14,7 @@
     /* width: calc(100%/3); */
     position: absolute;"
             >
-            <img src="../../assets/Boots2.png" alt="" :class="{colorBoots: mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK1_3 === 2}"
+            <img src="../../assets/Boots2.webp" alt="" :class="{colorBoots: mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK1_3 === 2}"
                  @click="addAnswer(2)" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Маленький рюкзак"
                  style="width: calc(100%/4);
     left: calc(100%/2.6);
@@ -22,7 +22,7 @@
     /* width: calc(100%/3); */
     position: absolute;"
             >
-            <img src="../../assets/Boots3.png" alt="" :class="{colorBoots: mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK1_3 === 3}"
+            <img src="../../assets/Boots3.webp" alt="" :class="{colorBoots: mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK1_3 === 3}"
                  @click="addAnswer(3)" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Большой рюкзак"
                  style="width: calc(100%/4);
     left: calc(100%/2.6);
@@ -30,7 +30,7 @@
     /* width: calc(100%/3); */
     position: absolute;"
             >
-            <img src="../../assets/Boots4.png" alt="" :class="{colorBoots: mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK1_3 === 4}"
+            <img src="../../assets/Boots4.webp" alt="" :class="{colorBoots: mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK1_3 === 4}"
                  @click="addAnswer(4)" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Маленький рюкзак"
                  style="width: calc(100%/4);
     left: calc(100%/2.6);
@@ -42,10 +42,10 @@
         <div class="background-text">
                  <div class="d-flex">
                 <div class="me-2">
-                    <img src="../../assets/TaskNightInTheMuseumAvatarAsia.png" alt="" style="width: 50px"
+                    <img src="../../assets/TaskNightInTheMuseumAvatarAsia.webp" alt="" style="width: 50px"
                          v-if="constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Ася: ' ||
                          constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Старшая сестра Ася, 20 лет: '">
-                    <img src="../../assets/TaskNightInTheMuseumAvatarKolia.png" alt="" style="width: 50px"
+                    <img src="../../assets/TaskNightInTheMuseumAvatarKolia.webp" alt="" style="width: 50px"
                          v-if="constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name === 'Коля: '">
                 </div>
                 <p>

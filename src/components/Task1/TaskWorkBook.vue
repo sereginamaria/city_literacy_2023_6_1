@@ -1,6 +1,6 @@
 <template>
     <!--Задание рабочая тетрадь-->
-    <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
+    <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.webp') + ')'}">
         <div class="instruction-block">
             <p>Заполни пропуски в тексте.
             </p>
@@ -112,7 +112,7 @@
 
         <!--Четвертый вопрос-->
         <div class="background-task2" v-if="mainJSON.taskNightInTheMuseum.modularTask1_17Show">
-            <img src="../../assets/Workbook8.png" alt="" style="width: 90%">
+            <img src="../../assets/Workbook8.webp" alt="" style="width: 90%">
             <div style="background: #fff; border: 1px solid #54bedf;" class="mt-2">
                 <div v-for="el in constTaskNightInTheMuseum.listOfAnswersTaskWorkBook4" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_LLK1_4}"
                      class="option-answers-border"

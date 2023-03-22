@@ -1,6 +1,6 @@
 <template>
     <div class="background d-flex align-items-center flex-column" style="backdrop-filter: blur(5px);"
-         :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
+         :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.webp') + ')'}">
         <div class="instruction-block" id="instruction-block">
             <p>Какой электронный сервис поможет решить проблему раскрученных болтов у качелей в парке? Кликни на нужную картинку.
             </p>
@@ -9,16 +9,16 @@
              :style="'height: calc(100% - ' + this.height + 'px)'">
             <div class="background-task flex-row flex-wrap" style="height: 85%; padding: 0">
                 <div class="electronic_services_part1_img_block">
-                    <img @click="choose(1)" src="../../assets/TaskVolunteersElectronicServices1.png" alt="" :class="{choose: mainJSON.taskVolunteers.results.ULSE1_Log1_SEK5_1 === 1}">
+                    <img @click="choose(1)" src="../../assets/TaskVolunteersElectronicServices1.webp" alt="" :class="{choose: mainJSON.taskVolunteers.results.ULSE1_Log1_SEK5_1 === 1}">
                 </div>
                 <div class="electronic_services_part1_img_block">
-                    <img @click="choose(2)" src="../../assets/TaskVolunteersElectronicServices2.png" alt="" :class="{choose: mainJSON.taskVolunteers.results.ULSE1_Log1_SEK5_1 === 2}">
+                    <img @click="choose(2)" src="../../assets/TaskVolunteersElectronicServices2.webp" alt="" :class="{choose: mainJSON.taskVolunteers.results.ULSE1_Log1_SEK5_1 === 2}">
                 </div>
                 <div class="electronic_services_part1_img_block">
-                    <img @click="choose(3)" src="../../assets/TaskVolunteersElectronicServices3.png" alt="" :class="{choose: mainJSON.taskVolunteers.results.ULSE1_Log1_SEK5_1 === 3}">
+                    <img @click="choose(3)" src="../../assets/TaskVolunteersElectronicServices3.webp" alt="" :class="{choose: mainJSON.taskVolunteers.results.ULSE1_Log1_SEK5_1 === 3}">
                 </div>
                 <div class="electronic_services_part1_img_block">
-                    <img @click="choose(4)" src="../../assets/TaskVolunteersElectronicServices4.png" alt="" :class="{choose: mainJSON.taskVolunteers.results.ULSE1_Log1_SEK5_1 === 4}">
+                    <img @click="choose(4)" src="../../assets/TaskVolunteersElectronicServices4.webp" alt="" :class="{choose: mainJSON.taskVolunteers.results.ULSE1_Log1_SEK5_1 === 4}">
                 </div>
             </div>
         </div>
@@ -26,15 +26,15 @@
         <div class="background-text" id="background-text">
             <div class="d-flex">
                       <div class="me-2">
-                    <img src="../../assets/TaskVolunteersAvatarAnn.png" alt="" style="width: 50px"
+                    <img src="../../assets/TaskVolunteersAvatarAnn.webp" alt="" style="width: 50px"
                          v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Анна Ивановна: ' ||
                          constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Руководитель школьного клуба волонтеров Анна Ивановна: '">
-                    <img src="../../assets/TaskVolunteersAvatarMax.png" alt="" style="width: 50px"
+                    <img src="../../assets/TaskVolunteersAvatarMax.webp" alt="" style="width: 50px"
                          v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Макс: ' ||
                          constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Гость: '">
-                    <img src="../../assets/TaskVolunteersAvatarSchoolgirl.png" alt="" style="width: 50px"
+                    <img src="../../assets/TaskVolunteersAvatarSchoolgirl.webp" alt="" style="width: 50px"
                          v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Школьница: '">
-                    <img src="../../assets/TaskVolunteersAvatarSchoolboy.png" alt="" style="width: 50px"
+                    <img src="../../assets/TaskVolunteersAvatarSchoolboy.webp" alt="" style="width: 50px"
                          v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Школьник: '">
                 </div>
                 <p>

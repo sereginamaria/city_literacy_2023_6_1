@@ -6,12 +6,12 @@
             :dragSelector="dragSelector"
             :active="handlers"
             :fit-parent="fit"
-            :width="width"
-            :height="height"
+            :width="mainJSON.taskChatWalk.width"
+            :height="mainJSON.taskChatWalk.height"
             :minWidth="minW"
             :minHeight="minH"
-            :left="left"
-            :top="top"
+            :left="mainJSON.taskChatWalk.left"
+            :top="mainJSON.taskChatWalk.top"
     >
         <div class="d-flex justify-content-between align-items-center handle" style="padding: 0 10px">
             <div class="d-flex align-items-center">
@@ -38,10 +38,6 @@
             /*      const tH = 700;*/
             return {
                 handlers: ["r", "rb", "b", "lb", "l", "lt", "t", "rt"],
-                left: 100,
-                top: 70,
-                height: `80%`,
-                width: '70%',
                 maxW: 1000,
                 maxH: 700,
                 minW: 700,

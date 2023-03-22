@@ -24,6 +24,10 @@ module.exports = {
             from: path.resolve(__dirname, "../city_literacy_2023_6_1/static_img/"),
             to: path.resolve(__dirname, "../2023_6_1/img/")
           },
+          {
+            from: path.resolve(__dirname, "../city_literacy_2023_6_1/readme.txt"),
+            to: path.resolve(__dirname, "../2023_6_1/")
+          },
         ],
       }),
     ]

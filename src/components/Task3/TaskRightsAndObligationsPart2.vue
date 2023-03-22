@@ -1,6 +1,6 @@
 <template>
     <div class="background d-flex align-items-center flex-column" style="backdrop-filter: blur(5px);"
-         :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.png') + ')'}">
+         :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.webp') + ')'}">
         <div class="instruction-block" id="instruction-block">
             <p>Что в нашей стране относится к основным правам, а что - к обязанностям? Дополни схему, перетащив фразы снизу в соответствующий пустой блок.
             </p>
@@ -104,15 +104,15 @@
         <div class="background-text" id="background-text">
             <div class="d-flex">
                       <div class="me-2">
-                    <img src="../../assets/TaskVolunteersAvatarAnn.png" alt="" style="width: 50px"
+                    <img src="../../assets/TaskVolunteersAvatarAnn.webp" alt="" style="width: 50px"
                          v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Анна Ивановна: ' ||
                          constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Руководитель школьного клуба волонтеров Анна Ивановна: '">
-                    <img src="../../assets/TaskVolunteersAvatarMax.png" alt="" style="width: 50px"
+                    <img src="../../assets/TaskVolunteersAvatarMax.webp" alt="" style="width: 50px"
                          v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Макс: ' ||
                          constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Гость: '">
-                    <img src="../../assets/TaskVolunteersAvatarSchoolgirl.png" alt="" style="width: 50px"
+                    <img src="../../assets/TaskVolunteersAvatarSchoolgirl.webp" alt="" style="width: 50px"
                          v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Школьница: '">
-                    <img src="../../assets/TaskVolunteersAvatarSchoolboy.png" alt="" style="width: 50px"
+                    <img src="../../assets/TaskVolunteersAvatarSchoolboy.webp" alt="" style="width: 50px"
                          v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Школьник: '">
                 </div>
                 <p>

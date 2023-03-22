@@ -138,39 +138,39 @@ const constTaskNightInTheMuseum = {
     ],
     "listOfAnswersTaskWorkBook2": [
         {
-            "src": "Workbook1.png",
+            "src": "Workbook1.webp",
             "value": "Князь Юрий Долгорукий",
             "id": 1,
         },
         {
-            "src": "Workbook2.png",
+            "src": "Workbook2.webp",
             "value": "Князь Иван Калита",
             "id": 2,
         },
         {
-            "src": "Workbook3.png",
+            "src": "Workbook3.webp",
             "value": "Князь Даниил Московский",
             "id": 3,
         },
         {
-            "src": "Workbook4.png",
+            "src": "Workbook4.webp",
             "value": "Боярин Степан Кучка",
             "id": 4,
         },
     ],
     "listOfAnswersTaskWorkBook3": [
         {
-            "src": "Workbook5.png",
+            "src": "Workbook5.webp",
             "value": "Кремль",
             "id": 1,
         },
         {
-            "src": "Workbook6.png",
+            "src": "Workbook6.webp",
             "value": "Воскресенские ворота",
             "id": 2,
         },
         {
-            "src": "Workbook7.png",
+            "src": "Workbook7.webp",
             "value": "Птичья башня",
             "id": 3,
         }

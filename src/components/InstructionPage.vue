@@ -22,7 +22,7 @@
 </template>
 
 <script>
-    import {mapGetters} from "vuex";
+    import {mapGetters, mapMutations} from "vuex";
 
     export default {
         name: "InstructionPage",
@@ -30,9 +30,13 @@
             ...mapGetters(['mainJSON', 'constTaskNightInTheMuseum', 'constTaskChatWalk', 'constTaskVolunteers']),
         },
         methods: {
+            ...mapMutations(["push_mainJSON"]),
             instruction() {
                 this.mainJSON['instructionShow'] = false
                 this.mainJSON['mainPageShow'] = true
+                this.push_mainJSON({
+                    push: this.mainJSON
+                })
             }
         }
     }
@@ -45,13 +49,13 @@
         background-size: cover !important;
     }
     .backgroundTaskNightInTheMuseum {
-        background: url("../assets/Background.png") rgba(255, 255, 255, 0.01) no-repeat center center fixed;
+        background: url("../assets/Background.webp") rgba(255, 255, 255, 0.01) no-repeat center center fixed;
     }
     .backgroundTaskChatWalk {
-        background: url("../assets/TaskChatBackground.png") rgba(255, 255, 255, 0.01) no-repeat center center fixed;
+        background: url("../assets/TaskChatBackground.webp") rgba(255, 255, 255, 0.01) no-repeat center center fixed;
     }
     .backgroundTaskVolunteers {
-        background: url("../assets/TaskVolunteersBackground.png") rgba(255, 255, 255, 0.01) no-repeat center center fixed;
+        background: url("../assets/TaskVolunteersBackground.webp") rgba(255, 255, 255, 0.01) no-repeat center center fixed;
     }
     .instruction-card {
         display: flex;

@@ -1,5 +1,5 @@
 <template>
-    <div class="background" :style="{ background: 'url(' + require('../../assets/TaskChatBackground.png') + ')'}">
+    <div class="background" :style="{ background: 'url(' + require('../../assets/TaskChatBackground.webp') + ')'}">
         <ChatModel v-if="this.mainJSON.taskChatWalk.chatShow"/>
     </div>
 </template>
