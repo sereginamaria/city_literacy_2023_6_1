@@ -8,91 +8,91 @@
         </div>
         <div class="d-flex justify-content-center align-items-center w-100 h-100">
             <div class="background-task" style="height: 85%">
-            <div class="d-flex" style="height: 60%">
-                <div class="task15El">
-                    <div class="d-flex justify-content-center align-items-center flex-column" style="height: 80%">
-                        <p  style="font-weight: 700; font-size: 30px;">11:00</p>
-                        <img src="../../assets/task15El1.png" alt="" style="width: 90%;">
+                <div class="d-flex" style="height: 70%; margin-bottom: 3%;">
+                    <div class="task15El">
+                        <div class="d-flex justify-content-center align-items-center flex-column" style="height: 80%">
+                            <p  style="font-weight: 700; font-size: 30px;">11:00</p>
+                            <img src="../../assets/task15El1.png" alt="" style="width: 90%;">
+                        </div>
+                        <draggable
+                                @add="error(1)"
+                                class="list-group list-group-el-weather-forecast"
+                                :list="this.mainJSON.taskNightInTheMuseum.listOfAnswersTask15_1"
+                                group="task15"
+                        >
+                            <template #item="{ element }">
+                                <div>
+                                    {{element.value}}
+                                </div>
+                            </template>
+                        </draggable>
                     </div>
-                    <draggable
-                            @add="error(1)"
-                            class="list-group list-group-el-weather-forecast"
-                            :list="this.mainJSON.taskNightInTheMuseum.listOfAnswersTask15_1"
-                            group="task15"
-                    >
-                        <template #item="{ element }">
-                            <div>
-                                {{element.value}}
-                            </div>
-                        </template>
-                    </draggable>
+                    <div class="task15El">
+                        <div class="d-flex justify-content-center align-items-center flex-column" style="height: 80%">
+                            <p  style="font-weight: 700; font-size: 30px;">13:00</p>
+                            <img src="../../assets/task15El3.png" alt="" style="width: 90%;">
+                        </div>
+                        <draggable
+                                @add="error(2)"
+                                class="list-group list-group-el-weather-forecast"
+                                :list="this.mainJSON.taskNightInTheMuseum.listOfAnswersTask15_2"
+                                group="task15"
+                        >
+                            <template #item="{ element }">
+                                <div>
+                                    {{element.value}}
+                                </div>
+                            </template>
+                        </draggable>
+                    </div>
+                    <div class="task15El">
+                        <div class="d-flex justify-content-center align-items-center flex-column" style="height: 80%">
+                            <p style="font-weight: 700; font-size: 30px;">16:00</p>
+                            <img src="../../assets/task15El1.png" alt="" style="width: 90%;">
+                        </div>
+                        <draggable
+                                @add="error(3)"
+                                class="list-group list-group-el-weather-forecast"
+                                :list="this.mainJSON.taskNightInTheMuseum.listOfAnswersTask15_3"
+                                group="task15"
+                        >
+                            <template #item="{ element }">
+                                <div>
+                                    {{element.value}}
+                                </div>
+                            </template>
+                        </draggable>
+                    </div>
+                    <div class="task15El">
+                        <div class="d-flex justify-content-center align-items-center flex-column" style="height: 80%">
+                            <p  style="font-weight: 700; font-size: 30px;">18:00</p>
+                            <img src="../../assets/task15El2.png" alt="" style="width: 90%;">
+                        </div>
+                        <draggable
+                                @add="error(4)"
+                                class="list-group list-group-el-weather-forecast"
+                                :list="this.mainJSON.taskNightInTheMuseum.listOfAnswersTask15_4"
+                                group="task15"
+                        >
+                            <template #item="{ element }">
+                                <div>
+                                    {{element.value}}
+                                </div>
+                            </template>
+                        </draggable>
+                    </div>
                 </div>
-                <div class="task15El">
-                    <div class="d-flex justify-content-center align-items-center flex-column" style="height: 80%">
-                        <p  style="font-weight: 700; font-size: 30px;">13:00</p>
-                        <img src="../../assets/task15El3.png" alt="" style="width: 90%;">
-                    </div>
-                    <draggable
-                            @add="error(2)"
-                            class="list-group list-group-el-weather-forecast"
-                            :list="this.mainJSON.taskNightInTheMuseum.listOfAnswersTask15_2"
-                            group="task15"
-                    >
-                        <template #item="{ element }">
-                            <div>
-                                {{element.value}}
-                            </div>
-                        </template>
-                    </draggable>
-                </div>
-                <div class="task15El">
-                    <div class="d-flex justify-content-center align-items-center flex-column" style="height: 80%">
-                        <p style="font-weight: 700; font-size: 30px;">16:00</p>
-                        <img src="../../assets/task15El1.png" alt="" style="width: 90%;">
-                    </div>
-                    <draggable
-                            @add="error(3)"
-                            class="list-group list-group-el-weather-forecast"
-                            :list="this.mainJSON.taskNightInTheMuseum.listOfAnswersTask15_3"
-                            group="task15"
-                    >
-                        <template #item="{ element }">
-                            <div>
-                                {{element.value}}
-                            </div>
-                        </template>
-                    </draggable>
-                </div>
-                <div class="task15El">
-                    <div class="d-flex justify-content-center align-items-center flex-column" style="height: 80%">
-                        <p  style="font-weight: 700; font-size: 30px;">18:00</p>
-                        <img src="../../assets/task15El2.png" alt="" style="width: 90%;">
-                    </div>
-                    <draggable
-                            @add="error(4)"
-                            class="list-group list-group-el-weather-forecast"
-                            :list="this.mainJSON.taskNightInTheMuseum.listOfAnswersTask15_4"
-                            group="task15"
-                    >
-                        <template #item="{ element }">
-                            <div>
-                                {{element.value}}
-                            </div>
-                        </template>
-                    </draggable>
-                </div>
-            </div>
-            <draggable
-                    class="list-group list-of-answers-weather-forecast d-flex flex-row flex-wrap justify-content-center align-items-center"
-                    :list="this.mainJSON.taskNightInTheMuseum.listOfAnswersTask15"
-                    group="task15"
-            >
-                <template #item="{ element }">
-                    <div class="task15List">
-                        {{element.value}}
-                    </div>
-                </template>
-            </draggable>
+                <draggable
+                        class="list-group list-of-answers-weather-forecast d-flex flex-row flex-wrap justify-content-center align-items-center"
+                        :list="this.mainJSON.taskNightInTheMuseum.listOfAnswersTask15"
+                        group="task15"
+                >
+                    <template #item="{ element }">
+                        <div class="task15List">
+                            {{element.value}}
+                        </div>
+                    </template>
+                </draggable>
         </div>
         </div>
         <div class="background-text">
@@ -180,7 +180,7 @@
 <style scoped>
     .list-of-answers-weather-forecast {
         text-align: center;
-        height: 30%;
+        height: 15%;
         width: 100%;
     }
     .list-group-el-weather-forecast {

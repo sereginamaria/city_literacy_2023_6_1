@@ -107,12 +107,38 @@
                 }
                 else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLS5_1 = 0
 
-                if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLK1_1 === ""){
+                let ULHLDT1_Log_HLK1_1 = this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLK1_1.split(',')
+                let ULHLDT1_Log_HLK1_1_answer = 0
+                ULHLDT1_Log_HLK1_1.forEach(el => {
+                    if (el === '1'){
+                        ULHLDT1_Log_HLK1_1_answer++
+                    }
+                    if (el === '4'){
+                        ULHLDT1_Log_HLK1_1_answer++
+                    }
+                })
+                if(ULHLDT1_Log_HLK1_1.length === 2 && ULHLDT1_Log_HLK1_1_answer === 2){
+                    this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLK1_1 = 2
+                }
+                else if (ULHLDT1_Log_HLK1_1.length === 1 && ULHLDT1_Log_HLK1_1_answer === 1) {
                     this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLK1_1 = 1
                 }
                 else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLK1_1 = 0
 
-                if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLK2_1 === ""){
+                let ULHLDT1_Log_HLK2_1 = this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLK2_1.split(',')
+                let ULHLDT1_Log_HLK2_1_answer = 0
+                ULHLDT1_Log_HLK2_1.forEach(el => {
+                    if (el === '4'){
+                        ULHLDT1_Log_HLK2_1_answer++
+                    }
+                    if (el === '3'){
+                        ULHLDT1_Log_HLK2_1_answer++
+                    }
+                })
+                if(ULHLDT1_Log_HLK2_1.length === 2 && ULHLDT1_Log_HLK2_1_answer === 2){
+                    this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLK2_1 = 2
+                }
+                else if (ULHLDT1_Log_HLK2_1.length === 1 && ULHLDT1_Log_HLK2_1_answer === 1) {
                     this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLK2_1 = 1
                 }
                 else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLK2_1 = 0
@@ -122,7 +148,20 @@
                 }
                 else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_DTS1_1 = 0
 
-                if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLK4_1 === ""){
+                let ULHLDT1_Log_HLK4_1 = this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLK4_1.split(',')
+                let ULHLDT1_Log_HLK4_1_answer = 0
+                ULHLDT1_Log_HLK4_1.forEach(el => {
+                    if (el === '1'){
+                        ULHLDT1_Log_HLK4_1_answer++
+                    }
+                    if (el === '3'){
+                        ULHLDT1_Log_HLK4_1_answer++
+                    }
+                })
+                if(ULHLDT1_Log_HLK4_1.length === 2 && ULHLDT1_Log_HLK4_1_answer === 2){
+                    this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLK4_1 = 2
+                }
+                else if (ULHLDT1_Log_HLK4_1.length === 1 && ULHLDT1_Log_HLK4_1_answer === 1) {
                     this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLK4_1 = 1
                 }
                 else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLK4_1 = 0

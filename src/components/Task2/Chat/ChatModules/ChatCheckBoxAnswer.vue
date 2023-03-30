@@ -12,7 +12,8 @@
             />
             <label :for=option.id>{{option.value}}</label>
         </div>
-        <MyButton @click="save">Готово</MyButton>
+        <MyButton @click="save" style="border-color: #74a2ce" v-if="this.mainJSON.taskChatWalk.checkBox1Selected.length !== 0">Готово</MyButton>
+        <MyButton disabled style="border-color: #74a2ce" v-else>Готово</MyButton>
     </div>
 </template>
 

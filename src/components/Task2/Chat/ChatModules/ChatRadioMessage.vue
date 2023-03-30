@@ -1,4 +1,33 @@
 <template>
+
+    <div v-if="(currentScreenConst.id === 4 && this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLS5_1 !== 2) ||
+                (currentScreenConst.id === 7 && this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLK4_1 !== '1,3') ||
+                (currentScreenConst.id === 7 && this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLK4_1 !== '3,1') ||
+                (currentScreenConst.id === 10 && this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLK3_1 !== 2) ">
+        <div class="d-flex chat-message-body" v-for="message_dop in currentScreenConst.message_dop" :key="message_dop.text">
+            <img src="../../../../assets/TaskChatWalkZhenya.png" alt="Аватар Женя" style="margin-right: 20px; width: 50px; height: 50px" v-if="message_dop.name === 'Женя'">
+            <img src="../../../../assets/TaskChatWalkDima.png" alt="Аватар Дима" style="margin-right: 20px; width: 50px; height: 50px" v-if="message_dop.name === 'Дима'">
+            <img src="../../../../assets/TaskChatWalkMasha.png" alt="Аватар Маша" style="margin-right: 20px; width: 50px; height: 50px" v-if="message_dop.name === 'Маша'">
+            <div>
+                <p class="text-bold">
+                    {{message_dop.name}}
+                </p>
+                <div class="chat-message">
+                    <p>
+                        {{message_dop.text}}
+                    </p>
+                    <div v-if="currentScreenConst.src !== '' && currentScreenConst.message_dop.indexOf(message_dop) === (currentScreenConst.message_dop.length - 1)">
+                        <p style="font-style: italic">Нажми на картинку, чтобы ее развернуть</p>
+                        <img :src=" require('../../../../assets/' + currentScreenConst.src + '.webp') " alt="" @click="openModalDialog(currentScreenConst.src)"
+                             style="width: 40%"
+                        >
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="d-flex chat-message-body" v-for="message in currentScreenConst.message" :key="message.text">
         <img src="../../../../assets/TaskChatWalkZhenya.png" alt="Аватар Женя" style="margin-right: 20px; width: 50px; height: 50px" v-if="message.name === 'Женя'">
         <img src="../../../../assets/TaskChatWalkDima.png" alt="Аватар Дима" style="margin-right: 20px; width: 50px; height: 50px" v-if="message.name === 'Дима'">
@@ -19,7 +48,6 @@
                 </div>
 
             </div>
-
         </div>
     </div>
 

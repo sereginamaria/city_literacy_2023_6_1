@@ -8,7 +8,7 @@
         <div class="d-flex justify-content-center align-items-center w-100"
              :style="'height: calc(100% - ' + this.height + 'px)'">
             <div class="option-answers-background">
-                <div v-for="el in constTaskVolunteers.listOfAnswersTakeOffTheBackpack" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.taskVolunteers.results.ULSE1_Log_SES6}"
+                <div v-for="el in constTaskVolunteers.listOfAnswersTakeOffTheBackpack" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.taskVolunteers.results.ULSE1_Log_SEK3_3}"
                      class="option-answers-border"
                 >
                     <div @click="chooseAnswer(el)">
@@ -38,7 +38,7 @@
                     {{constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].text}}
                 </p>
             </div>
-            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.taskVolunteers.results.ULSE1_Log_SES6 !== 'NA'">Готово</MyButton>
+            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.taskVolunteers.results.ULSE1_Log_SEK3_3 !== 'NA'">Готово</MyButton>
             <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
@@ -64,7 +64,7 @@
         methods: {
             ...mapMutations(["push_mainJSON"]),
             chooseAnswer(el){
-                this.mainJSON.taskVolunteers.results.ULSE1_Log_SES6 = el.id
+                this.mainJSON.taskVolunteers.results.ULSE1_Log_SEK3_3 = el.id
             },
             checkAnswer() {
                 screen.isShow = false
