@@ -38,7 +38,7 @@
 </template>
 
 <script>
-    import {mapGetters} from "vuex";
+    import {mapGetters, mapMutations} from "vuex";
 
     export default {
         name: "ResultsPage",
@@ -54,10 +54,33 @@
             ...mapGetters(['mainJSON']),
         },
         methods: {
+            ...mapMutations(["push_mainJSON"]),
           exit(){
+              let d = new Date()
+              this.mainJSON.results.dataTimeEnd =  this.mainJSON.results.dataTimeLastUpdate = [
+                  d.getFullYear(),
+                  ('0' + (d.getMonth() + 1)).slice(-2),
+                  ('0' + d.getDate()).slice(-2)
+              ].join('-') + ' ' + [
+                  ('0' + (d.getHours())).slice(-2),
+                  ('0' + (d.getMinutes())).slice(-2),
+                  ('0' + d.getSeconds()).slice(-2)
+              ].join(':');
+
+              this.mainJSON.taskVolunteers["isShow"] = false
+              this.mainJSON.taskChatWalk["isShow"] = false
+              this.mainJSON.taskNightInTheMuseum["isShow"] = false
+
               this.mainJSON['loginShow'] = true
               this.mainJSON['mainPageShow'] = false
               this.mainJSON['resultsShow'] = false
+
+              this.push_mainJSON({
+                  push: this.mainJSON
+              })
+
+              localStorage.clear()
+
             }
         },
         mounted(){

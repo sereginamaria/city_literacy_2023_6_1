@@ -61,7 +61,7 @@
                         if(el.name === 'taskVolunteers'){
                             el.done = true
                             let t = new Date()
-                            this.mainJSON.results.dataTimeLastUpdate = this.mainJSON.results.dataTimeEndTaskVolunteers =
+                            this.mainJSON.results.dataTimeLastUpdate = this.mainJSON.results.dataTimeEndtaskVolunteers =
                                 [
                                     t.getFullYear(),
                                     ('0' + (t.getMonth() + 1)).slice(-2),
@@ -71,6 +71,9 @@
                                     ('0' + (t.getMinutes())).slice(-2),
                                     ('0' + t.getSeconds()).slice(-2)
                                 ].join(':');
+                            this.push_mainJSON({
+                                push: this.mainJSON
+                            })
                         }
                         if(el.done === false){
                             this.listOfNotDoneTasks.push(el.name)

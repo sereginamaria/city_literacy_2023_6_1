@@ -85,7 +85,7 @@
                     ].join(':');
 
                     this.push_mainJSON({
-                        push: this.mainJSON.mainJSON
+                        push: this.mainJSON
                     })
 
                     localStorage.clear()
