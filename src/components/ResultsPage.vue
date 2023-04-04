@@ -27,6 +27,11 @@
                     </div>
                 </div>
             </div>
+            <div class="m-3">
+                <div v-for="result in this.resultsTime" :key="result">
+                    {{result.key}}: {{result.value}}
+                </div>
+            </div>
            <MyButton @click="exit">Выйти</MyButton>
         </div>
     </div>

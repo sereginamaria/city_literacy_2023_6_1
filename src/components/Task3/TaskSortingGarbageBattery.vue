@@ -192,42 +192,69 @@
                 })
 
                 if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list1.length !== 0){
-                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_1 = this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list1[0].id
+                    if( this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_1 !== "NA"){
+                        this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_1 =  this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_1.toString() +
+                            this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list1[0].id.toString()
+                    }
+                    else this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_1 = this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list1[0].id
+
                     if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list1[0].id === 6){
                         this.mainJSON.taskVolunteers.results.ULSE1_Score_SES3 = 0
                     }
                 }
                 if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list2.length !== 0){
-                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_2 = this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list2[0].id
+                    if( this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_2 !== "NA"){
+                        this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_2 =  this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_2.toString() +
+                            this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list2[0].id.toString()
+                    }
+                    else this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_2 = this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list2[0].id
+
                     if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list2[0].id === 6){
                         this.mainJSON.taskVolunteers.results.ULSE1_Score_SES3 = 0
                     }
                 }
                 if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list3.length !== 0){
-                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_3 = this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list3[0].id
+                    if( this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_3 !== "NA"){
+                        this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_3 =  this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_3.toString() +
+                            this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list3[0].id.toString()
+                    }
+                    else this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_3 = this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list3[0].id
+
                     if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list3[0].id === 6){
                         this.mainJSON.taskVolunteers.results.ULSE1_Score_SES3 = 0
                     }
                 }
                 if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list4.length !== 0){
-                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_4 = this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list4[0].id
+                    if( this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_4 !== "NA"){
+                        this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_4 =  this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_4.toString() +
+                            this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list4[0].id.toString()
+                    }
+                    else this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_4 = this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list4[0].id
+
                     if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list4[0].id === 6){
                         this.mainJSON.taskVolunteers.results.ULSE1_Score_SES3 = 0
                     }
                 }
+
                 if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list5.length !== 0){
                     if( this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_5 !== "NA"){
                         this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_5 =  this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_5.toString() +
                             this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list5[0].id.toString()
                     }
                     else this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_5 = this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list5[0].id
+
                     if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list5[0].id === 6){
                         this.mainJSON.taskVolunteers.results.ULSE1_Score_SES3 = 0
                     }
                 }
 
                 if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list6.length !== 0){
-                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SES3 = this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list6[0].id
+                    if( this.mainJSON.taskVolunteers.results.ULSE1_Log_SES3 !== "NA"){
+                        this.mainJSON.taskVolunteers.results.ULSE1_Log_SES3 =  this.mainJSON.taskVolunteers.results.ULSE1_Log_SES3.toString() +
+                            this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list6[0].id.toString()
+                    }
+                    else this.mainJSON.taskVolunteers.results.ULSE1_Log_SES3 = this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list6[0].id
+
                     if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list6[0].id === 6){
                         this.mainJSON.taskVolunteers.results.ULSE1_Score_SES3 = 1
                     }

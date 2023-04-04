@@ -23,7 +23,7 @@
             </div>
         </form>
 
-        <div style="color: lightgrey; position: absolute; bottom: 0; right: 0">v-1.0.11.</div>
+        <div style="color: lightgrey; position: absolute; bottom: 0; right: 0">v-1.0.12.</div>
 
     </div>
 

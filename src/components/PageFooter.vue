@@ -80,6 +80,17 @@
                 this.mainJSON.listOfTasks.forEach( el => {
                     if(el.name === taskName){
                         el.done = true
+                        let t = new Date()
+                        this.mainJSON.results.dataTimeLastUpdate = this.mainJSON.results['dataTimeEnd' + taskName] =
+                            [
+                                t.getFullYear(),
+                                ('0' + (t.getMonth() + 1)).slice(-2),
+                                ('0' + t.getDate()).slice(-2)
+                            ].join('-') + ' ' + [
+                                ('0' + (t.getHours())).slice(-2),
+                                ('0' + (t.getMinutes())).slice(-2),
+                                ('0' + t.getSeconds()).slice(-2)
+                            ].join(':');
                     }
                     if(el.done === false){
                         this.listOfNotDoneTasks.push(el.name)
@@ -98,6 +109,17 @@
                 }
             },
             endTask(){
+                let t = new Date()
+                this.mainJSON.results.dataTimeLastUpdate = this.mainJSON.results.dataTimeEnd =
+                    [
+                        t.getFullYear(),
+                        ('0' + (t.getMonth() + 1)).slice(-2),
+                        ('0' + t.getDate()).slice(-2)
+                    ].join('-') + ' ' + [
+                        ('0' + (t.getHours())).slice(-2),
+                        ('0' + (t.getMinutes())).slice(-2),
+                        ('0' + t.getSeconds()).slice(-2)
+                    ].join(':');
                 this.modalVisible = true
                 this.modalButtons = [
                     {value: "Выйти", status: 'exit'}
@@ -223,30 +245,6 @@
                     this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLS2_1 = 1
                 }
                 else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLS2_1 = 0
-
-                this.mainJSON.listOfTasks.forEach( el => {
-                    if(el.name === 'taskChatWalk'){
-                        el.done = true
-                    }
-                    if(el.done === false){
-                        this.listOfNotDoneTasks.push(el.name)
-                    }
-                })
-                if(this.listOfNotDoneTasks.length === 0){
-                    this.modalVisible = true
-                    this.modalButtons = [
-                        {value: "Выйти", status: 'exit'}
-                    ]
-                    this.modalMessage = 'Ты завершил все задания, нажми кнопку "Выйти" для выхода из системы.'
-                }
-                else {
-                    let randomElement = this.listOfNotDoneTasks[Math.floor(Math.random()*this.listOfNotDoneTasks.length)]
-                    this.mainJSON[randomElement].isShow = true
-                    this.mainJSON["instructionShow"] = true
-                    this.mainJSON["mainPageShow"] = false
-                    this.listOfNotDoneTasks = []
-                    this.mainJSON.taskChatWalk["isShow"] = false
-                }
             }
         }
     }

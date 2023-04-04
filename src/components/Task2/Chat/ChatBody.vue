@@ -209,12 +209,34 @@
                 this.mainJSON.listOfTasks.forEach( el => {
                     if(el.name === 'taskChatWalk'){
                         el.done = true
+                        let t = new Date()
+                        this.mainJSON.results.dataTimeLastUpdate = this.mainJSON.results.dataTimeEndTaskChatWalk =
+                            [
+                                t.getFullYear(),
+                                ('0' + (t.getMonth() + 1)).slice(-2),
+                                ('0' + t.getDate()).slice(-2)
+                            ].join('-') + ' ' + [
+                                ('0' + (t.getHours())).slice(-2),
+                                ('0' + (t.getMinutes())).slice(-2),
+                                ('0' + t.getSeconds()).slice(-2)
+                            ].join(':');
                     }
                     if(el.done === false){
                         this.listOfNotDoneTasks.push(el.name)
                     }
                 })
                 if(this.listOfNotDoneTasks.length === 0){
+                    let t = new Date()
+                    this.mainJSON.results.dataTimeLastUpdate = this.mainJSON.results.dataTimeEnd =
+                        [
+                            t.getFullYear(),
+                            ('0' + (t.getMonth() + 1)).slice(-2),
+                            ('0' + t.getDate()).slice(-2)
+                        ].join('-') + ' ' + [
+                            ('0' + (t.getHours())).slice(-2),
+                            ('0' + (t.getMinutes())).slice(-2),
+                            ('0' + t.getSeconds()).slice(-2)
+                        ].join(':');
                     this.modalVisible = true
                     this.modalButtons = [
                         {value: "Выйти", status: 'exit'}
@@ -244,16 +266,25 @@
                 this.push_mainJSON({
                     push: this.mainJSON
                 })
-            }
+            },
+            checkAnswer(status) {
+                if(status === 'exit'){
+                    this.mainJSON['resultsShow'] = true
+                    /*this.mainJSON['loginShow'] = true
+                    this.mainJSON['mainPageShow'] = false*/
+                    this.mainJSON.taskChatWalk["isShow"] = false
+                }
+            },
         },
-        checkAnswer(status) {
-            if(status === 'exit'){
-                this.mainJSON['resultsShow'] = true
-                /*this.mainJSON['loginShow'] = true
-                this.mainJSON['mainPageShow'] = false*/
-                this.mainJSON.taskChatWalk["isShow"] = false
-            }
-        },
+        mounted() {
+            let el =  document.getElementById("main")
+            el.addEventListener("DOMSubtreeModified", function () {
+                this.counth = el.scrollHeight
+            }, false);
+
+            let block1 = document.getElementById("main");
+            block1.scrollTop = block1.scrollHeight;
+        }
     }
 </script>
 

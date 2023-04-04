@@ -83,7 +83,7 @@
                     </div>
                 </div>
                 <draggable
-                        class="list-group list-of-answers-weather-forecast d-flex flex-row flex-wrap justify-content-center align-items-center"
+                        class="list-group list-of-answers-weather-forecast d-flex flex-row flex-wrap justify-content-between align-items-center"
                         :list="this.mainJSON.taskNightInTheMuseum.listOfAnswersTask15"
                         group="task15"
                 >

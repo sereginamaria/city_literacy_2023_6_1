@@ -13,9 +13,9 @@ const date = {
     "retPause": '',
     "results": {
         "dataTimeStart": null,
-        "dataTimeEndTask1": null,
-        "dataTimeEndTask2": null,
-        "dataTimeEndTask3": null,
+        "dataTimeEndtaskNightInTheMuseum": null,
+        "dataTimeEndtaskChatWalk": null,
+        "dataTimeEndtaskVolunteers": null,
         "dataTimeEnd": null,
         "dataTimeLastUpdate": null
     },

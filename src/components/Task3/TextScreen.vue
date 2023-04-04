@@ -60,12 +60,34 @@
                     this.mainJSON.listOfTasks.forEach( el => {
                         if(el.name === 'taskVolunteers'){
                             el.done = true
+                            let t = new Date()
+                            this.mainJSON.results.dataTimeLastUpdate = this.mainJSON.results.dataTimeEndTaskVolunteers =
+                                [
+                                    t.getFullYear(),
+                                    ('0' + (t.getMonth() + 1)).slice(-2),
+                                    ('0' + t.getDate()).slice(-2)
+                                ].join('-') + ' ' + [
+                                    ('0' + (t.getHours())).slice(-2),
+                                    ('0' + (t.getMinutes())).slice(-2),
+                                    ('0' + t.getSeconds()).slice(-2)
+                                ].join(':');
                         }
                         if(el.done === false){
                             this.listOfNotDoneTasks.push(el.name)
                         }
                     })
                     if(this.listOfNotDoneTasks.length === 0){
+                        let t = new Date()
+                        this.mainJSON.results.dataTimeLastUpdate = this.mainJSON.results.dataTimeEnd =
+                            [
+                                t.getFullYear(),
+                                ('0' + (t.getMonth() + 1)).slice(-2),
+                                ('0' + t.getDate()).slice(-2)
+                            ].join('-') + ' ' + [
+                                ('0' + (t.getHours())).slice(-2),
+                                ('0' + (t.getMinutes())).slice(-2),
+                                ('0' + t.getSeconds()).slice(-2)
+                            ].join(':');
                         this.modalVisible = true
                         this.modalButtons = [
                             {value: "Выйти", status: 'exit'}
