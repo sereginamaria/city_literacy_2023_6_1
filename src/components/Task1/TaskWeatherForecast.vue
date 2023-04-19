@@ -8,7 +8,7 @@
         </div>
         <div class="d-flex justify-content-center align-items-center w-100 h-100">
             <div class="background-task" style="height: 85%">
-                <div class="d-flex" style="height: 70%; margin-bottom: 3%;">
+                <div class="d-flex justify-content-between" style="height: 70%; margin-bottom: 3%; width: 100%">
                     <div class="task15El">
                         <div class="d-flex justify-content-center align-items-center flex-column" style="height: 80%">
                             <p  style="font-weight: 700; font-size: 30px;">11:00</p>
@@ -83,7 +83,7 @@
                     </div>
                 </div>
                 <draggable
-                        class="list-group list-of-answers-weather-forecast d-flex flex-row flex-wrap justify-content-between align-items-center"
+                        class="list-group list-of-answers-weather-forecast d-flex flex-row justify-content-between align-items-center"
                         :list="this.mainJSON.taskNightInTheMuseum.listOfAnswersTask15"
                         group="task15"
                 >
@@ -213,7 +213,7 @@
         justify-content: center;
         align-items: center;
         margin: 20px;
-        width: 20%;
+        width: 25%;
         padding: 20px;
         background: #d2fff7;
         border-radius: 4px;

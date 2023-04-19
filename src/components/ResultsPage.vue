@@ -56,6 +56,10 @@
         methods: {
             ...mapMutations(["push_mainJSON"]),
           exit(){
+              this.push_mainJSON({
+                  push: this.mainJSON
+              })
+
               let d = new Date()
               this.mainJSON.results.dataTimeEnd =  this.mainJSON.results.dataTimeLastUpdate = [
                   d.getFullYear(),
@@ -74,10 +78,6 @@
               this.mainJSON['loginShow'] = true
               this.mainJSON['mainPageShow'] = false
               this.mainJSON['resultsShow'] = false
-
-              this.push_mainJSON({
-                  push: this.mainJSON
-              })
 
               localStorage.clear()
 

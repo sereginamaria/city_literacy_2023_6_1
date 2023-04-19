@@ -65,6 +65,10 @@
                 this.modalMessage = 'Ты действительно хочешь выйти?'
             },
             checkAnswer(status){
+                this.push_mainJSON({
+                    push: this.mainJSON
+                })
+
                 this.modalVisible = false
                 if(status){
                     this.mainJSON.taskVolunteers["isShow"] = false
@@ -83,10 +87,6 @@
                         ('0' + (d.getMinutes())).slice(-2),
                         ('0' + d.getSeconds()).slice(-2)
                     ].join(':');
-
-                    this.push_mainJSON({
-                        push: this.mainJSON
-                    })
 
                     localStorage.clear()
                 }

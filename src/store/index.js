@@ -17,6 +17,7 @@ export default new Vuex.Store({
     actions: {
         get_mainJSON({commit}){
             if (!localStorage.login && !localStorage.hash) {
+                console.log('get_mainJSON no local storage')
                 commit('first_set_mainJSON', date.date)
                 commit('set_constTaskNightInTheMuseum', constTaskNightInTheMuseum.constTaskNightInTheMuseum)
                 commit('set_constTaskChatWalk', constTaskChatWalk.constTaskChatWalk)
@@ -28,7 +29,9 @@ export default new Vuex.Store({
                     hash: localStorage.hash
                 })
                     .then(function (response) {
+                        console.log('get_mainJSON local storage')
                         if (response.data.status === "ok") {
+                            console.log(response.data)
                             commit('set_mainJSON', JSON.parse(response.data.json))
                             commit('set_constTaskNightInTheMuseum', constTaskNightInTheMuseum.constTaskNightInTheMuseum)
                             commit('set_constTaskChatWalk', constTaskChatWalk.constTaskChatWalk)
@@ -76,14 +79,21 @@ export default new Vuex.Store({
             })
                 .then(function (response) {
                     if( response.data.status === "ok") {
-                        state.mainJSON.login = response.data.login
-                        state.mainJSON.hash = response.data.hash
-                        state.mainJSON.loginShow = false
-
+                        console.log('ok')
+                        console.log(response.data)
                         if(response.data.message === "re_login_success") {
                             state.mainJSON =  JSON.parse(response.data.json)
+                            console.log('relogin')
+                            console.log( response.data)
+                            state.mainJSON.hash = response.data.hash
+                            console.log(state.mainJSON)
                         }
                         else {
+                            console.log('norelogin:')
+                            console.log(response.data)
+                            state.mainJSON.login = response.data.login
+                            state.mainJSON.hash = response.data.hash
+                            state.mainJSON.loginShow = false
                             state.mainJSON.instructionShow = true
                             let t = new Date()
                             state.mainJSON.results.dataTimeStart =
@@ -100,6 +110,7 @@ export default new Vuex.Store({
 
                         localStorage.hash = response.data.hash
                         localStorage.login = response.data.login
+
                         axios.post( "/city_literacy/2023_6_1/server_request/receiver.php", {
                             mainJSON: state.mainJSON
                         })

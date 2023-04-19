@@ -193,47 +193,91 @@
                 })
 
                 let answers = 0
+                let answersWithMistake = 0
+                let listOfAnswers = []
                 if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list1.length !== 0){
-                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_1 = this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list1[0].id
-                    if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list1[0].id === 1){
-                        answers++
-                    }
+                    this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list1.forEach(elId => {
+                        listOfAnswers.push(elId.id)
+                        if (this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list1.length === 1 && elId.id === 1){
+                            answers++
+                        }
+                        if (this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list1.length > 1 && elId.id === 1){
+                            answersWithMistake++
+                        }
+                    })
+                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_1 = listOfAnswers.join()
+                    listOfAnswers = []
                 }
                 if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list2.length !== 0){
-                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_2 = this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list2[0].id
-                    if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list2[0].id === 2){
-                        answers++
-                    }
+                    this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list2.forEach(elId => {
+                        listOfAnswers.push(elId.id)
+                        if (this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list2.length === 1 && elId.id === 2){
+                            answers++
+                        }
+                        if (this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list2.length > 1 && elId.id === 2){
+                            answersWithMistake++
+                        }
+                    })
+                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_2 = listOfAnswers.join()
+                    listOfAnswers = []
                 }
                 if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list3.length !== 0){
-                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_3 = this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list3[0].id
-                    if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list3[0].id === 3){
-                        answers++
-                    }
+                    this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list3.forEach(elId => {
+                        listOfAnswers.push(elId.id)
+                        if (this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list3.length === 1 && elId.id === 3){
+                            answers++
+                        }
+                        if (this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list3.length > 1 && elId.id === 3){
+                            answersWithMistake++
+                        }
+                    })
+                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_3 = listOfAnswers.join()
+                    listOfAnswers = []
                 }
                 if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list4.length !== 0){
-                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_4 = this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list4[0].id
-                    if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list4[0].id === 4){
-                        answers++
-                    }
+                    this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list4.forEach(elId => {
+                        listOfAnswers.push(elId.id)
+                        if (this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list4.length === 1 && elId.id === 4){
+                            answers++
+                        }
+                        if (this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list4.length > 1 && elId.id === 4){
+                            answersWithMistake++
+                        }
+                    })
+                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_4 = listOfAnswers.join()
+                    listOfAnswers = []
                 }
                 if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list5.length !== 0){
-                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_5 = this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list5[0].id
-                    if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list5[0].id === 5){
-                        answers++
-                    }
+                    this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list5.forEach(elId => {
+                        listOfAnswers.push(elId.id)
+                        if (this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list5.length === 1 && elId.id === 5){
+                            answers++
+                        }
+                        if (this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list5.length > 1 && elId.id === 5){
+                            answersWithMistake++
+                        }
+                    })
+                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SES2_5 = listOfAnswers.join()
+                    listOfAnswers = []
                 }
                 if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list6.length !== 0){
-                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SES3 = this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list6[0].id
-                    if(this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list6[0].id === 6){
-                        answers++
-                    }
+                    this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list6.forEach(elId => {
+                        listOfAnswers.push(elId.id)
+                        if (this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list6.length === 1 && elId.id === 6){
+                            answers++
+                        }
+                        if (this.mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list6.length > 1 && elId.id === 6){
+                            answersWithMistake++
+                        }
+                    })
+                    this.mainJSON.taskVolunteers.results.ULSE1_Log_SES3 = listOfAnswers.join()
+                    listOfAnswers = []
                 }
 
                 if(answers === 5){
                     this.mainJSON.taskVolunteers.results.ULSE1_Score_SES2 = 2
                 }
-                else if (answers === 4 || answers === 3){
+                else if ((answers + answersWithMistake === 4) || (answers + answersWithMistake === 3)){
                     this.mainJSON.taskVolunteers.results.ULSE1_Score_SES2 = 1
                 }
                 else this.mainJSON.taskVolunteers.results.ULSE1_Score_SES2 = 0
