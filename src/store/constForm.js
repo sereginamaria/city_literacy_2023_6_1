@@ -78,6 +78,7 @@ const constForm = {
             ],
             "extraAnswers":
                 {
+                    "id": 5,
                     "rightAnswerId": 1,
                     "resultIndicator": "ULSE_SEA5_",
                     "answers": [
@@ -144,7 +145,7 @@ const constForm = {
         },
         {
             "id": 9,
-            "resultIndicator": "ULSC_SCA4_1",
+            "resultIndicator": "ULSC_SCA4_",
             "answers": [
                 {"id": 1, "name": 'Не согласен'},
                 {"id": 2, "name": 'Скорее не согласен'},
