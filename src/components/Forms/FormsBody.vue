@@ -15,9 +15,6 @@ export default {
     computed: {
         ...mapGetters(['mainJSON', 'constForm']),
         currentForm() {
-            console.log(this.constForm.forms)
-            console.log(this.constForm.forms[this.mainJSON.forms.shownFormID])
-            console.log(this.constForm.forms[this.mainJSON.forms.shownFormID - 1])
             return this.constForm.forms[this.mainJSON.forms.shownFormID - 1]
         }
     },

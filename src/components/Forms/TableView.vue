@@ -66,7 +66,6 @@ export default {
         addAnswer(questionID, answerID){
             this.mainJSON.forms.results[this.currentForm.resultIndicator + questionID] = answerID
             this.questionID = questionID
-            console.log( this.mainJSON.forms.results)
         },
         nextQuestion(){
             this.mainJSON.forms.shownFormID++

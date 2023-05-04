@@ -37,7 +37,6 @@ export default {
     methods: {
         addAnswer(questionID, answerID){
             this.mainJSON.forms.results[this.currentForm.resultIndicator + questionID] = answerID
-            console.log( this.mainJSON.forms.results)
         },
     }
 }
