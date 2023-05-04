@@ -26,6 +26,12 @@
                         {{result.key}}: {{result.value}}
                     </div>
                 </div>
+                <div class="m-3">
+                    <p>Анкета</p>
+                    <div v-for="result in this.resultsForms" :key="result">
+                        {{result.key}}: {{result.value}}
+                    </div>
+                </div>
             </div>
             <div class="m-3">
                 <div v-for="result in this.resultsTime" :key="result">
@@ -47,7 +53,8 @@
                 resultsTaskNightInTheMuseum: [],
                 resultsTaskChatWalk: [],
                 resultsTaskVolunteers: [],
-                resultsTime: []
+                resultsTime: [],
+                resultsForms: []
             }
         },
         computed: {
@@ -104,6 +111,12 @@
             }
             for (const [key, value] of Object.entries(this.mainJSON.results)) {
                 this.resultsTime.push({
+                    key: `${key}`,
+                    value: `${value}`
+                })
+            }
+            for (const [key, value] of Object.entries(this.mainJSON.forms.results)) {
+                this.resultsForms.push({
                     key: `${key}`,
                     value: `${value}`
                 })

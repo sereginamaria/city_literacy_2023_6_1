@@ -5,6 +5,8 @@ import date from "./date"
 import constTaskNightInTheMuseum from "./constTaskNightInTheMuseum"
 import constTaskChatWalk from "@/store/constTaskChatWalk";
 import constTaskVolunteers from "@/store/constTaskVolunteers";
+import constForm from "@/store/constForm";
+
 
 export default new Vuex.Store({
     state: {
@@ -12,6 +14,7 @@ export default new Vuex.Store({
         constTaskNightInTheMuseum: {},
         constTaskChatWalk: {},
         constTaskVolunteers: {},
+        constForm: {},
         loginResponse: {}
     },
     actions: {
@@ -22,6 +25,7 @@ export default new Vuex.Store({
                 commit('set_constTaskNightInTheMuseum', constTaskNightInTheMuseum.constTaskNightInTheMuseum)
                 commit('set_constTaskChatWalk', constTaskChatWalk.constTaskChatWalk)
                 commit('set_constTaskVolunteers', constTaskVolunteers.constTaskVolunteers)
+                commit('set_constForm', constForm.constForm)
             }
             else {
                 axios.post( "/city_literacy/2023_6_1/server_request/auth_city.php", {
@@ -36,6 +40,7 @@ export default new Vuex.Store({
                             commit('set_constTaskNightInTheMuseum', constTaskNightInTheMuseum.constTaskNightInTheMuseum)
                             commit('set_constTaskChatWalk', constTaskChatWalk.constTaskChatWalk)
                             commit('set_constTaskVolunteers', constTaskVolunteers.constTaskVolunteers)
+                            commit('set_constForm', constForm.constForm)
                         }
                         if (response.data.status === "error") {
                             localStorage.clear()
@@ -44,6 +49,7 @@ export default new Vuex.Store({
                             commit('set_constTaskNightInTheMuseum', constTaskNightInTheMuseum.constTaskNightInTheMuseum)
                             commit('set_constTaskChatWalk', constTaskChatWalk.constTaskChatWalk)
                             commit('set_constTaskVolunteers', constTaskVolunteers.constTaskVolunteers)
+                            commit('set_constForm', constForm.constForm)
                         }
                     })
                     .catch(function () {
@@ -69,6 +75,9 @@ export default new Vuex.Store({
         },
         set_constTaskVolunteers: (state, el) => {
             state.constTaskVolunteers = el
+        },
+        set_constForm: (state, el) => {
+            state.constForm = el
         },
         push_login: (state, auth) => {
             axios.post("/city_literacy/2023_6_1/server_request/auth_city.php", {  // todo разница между авторизацией и аутентификацией
@@ -155,6 +164,9 @@ export default new Vuex.Store({
         },
         constTaskVolunteers(state){
             return state.constTaskVolunteers;
+        },
+        constForm(state) {
+            return state.constForm;
         },
         loginResponse(state){
             return state.loginResponse;

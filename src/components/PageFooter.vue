@@ -70,12 +70,6 @@
                         this.nextTask('taskVolunteers')
                     }
                 }
-                if(status === 'exit'){
-                    this.mainJSON['resultsShow'] = true
-
-                  /*  this.mainJSON['loginShow'] = true
-                    this.mainJSON['mainPageShow'] = false*/
-                }
             },
             nextTask(taskName){
                 this.mainJSON.listOfTasks.forEach( el => {
@@ -124,11 +118,9 @@
                         ('0' + (t.getMinutes())).slice(-2),
                         ('0' + t.getSeconds()).slice(-2)
                     ].join(':');
-                this.modalVisible = true
-                this.modalButtons = [
-                    {value: "Выйти", status: 'exit'}
-                ]
-                this.modalMessage = 'Ты завершил все задания, нажми кнопку "Выйти" для выхода из системы.'
+                this.mainJSON.forms['isShow'] = true
+                this.mainJSON["instructionShow"] = true
+                this.mainJSON["mainPageShow"] = false
             },
             addAnswersTaskChatWalk() {
                 if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLS1_1 === 3){

@@ -8,8 +8,9 @@
     <PageFooter/>
   </div>
 
-  <PausePage v-if="this.mainJSON.pauseShow"/>
-  <ResultsPage v-if="this.mainJSON.resultsShow"/>
+
+    <PausePage v-if="this.mainJSON.pauseShow"/>
+    <ResultsPage v-if="this.mainJSON.resultsShow"/>
 </template>
 
 <script>
