@@ -77,6 +77,32 @@
                     this.mainJSON['loginShow'] = true
                     this.mainJSON['mainPageShow'] = false
 
+                    let exceptionIndicators = ['ULLL_LLA8_2', 'ULHL_HLA1_2', 'ULHL_HLA1_4', 'ULHL_HLA1_6', 'ULDT_DTA1_4', 'ULDT_DTA1_5', 'ULDT_DTA1_6']
+                    let changeExceptionIndicator = 0
+
+                    exceptionIndicators.forEach(exceptionIndicator => {
+                        if(this.mainJSON.forms.results[exceptionIndicator] !== undefined){
+                            if (this.mainJSON.forms.results[exceptionIndicator] === 1 && changeExceptionIndicator === 0){
+                                changeExceptionIndicator++
+                                this.mainJSON.forms.results[exceptionIndicator] = 4
+                            }
+                            if (this.mainJSON.forms.results[exceptionIndicator] === 2 && changeExceptionIndicator === 0){
+                                changeExceptionIndicator++
+                                this.mainJSON.forms.results[exceptionIndicator] = 3
+                            }
+                            if (this.mainJSON.forms.results[exceptionIndicator] === 3 && changeExceptionIndicator === 0){
+                                changeExceptionIndicator++
+                                this.mainJSON.forms.results[exceptionIndicator] = 2
+                            }
+                            if (this.mainJSON.forms.results[exceptionIndicator] === 4 && changeExceptionIndicator === 0){
+                                changeExceptionIndicator++
+                                this.mainJSON.forms.results[exceptionIndicator] = 1
+                            }
+                            changeExceptionIndicator = 0
+                        }
+                    })
+
+
                     let d = new Date()
                     this.mainJSON.results.dataTimeEnd =  this.mainJSON.results.dataTimeLastUpdate = [
                         d.getFullYear(),
@@ -87,6 +113,10 @@
                         ('0' + (d.getMinutes())).slice(-2),
                         ('0' + d.getSeconds()).slice(-2)
                     ].join(':');
+
+                    this.push_mainJSON({
+                        push: this.mainJSON
+                    })
 
                     localStorage.clear()
                 }

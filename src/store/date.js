@@ -12,6 +12,7 @@ const date = {
     "retPush": '',
     "retPause": '',
     "results": {
+        "login": null,
         "dataTimeStart": null,
         "dataTimeEndtaskNightInTheMuseum": null,
         "dataTimeEndtaskChatWalk": null,
@@ -1195,12 +1196,12 @@ const date = {
             "ULHL_HLA1_7": "NA",
             "ULHL_HLA1_8": "NA",
             //14
-            "ULCM_DTA1_1": "NA",
-            "ULCM_DTA1_2": "NA",
-            "ULCM_DTA1_3": "NA",
-            "ULCM_DTA1_4": "NA",
-            "ULCM_DTA1_5": "NA",
-            "ULCM_DTA1_6": "NA"
+            "ULDT_DTA1_1": "NA",
+            "ULDT_DTA1_2": "NA",
+            "ULDT_DTA1_3": "NA",
+            "ULDT_DTA1_4": "NA",
+            "ULDT_DTA1_5": "NA",
+            "ULDT_DTA1_6": "NA"
         },
         "isShow": false,
         "modelShow": true,

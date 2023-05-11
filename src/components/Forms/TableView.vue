@@ -1,4 +1,5 @@
 <template>
+    {{currentForm.instruction}}
     <table class="table">
         <tbody>
         <tr>
@@ -69,6 +70,10 @@ export default {
         },
         nextQuestion(){
             this.mainJSON.forms.shownFormID++
+
+            this.push_mainJSON({
+                push: this.mainJSON
+            })
         },
         prevQuestion(){
             this.mainJSON.forms.shownFormID--
@@ -86,6 +91,31 @@ export default {
         checkAnswer() {
             this.modalVisible = false
 
+            let exceptionIndicators = ['ULLL_LLA8_2', 'ULHL_HLA1_2', 'ULHL_HLA1_4', 'ULHL_HLA1_6', 'ULDT_DTA1_4', 'ULDT_DTA1_5', 'ULDT_DTA1_6']
+            let changeExceptionIndicator = 0
+
+            exceptionIndicators.forEach(exceptionIndicator => {
+                if(this.mainJSON.forms.results[exceptionIndicator] !== undefined){
+                    if (this.mainJSON.forms.results[exceptionIndicator] === 1 && changeExceptionIndicator === 0){
+                        changeExceptionIndicator++
+                        this.mainJSON.forms.results[exceptionIndicator] = 4
+                    }
+                    if (this.mainJSON.forms.results[exceptionIndicator] === 2 && changeExceptionIndicator === 0){
+                        changeExceptionIndicator++
+                        this.mainJSON.forms.results[exceptionIndicator] = 3
+                    }
+                    if (this.mainJSON.forms.results[exceptionIndicator] === 3 && changeExceptionIndicator === 0){
+                        changeExceptionIndicator++
+                        this.mainJSON.forms.results[exceptionIndicator] = 2
+                    }
+                    if (this.mainJSON.forms.results[exceptionIndicator] === 4 && changeExceptionIndicator === 0){
+                        changeExceptionIndicator++
+                        this.mainJSON.forms.results[exceptionIndicator] = 1
+                    }
+                    changeExceptionIndicator = 0
+                }
+            })
+
             let t = new Date()
             this.mainJSON.results.dataTimeEnd = this.mainJSON.results.dataTimeLastUpdate =
                 [
@@ -98,11 +128,18 @@ export default {
                     ('0' + t.getSeconds()).slice(-2)
                 ].join(':');
 
-            this.mainJSON.forms['isShow'] = false
-            this.mainJSON['resultsShow'] = true
+            this.mainJSON.taskVolunteers["isShow"] = false
+            this.mainJSON.taskChatWalk["isShow"] = false
+            this.mainJSON.taskNightInTheMuseum["isShow"] = false
+            this.mainJSON.forms["isShow"] = false
+            this.mainJSON['loginShow'] = true
+            this.mainJSON['mainPageShow'] = false
+
+          /*  this.mainJSON['resultsShow'] = true*/
             this.push_mainJSON({
                 push: this.mainJSON
             })
+            localStorage.clear()
         },
     }
 }
@@ -111,5 +148,9 @@ export default {
 <style scoped>
     .table tr, .table td {
         border: 1px solid grey;
+    }
+    .custom-control-input {
+        transform: scale(1.3);
+        cursor: pointer;
     }
 </style>

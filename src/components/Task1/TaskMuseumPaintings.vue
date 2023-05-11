@@ -105,7 +105,7 @@
                 else {
                     this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_SCK2_2 = 0
                 }
-                if(this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK2_3 === 1 && this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK2_3 === 3){
+                if(this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK2_3 === 1 || this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK2_3 === 3){
                     this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_SCK2_3 = 1
                 }
                 else {

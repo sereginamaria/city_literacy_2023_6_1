@@ -9,7 +9,7 @@
                     <p v-if="mainJSON.taskVolunteers.isShow">{{constTaskVolunteers.instruction}}</p>
                     <p v-if="mainJSON.forms.isShow">{{constForm.instruction}}</p>
                 </div>
-                <div class="d-flex justify-content-end">
+                <div class="d-flex justify-content-end" v-if="!mainJSON.forms.isShow">
                     <p style="font-style: italic; width: 700px; text-align: right;">
                         Все имена и события в тесте вымышлены, любые совпадения с реальными людьми и событиями случайны.
                     </p>

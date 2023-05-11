@@ -15,7 +15,7 @@
                 <input type="radio" :id="currentForm.id + '_' + question.id + '_' + answer.id" :name="currentForm.id + '_' + question.id"
                        class="custom-control-input" v-model="this.mainJSON.forms.results[this.currentForm.resultIndicator + question.id]"
                        :value="answer.id"
-                       @click="addAnswer(currentForm.id + '_' + question.id + '_' + answer.id)">
+                       @click="addAnswer(question.id, answer.id)">
                 <label class="custom-control-label" :for="currentForm.id + '_' + question.id + '_' + answer.id"></label>
             </td>
         </tr>
@@ -45,5 +45,9 @@ export default {
 <style scoped>
     .table tr, .table td {
         border: 1px solid grey;
+    }
+    .custom-control-input {
+        transform: scale(1.3);
+        cursor: pointer;
     }
 </style>

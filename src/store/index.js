@@ -90,7 +90,7 @@ export default new Vuex.Store({
                             state.mainJSON.hash = response.data.hash
                         }
                         else {
-                            state.mainJSON.login = response.data.login
+                            state.mainJSON.login = state.mainJSON.results.login = response.data.login
                             state.mainJSON.hash = response.data.hash
                             state.mainJSON.loginShow = false
                             state.mainJSON.instructionShow = true
