@@ -134,6 +134,7 @@ export default {
             this.mainJSON.forms["isShow"] = false
             this.mainJSON['loginShow'] = true
             this.mainJSON['mainPageShow'] = false
+            this.mainJSON['allDone'] = true
 
           /*  this.mainJSON['resultsShow'] = true*/
             this.push_mainJSON({

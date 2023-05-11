@@ -87,6 +87,7 @@
                     this.mainJSON.forms["isShow"] = false
                     this.mainJSON['loginShow'] = true
                     this.mainJSON['mainPageShow'] = false
+                    this.mainJSON['allDone'] = true
 
                     let exceptionIndicators = ['ULLL_LLA8_2', 'ULHL_HLA1_2', 'ULHL_HLA1_4', 'ULHL_HLA1_6', 'ULDT_DTA1_4', 'ULDT_DTA1_5', 'ULDT_DTA1_6']
                     let changeExceptionIndicator = 0

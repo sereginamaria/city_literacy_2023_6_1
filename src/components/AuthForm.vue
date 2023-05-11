@@ -23,7 +23,7 @@
             </div>
         </form>
 
-        <div style="color: lightgrey; position: absolute; bottom: 0; right: 0">v-1.0.17.</div>
+        <div style="color: lightgrey; position: absolute; bottom: 0; right: 0">v-1.0.18.</div>
 
     </div>
 
@@ -66,6 +66,15 @@
         watch: {
             loginResponse: {
                 handler(el) {
+                    if (el.json !== undefined) {
+                        if (JSON.parse(el.json).allDone === true){
+                            this.modalVisible = true
+                            this.modalButtons = [
+                                {value: "OK", status: true}
+                            ]
+                            this.modalMessage = 'Вы уже выполнили все задания.'
+                        }
+                    }
                     if (el.status === "error" && el.message === "login_failed_bad_login") {
                         this.modalVisible = true
                         this.modalButtons = [

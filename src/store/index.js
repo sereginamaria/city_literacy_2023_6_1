@@ -84,6 +84,8 @@ export default new Vuex.Store({
                 }
             })
                 .then(function (response) {
+                    state.loginResponse = response.data
+
                     if( response.data.status === "ok") {
                         if(response.data.message === "re_login_success") {
                             state.mainJSON =  JSON.parse(response.data.json)

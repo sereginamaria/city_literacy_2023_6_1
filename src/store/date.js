@@ -6,6 +6,7 @@ const date = {
     "mainPageShow": false,
     "pauseShow": false,
     "resultsShow": false,
+    "allDone": false,
     "currentPushTime": 0,
     "currentTime": 5400,
     "ret": '',
