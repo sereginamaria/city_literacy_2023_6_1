@@ -8,7 +8,7 @@ const date = {
     "resultsShow": false,
     "allDone": false,
     "currentPushTime": 0,
-    "currentTime": 5400,
+    "currentTime": 4200,
     "ret": '',
     "retPush": '',
     "retPause": '',

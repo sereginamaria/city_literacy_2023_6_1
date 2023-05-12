@@ -64,13 +64,13 @@
           if (newValue === 0) {
             this.stopTimer()
           }
-          if(newValue === 3600){
+          if(newValue === 3000){
             this.mainJSON["pauseShow"] = true
             this.mainJSON["mainPageShow"] = false
             this.pushMainJSON()
             this.stopPushTimer()
           }
-          if (newValue < 3600 && newValue > 3300) {
+          if (newValue < 3000 && newValue > 2700) {
             let time = newValue - 3300
             let hours_all = Math.floor(time / 3600)  // TODO разобраться с DateTime
             let minutes_all = Math.floor((time - (hours_all*3600))/60)
@@ -85,7 +85,7 @@
             this.mainJSON['retPause'] = minutes_all + ":" + seconds_all
           }
 
-          if (newValue === 3300) {
+          if (newValue === 2700) {
             this.mainJSON["pauseShow"] = false
             this.mainJSON["mainPageShow"] = true
             this.startPushTimer()
