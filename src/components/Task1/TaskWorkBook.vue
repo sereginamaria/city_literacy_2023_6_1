@@ -169,8 +169,8 @@
                     if(el.value === 'Князь Даниил Московский'){
                         this.mainJSON.taskNightInTheMuseum["ULSCLL1_Log_LLK1_" + workBookID] = 'Князем Даниилом Московским'
                     }
-                    if(el.value === 'Боярин Степан Кучка'){
-                        this.mainJSON.taskNightInTheMuseum["ULSCLL1_Log_LLK1_" + workBookID] = 'Боярином Степаном Кучкой'
+                    if(el.value === 'Князь Владимир Красное Солнышко'){
+                        this.mainJSON.taskNightInTheMuseum["ULSCLL1_Log_LLK1_" + workBookID] = 'Князем Владимиром Красное Солнышко'
                     }
                 }
                 if(workBookID === 3){

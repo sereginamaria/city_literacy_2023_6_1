@@ -1,9 +1,9 @@
 <template>
 
-    <div v-if="(currentScreenConst.id === 4 && this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLS5_1 !== 2) ||
-                ((currentScreenConst.id === 8 && this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLK4_1 !== '1,3') &&
-                (currentScreenConst.id === 8 && this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLK4_1 !== '3,1')) ||
-                (currentScreenConst.id === 10 && this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLK3_1 !== 2) ">
+    <div v-if="(currentScreenConst.id === 5 && this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLS5_1 !== 2) ||
+                ((currentScreenConst.id === 9 && this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLK4_1 !== '1,3') &&
+                (currentScreenConst.id === 9 && this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLK4_1 !== '3,1')) ||
+                (currentScreenConst.id === 11 && this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLK3_1 !== 2) ">
         <div class="d-flex chat-message-body" v-for="message_dop in currentScreenConst.message_dop" :key="message_dop.text">
             <img src="../../../../assets/TaskChatWalkZhenya.png" alt="Аватар Женя" style="margin-right: 20px; width: 50px; height: 50px" v-if="message_dop.name === 'Женя'">
             <img src="../../../../assets/TaskChatWalkDima.png" alt="Аватар Дима" style="margin-right: 20px; width: 50px; height: 50px" v-if="message_dop.name === 'Дима'">
@@ -34,7 +34,7 @@
         <img src="../../../../assets/TaskChatWalkMasha.png" alt="Аватар Маша" style="margin-right: 20px; width: 50px; height: 50px" v-if="message.name === 'Маша'">
         <div>
             <p class="text-bold">
-                {{message.name}}
+                {{message.name}}в
             </p>
             <div class="chat-message">
                 <p>

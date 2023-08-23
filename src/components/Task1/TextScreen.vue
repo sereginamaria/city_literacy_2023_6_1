@@ -131,7 +131,7 @@
                 })
             },
             nextTask(screen){
-                if(screen.id === 52){
+                if(screen.id === 51){
                     this.modalVisible = true
                     this.modalButtons = [
                         {value: "Хорошо", status: true}

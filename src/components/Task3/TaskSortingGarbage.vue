@@ -274,10 +274,11 @@
                     listOfAnswers = []
                 }
 
-                if(answers === 5){
-                    this.mainJSON.taskVolunteers.results.ULSE1_Score_SES2 = 2
+                if(answersWithMistake === 1){
+                    answersWithMistake = 0
                 }
-                else if ((answers + answersWithMistake === 4) || (answers + answersWithMistake === 3)){
+
+                if(answers === 5){
                     this.mainJSON.taskVolunteers.results.ULSE1_Score_SES2 = 1
                 }
                 else this.mainJSON.taskVolunteers.results.ULSE1_Score_SES2 = 0

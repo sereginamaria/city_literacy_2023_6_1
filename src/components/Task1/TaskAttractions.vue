@@ -119,13 +119,6 @@
                 })
                 if(this.mainJSON.taskNightInTheMuseum.listOfAnswersTask10_1[0].id === 6 && this.mainJSON.taskNightInTheMuseum.listOfAnswersTask10_2[0].id === 7 &&
                     this.mainJSON.taskNightInTheMuseum.listOfAnswersTask10_3[0].id === 8){
-                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_LLK2_1 = 2
-                }
-                else if(this.mainJSON.taskNightInTheMuseum.listOfAnswersTask10_1[0].id === 6 && (this.mainJSON.taskNightInTheMuseum.listOfAnswersTask10_2[0].id === 7 ||
-                    this.mainJSON.taskNightInTheMuseum.listOfAnswersTask10_3[0].id === 8)){
-                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_LLK2_1 = 1
-                }
-                else if(this.mainJSON.taskNightInTheMuseum.listOfAnswersTask10_2[0].id === 7 && this.mainJSON.taskNightInTheMuseum.listOfAnswersTask10_3[0].id === 8){
                     this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_LLK2_1 = 1
                 }
                 else {

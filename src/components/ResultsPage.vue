@@ -84,6 +84,7 @@
 
               this.mainJSON['loginShow'] = true
               this.mainJSON['mainPageShow'] = false
+              this.mainJSON['allDone'] = true
               this.mainJSON['resultsShow'] = false
 
               localStorage.clear()

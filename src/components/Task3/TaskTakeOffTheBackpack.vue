@@ -1,27 +1,21 @@
 <template>
-    <div class="background d-flex align-items-center flex-column" style="backdrop-filter: blur(5px);"
-         :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.webp') + ')'}">
-        <div class="instruction-block" id="instruction-block">
-            <p>Ответь на вопрос Макса. Выбери один из вариантов ответа
+    <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.webp') + ')'}">
+        <div class="instruction-block">
+            <p>Ответь на вопрос Макса.
             </p>
         </div>
-        <div class="d-flex justify-content-center align-items-center w-100"
-             :style="'height: calc(100% - ' + this.height + 'px)'">
-            <div class="option-answers-background">
-                <div v-for="el in constTaskVolunteers.listOfAnswersTakeOffTheBackpack" :key="el.id" :class="{choosenAnswer: el.id === mainJSON.taskVolunteers.results.ULSE1_Log_SEK3_3}"
-                     class="option-answers-border"
-                >
-                    <div @click="chooseAnswer(el)">
-                        {{el.value}}
-                    </div>
+        <div class="option-answers-background">
+            <div v-for="el in mainJSON.taskVolunteers.listOfAnswersTakeOffTheBackpack" :key="el.id" :class="{choosenAnswer: el.choose}"
+                 class="option-answers-border"
+            >
+                <div @click="chooseAnswer(el)">
+                    <p>{{el.name}}</p>
                 </div>
             </div>
         </div>
-
-
         <div class="background-text" id="background-text">
             <div class="d-flex">
-                      <div class="me-2">
+                <div class="me-2">
                     <img src="../../assets/TaskVolunteersAvatarAnn.png" alt="" style="width: 50px"
                          v-if="constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Анна Ивановна: ' ||
                          constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].name === 'Руководитель школьного клуба волонтеров Анна Ивановна: '">
@@ -63,8 +57,20 @@
         },
         methods: {
             ...mapMutations(["push_mainJSON"]),
-            chooseAnswer(el){
-                this.mainJSON.taskVolunteers.results.ULSE1_Log_SEK3_3 = el.id
+            chooseAnswer(el) {
+                let k = 0
+                this.mainJSON.taskVolunteers.listOfChoosenAnswersTakeOffTheBackpack.forEach(elMass => {
+                    if(elMass === el.id){
+                        this.mainJSON.taskVolunteers.listOfChoosenAnswersTakeOffTheBackpack.splice(this.mainJSON.taskVolunteers.listOfChoosenAnswersTakeOffTheBackpack.indexOf(elMass), 1)
+                        el.choose = false
+                        k++
+                    }
+                })
+                if(k === 0){
+                    this.mainJSON.taskVolunteers.listOfChoosenAnswersTakeOffTheBackpack.push(el.id)
+                    el.choose = true
+                }
+                this.mainJSON.taskVolunteers.results.ULSE1_Log_SEK3_3 = this.mainJSON.taskVolunteers.listOfChoosenAnswersTakeOffTheBackpack.join()
             },
             checkAnswer() {
                 screen.isShow = false
@@ -74,10 +80,22 @@
                         el.isShow = true
                     }
                 })
-                if (this.mainJSON.taskVolunteers.results.ULSE1_Log_SEK3_3 === 3){
+                let maxScore = 0
+                this.mainJSON.taskVolunteers.listOfChoosenAnswersTakeOffTheBackpack.forEach(el => {
+                    if(el === 1 || el === 3){
+                        maxScore++
+                    }
+                })
+                if(this.mainJSON.taskVolunteers.listOfChoosenAnswersTakeOffTheBackpack.length === 2 && maxScore === 2){
+                    this.mainJSON.taskVolunteers.results.ULSE1_Score_SEK3_3 = 2
+                }
+                else if(this.mainJSON.taskVolunteers.listOfChoosenAnswersTakeOffTheBackpack.length === 1 && maxScore === 1){
                     this.mainJSON.taskVolunteers.results.ULSE1_Score_SEK3_3 = 1
                 }
-                else this.mainJSON.taskVolunteers.results.ULSE1_Score_SEK3_3 = 0
+                else {
+                    this.mainJSON.taskVolunteers.results.ULSE1_Score_SEK3_3 = 0
+                }
+
                 let t = new Date()
                 this.mainJSON.results.dataTimeLastUpdate =
                     [
@@ -94,9 +112,6 @@
                     push: this.mainJSON
                 })
             }
-        },
-        mounted(){
-            this.height = document.getElementById('background-text').offsetHeight + document.getElementById('instruction-block').offsetHeight
         }
     }
 </script>

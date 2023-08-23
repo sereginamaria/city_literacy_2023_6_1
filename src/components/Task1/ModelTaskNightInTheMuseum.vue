@@ -1,7 +1,5 @@
 <template>
   <TextScreen v-if="screen.isShow && !screen.haveTask" :screen="screen" :constTaskNightInTheMuseum="constTaskNightInTheMuseum"/>
-  <TaskChooseBag v-if="screen.isShow && screen.haveTask && screen.taskName === 'ChooseBag'"
-                  :screen="screen" :constTaskNightInTheMuseum="constTaskNightInTheMuseum"/>
   <TaskMovingThingsFromBag v-if="screen.isShow && screen.haveTask && screen.taskName === 'MovingThingsFromBag'"
                            :screen="screen" :constTaskNightInTheMuseum="constTaskNightInTheMuseum"/>
   <TaskChooseShoes v-if="screen.isShow && screen.haveTask && screen.taskName === 'ChooseShoes'"
@@ -10,7 +8,7 @@
              :screen="screen" :constTaskNightInTheMuseum="constTaskNightInTheMuseum"/>
   <TaskWorkBook v-if="screen.isShow && screen.haveTask && screen.taskName === 'WorkBook'"
                 :screen="screen" :constTaskNightInTheMuseum="constTaskNightInTheMuseum"/>
-  <TaskMuseumPaintings v-if="(screen.taskName === 'MuseumPaintings1' || screen.taskName === 'MuseumPaintings2' ||screen.taskName === 'MuseumPaintings3') &&
+  <TaskMuseumPaintings v-if="(screen.taskName === 'MuseumPaintings1' || screen.taskName === 'MuseumPaintings2') &&
                         screen.isShow && screen.haveTask"
                        :screen="screen" :constTaskNightInTheMuseum="constTaskNightInTheMuseum"/>
   <TaskEscape v-if="screen.isShow && screen.haveTask && screen.taskName === 'Escape'"
@@ -39,7 +37,6 @@
 <script>
     import {mapGetters} from "vuex";
     import TextScreen from "@/components/Task1/TextScreen";
-    import TaskChooseBag from "@/components/Task1/TaskChooseBag";
     import TaskMovingThingsFromBag from "@/components/Task1/TaskMovingThingsFromBag";
     import TaskChooseShoes from "@/components/Task1/TaskChooseShoes";
     import TaskMetro from "@/components/Task1/TaskMetro";
@@ -73,15 +70,16 @@
           TaskMetro,
           TaskChooseShoes,
           TaskMovingThingsFromBag,
-          TaskChooseBag,
           TextScreen,
         },
         computed: {
             ...mapGetters(['mainJSON', 'constTaskNightInTheMuseum']),
           screenID(){
+                console.log(this.mainJSON.taskNightInTheMuseum.shownScreenID)
             return this.mainJSON.taskNightInTheMuseum.shownScreenID
           },
           screen(){
+                console.log(this.mainJSON.taskNightInTheMuseum.screens[this.screenID])
             return this.mainJSON.taskNightInTheMuseum.screens[this.screenID]
           }
         },

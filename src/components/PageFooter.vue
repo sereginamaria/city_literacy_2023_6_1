@@ -85,9 +85,10 @@
                     this.mainJSON.taskChatWalk["isShow"] = false
                     this.mainJSON.taskNightInTheMuseum["isShow"] = false
                     this.mainJSON.forms["isShow"] = false
-                    this.mainJSON['loginShow'] = true
+                    this.mainJSON['resultsShow'] = true
+                    /*this.mainJSON['loginShow'] = true
                     this.mainJSON['mainPageShow'] = false
-                    this.mainJSON['allDone'] = true
+                    this.mainJSON['allDone'] = true*/
 
                     let exceptionIndicators = ['ULLL_LLA8_2', 'ULHL_HLA1_2', 'ULHL_HLA1_4', 'ULHL_HLA1_6', 'ULDT_DTA1_4', 'ULDT_DTA1_5', 'ULDT_DTA1_6']
                     let changeExceptionIndicator = 0
@@ -274,15 +275,15 @@
                 }
                 else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLK3_1 = 0
 
-                if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLS3_1 === 2){
-                    this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLS3_1 = 1
+                if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLS4_2 === 2){
+                    this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLS4_2 = 1
                 }
-                else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLS3_1 = 0
+                else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLS4_2 = 0
 
-                if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLS1_2 === 2){
-                    this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLS1_2 = 1
+                if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLS2_1 === 2){
+                    this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLS2_1 = 1
                 }
-                else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLS1_2 = 0
+                else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLS2_1 = 0
 
                 if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLK2_2 === 1){
                     this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLK2_2 = 1
@@ -294,15 +295,26 @@
                 }
                 else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_DTS1_2 = 0
 
-                if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_DTS3_1 === 4){
+                if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_DTS3_2 === 4){
+                    this.mainJSON.taskChatWalk.results.ULHLDT1_Score_DTS3_2 = 1
+                }
+                else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_DTS3_2 = 0
+
+                if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLS3_1 === 3){
+                    this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLS3_1 = 1
+                }
+                else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLS3_1 = 0
+
+                //новые модули
+                if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_DTS3_1 === 2){
                     this.mainJSON.taskChatWalk.results.ULHLDT1_Score_DTS3_1 = 1
                 }
                 else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_DTS3_1 = 0
 
-                if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLS2_1 === 3){
-                    this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLS2_1 = 1
+                if(this.mainJSON.taskChatWalk.results.ULHLDT1_Log_DTS2_2 === 3){
+                    this.mainJSON.taskChatWalk.results.ULHLDT1_Score_DTS2_2 = 1
                 }
-                else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_HLS2_1 = 0
+                else this.mainJSON.taskChatWalk.results.ULHLDT1_Score_DTS2_2 = 0
             }
         }
     }

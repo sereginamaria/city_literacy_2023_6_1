@@ -2,7 +2,7 @@
     <!--Задание 9 задание-->
     <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.webp') + ')'}">
         <div class="instruction-block">
-            <p>Проверь эту карту. Кликни на те объекты, которых на самом деле НЕТ в Москве. Ты можешь вернуть объект на карту, кликнув на него еще раз.
+            <p>Проверь эту карту. Выбери ДВА объекта, которых на самом деле НЕТ в Москве. Ты можешь вернуть объект на карту, кликнув на него еще раз.
             </p>
         </div>
         <div>
@@ -93,14 +93,14 @@
 
                 let maxScore = 0
                 this.mainJSON.taskNightInTheMuseum.listOfAnswersTask9.forEach( el => {
-                    if(el === "Река Ока" || el === "Пруд Королевский" || el === "Парк Таганай"){
+                    if(el === "Река Ока" || el === "Парк Таганай"){
                         maxScore++
                     }
                 })
-                if(this.mainJSON.taskNightInTheMuseum.listOfAnswersTask9.length === 3 && maxScore === 3){
+                if(this.mainJSON.taskNightInTheMuseum.listOfAnswersTask9.length === 2 && maxScore === 2){
                     this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_LLK3_1 = 2
                 }
-                else if(this.mainJSON.taskNightInTheMuseum.listOfAnswersTask9.length === 2 && maxScore === 2){
+                else if(this.mainJSON.taskNightInTheMuseum.listOfAnswersTask9.length === 2 && maxScore === 1){
                     this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_LLK3_1 = 1
                 }
                 else{

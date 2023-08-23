@@ -1,7 +1,7 @@
 <template>
     <!--Задание 7 задание 1-->
     <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.webp') + ')'}"
-         v-if="mainJSON.taskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].id === 30">
+         v-if="mainJSON.taskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].id === 29">
         <div class="instruction-block">
             <p>Что ответишь Коле? Выбери один ответ
             </p>
@@ -35,7 +35,7 @@
     </div>
     <!--Задание 7 задание 2-->
     <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.webp') + ')'}"
-         v-if="mainJSON.taskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].id === 33">
+         v-if="mainJSON.taskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].id === 32">
         <div class="instruction-block">
             <p>Что ответишь Коле? Выбери один вариант ответа.
             </p>

@@ -158,9 +158,6 @@
                     k++
                 }
                 if(k === 4){
-                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_SCK3_2 = 2
-                }
-                else if(k === 3){
                     this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_SCK3_2 = 1
                 }
                 else {

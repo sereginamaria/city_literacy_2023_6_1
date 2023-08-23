@@ -196,9 +196,6 @@
                 }
 
                 if(results === 4){
-                    this.mainJSON.taskVolunteers.results.ULSE1_Score1_SEK2_1 = 2
-                }
-                else if(results === 2){
                     this.mainJSON.taskVolunteers.results.ULSE1_Score1_SEK2_1 = 1
                 }
                 else this.mainJSON.taskVolunteers.results.ULSE1_Score1_SEK2_1 = 0

@@ -29,9 +29,7 @@ const date = {
     "taskNightInTheMuseum": {
         "results": {
             //1 ChooseBag and Moving things from bag
-            "ULSCLL1_Log_SCK1_1": "NA",
             "ULSCLL1_Log_SCK1_2": "NA",// todo поразмислыть в контексте state machine
-            "ULSCLL1_Score_SCK1_1": "NA",
             "ULSCLL1_Score_SCK1_2": "NA",
 
             //2 Choose shoes
@@ -55,10 +53,8 @@ const date = {
             //5 Museum Paintings
             "ULSCLL1_Log_SCK2_2": "NA",
             "ULSCLL1_Log_SCK2_3": "NA",
-            "ULSCLL1_Log_SCK2_4": "NA",
             "ULSCLL1_Score_SCK2_2": "NA",
             "ULSCLL1_Score_SCK2_3": "NA",
-            "ULSCLL1_Score_SCK2_4": "NA",
 
             //6 Escape
             "ULSCLL1_Log_SCS4_1": "NA",
@@ -109,15 +105,15 @@ const date = {
             "ULSCLL1_Score_LLK6_1": "NA",
         },
         "isShow": false,
-        "shownScreenID": 0,
+        "shownScreenID": 3,
         "screens": [
-            {"id": 0, "isShow": true, "imgURL": "BackgroundModule0", "haveTask": false,
+            {"id": 0, "isShow": false, "imgURL": "BackgroundModule1", "haveTask": false,
+                "description": 'Перетаскивание вещей'},
+            {"id": 1, "isShow": false, "imgURL": "BackgroundModule1", "haveTask": false,
+                "description": 'Перетаскивание вещей'},
+            {"id": 2, "isShow": false, "imgURL": "BackgroundModule1", "haveTask": false,
                 "description": ''},
-            {"id": 1, "isShow": false, "imgURL": "BackgroundModule1", "haveTask": true, "taskName": "ChooseBag",
-                "description": 'Выбор рюкзака'},
-            {"id": 2, "isShow": false, "imgURL": "BackgroundModule2", "haveTask": false,
-                "description": ''},
-            {"id": 3, "isShow": false, "imgURL": "BackgroundModule1", "haveTask": true, "taskName": "MovingThingsFromBag",
+            {"id": 3, "isShow": true, "imgURL": "BackgroundModule1", "haveTask": true, "taskName": "MovingThingsFromBag",
                 "description": 'Перетаскивание вещей'},
             {"id": 4, "isShow": false, "imgURL": "BackgroundModule6", "haveTask": true, "taskName": "ChooseShoes",
                 "description": 'Выбор обуви'},
@@ -149,86 +145,76 @@ const date = {
                 "description": 'Картины'},
             {"id": 18, "isShow": false, "imgURL": "BackgroundModule21", "haveTask": true, "taskName": "MuseumPaintings2",
                 "description": 'Картины'},
-            {"id": 19, "isShow": false, "imgURL": "BackgroundModule22", "haveTask": true, "taskName": "MuseumPaintings3",
-                "description": 'Картины'},
-            {"id": 20, "isShow": false, "imgURL": "BackgroundModule25", "haveTask": true, "taskName": "Escape",
+            {"id": 19, "isShow": false, "imgURL": "BackgroundModule25", "haveTask": true, "taskName": "Escape",
                 "description": 'Побег'},
-            {"id": 21, "isShow": false, "imgURL": "BackgroundModule26", "haveTask": false,
+            {"id": 20, "isShow": false, "imgURL": "BackgroundModule26", "haveTask": false,
                 "description": '2 или 4 ответ'},
-            {"id": 22, "isShow": false, "imgURL": "BackgroundModule27", "haveTask": false,
+            {"id": 21, "isShow": false, "imgURL": "BackgroundModule27", "haveTask": false,
                 "description": '2 или 4 ответ'},
-            {"id": 23, "isShow": false, "imgURL": "BackgroundModule28", "haveTask": false,
+            {"id": 22, "isShow": false, "imgURL": "BackgroundModule28", "haveTask": false,
                 "description": '2 или 4 ответ'},
-            {"id": 24, "isShow": false, "imgURL": "BackgroundModule29", "haveTask": false,
+            {"id": 23, "isShow": false, "imgURL": "BackgroundModule29", "haveTask": false,
                 "description": '1 ответ'},
-            {"id": 25, "isShow": false, "imgURL": "BackgroundModule28", "haveTask": false,
+            {"id": 24, "isShow": false, "imgURL": "BackgroundModule28", "haveTask": false,
                 "description": '1 ответ'},
-            {"id": 26, "isShow": false, "imgURL": "BackgroundModule31", "haveTask": false,
+            {"id": 25, "isShow": false, "imgURL": "BackgroundModule31", "haveTask": false,
                 "description": '3 ответ'},
-            {"id": 27, "isShow": false, "imgURL": "BackgroundModule32", "haveTask": false,
+            {"id": 26, "isShow": false, "imgURL": "BackgroundModule32", "haveTask": false,
                 "description": ''},
-            {"id": 28, "isShow": false, "imgURL": "BackgroundModule34", "haveTask": true, "taskName": "Fire",
+            {"id": 27, "isShow": false, "imgURL": "BackgroundModule34", "haveTask": true, "taskName": "Fire",
                 "description": 'Пожар'},
-            {"id": 29, "isShow": false, "imgURL": "BackgroundModule35", "haveTask": false,
+            {"id": 28, "isShow": false, "imgURL": "BackgroundModule35", "haveTask": false,
                 "description": ''},
-            {"id": 30, "isShow": false, "imgURL": "BackgroundModule37", "haveTask": true, "taskName": "Statue1",
+            {"id": 29, "isShow": false, "imgURL": "BackgroundModule37", "haveTask": true, "taskName": "Statue1",
                 "description": 'Статуя'},
-            {"id": 31, "isShow": false, "imgURL": "BackgroundModule38", "haveTask": false,
+            {"id": 30, "isShow": false, "imgURL": "BackgroundModule38", "haveTask": false,
                 "description": 'Ответ да'},
-            {"id": 32, "isShow": false, "imgURL": "BackgroundModule39", "haveTask": false,
+            {"id": 31, "isShow": false, "imgURL": "BackgroundModule39", "haveTask": false,
                 "description": 'Ответ нет'},
-            {"id": 33, "isShow": false, "imgURL": "BackgroundModule41", "haveTask": true, "taskName": "Statue2",
+            {"id": 32, "isShow": false, "imgURL": "BackgroundModule41", "haveTask": true, "taskName": "Statue2",
                 "description": 'Вторая статуя'},
-            {"id": 34, "isShow": false, "imgURL": "BackgroundModule42", "haveTask": false,
+            {"id": 33, "isShow": false, "imgURL": "BackgroundModule42", "haveTask": false,
                 "description": ''},
-            {"id": 35, "isShow": false, "imgURL": "BackgroundModule44", "haveTask": true, "taskName": "Map",
+            {"id": 34, "isShow": false, "imgURL": "BackgroundModule44", "haveTask": true, "taskName": "Map",
                 "description": 'Карта'},
-            {"id": 36, "isShow": false, "imgURL": "BackgroundModule45", "haveTask": false,
+            {"id": 35, "isShow": false, "imgURL": "BackgroundModule45", "haveTask": false,
                 "description": ''},
-            {"id": 37, "isShow": false, "imgURL": "BackgroundModule46", "haveTask": false,
+            {"id": 36, "isShow": false, "imgURL": "BackgroundModule46", "haveTask": false,
                 "description": ''},
-            {"id": 38, "isShow": false, "imgURL": "BackgroundModule46", "haveTask": true, "taskName": "Attractions",
+            {"id": 37, "isShow": false, "imgURL": "BackgroundModule46", "haveTask": true, "taskName": "Attractions",
                 "description": 'Достопримечательности'},
-            {"id": 39, "isShow": false, "imgURL": "BackgroundModule48", "haveTask": false,
+            {"id": 38, "isShow": false, "imgURL": "BackgroundModule48", "haveTask": false,
                 "description": ''},
-            {"id": 40, "isShow": false, "imgURL": "BackgroundModule50", "haveTask": true, "taskName": "Festival",
+            {"id": 39, "isShow": false, "imgURL": "BackgroundModule50", "haveTask": true, "taskName": "Festival",
                 "description": 'Фестиваль'},
-            {"id": 41, "isShow": false, "imgURL": "BackgroundModule48", "haveTask": false,
+            {"id": 40, "isShow": false, "imgURL": "BackgroundModule48", "haveTask": false,
                 "description": ''},
-            {"id": 42, "isShow": false, "imgURL": "BackgroundModule52", "haveTask": true, "taskName": "Sites",
+            {"id": 41, "isShow": false, "imgURL": "BackgroundModule52", "haveTask": true, "taskName": "Sites",
                 "description": 'Сайты'},
-            {"id": 43, "isShow": false, "imgURL": "BackgroundModule53", "haveTask": false,
+            {"id": 42, "isShow": false, "imgURL": "BackgroundModule53", "haveTask": false,
                 "description": ''},
-            {"id": 44, "isShow": false, "imgURL": "BackgroundModule54", "haveTask": false,
+            {"id": 43, "isShow": false, "imgURL": "BackgroundModule54", "haveTask": false,
                 "description": ''},
-            {"id": 45, "isShow": false, "imgURL": "BackgroundModule55", "haveTask": false,
+            {"id": 44, "isShow": false, "imgURL": "BackgroundModule55", "haveTask": false,
                 "description": ''},
-            {"id": 46, "isShow": false, "imgURL": "BackgroundModule54", "haveTask": true, "taskName": "BadWeather",
+            {"id": 45, "isShow": false, "imgURL": "BackgroundModule54", "haveTask": true, "taskName": "BadWeather",
                 "description": 'Плохая погода (и 4 раза фон меняется)'},
-            {"id": 47, "isShow": false, "imgURL": "BackgroundModule62", "haveTask": false,
+            {"id": 46, "isShow": false, "imgURL": "BackgroundModule62", "haveTask": false,
                 "description": 'Предупреждающие знаки коля'},
-            {"id": 48, "isShow": false, "imgURL": "BackgroundModule63", "haveTask": false,
+            {"id": 47, "isShow": false, "imgURL": "BackgroundModule63", "haveTask": false,
                 "description": ''},
-            {"id": 49, "isShow": false, "imgURL": "BackgroundModule63", "haveTask": true, "taskName": "WarningSigns",
+            {"id": 48, "isShow": false, "imgURL": "BackgroundModule63", "haveTask": true, "taskName": "WarningSigns",
                 "description": 'Предупреждающие знаки'},
-            {"id": 50, "isShow": false, "imgURL": "BackgroundModule64", "haveTask": false,
+            {"id": 49, "isShow": false, "imgURL": "BackgroundModule64", "haveTask": false,
                 "description": ''},
-            {"id": 51, "isShow": false, "imgURL": "BackgroundModule64", "haveTask": true, "taskName": "WeatherForecast",
+            {"id": 50, "isShow": false, "imgURL": "BackgroundModule64", "haveTask": true, "taskName": "WeatherForecast",
                 "description": 'Прогноз погоды'},
-            {"id": 52, "isShow": false, "imgURL": "BackgroundModule65", "haveTask": false,
+            {"id": 51, "isShow": false, "imgURL": "BackgroundModule65", "haveTask": false,
                 "description": ''},
         ],
 
         //Перетаскивание вещей в рюкзаке
         "listOfElementsStart": [  // todo контекстуальные стили? подумать про state machine
-            {
-                "src": "Element1.png",
-                "src_dop": "Element1_dop.png",
-                "id": 5,
-                "style": "width: calc(100%/5); position: absolute; bottom: calc(100%/1.8); left: calc(100%/6)",
-                "style_dop": "width: calc(100%/5); position: absolute; bottom: 15%; left: calc(100%/6)",
-                "toolTip": "термокружка с чаем"
-            },
             {
                 "src": "Element2.png",
                 "src_dop": "Element2_dop.png",
@@ -303,13 +289,6 @@ const date = {
                 "style": "width: 6.5%; position: absolute; bottom: calc(100%/6.8); left: calc(100%/4)"
             },
             {
-                "src": "Stiker2.png",
-                "name": "Пруд Королевский",
-                "id": 2,
-                "choose": false,
-                "style": "width: 6.5%; position: absolute; bottom: calc(100%/1.6); left: calc(100%/3.8)"
-            },
-            {
                 "src": "Stiker3.png",
                 "name": "Красная Площадь",
                 "id": 3,
@@ -381,7 +360,7 @@ const date = {
             },
             {
                 "src": "Stiker13.png",
-                "name": "Музеон",
+                "name": "Парк Горького",
                 "id": 13,
                 "choose": false,
                 "style": "width: 6.5%; position: absolute; bottom: calc(100%/4.7); left: calc(100%/2.4)"
@@ -405,10 +384,6 @@ const date = {
             {
                 "id": 2,
                 "value": "ВДНХ"
-            },
-            {
-                "id": 3,
-                "value": "Пушкинский музей"
             },
             {
                 "id": 4,
@@ -436,29 +411,6 @@ const date = {
         "listOfAnswersTask10_3": [],
         "listOfAnswersTask10": [],
 
-        //Задание 11 задание
-        "listOfAnswersTask11": [
-            {
-                "name": "Фестиваль “Путешествие в рождество”",
-                "id": 1,
-                "choose": false,
-            },
-            {
-                "name": "Фестиваль “Времена и эпохи”",
-                "id": 2,
-                "choose": false,
-            },
-            {
-                "name": "Фестиваль “Ежевичное варенье”",
-                "id": 3,
-                "choose": false,
-            }, {
-                "name": "Фестиваль Воздушных шаров",
-                "id": 4,
-                "choose": false,
-            },
-        ],
-        "listOfChoosenAnswersTask11": [],
 
         //Задание 12 задание
         "listOfAnswersTask12": [
@@ -589,6 +541,9 @@ const date = {
             //2
             "ULHLDT1_Log_DTS2_1": "NA",
             "ULHLDT1_Score_DTS2_1": "NA",
+            //3 новый модуль
+            "ULHLDT1_Log_DTS3_1": "NA",
+            "ULHLDT1_Score_DTS3_1": "NA",
             //3
             "ULHLDT1_Log_HLS5_1": "NA",
             "ULHLDT1_Score_HLS5_1": "NA",
@@ -611,23 +566,26 @@ const date = {
             "ULHLDT1_Log_HLK3_1": "NA",
             "ULHLDT1_Score_HLK3_1": "NA",
             //10
-            "ULHLDT1_Log_HLS3_1": "NA",
-            "ULHLDT1_Score_HLS3_1": "NA",
+            "ULHLDT1_Log_HLS4_2": "NA",
+            "ULHLDT1_Score_HLS4_2": "NA",
             //11
-            "ULHLDT1_Log_HLS1_2": "NA",
-            "ULHLDT1_Score_HLS1_2": "NA",
+            "ULHLDT1_Log_HLS2_1": "NA",
+            "ULHLDT1_Score_HLS2_1": "NA",
             //12
             "ULHLDT1_Log_HLK2_2": "NA",
             "ULHLDT1_Score_HLK2_2": "NA",
+            //13 новый модуль
+            "ULHLDT1_Log_DTS2_2": "NA",
+            "ULHLDT1_Score_DTS2_2": "NA",
             //13
             "ULHLDT1_Log_DTS1_2": "NA",
             "ULHLDT1_Score_DTS1_2": "NA",
             //14
-            "ULHLDT1_Log_DTS3_1": "NA",
-            "ULHLDT1_Score_DTS3_1": "NA",
+            "ULHLDT1_Log_DTS3_2": "NA",
+            "ULHLDT1_Score_DTS3_2": "NA",
             //15
-            "ULHLDT1_Log_HLS2_1": "NA",
-            "ULHLDT1_Score_HLS2_1": "NA",
+            "ULHLDT1_Log_HLS3_1": "NA",
+            "ULHLDT1_Score_HLS3_1": "NA",
         },
         "ULHLDT1_Log_HLS1_1": "NA",
         //1
@@ -649,17 +607,17 @@ const date = {
         //9
         "ULHLDT1_Log_HLK3_1": "NA",
         //10
-        "ULHLDT1_Log_HLS3_1": "NA",
+        "ULHLDT1_Log_HLS4_2": "NA",
         //11
-        "ULHLDT1_Log_HLS1_2": "NA",
+        "ULHLDT1_Log_HLS2_1": "NA",
         //12
         "ULHLDT1_Log_HLK2_2": "NA",
         //13
         "ULHLDT1_Log_DTS1_2": "NA",
         //14
-        "ULHLDT1_Log_DTS3_1": "NA",
+        "ULHLDT1_Log_DTS3_2": "NA",
         //15
-        "ULHLDT1_Log_HLS2_1": "NA",
+        "ULHLDT1_Log_HLS3_1": "NA",
         "shownScreenID": 0,
         "screens": [
             {
@@ -679,7 +637,7 @@ const date = {
                 "description": ""
             },
             {
-                "id": 4, "type": "checkBox", "isShow": false, "haveImg": false,
+                "id": 4, "type": "radio", "isShow": false, "haveImg": false,
                 "description": ""
             },
             {
@@ -687,15 +645,15 @@ const date = {
                 "description": ""
             },
             {
-                "id": 6, "type": "radio", "isShow": false, "haveImg": false,
+                "id": 6, "type": "checkBox", "isShow": false, "haveImg": false,
                 "description": ""
             },
             {
-                "id": 7, "type": "checkBox", "isShow": false, "haveImg": false,
+                "id": 7, "type": "radio", "isShow": false, "haveImg": false,
                 "description": ""
             },
             {
-                "id": 8, "type": "radio", "isShow": false, "haveImg": false,
+                "id": 8, "type": "checkBox", "isShow": false, "haveImg": false,
                 "description": ""
             },
             {
@@ -727,9 +685,18 @@ const date = {
                 "description": ""
             },
             {
-                "id": 16, "type": "end", "isShow": false, "haveImg": false,
+                "id": 16, "type": "radio", "isShow": false, "haveImg": false,
                 "description": ""
             },
+            {
+                "id": 17, "type": "radio", "isShow": false, "haveImg": false,
+                "description": ""
+            },
+            {
+                "id": 18, "type": "end", "isShow": false, "haveImg": false,
+                "description": ""
+            },
+
         ],
         "chatShow": true,
         "checkBox1Selected": [],
@@ -1115,6 +1082,29 @@ const date = {
         "listOfAnswersSortingGarbage_list4": [],
         "listOfAnswersSortingGarbage_list5": [],
         "listOfAnswersSortingGarbage_list6": [],
+
+        "listOfAnswersTakeOffTheBackpack": [
+            {
+                "name": "Нужно проходить в салон спокойно, не толкая других людей.",
+                "id": 1,
+                "choose": false,
+            },
+            {
+                "name": "Нужно слушать музыку или смотреть видео только в наушниках.",
+                "id": 2,
+                "choose": false,
+            },
+            {
+                "name": "Нужно сесть и положить рюкзак на свободное сидение рядом с собой.",
+                "id": 3,
+                "choose": false,
+            }, {
+                "name": "Нужно садиться на свободные места у прохода, а не у окна. ",
+                "id": 4,
+                "choose": false,
+            },
+        ],
+        "listOfChoosenAnswersTakeOffTheBackpack": [],
     },
     "forms": {
         "results": {

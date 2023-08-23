@@ -2,7 +2,7 @@
     <!--Перетаскивание вещей из сумки-->
     <div class="background" :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.webp') + ')'}">
         <div class="instruction-block">
-            <p>Какие вещи в сумке небезопасно проносить в музей? Выложи их, перетащив из сумки на стол. Чтобы вернуть вещь в сумку, снова перетащи ее.</p>
+            <p>Какие вещи в сумке небезопасно проносить в музей? Выложи две вещи, перетащив из сумки на стол. Чтобы вернуть вещь в сумку, снова перетащи ее.</p>
         </div>
         <draggable
                 class="list-group draggable-backpack-end"
@@ -119,7 +119,7 @@
                     let middleScore = 0
                     this.mainJSON.taskNightInTheMuseum.listOfElementsEnd.forEach(el => {
                         answers.push(el.id)
-                        if(el.id === 4 || el.id === 5 || el.id === 7){
+                        if(el.id === 4 || el.id === 7){
                             maxScore++
                         }
                         if(el.id === 1 || el.id === 2 || el.id === 3 || el.id === 6){
@@ -127,10 +127,10 @@
                         }
                     })
                     this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_SCK1_2 = answers.join()
-                    if(this.mainJSON.taskNightInTheMuseum.listOfElementsEnd.length === 3 && maxScore === 3){
+                    if(this.mainJSON.taskNightInTheMuseum.listOfElementsEnd.length === 2 && maxScore === 2){
                         this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_SCK1_2 = 2
                     }
-                    else if(this.mainJSON.taskNightInTheMuseum.listOfElementsEnd.length === 4 && maxScore === 3 && middleScore === 1){
+                    else if(this.mainJSON.taskNightInTheMuseum.listOfElementsEnd.length === 2 && maxScore === 1 && middleScore === 1){
                         this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_SCK1_2 = 1
                     }
                     else {
