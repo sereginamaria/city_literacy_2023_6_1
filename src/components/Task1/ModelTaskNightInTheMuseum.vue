@@ -75,11 +75,9 @@
         computed: {
             ...mapGetters(['mainJSON', 'constTaskNightInTheMuseum']),
           screenID(){
-                console.log(this.mainJSON.taskNightInTheMuseum.shownScreenID)
             return this.mainJSON.taskNightInTheMuseum.shownScreenID
           },
           screen(){
-                console.log(this.mainJSON.taskNightInTheMuseum.screens[this.screenID])
             return this.mainJSON.taskNightInTheMuseum.screens[this.screenID]
           }
         },
