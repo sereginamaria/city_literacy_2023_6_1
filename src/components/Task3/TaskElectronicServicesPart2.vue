@@ -208,27 +208,54 @@
 
                 let ans = []
                 let results = 0
+
+                console.log(this.answers.answerHomelessPerson)
+                console.log(this.answers.answerCat)
+                console.log(this.answers.answerPollution)
+                console.log(this.answers.answerNoise)
+
                 if(this.answers.answerHomelessPerson){
                     ans.push(1)
-                } else {
+                }
+                else if (this.answers.answerHomelessPerson === false) {
                     ans.push(2)
                     results++
                 }
+                else {
+                    ans.push("NA")
+                }
+
                 if(this.answers.answerCat){
                     ans.push(3)
                     results++
-                } else ans.push(4)
+                }
+                else if (this.answers.answerCat === false) {
+                    ans.push(4)
+                }
+                else {
+                    ans.push("NA")
+                }
+
                 if(this.answers.answerPollution){
                     ans.push(5)
                     results++
-                } else {
+                }
+                else if (this.answers.answerPollution === false) {
                     ans.push(6)
                 }
+                else {
+                    ans.push("NA")
+                }
+
                 if(this.answers.answerNoise){
                     ans.push(7)
-                } else {
+                }
+                else if (this.answers.answerNoise === false) {
                     ans.push(8)
                     results++
+                }
+                else {
+                    ans.push("NA")
                 }
 
                 this.mainJSON.taskVolunteers.results.ULSE1_Log_SEK6_1 = ans.join()

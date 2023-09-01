@@ -34,7 +34,7 @@
         <img src="../../../../assets/TaskChatWalkMasha.png" alt="Аватар Маша" style="margin-right: 20px; width: 50px; height: 50px" v-if="message.name === 'Маша'">
         <div>
             <p class="text-bold">
-                {{message.name}}в
+                {{message.name}}
             </p>
             <div class="chat-message">
                 <p>

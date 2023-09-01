@@ -71,7 +71,7 @@
             this.stopPushTimer()
           }
           if (newValue < 3000 && newValue > 2700) {
-            let time = newValue - 3300
+            let time = newValue - 2700
             let hours_all = Math.floor(time / 3600)  // TODO разобраться с DateTime
             let minutes_all = Math.floor((time - (hours_all*3600))/60)
             let seconds_all = time - (hours_all * 3600) - (minutes_all * 60)

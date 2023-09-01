@@ -82,7 +82,7 @@
                 })
                 let maxScore = 0
                 this.mainJSON.taskVolunteers.listOfChoosenAnswersTakeOffTheBackpack.forEach(el => {
-                    if(el === 1 || el === 3){
+                    if(el === 1 || el === 2){
                         maxScore++
                     }
                 })
