@@ -298,17 +298,17 @@ export default {
             this.prosocialEngagement++
         }
 
-        console.log(this.prosocialEngagement)
-        console.log(this.securityInTheCity)
-        console.log(this.localLiteracy)
-        console.log(this.healthyLifestyle)
-        console.log(this.applicationOfDigitalTechnologies)
+        // console.log(this.prosocialEngagement)
+        // console.log(this.securityInTheCity)
+        // console.log(this.localLiteracy)
+        // console.log(this.healthyLifestyle)
+        // console.log(this.applicationOfDigitalTechnologies)
 
-        this.prosocialEngagement = this.prosocialEngagement/10*100
-        this.securityInTheCity = this.securityInTheCity/10*100
-        this.localLiteracy = this.localLiteracy/10*100
-        this.healthyLifestyle = this.healthyLifestyle/10*100
-        this.applicationOfDigitalTechnologies = this.applicationOfDigitalTechnologies/10*100
+        this.prosocialEngagement = Math.round(this.prosocialEngagement/23*100)
+        this.securityInTheCity = Math.round(this.securityInTheCity/12*100)
+        this.localLiteracy = Math.round(this.localLiteracy/11*100)
+        this.healthyLifestyle = Math.round(this.healthyLifestyle/14*100)
+        this.applicationOfDigitalTechnologies = Math.round(this.applicationOfDigitalTechnologies/7*100)
     }
 }
 </script>
