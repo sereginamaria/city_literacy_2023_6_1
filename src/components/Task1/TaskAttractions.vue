@@ -4,7 +4,7 @@
          :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.webp') + ')'}">
         <div class="instruction-block">
             <p>
-                Добавь подписи к объектам на картинках, перенеси название выбранного объекта в нужное поле.
+                Коля: Москва такая красивая! А что это такое?
             </p>
         </div>
         <div class="d-flex justify-content-center align-items-center w-100 h-100">

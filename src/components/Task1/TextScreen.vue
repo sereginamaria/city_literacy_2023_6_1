@@ -140,13 +140,13 @@
                 }
                 else {
                     screen.isShow = false
-                    if(screen.id === 23 || screen.id === 25){
-                        this.mainJSON.taskNightInTheMuseum.shownScreenID = 27
+                    if(screen.id === 22 || screen.id === 24){
+                        this.mainJSON.taskNightInTheMuseum.shownScreenID = 26
                     }
-                    if(screen.id === 31){
-                        this.mainJSON.taskNightInTheMuseum.shownScreenID = 33
+                    if(screen.id === 30){
+                        this.mainJSON.taskNightInTheMuseum.shownScreenID = 32
                     }
-                    if(screen.id !== 23 && screen.id !== 25 && screen.id !== 31) {
+                    if(screen.id !== 22 && screen.id !== 24 && screen.id !== 30) {
                         this.mainJSON.taskNightInTheMuseum.shownScreenID++
                     }
 
