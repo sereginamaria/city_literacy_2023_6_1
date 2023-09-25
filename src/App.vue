@@ -11,6 +11,7 @@
 
     <PausePage v-if="this.mainJSON.pauseShow"/>
     <ResultsPage v-if="this.mainJSON.resultsShow"/>
+    <FeedbackPage v-if="this.mainJSON.feedbackShow"/>
 </template>
 
 <script>
@@ -23,10 +24,12 @@
   import PausePage from "@/components/PausePage";
   import PageNavBar from "@/components/PageNavBar";
   import ResultsPage from "@/components/ResultsPage";
+  import FeedbackPage from "@/components/FeedbackPage.vue";
 
   export default {
     name: 'App',
     components: {
+        FeedbackPage,
       ResultsPage,
       PageNavBar,
       PausePage,
