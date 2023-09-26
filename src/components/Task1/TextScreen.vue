@@ -2,7 +2,7 @@
     <div class="background"
          :style="{ background: 'url(' + require('../../assets/' + screen.imgURL + '.webp') + ')'}"
     >
-        <div v-if="screen.id === 6 || screen.id === 9 || screen.id === 26 || screen.id === 28 || screen.id === 35 || screen.id === 43">
+        <div v-if="screen.id === 6 || screen.id === 9 || screen.id === 26 || screen.id === 28 || screen.id === 36 || screen.id === 45">
             <div class="background-text-center">
                 <p>
                     <span class="name-in-dialog">{{constTaskNightInTheMuseum.screens[this.mainJSON.taskNightInTheMuseum.shownScreenID].name}}</span>
@@ -131,7 +131,7 @@
                 })
             },
             nextTask(screen){
-                if(screen.id === 51){
+                if(screen.id === 53){
                     this.modalVisible = true
                     this.modalButtons = [
                         {value: "Хорошо", status: true}

@@ -88,7 +88,9 @@
                 list1: [],
                 list2: [],
                 list3: [],
-                rightAnswers: 0,
+                rightAnswer1: 0,
+                rightAnswer2: 0,
+                rightAnswer3: 0,
                 height: 0
             }
         },
@@ -104,23 +106,39 @@
             },
             addAnswer(id) {
                 if(id === 1 || id === 2){
+                    if (id === 1){
+                        this.rightAnswer1 = 1
+                    }
+                    if (id === 2){
+                        this.rightAnswer1 = 0
+                    }
                     this.list1 = []
                     this.list1.push(id)
                 }
                 if(id === 3 || id === 4){
+                    if (id === 3){
+                        this.rightAnswer2 = 0
+                    }
+                    if (id === 4){
+                        this.rightAnswer2 = 1
+                    }
                     this.list2 = []
                     this.list2.push(id)
                 }
                 if(id === 5 || id === 6){
+                    if (id === 5){
+                        this.rightAnswer3 = 1
+                    }
+                    if (id === 6){
+                        this.rightAnswer3 = 0
+                    }
                     this.list3 = []
                     this.list3.push(id)
                 }
-                if(id === 1 || id === 4 || id === 5){
-                    this.rightAnswers++
-                }
+
                 let answer = this.list1.concat(this.list2).concat(this.list3)
                 this.mainJSON.taskVolunteers.results.ULSE1_Log_SEK4_4 = answer.join()
-                if(this.rightAnswers === 3) {
+                if(this.rightAnswer1 === 1 && this.rightAnswer2 === 1 && this.rightAnswer3 === 1) {
                     this.mainJSON.taskVolunteers.results.ULSE1_Score_SEK4_2 = 1
                 }
                 else this.mainJSON.taskVolunteers.results.ULSE1_Score_SEK4_2 = 0
