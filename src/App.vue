@@ -271,10 +271,13 @@
     border-radius: unset;
   }
   .white-buttons {
-    background: #FCFCFC;
-    border: 1px solid #54BEDF;
-    color: #333333;
-    border-radius: unset;
+      background: #FCFCFC;
+      border: 1px solid #54BEDF;
+      color: #333333;
+      border-radius: unset;
+      align-items: end;
+      height: 40px;
+      width: 8%
   }
   .white-buttons:hover {
     background: #FCFCFC;
