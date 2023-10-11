@@ -68,8 +68,10 @@
                 this.modalMessage = 'Ты действительно хочешь закончить выполнение этого задания? После этого уже нельзя будет изменить ответы.'
             },
             addAnswer(el){
-                el.choose = !el.choose
-                this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_LLK3_1 = this.mainJSON.taskNightInTheMuseum.listOfAnswersTask9.join()
+                if (el.choose !== null) {
+                    el.choose = !el.choose
+                    this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Log_LLK3_1 = this.mainJSON.taskNightInTheMuseum.listOfAnswersTask9.join()
+                }
             },
             checkAnswer(status) {
                 this.modalVisible = false

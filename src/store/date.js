@@ -300,14 +300,14 @@ const date = {
                 "src": "Stiker3.png",
                 "name": "Красная Площадь",
                 "id": 3,
-                "choose": false,
+                "choose": null,
                 "style": "width: 6.5%; position: absolute; bottom: calc(100%/1.95); left: calc(100%/2.1)"
             },
             {
                 "src": "Stiker4.png",
                 "name": "Кремль",
                 "id": 4,
-                "choose": false,
+                "choose": null,
                 "style": "width: 6.5%; position: absolute; bottom: calc(100%/2.4); left: calc(100%/2.25)"
             },
             {
@@ -321,21 +321,21 @@ const date = {
                 "src": "Stiker6.png",
                 "name": "Тверская улица",
                 "id": 6,
-                "choose": false,
+                "choose": null,
                 "style": "width: 6.5%; position: absolute; bottom: calc(100%/1.65); left: calc(100%/2.4)"
             },
             {
                 "src": "Stiker7.png",
                 "name": "Садовое кольцо",
                 "id": 7,
-                "choose": false,
+                "choose": null,
                 "style": "width: 6.5%; position: absolute; bottom: calc(100%/1.3); left: calc(100%/2.4)"
             },
             {
                 "src": "Stiker8.png",
                 "name": "Бульварное кольцо",
                 "id": 8,
-                "choose": false,
+                "choose": null,
                 "style": "width: 6.5%; position: absolute; bottom: calc(100%/1.5); left: calc(100%/2)"
             },
             {
