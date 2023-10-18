@@ -53,7 +53,7 @@
                 this.modalButtons = [
                     {value: "Понятно", status: true}
                 ]
-                this.modalMessage = 'Ты не сможешь изменить свой выбор после нажатия на кнопку "Готово"'
+                this.modalMessage = 'Ты не сможешь изменить свой выбор после нажатия на кнопку "Готово".'
             },
             nextTask(){
                 if(this.id === 0 && !this.instructionWasShown){
