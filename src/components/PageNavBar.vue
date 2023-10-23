@@ -115,6 +115,7 @@
                     this.mainJSON['mainPageShow'] = false
 
                     localStorage.clear()
+                    window.location.reload();
                 }
             }
         },
