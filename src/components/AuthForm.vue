@@ -1,6 +1,7 @@
 <template>
     <div class="w-100 h-100 position-absolute d-flex flex-column justify-content-center align-items-center">
         <img src="../assets/logoMCKO.png" alt="" style="margin-bottom: 20px">
+        <h2>Вариант 1</h2>
         <form class="row g-3"
               @submit.prevent="loginUser"
         >
@@ -23,7 +24,7 @@
             </div>
         </form>
 
-        <div style="color: lightgrey; position: absolute; bottom: 0; right: 0">v-2.0.1.</div>
+        <div style="color: lightgrey; position: absolute; bottom: 0; right: 0">v-2.0.2.</div>
 
     </div>
 

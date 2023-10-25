@@ -85,6 +85,7 @@ export default {
             this.mainJSON['allDone'] = true
 
             localStorage.clear()
+            window.location.reload();
 
         }
     },
@@ -315,7 +316,7 @@ export default {
 
 <style scoped>
 .dialog-content {
-    overflow-y: scroll;
+    /*overflow-y: scroll;*/
     max-height: 80vh;
     max-width: 80vw;
 }
