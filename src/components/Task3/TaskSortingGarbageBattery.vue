@@ -127,7 +127,12 @@
                     {{constTaskVolunteers.screens[this.mainJSON.taskVolunteers.shownScreenID].text}}
                 </p>
             </div>
-            <MyButton class="white-buttons" @click="checkAnswer" v-if="this.nextTask">Готово</MyButton>
+            <MyButton class="white-buttons" @click="checkAnswer" v-if="mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list1.length !== 0 ||
+            mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list2.length !== 0 || mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list3.length !== 0 ||
+            mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list4.length !== 0  ||
+            mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list5.length !== 0 ||
+            mainJSON.taskVolunteers.listOfAnswersSortingGarbage_list6.length !== 0">Готово</MyButton>
+            <MyButton class="white-buttons" disabled v-else>Готово</MyButton>
         </div>
     </div>
 

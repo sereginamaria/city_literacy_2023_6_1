@@ -137,7 +137,6 @@ export default {
             this.mainJSON['mainPageShow'] = false
             this.mainJSON['allDone'] = true*/
 
-          /*  this.mainJSON['feedbackShow'] = true*/
             this.push_mainJSON({
                 push: this.mainJSON
             })
