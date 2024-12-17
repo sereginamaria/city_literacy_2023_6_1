@@ -7,6 +7,7 @@
                     Выполни гимнастику для глаз.
                 </p>
                 <p style="color: white">{{this.mainJSON.retPause}}</p>
+                <MyButton style="margin-top: 10px" @click="$emit('skipPause')">Пропустить</MyButton>
             </div>
         </div>
     </div>

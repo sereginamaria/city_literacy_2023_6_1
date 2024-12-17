@@ -9,7 +9,7 @@
   </div>
 
 
-    <PausePage v-if="this.mainJSON.pauseShow"/>
+    <PausePage v-if="this.mainJSON.pauseShow" @skip-pause="skipPause()"/>
     <ResultsPage v-if="this.mainJSON.resultsShow"/>
     <FeedbackPage v-if="this.mainJSON.feedbackShow"/>
 </template>
@@ -42,6 +42,7 @@
       return {
         timer: '',
         timerPush: '',
+        timerPause: ''
       }
     },
     computed: {
@@ -51,7 +52,10 @@
       },
       currentPushTime() {
         return this.mainJSON.currentPushTime
-      }
+      },
+     currentPauseTime() {
+      return this.mainJSON.currentPauseTime
+    }
     },
     watch: {
       currentPushTime: {
@@ -62,12 +66,24 @@
         },
         immediate: true
       },
+      currentPauseTime: {
+        handler(newValue) {
+          if (newValue === 0 ) {
+            this.mainJSON["pauseShow"] = false  // TODO codestyle
+            this.mainJSON["mainPageShow"] = true
+            this.startPushTimer()
+            this.startTimer()
+            this.stopPauseTimer()
+          }
+        },
+        immediate: true
+      },
       currentTime: {
         handler(newValue) {
           if (newValue === 0) {
             this.stopTimer()
           }
-          if(newValue === 3000){
+          /*if(newValue === 3000){
             this.mainJSON["pauseShow"] = true
             this.mainJSON["mainPageShow"] = false
             this.pushMainJSON()
@@ -92,17 +108,20 @@
             this.mainJSON["pauseShow"] = false
             this.mainJSON["mainPageShow"] = true
             this.startPushTimer()
-          }
+          }*/
 
-          if (newValue === 1500) {
+          if (newValue === 1200) {
             this.mainJSON["pauseShow"] = true
             this.mainJSON["mainPageShow"] = false
             this.pushMainJSON()
             this.stopPushTimer()
+            this.stopTimer()
+            this.startPauseTimer()
+
           }
 
-          if(newValue < 1500 && newValue > 1200){
-            let time = newValue - 1200
+          /*if(newValue < 2669 && newValue > 2500){
+            let time = newValue - 2500
             let hours_all = Math.floor(time / 3600)
             let minutes_all = Math.floor((time - (hours_all*3600))/60)
             let seconds_all = time - (hours_all * 3600) - (minutes_all * 60)
@@ -116,11 +135,12 @@
             this.mainJSON['retPause'] = minutes_all + ":" + seconds_all
           }
 
-          if (newValue === 1200) {
+          if (newValue === 2500) {
             this.mainJSON["pauseShow"] = false  // TODO codestyle
             this.mainJSON["mainPageShow"] = true
             this.startPushTimer()
-          }
+            this.startTimer()
+          }*/
         },
         immediate: true
       }
@@ -128,6 +148,14 @@
     methods: {
       ...mapMutations(["push_mainJSON"]),  // todo eslint
       ...mapActions(['get_mainJSON']),
+       skipPause(n){
+          console.log(n)
+           this.mainJSON["pauseShow"] = false  // TODO codestyle
+            this.mainJSON["mainPageShow"] = true
+            this.startPushTimer()
+            this.startTimer()
+            this.stopPauseTimer()
+      },
       startTimer() {
         this.timer = setInterval(() => {
 
@@ -153,6 +181,29 @@
         }, 1000)
 
       },
+      startPauseTimer() {
+        this.pauseTimer = setInterval(() => {
+
+            this.mainJSON.currentPauseTime--
+          console.log(this.mainJSON.currentPauseTime)
+            var sec_num_all = parseInt(this.mainJSON.currentPauseTime, 10)
+            var hours_all = Math.floor(sec_num_all / 3600)
+            var minutes_all = Math.floor((sec_num_all - (hours_all * 3600)) / 60)
+            var seconds_all = sec_num_all - (hours_all * 3600) - (minutes_all * 60)
+
+            if (hours_all < 10) {
+              hours_all = "0" + hours_all
+            }
+            if (minutes_all < 10) {
+              minutes_all = "0" + minutes_all
+            }
+            if (seconds_all < 10) {
+              seconds_all = "0" + seconds_all
+            }
+
+            this.mainJSON['retPause'] = hours_all + ":" + minutes_all + ":" + seconds_all
+        }, 1000)
+      },
       startPushTimer() {
         if(this.mainJSON.loginShow === false) {
           this.timerPush = setInterval(() => {
@@ -175,8 +226,12 @@
           }, 1000)
         }
       },
+
       stopTimer() {
         clearTimeout(this.timer)
+      },
+       stopPauseTimer() {
+        clearTimeout(this.pauseTimer)
       },
       stopPushTimer() {
         clearTimeout(this.timerPush)
@@ -328,5 +383,20 @@
 
   .text-bold {
     font-weight: bold
+  }
+
+  .instruction-block {
+      margin: 0 auto;
+      background: #FFFFFF;
+      border: 5px solid #54BEDF;
+      width: 70%;
+      padding: 20px;
+      position: relative;
+      z-index: 9;
+      text-align: center;
+  }
+
+  .instruction-block p {
+      font-size: 18px;
   }
 </style>
