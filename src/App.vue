@@ -157,6 +157,7 @@
       ...mapActions(['get_mainJSON']),
       showResults(){
          this.mainJSON['feedbackShow'] = true
+        this.mainJSON["mainPageShow"] = false
       },
       endTime(){
         this.stopTimer()
@@ -167,7 +168,9 @@
         this.mainJSON.taskChatWalk["isShow"] = false
         this.mainJSON.taskNightInTheMuseum["isShow"] = false
         this.mainJSON['endTimeShow'] = false
+        this.mainJSON["mainPageShow"] = false
         this.mainJSON['feedbackShow'] = true
+
 
         this.push_mainJSON()
 

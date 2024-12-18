@@ -295,6 +295,7 @@
                     this.mainJSON.taskChatWalk["isShow"] = false
                     this.mainJSON.taskNightInTheMuseum["isShow"] = false
                     this.mainJSON['feedbackShow'] = true
+                  this.mainJSON["mainPageShow"] = false
 
                     // this.mainJSON.forms['isShow'] = true
                     // this.mainJSON["instructionShow"] = true
