@@ -4,7 +4,7 @@
             <div class="d-flex flex-column">
                 <h2 style="text-align: center">Все задания выполнены!</h2>
                 <h3 style="text-align: center">О твоей городской грамотности</h3>
-                <p>Ты - <span style="text-decoration: underline">{{ this.finalResult }} </span> ! </p>
+                <p>Ты - <span style="text-decoration: underline">{{ this.finalResult }} </span>! </p>
                 <p>В тесте были задания, связанные с разными важными вопросами жизни в крупном мегаполисе. 
                   В таблице приведен твой уровень по отдельным направлениям.
                 </p>
@@ -124,7 +124,7 @@ export default {
         }
     },
     mounted(){
-        console.log('feedback')
+        // console.log('feedback')
         if(this.mainJSON.taskNightInTheMuseum.results.ULSCLL1_Score_SCK1_2 === 1){
             this.securityInTheCity++
         }
@@ -333,11 +333,11 @@ export default {
             this.prosocialEngagement++
         }
 
-        console.log(this.prosocialEngagement)
-        console.log(this.securityInTheCity)
-        console.log(this.localLiteracy)
-        console.log(this.healthyLifestyle)
-        console.log(this.applicationOfDigitalTechnologies)
+        // console.log(this.prosocialEngagement)
+        // console.log(this.securityInTheCity)
+        // console.log(this.localLiteracy)
+        // console.log(this.healthyLifestyle)
+        // console.log(this.applicationOfDigitalTechnologies)
 
         this.prosocialEngagement = Math.round(this.prosocialEngagement/23*100)
         this.securityInTheCity = Math.round(this.securityInTheCity/12*100)
@@ -346,11 +346,11 @@ export default {
         this.applicationOfDigitalTechnologies = Math.round(this.applicationOfDigitalTechnologies/7*100)
 
 
-        console.log(this.prosocialEngagement)
-        console.log(this.securityInTheCity)
-        console.log(this.localLiteracy)
-        console.log(this.healthyLifestyle)
-        console.log(this.applicationOfDigitalTechnologies)
+        // console.log(this.prosocialEngagement)
+        // console.log(this.securityInTheCity)
+        // console.log(this.localLiteracy)
+        // console.log(this.healthyLifestyle)
+        // console.log(this.applicationOfDigitalTechnologies)
 
         if (this.prosocialEngagement < 25){
           this.prosocialEngagementLevel = 0
@@ -437,16 +437,16 @@ export default {
           this.countOf3Level++
         }
 
-        console.log(this.prosocialEngagementLevel)
-        console.log(this.securityInTheCityLevel)
-        console.log(this.localLiteracyLevel)
-        console.log(this.healthyLifestyleLevel)
-        console.log(this.applicationOfDigitalTechnologiesLevel)
-
-        console.log(this.countOf0Level++)
-      console.log(this.countOf1Level++)
-      console.log(this.countOf2Level++)
-      console.log(this.countOf3Level++)
+      //   console.log(this.prosocialEngagementLevel)
+      //   console.log(this.securityInTheCityLevel)
+      //   console.log(this.localLiteracyLevel)
+      //   console.log(this.healthyLifestyleLevel)
+      //   console.log(this.applicationOfDigitalTechnologiesLevel)
+      //
+      //   console.log(this.countOf0Level++)
+      // console.log(this.countOf1Level++)
+      // console.log(this.countOf2Level++)
+      // console.log(this.countOf3Level++)
 
 
       if (this.countOf0Level >= 3 && this.countOf1Level <= 3 && this.countOf2Level <= 2 && this.countOf3Level <= 1){
@@ -459,7 +459,7 @@ export default {
         this.finalResult = 'Уверенный пользователь города'
       }
 
-      console.log(this.finalResult)
+      // console.log(this.finalResult)
 
 
     }

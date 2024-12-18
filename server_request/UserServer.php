@@ -23,9 +23,9 @@ class UserServer
     private /*RedisConnector*/ $redis_connect;
 
 
-    public function __construct(){
+    public function __construct($postfix){
 
-        $this->redis_connect = new RedisConnector();
+        $this->redis_connect = new RedisConnector($postfix);
     }
 
 

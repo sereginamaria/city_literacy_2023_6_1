@@ -1,4 +1,7 @@
 <?php
+
+$pathArray = explode("/", $_SERVER['PHP_SELF']);
+$postfix = '_'.$pathArray[2]; // 2023_6_1
 require_once "UserServer.php";
 
 $arr = array();
@@ -11,7 +14,7 @@ $data = file_get_contents('php://input');
 $str_test ='{"loginJSON":{"login":"log_1000","password":"pass_1000"}}';
 
 
-$usr_srv = new UserServer();
+$usr_srv = new UserServer($postfix);
 //$arr = json_decode ($str_test , true );
 
 //echo $arr['loginJSON']['login'];
