@@ -182,9 +182,15 @@
                         ('0' + (t.getMinutes())).slice(-2),
                         ('0' + t.getSeconds()).slice(-2)
                     ].join(':');
-                this.mainJSON.forms['isShow'] = true
-                this.mainJSON["instructionShow"] = true
-                this.mainJSON["mainPageShow"] = false
+
+                this.mainJSON.taskVolunteers["isShow"] = false
+                this.mainJSON.taskChatWalk["isShow"] = false
+                this.mainJSON.taskNightInTheMuseum["isShow"] = false
+                this.mainJSON['feedbackShow'] = true
+
+                // this.mainJSON.forms['isShow'] = true
+                // this.mainJSON["instructionShow"] = true
+                // this.mainJSON["mainPageShow"] = false
             },
             addAnswersTaskChatWalk() {
                 if (this.mainJSON.taskChatWalk.results.ULHLDT1_Log_HLS1_1 !== "NA"){

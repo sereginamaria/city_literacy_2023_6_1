@@ -2,40 +2,63 @@
     <div class="dialog">
         <div class="dialog-content">
             <div class="d-flex flex-column">
-                <p>Результаты выполнения теста "Городская грамотность"</p>
+                <h2 style="text-align: center">Все задания выполнены!</h2>
+                <h3 style="text-align: center">О твоей городской грамотности</h3>
+                <p>Ты - <span style="text-decoration: underline">{{ this.finalResult }} </span> ! </p>
+                <p>В тесте были задания, связанные с разными важными вопросами жизни в крупном мегаполисе. 
+                  В таблице приведен твой уровень по отдельным направлениям.
+                </p>
                 <table class="table">
                     <thead>
                     <tr>
-                        <th scope="col">Компонент</th>
-                        <th scope="col">Результат (%)</th>
+                        <th scope="col">Направление</th>
+                        <th scope="col">Процент выполнения</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td>Просоциальная вовлеченность</td>
+                        <td>
+                          <p>Просоциальная вовлеченность</p>
+                          <p style="color: gray; font-style: italic">(задания про твою готовность заботиться о городе, его жителях и природе)</p>
+                        </td>
                         <td>{{ this.prosocialEngagement }}</td>
                     </tr>
                     <tr>
-                        <td>Локальная грамотность</td>
-                        <td>{{this.localLiteracy}}</td>
-                    </tr>
-                    <tr>
-                        <td>Безопасность в городе</td>
+                       <td>
+                          <p>Локальная грамотность</p>
+                          <p style="color: gray; font-style: italic">(задания про историю, культуру и особенности нашего города)</p>
+                        </td>
                         <td>{{this.securityInTheCity}}</td>
                     </tr>
                     <tr>
-                        <td>Здоровый образ жизни</td>
+                       <td>
+                          <p>Безопасность в городе</p>
+                          <p style="color: gray; font-style: italic">(задания про безопасное взаимодействие с городом: с людьми и транспортом)</p>
+                        </td>
+                        <td>{{this.securityInTheCity}}</td>
+                    </tr>
+                    <tr>
+                       <td>
+                          <p>Здоровый образ жизни</p>
+                          <p style="color: gray; font-style: italic">(задания про поддержание твоего здоровьяи благополучия в городе)</p>
+                        </td>
                         <td>{{this.healthyLifestyle}}</td>
                     </tr>
                     <tr>
-                        <td>Применение цифровых технологий</td>
+                       <td>
+                          <p>Применение цифровых технологий</p>
+                          <p style="color: gray; font-style: italic">(задания про разные городские цифровые ресурсы и сервисы)</p>
+                        </td>
                         <td>{{this.applicationOfDigitalTechnologies}}</td>
                     </tr>
                     </tbody>
                 </table>
-                <p>Благодарим за участие!</p>
+                <h3 style="text-align: center">Благодарим за участие!</h3>
             </div>
-            <MyButton @click="exit">Выйти</MyButton>
+          <div style="display: flex; justify-content: center">
+             <MyButton @click="exit">Выйти</MyButton>
+          </div>
+
         </div>
     </div>
 </template>
@@ -52,6 +75,17 @@ export default {
             healthyLifestyle: 0,
             applicationOfDigitalTechnologies: 0,
             prosocialEngagement: 0,
+            securityInTheCityLevel: 0,
+            localLiteracyLevel: 0,
+            healthyLifestyleLevel: 0,
+            applicationOfDigitalTechnologiesLevel: 0,
+            prosocialEngagementLevel: 0,
+
+            countOf0Level: 0,
+            countOf1Level: 0,
+            countOf2Level: 0,
+            countOf3Level: 0,
+            finalResult: 0
         }
     },
     computed: {
@@ -299,17 +333,135 @@ export default {
             this.prosocialEngagement++
         }
 
-        // console.log(this.prosocialEngagement)
-        // console.log(this.securityInTheCity)
-        // console.log(this.localLiteracy)
-        // console.log(this.healthyLifestyle)
-        // console.log(this.applicationOfDigitalTechnologies)
+        console.log(this.prosocialEngagement)
+        console.log(this.securityInTheCity)
+        console.log(this.localLiteracy)
+        console.log(this.healthyLifestyle)
+        console.log(this.applicationOfDigitalTechnologies)
 
         this.prosocialEngagement = Math.round(this.prosocialEngagement/23*100)
         this.securityInTheCity = Math.round(this.securityInTheCity/12*100)
         this.localLiteracy = Math.round(this.localLiteracy/11*100)
         this.healthyLifestyle = Math.round(this.healthyLifestyle/14*100)
         this.applicationOfDigitalTechnologies = Math.round(this.applicationOfDigitalTechnologies/7*100)
+
+
+        console.log(this.prosocialEngagement)
+        console.log(this.securityInTheCity)
+        console.log(this.localLiteracy)
+        console.log(this.healthyLifestyle)
+        console.log(this.applicationOfDigitalTechnologies)
+
+        if (this.prosocialEngagement < 25){
+          this.prosocialEngagementLevel = 0
+          this.countOf0Level++
+        }
+        if (this.prosocialEngagement >= 25 && this.prosocialEngagement <= 50){
+          this.prosocialEngagementLevel = 1
+          this.countOf1Level++
+        }
+        if (this.prosocialEngagement >= 51 && this.prosocialEngagement <= 75){
+          this.prosocialEngagementLevel = 2
+          this.countOf2Level++
+        }
+        if (this.prosocialEngagement > 76){
+          this.prosocialEngagementLevel = 3
+          this.countOf3Level++
+        }
+
+         if (this.securityInTheCity < 25){
+          this.securityInTheCityLevel = 0
+           this.countOf0Level++
+        }
+        if (this.securityInTheCity >= 25 && this.securityInTheCity <= 50){
+          this.securityInTheCityLevel = 1
+          this.countOf1Level++
+        }
+        if (this.securityInTheCity >= 51 && this.securityInTheCity <= 75){
+          this.securityInTheCityLevel = 2
+          this.countOf2Level++
+        }
+        if (this.securityInTheCity > 76){
+          this.securityInTheCityLevel = 3
+          this.countOf3Level++
+        }
+
+         if (this.localLiteracy < 25){
+          this.localLiteracyLevel = 0
+           this.countOf0Level++
+        }
+        if (this.localLiteracy >= 25 && this.localLiteracy <= 50){
+          this.localLiteracyLevel = 1
+          this.countOf1Level++
+        }
+        if (this.localLiteracy >= 51 && this.localLiteracy <= 75){
+          this.localLiteracyLevel = 2
+          this.countOf2Level++
+        }
+        if (this.localLiteracy > 76){
+          this.localLiteracyLevel = 3
+          this.countOf3Level++
+        }
+
+         if (this.healthyLifestyle < 25){
+          this.healthyLifestyleLevel = 0
+           this.countOf0Level++
+        }
+        if (this.healthyLifestyle >= 25 && this.healthyLifestyle <= 50){
+          this.healthyLifestyleLevel = 1
+          this.countOf1Level++
+        }
+        if (this.healthyLifestyle >= 51 && this.healthyLifestyle <= 75){
+          this.healthyLifestyleLevel = 2
+          this.countOf2Level++
+        }
+        if (this.healthyLifestyle > 76){
+          this.healthyLifestyleLevel = 3
+          this.countOf3Level++
+        }
+
+        if (this.applicationOfDigitalTechnologies < 25){
+          this.applicationOfDigitalTechnologiesLevel = 0
+          this.countOf0Level++
+        }
+        if (this.applicationOfDigitalTechnologies >= 25 && this.applicationOfDigitalTechnologies <= 50){
+          this.applicationOfDigitalTechnologiesLevel = 1
+          this.countOf1Level++
+        }
+        if (this.applicationOfDigitalTechnologies >= 51 && this.applicationOfDigitalTechnologies <= 75){
+          this.applicationOfDigitalTechnologiesLevel = 2
+          this.countOf2Level++
+        }
+        if (this.applicationOfDigitalTechnologies > 76){
+          this.applicationOfDigitalTechnologiesLevel = 3
+          this.countOf3Level++
+        }
+
+        console.log(this.prosocialEngagementLevel)
+        console.log(this.securityInTheCityLevel)
+        console.log(this.localLiteracyLevel)
+        console.log(this.healthyLifestyleLevel)
+        console.log(this.applicationOfDigitalTechnologiesLevel)
+
+        console.log(this.countOf0Level++)
+      console.log(this.countOf1Level++)
+      console.log(this.countOf2Level++)
+      console.log(this.countOf3Level++)
+
+
+      if (this.countOf0Level >= 3 && this.countOf1Level <= 3 && this.countOf2Level <= 2 && this.countOf3Level <= 1){
+        this.finalResult = 'Начинающий пользователь города'
+      }
+      else if (this.countOf0Level <= 1 && this.countOf1Level <= 2 && this.countOf2Level <= 4 && this.countOf3Level >= 2){
+        this.finalResult = 'Продвинутый пользователь города'
+      }
+      else {
+        this.finalResult = 'Уверенный пользователь города'
+      }
+
+      console.log(this.finalResult)
+
+
     }
 }
 </script>
@@ -317,7 +469,7 @@ export default {
 <style scoped>
 .dialog-content {
     /*overflow-y: scroll;*/
-    max-height: 80vh;
-    max-width: 80vw;
+    height: 60vh;
+    width: 60vw;
 }
 </style>

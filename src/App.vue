@@ -375,9 +375,9 @@
     margin: auto;
     background: white;
     border-radius: 12px;
-    min-height: 100px;
-    min-width: 300px;
-    max-width: 600px;
+    //min-height: 100px;
+    //min-width: 300px;
+    //max-width: 600px;
     padding: 20px;
   }
 
