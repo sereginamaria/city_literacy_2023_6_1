@@ -15,11 +15,9 @@ $data = file_get_contents('php://input');
 
 $arr = json_decode ( $data , true );
 
-$pathArray = explode("/", $_SERVER['PHP_SELF']);
-$postfix = '_'.$pathArray[2]; // 2023_6_1
-$usr_srv = new UserServer($postfix);
+$usr_srv = new UserServer();
 
-// var_dump($arr);
+//var_dump($arr);
 
 //for($i=0 ;$i<100000;++$i)
 //    $usr_srv->put_json_data($arr["login"],$arr["hash"],$arr["item"].$i);

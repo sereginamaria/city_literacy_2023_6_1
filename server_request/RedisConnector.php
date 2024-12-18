@@ -4,25 +4,20 @@ require_once "NoSqlSet.php";
 class RedisConnector implements NoSqlSet
 {
 
-	private $redis; /*Redis*/  
-	
+    private /*Redis*/  $redis;
 
-    private  $city_literacy_login_password_map;
-    private  $city_literacy_json_map;
-    private  $city_literacy_login_hash_map;
-    private  $city_literacy_login_register;
+    private  $city_literacy_login_password_map ="city_literacy_login_password_map";
+    private  $city_literacy_json_map = "city_literacy_json_map";
+    private  $city_literacy_login_hash_map ="city_literacy_login_hash_map";
+//__________________________________________________________
+    private  $city_literacy_login_register ="city_literacy_login_register";
 
 
-    public function __construct($postfix){
+    public function __construct(){
 
         //Connecting to Redis
         $this->redis = new Redis();
         $this->redis->connect('127.0.0.1', 6379);
-		$this->city_literacy_login_password_map ="city_literacy_login_password_map".$postfix;
-		$this->city_literacy_json_map = "city_literacy_json_map".$postfix;
-		$this->city_literacy_login_hash_map ="city_literacy_login_hash_map".$postfix;
-		$this->city_literacy_login_register ="city_literacy_login_register".$postfix;
-		// echo ''.$postfix;
     //    $this->redis->auth('password');
         //if ($this->redis->ping())
          //   echo "ping from redis: PONG\n";
@@ -43,11 +38,11 @@ class RedisConnector implements NoSqlSet
     }
     public function setPassword( $login,  $password)
     {
-		// echo $this->city_literacy_login_password_map .' '.$login .' '.  $password.' <br />';
+
         $this->redis->hset($this->city_literacy_login_password_map,$login, $password);
     }
     public function putDataJSON( $login,  $json_data)
-    {	
+    {
         $this->redis->hset($this->city_literacy_json_map,$login,$json_data);
     }
 

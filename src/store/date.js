@@ -5,6 +5,7 @@ const date = {
     "instructionShow": false,
     "mainPageShow": false,
     "pauseShow": false,
+    "endTimeShow": false,
     "resultsShow": false,
     "feedbackShow": false,
     "allDone": false,

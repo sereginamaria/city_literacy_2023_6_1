@@ -1,5 +1,5 @@
 <template>
-  <AuthForm v-if="mainJSON.loginShow"/>
+  <AuthForm v-if="mainJSON.loginShow" @show-results="showResults()"/>
   <InstructionPage v-if="mainJSON.instructionShow"/>
 
   <div v-if="mainJSON.mainPageShow">
@@ -10,6 +10,7 @@
 
 
     <PausePage v-if="this.mainJSON.pauseShow" @skip-pause="skipPause()"/>
+    <EndTimePage v-if="this.mainJSON.endTimeShow" @end-time="endTime()"/>
     <ResultsPage v-if="this.mainJSON.resultsShow"/>
     <FeedbackPage v-if="this.mainJSON.feedbackShow"/>
 </template>
@@ -25,10 +26,12 @@
   import PageNavBar from "@/components/PageNavBar";
   import ResultsPage from "@/components/ResultsPage";
   import FeedbackPage from "@/components/FeedbackPage.vue";
+  import EndTimePage from "@/components/EndTimePage.vue";
 
   export default {
     name: 'App',
     components: {
+      EndTimePage,
         FeedbackPage,
       ResultsPage,
       PageNavBar,
@@ -81,7 +84,11 @@
       currentTime: {
         handler(newValue) {
           if (newValue === 0) {
-            this.stopTimer()
+            if (!this.mainJSON["allDone"]){
+              this.stopTimer()
+              this.mainJSON["endTimeShow"] = true
+              this.mainJSON["mainPageShow"] = false
+            }
           }
           /*if(newValue === 3000){
             this.mainJSON["pauseShow"] = true
@@ -148,6 +155,23 @@
     methods: {
       ...mapMutations(["push_mainJSON"]),  // todo eslint
       ...mapActions(['get_mainJSON']),
+      showResults(){
+         this.mainJSON['feedbackShow'] = true
+      },
+      endTime(){
+        this.stopTimer()
+        this.stopPauseTimer()
+        this.stopPushTimer()
+
+        this.mainJSON.taskVolunteers["isShow"] = false
+        this.mainJSON.taskChatWalk["isShow"] = false
+        this.mainJSON.taskNightInTheMuseum["isShow"] = false
+        this.mainJSON['endTimeShow'] = false
+        this.mainJSON['feedbackShow'] = true
+
+        this.push_mainJSON()
+
+      },
        skipPause(n){
           console.log(n)
            this.mainJSON["pauseShow"] = false  // TODO codestyle

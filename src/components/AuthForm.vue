@@ -24,7 +24,7 @@
             </div>
         </form>
 
-        <div style="color: lightgrey; position: absolute; bottom: 0; right: 0">v-3.0.1.</div>
+        <div style="color: lightgrey; position: absolute; bottom: 0; right: 0">v-3.0.2.</div>
 
     </div>
 
@@ -60,8 +60,12 @@
                     password: this.password
                 })
             },
-            checkAnswer(){
+            checkAnswer(status){
                 this.modalVisible = false
+
+                if (status === 'results'){
+                    this.$emit('showResults')
+                }
             }
         },
         watch: {
@@ -71,7 +75,8 @@
                         if (JSON.parse(el.json).allDone === true){
                             this.modalVisible = true
                             this.modalButtons = [
-                                {value: "OK", status: true}
+                                {value: "OK", status: true},
+                                {value: "Мои результаты", status: 'results'}
                             ]
                             this.modalMessage = 'Вы уже выполнили все задания.'
                         }

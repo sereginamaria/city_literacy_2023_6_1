@@ -1,6 +1,6 @@
 <template>
     <div class="dialog">
-        <div class="dialog-content">
+        <div class="dialog-content" style="box-shadow: 0 0 10px 5px gray;">
             <div class="d-flex flex-column">
                 <h2 style="text-align: center">Все задания выполнены!</h2>
                 <h3 style="text-align: center">О твоей городской грамотности</h3>
@@ -94,9 +94,7 @@ export default {
     methods: {
         ...mapMutations(["push_mainJSON"]),
         exit(){
-            this.push_mainJSON({
-                push: this.mainJSON
-            })
+
 
             let d = new Date()
             this.mainJSON.results.dataTimeEnd =  this.mainJSON.results.dataTimeLastUpdate = [
@@ -112,11 +110,16 @@ export default {
             this.mainJSON.taskVolunteers["isShow"] = false
             this.mainJSON.taskChatWalk["isShow"] = false
             this.mainJSON.taskNightInTheMuseum["isShow"] = false
+            this.mainJSON['endTimeShow'] = false
 
             this.mainJSON['loginShow'] = true
             this.mainJSON['mainPageShow'] = false
             this.mainJSON['feedbackShow'] = false
             this.mainJSON['allDone'] = true
+
+            this.push_mainJSON({
+                push: this.mainJSON
+            })
 
             localStorage.clear()
             window.location.reload();

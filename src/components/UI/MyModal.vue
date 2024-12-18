@@ -6,7 +6,7 @@
             </div>
             <div class="d-flex justify-content-center">
                 <MyButton v-for="button in buttons" :key="button.value"  @click="$emit('update', button.status)"
-                          class="me-3 blue-buttons" style="width: 25%"
+                          class="me-3 blue-buttons" style="width: 25%; min-width: max-content;"
                 >
                     {{button.value}}
                 </MyButton>

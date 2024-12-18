@@ -1,18 +1,15 @@
 <?php
 
 require_once "RedisConnector.php";
- // 2023_6_1
+
 class csv_maker
 {
     private /*RedisConnector */ $redis_connect;
     private /*array*/ $vector ;
-	private $pathArray;
-	private $postfix;
 
     public function __construct(){
-		$this->pathArray = explode("/", $_SERVER['PHP_SELF']);
-		$this->postfix = '_'.$this->pathArray[2];
-        $this->redis_connect = new RedisConnector($this->postfix);
+
+        $this->redis_connect = new RedisConnector();
 
         $fp = fopen('result.csv', 'w');
         fclose($fp);
@@ -141,22 +138,4 @@ class csv_maker
 
 
 }
-$csv = new csv_maker();
-fileDownload(__DIR__ . DIRECTORY_SEPARATOR . 'result.csv');exit;
-
-function fileDownload($pathFileName){
-	if(file_exists($pathFileName) && is_file($pathFileName)){	
-			// header("Content-type: multipart/form-data");
-			// header("Content-length: ".filesize($pathFileName));
-			// header('Content-disposition: inline; filename="result.csv"');
-			// header('Content-transfer-encoding: binary');
-			
-		header('Content-type: application/octet-stream');
-		header("Content-Type: ".mime_content_type($pathFileName));
-		header("Content-Disposition: attachment; filename=result.csv");
-		while (ob_get_level()) {
-			ob_end_clean();
-		}
-		readfile($pathFileName);
-		}	
-}
+// $csv = new csv_maker();
